@@ -183,7 +183,7 @@
 		dict	值相同,id不相同
 		set		值相同,id不相同
 	
-	python3.7及其以上版本
+	python3.7及其以上版本 
 				只要值相同,id就相同
 			   (list除外,list是值相同,id也不同)
 
