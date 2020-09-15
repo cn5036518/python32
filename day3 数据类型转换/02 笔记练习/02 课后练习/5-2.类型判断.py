@@ -22,5 +22,6 @@ res = isinstance(n,(list,tuple,set,str))
 print(res)
 
 n = {'a':1}
-res = isinstance(n,(list,tuple,set,str))
+res = isinstance(n,(list,tuple,set,str))  #参数2只能是元组
+# res = isinstance(n,[list,tuple,set,str])  #TypeError: isinstance() arg 2 must be a type or tuple of types
 print(res)
