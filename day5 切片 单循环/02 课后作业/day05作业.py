@@ -17,6 +17,19 @@ strvar = "132a4b5c"
 6.国际棋盘效果
 '''
 
+# 1.猜大小的游戏：
+# 设定一个理想数字比如：66，让用户输入数字，如果比66大，则显示猜测的结果大了；
+# 如果比66小，则显示猜测的结果小了;只有等于66，显示猜测结果正确。
+n = 66
+# n = int(input('请猜数:'))
+if n > 66:
+	print('结果大了')
+elif n < 66:
+	print('结果小了')
+elif n == 66:
+	print('结果正确')
+print('--------------1')
+
 
 # 2.输出 1-100 内的所有奇数
 i = 1
@@ -33,6 +46,21 @@ while i < 101:
 		print(i)
 	i += 1
 print('--------------3')
+
+# 4.用户登陆（有三次输错机会）且每次输错误时显示剩余错误次数（提示：使用字符串格式化）
+# username = 'jack1'
+# password = '123'
+n = 1
+while n<=3:
+	username = input('请输入用户名:')
+	password = input('请输入密码:')
+	if username == 'jack' and password == '123':
+		print('登录成功')
+		break
+	else:
+		print('登录失败,你还有%s次登录集合' % (3-n))
+	n +=1
+print('--------------4')
 
 # 5.写代码，有如下字符串利用切片实现每一个功能
 strvar = "132a4b5c"
@@ -55,34 +83,26 @@ print(strvar[-1])
 print(strvar[-3::-2])
 print('--------------5')
 
-# 1.猜大小的游戏：
-# 设定一个理想数字比如：66，让用户输入数字，如果比66大，则显示猜测的结果大了；
-# 如果比66小，则显示猜测的结果小了;只有等于66，显示猜测结果正确。
-n = 66
-# n = int(input('请猜数:'))
-if n > 66:
-	print('结果大了')
-elif n < 66:
-	print('结果小了')
-elif n == 66:
-	print('结果正确')
-print('--------------1')
-
-
-# 4.用户登陆（有三次输错机会）且每次输错误时显示剩余错误次数（提示：使用字符串格式化）
-# username = 'jack1'
-# password = '123'
-n = 1
-while n<=3:
-	username = input('请输入用户名:')
-	password = input('请输入密码:')
-	if username == 'jack' and password == '123':
-		print('登录成功')
-		break
+# 6 国际象棋棋盘
+i = 0
+while i < 64:
+	if i //8 %2 ==0:
+		if i % 2 ==0:
+			print('★',end='')
+		else:
+			print('☆', end='')
 	else:
-		print('登录失败,你还有%s次登录集合' % (3-n))
-	n +=1
-print('--------------4')
+		if i % 2 == 0:
+			print('☆', end='')
+		else:
+			print('★', end='')
+	if i % 8 ==7:
+		print()
+	i +=1
+print('--------------6')
+
+
+
 
 
 
