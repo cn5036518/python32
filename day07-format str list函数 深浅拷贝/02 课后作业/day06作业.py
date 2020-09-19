@@ -7,7 +7,7 @@
 	最多三次都没有猜测正确，退出循环，并显示‘都没猜对,继续努力’。
 """
 """
-times = 1
+times = 1 
 while times <= 3:
 	num = input("请输入一个数字:")
 	if num.isdecimal():
