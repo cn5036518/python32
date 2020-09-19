@@ -99,41 +99,41 @@ print('--------------------3-1')
 # 			选择网吧，则显示‘两个小时到家，妈妈已做好了战斗准备。’并让其重新输入A，B,C选项。
 
 # i = 0
-# sign = True
-# while sign:
-# 	choice = input('请选择回家方式,A(走大路回家) B(走小路回家) C(绕道回家):')
-# 	if choice == 'A':
-# 		print('请走大路回家')
-# 		while True:
-# 			choice2 = input('是选择公交车(g),还是步行(b)?')
-# 			if choice2 == 'g':
-# 				print('10分钟到家')
-# 				sign = False
-# 				break   #跳出内循环
-# 			elif choice2 == 'b':
-# 				print('20分钟到家')
-# 				sign = False
-# 				break
-# 			else:
-# 				print('输入错误,请输入g b')
-# 	elif choice == 'B':
-# 		print('走小路回家')
-# 		break  #跳出外循环
-# 	elif choice == 'C':
-# 		print('绕道回家')
-# 		while True:
-# 			choice3 = input('是选择游戏厅玩会(y)，还是网吧(w)?')
-# 			if choice3 == 'y':
-# 				print('一个半小时到家，爸爸在家，拿棍等你')
-# 				break  #跳出内循环
-# 			elif choice3 == 'w':
-# 				print('两个小时到家，妈妈已做好了战斗准备')
-# 				break  #跳出内循环
-# 			else:
-# 				print('输入错误,请输入y w')
-# 				continue  #跳出内循环的当次循环
-# 	else:
-# 		print('输入错误,请输入A B C')
+sign = True
+while sign:
+	choice = input('请选择回家方式,A(走大路回家) B(走小路回家) C(绕道回家):')
+	if choice == 'A':
+		print('请走大路回家')
+		while True:
+			choice2 = input('是选择公交车(g),还是步行(b)?')
+			if choice2 == 'g':
+				print('10分钟到家')
+				sign = False
+				break   #跳出内循环
+			elif choice2 == 'b':
+				print('20分钟到家')
+				sign = False
+				break
+			else:
+				print('输入错误,请输入g b')
+	elif choice == 'B':
+		print('走小路回家')
+		break  #跳出外循环
+	elif choice == 'C':
+		print('绕道回家')
+		while True:
+			choice3 = input('是选择游戏厅玩会(y)，还是网吧(w)?')
+			if choice3 == 'y':
+				print('一个半小时到家，爸爸在家，拿棍等你')
+				break  #跳出内循环
+			elif choice3 == 'w':
+				print('两个小时到家，妈妈已做好了战斗准备')
+				break  #跳出内循环
+			else:
+				print('输入错误,请输入y w')
+				continue  #跳出内循环的当次循环
+	else:
+		print('输入错误,请输入A B C')
 
 # 5.写代码：计算 1 - 2 + 3 - 4 + ... + 99 中除了88以外所有数的总和？
 i = 1
