@@ -26,14 +26,16 @@
 content = input('请输入内容:')
 content = content.strip()
 a , b = content.split('+')
-if a.isdecimal() and b.isdecimal():
-	print('%s + %s = %s' % (a,b,a+b))
+a = a.strip()
+b = b.strip()
+if a.isdecimal() and b.isdecimal(): #
+	print('%s + %s = %s' % (int(a),int(b),int(a)+int(b)))
 else:
 	print('请输入数字或者+,比如: 5+9')
 
 # 4.计算用户输入的内容中有几个整数（以个位数为单位）。
 # 如：content = input("请输入内容：")   # 如fhdal234slfh98769fjdla
-input1 = input("请输入内容：")
+input1 = input("请输入内容2：")
 # input1 = 'fhdal234slfh98769fjdla'
 count1 = 0
 for i in input1:

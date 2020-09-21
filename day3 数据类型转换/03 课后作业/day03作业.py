@@ -43,6 +43,14 @@ dic = dict(setvar)
 print(dic)
 
 
+strvar = 'jack'
+res = '_'.join(strvar)
+print(res)  #j_a_c_k
+
+strdict = {'name':'jack','age':18}
+res = '-'.join(strdict)
+print(res)  #name-age
+
 
 
 
