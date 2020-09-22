@@ -62,6 +62,7 @@ content2 = input('请输入地点:')
 content3 = input('请输入爱好:')
 print('敬爱可亲的%s,最喜欢在%s地方%s' % (content1,content2,content3))
 print('敬爱可亲的{},最喜欢在{}地方{}'.format(content1,content2,content3))
+print('敬爱可亲的{:s},最喜欢在{:s}地方{:s}'.format(content1,content2,content3))
 
 
 # 3.升级题：实现一个整数加法计算器（多个数相加）：
