@@ -37,6 +37,20 @@ def func(args):
 	strvar = '_'.join(args)
 	print(strvar)   #a_b
 listvar = ['a','b']
+listvar = [1,2]
+
+func(listvar)
+
+
+def func(args):
+	li = []
+	for i in args:
+		li.append(str(i))
+
+	strvar = '_'.join(li)
+	print(strvar)   #a_b
+# listvar = ['a','b']
+listvar = [1,2]
 
 func(listvar)
 print('------------------------------------6')
