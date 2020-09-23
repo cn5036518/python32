@@ -19,7 +19,6 @@
 #	print(a)
 # wrapper()
 
-00
 
 #2
 # a = 2
