@@ -31,13 +31,13 @@ click_num()
 # 改造,用闭包来实现
 """
 闭包的意义:
-	闭包可以优先使用外函数中的变量,
+	闭包中的内函数可以优先使用外函数中的局部变量,
 	并对闭包中的值起到了封装保护的作用.外部无法访问.
 """
 def outer():
 	x = 0
 	def click_num():
-		nonlocal x
+		nonlocal x  #修改最近一层的局部变量
 		x += 1
 		print(x)
 	return click_num

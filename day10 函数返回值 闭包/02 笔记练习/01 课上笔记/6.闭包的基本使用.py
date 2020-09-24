@@ -5,7 +5,7 @@
 里面的内函数叫做闭包函数
 
 是不是闭包?
-	1.内函数用了外函数的那个局部变量
+	1.内函数用了外函数的局部变量
 	2.外函数返回内函数
 """
 
@@ -20,8 +20,8 @@ func = zhaoshenyang_family()
 func()
 
 print("<==1==>")
-tup = func.__closure__
-print(tup[0].cell_contents) # 马云
+tup = func.__closure__  #如果tup不是空,说明是闭包
+print(tup[0].cell_contents) # 马云  #打印延长生命周期的局部变量的值
 print(tup)
 print("<==2==>")
 
@@ -32,7 +32,7 @@ def zhaowanli_family():
 	money = 1000
 	
 	def gege_hobby():
-		nonlocal money
+		nonlocal money  #修改最近一层的局部变量的值
 		money -= 500
 		print("我交朋友不在乎他有没有钱,反正都没有我有钱.我就喜欢交女朋友... 钱物还剩下{}".format(money))
 		
