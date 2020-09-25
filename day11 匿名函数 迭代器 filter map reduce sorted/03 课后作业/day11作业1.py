@@ -36,6 +36,15 @@ it = map(func,listvar)
 print(list(it))
 print('-------------------------2-2')
 
+# map改写
+listvar = [{'name':'alex'},{'name':'wusir'}]
+def func(dic):  #这里需要一个形参
+	return {'name':(dic['name']  + '_leader')} #形参的dic和return的dic同样都是dic. 但是内容已经变了
+
+it = map(func,listvar)
+print(list(it))
+print('-------------------------2-3')
+
 
 # 3.用filter来处理,得到股票价格大于20的股票名字
 shares={
@@ -96,6 +105,8 @@ def func(dic):
 	return dic['price'] * dic['shares']
 	
 it = map(func,portfolio)
+
+
 print(list(it))
 print('---------------------------------4-1-2')
 
