@@ -10,77 +10,75 @@
 """
 
 # 1.r+ 先读后写
-"""
-fp = open("ceshi3.txt",mode="r+",encoding="utf-8")
-# 先读
-res = fp.read()
-# 在写
-fp.write("ab")
-# 在读
-fp.seek(0) # 通过seek把光标移动到开头
-print(fp.read())
-fp.close()
-"""
+
+# fp = open("ceshi3.txt",mode="r+",encoding="utf-8")
+# # 先读
+# res = fp.read()   #r+模式 打开文件后，光标默认在文件开头
+# print(res)  #红鲤鱼绿鲤鱼与驴
+# # 在写
+# fp.write("ab")
+# # 在读
+# fp.seek(0) # 通过seek把光标移动到开头
+# print(fp.read())  #红鲤鱼绿鲤鱼与驴ab
+# fp.close()
+
 
 # 2.r+ 先写后读
-"""
-fp = open("ceshi3.txt",mode="r+",encoding="utf-8")
-# 移动光标到最后,否则r模式下,原字符会被覆盖
-fp.seek(0,2)
-# 先写
-fp.write("cd")
-# 把光标移动到文件的开头
-fp.seek(0)
-# 在读
-res = fp.read()
-print(res)
-fp.close()
-"""
+
+# fp = open("ceshi3.txt",mode="r+",encoding="utf-8")
+# # 移动光标到文件最后,否则r+模式下,原字符会被覆盖
+# fp.seek(0,2)  #
+# # 先写
+# fp.write("cd")
+# # 把光标移动到文件的开头
+# fp.seek(0)
+# # 在读
+# res = fp.read()
+# print(res)  #红鲤鱼绿鲤鱼与驴cd
+# fp.close()
+
 
 # 3.w+ 可读可写,清空重写(默认可以创建新的文件)
-"""
-fp = open("ceshi4.txt",mode="w+",encoding="utf-8")
-fp.write("abc")
-fp.seek(0)
-print(fp.read())
-fp.close()
-"""
+# fp = open("ceshi4.txt",mode="w+",encoding="utf-8")
+# fp.write("abc")
+# fp.seek(0)
+# print(fp.read())  #abc
+# fp.close()
 
 # 4.a+ 可读可写,追加写入 (默认可以创建新的文件)
-"""
-fp = open("ceshi5.txt",mode="a+",encoding="utf-8")
-fp.write("def")
-# 读内容
-fp.seek(0)
-print(fp.read())
-fp.close()
-"""
+# fp = open("ceshi5.txt",mode="a+",encoding="utf-8")
+# fp.write("def")
+# # 读内容
+# fp.seek(0)
+# print(fp.read())  #def
+# fp.close()
+
 
 # 5.r+和a+区别
 """
-r+模式基于当前光标所在位置进行写入覆盖
+r+模式基于当前光标所在位置进行写入覆盖，r+模式下，光标默认在文件开头
 a+模式会强制把光标放到文件末尾进行追加写入
 """
-"""
+
 # fp = open("ceshi5.txt",mode="r+",encoding="utf-8")
-fp = open("ceshi5.txt",mode="a+",encoding="utf-8")
-fp.seek(3) # 从头数 3个字节的位置
-# fp.write("zxc") # 模式会强制把光标放到文件末尾进行追加写入
-print(fp.read())
-fp.close()
-"""
+# # fp = open("ceshi5.txt",mode="a+",encoding="utf-8")
+# # fp.seek(3) # 从头数 3个字节的位置
+# fp.write("zxc1") # 模式会强制把光标放到文件末尾进行追加写入
+# print(fp.read())
+# fp.close()
+
 
 # 6.seek,tell,read之间的使用
-fp = open("ceshi5.txt",mode="r+",encoding="utf-8")
-fp.seek(4)
-# tell 当前光标左边所有内容的字节数
-res = fp.tell()
-print(res)
-
-# 在r+模式下 read(2) 代表读取2个字符 在rb模式下 read(2) 代表读取2个字节
-fp.read(2) # 当前光标往右所有的字符内容
-print(fp.tell())
-fp.close()
+# fp = open("ceshi5.txt",mode="r+",encoding="utf-8")
+# fp.seek(4)
+# # tell 当前光标左边所有内容的字节数
+# res = fp.tell()
+# print(res)
+#
+# # 在r+模式下 read(2) 代表读取2个字符 在rb模式下 read(2) 代表读取2个字节
+# fp.read(2) # 当前光标往右所有的字符内容
+# print(fp.tell())
+# fp.close()
 
 # 7.注意点 (seek在移动时,又可能移动到某个汉字的字节中间,导致原字节无法解析)
 """
@@ -103,9 +101,9 @@ with open("集合3.png",mode="wb") as fp:
 	fp.write(res)
 """
 # 方法二.继续简化
-with open("集合3.png",mode="rb") as fp1 , open("集合4.png",mode="wb") as fp2 :
-	res = fp1.read()
-	fp2.write(res)
+# with open("集合3.png",mode="rb") as fp1 , open("集合4.png",mode="wb") as fp2 :
+# 	res = fp1.read()
+# 	fp2.write(res)
 
 
 

@@ -37,18 +37,18 @@ b"abc" b开头的字节流要求数据只能是ascii编码中的字符,不能是
 """
 data = b"abc"
 data = "中文".encode("utf-8")
-print(data,type(data))
+print(data,type(data))  #b'\xe4\xb8\xad\xe6\x96\x87' <class 'bytes'>
 res = data.decode("utf-8")
-print(res,type(res))
+print(res,type(res))  #中文 <class 'str'>
 
 # utf-8下 一个中文占用3个字节
 data = "中文".encode("utf-8")
 # 计算字节总大小
-print(len(data))
+print(len(data))  #6
 
 # 把中字这个字节流进行反解恢复成原来中的字符 "中"
 res = b"\xe4\xb8\xad".decode()
-print(res)
+print(res)  #中
 
 # 4.文件存储二进制的字节流
 """如果存储的是二进制字节流,指定模式wb,不要指定encoding编码集,否则报错""" 
@@ -57,12 +57,12 @@ strvar = "红鲤鱼绿鲤鱼与驴".encode("utf-8")
 fp.write(strvar)
 fp.close()
 
-# 5.文件读取二进制的字节流
+# 5.文件读取二进制的字节流  （中文也可以用二进制来读取成字节流）
 fp = open("ceshi2.txt",mode="rb")
 res = fp.read()
 fp.close()
-print(res)
-print(res.decode())
+print(res)  #b'\xe7\xba\xa2\xe9\xb2\xa4\xe9\xb1\xbc\xe7\xbb\xbf\xe9\xb2\xa4\xe9\xb1\xbc\xe4\xb8\x8e\xe9\xa9\xb4'
+print(res.decode()) #红鲤鱼绿鲤鱼与驴
 
 # 6.复制文件
 """所有的图片,音频,视频都需要通过二进制字节流来进行存储传输."""

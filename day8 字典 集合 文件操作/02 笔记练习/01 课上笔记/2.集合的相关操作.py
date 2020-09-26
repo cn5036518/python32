@@ -5,15 +5,15 @@ set1 = {"易烊千玺","王一博","刘某PDD","王文"}
 set2 = {"倪萍","赵忠祥","金龟子大风车","小龙人","王文"}
 
 res = set1.intersection(set2)
-print(res)
+print(res)  #{'王文'}
 
 # 简写 &
 res = set1 & set2
-print(res)
+print(res)  #{'王文'}
 
 # difference()   差集   
 res = set1.difference(set2)
-print(res)
+print(res)  #{'易烊千玺', '刘某PDD', '王一博'}
 
 #  简写 -
 res = set1 - set2
@@ -76,7 +76,7 @@ print(set1)
 set1 = {"王文"}
 lst = ["a","b","c"]
 lst = "ppp" # 迭代这添加,无序,会自动去重
-set1.update(lst)
+set1.update(lst)  #参数是可迭代数据（容器类型 range对象 迭代器）
 print(set1)
 
 # 删
@@ -101,13 +101,13 @@ setvar.discard("刘某PDD111111") # success
 # print(setvar)
 
 # ### 3.冰冻集合 (额外了解)
-"""frozenset 单纯的只能做交差并补操作,不能做添加或者删除的操作"""
+"""frozenset 单纯的只能做交差并补操作,不能做添加或者删除的操作  只读"""
 lst = ["王文","宋健","何旭彤"]
 fz1 = frozenset(lst)
 print(fz1, type(fz1))
 
 
-# 不能再冰冻集合中添加或者删除元素
+# 不能在冰冻集合中添加或者删除元素
 # fz1.add(1)
 # fz1.update("abc")
 # fz1.discard("王文")
