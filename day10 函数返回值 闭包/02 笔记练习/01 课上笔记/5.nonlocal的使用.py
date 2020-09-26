@@ -1,4 +1,4 @@
-# ### nonlocal的使用 (用来修改局部变量)
+# ### nonlocal的使用 (用来修改局部变量,且只能修改局部变量)
 """
 nonlocal遵循LEGB原则
 (1) 它会找当前空间上一层的变量进行修改
@@ -13,9 +13,9 @@ def outer():
 	def inner():
 		nonlocal a
 		a = 20
-		print(a)
+		print(a)  #20
 	inner()
-	print(a)
+	print(a)  #20
 outer()  #20 20
 
 # (2)如果上一层空间没有,继续向上寻找
@@ -28,28 +28,28 @@ def outer():
 			a = 30
 			print(a)  # 30
 		smaller()
-		print(a)  #30
+		print(a)  #30  一次只修改最近一层的局部变量
 	inner()
-	print(a)  #20
+	print(a)  #20  不变
 outer()  # 30 30 20
 
 # (3)如果最后找不到,直接报错
 """nonlocal 只能修改局部变量,而不能修改全局变量"""
-"""
-a = 20
-def outer():	
-	def inner():
-		def smaller():
-			nonlocal a
-			a = 30
-			print(a)
-		smaller()
-		print(a)
-	inner()
-	print(a)
-outer()
-error
-"""
+
+# a = 20
+# def outer():
+# 	def inner():
+# 		def smaller():
+# 			nonlocal a  #SyntaxError: no binding for nonlocal 'a' found
+# 			a = 30
+# 			print(a)  #30
+# 		smaller()
+# 		print(a)
+# 	inner()
+# 	print(a)
+# outer()
+# # error
+
 
 
 # (4) 不通过nonlocal 是否可以修改局部变量呢?ok

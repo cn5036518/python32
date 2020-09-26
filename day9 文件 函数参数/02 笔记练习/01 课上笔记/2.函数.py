@@ -34,7 +34,7 @@ func()
 		mycar => myCar
 _命名法:可以将不同的单词用_拼接在一起
 	mycar => my_car
-	symmetric_differencesymmetricDifference SymmetricDifference
+	symmetric_difference symmetricDifference SymmetricDifference
 """
 
 # 函数定义

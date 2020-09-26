@@ -42,14 +42,16 @@ def zhaowanli_family():
 		print("家里有鞋柜,各式各样的奢侈鞋,一双大概20~30万,钱物还剩下{}".format(money))
 	
 	def big_master():
-		return [gege_hobby,didi_hobby]
+		return [gege_hobby,didi_hobby]  #函数名本身gege_hobby,didi_hobby 就是局部变量
 	
 	return big_master
 	
 func = zhaowanli_family()
 print(func)
+print('------------1')
 lst = func()
 print(lst)
+print('------------2')
 
 # 获取哥哥函数
 gege = lst[0]
@@ -57,6 +59,7 @@ gege()
 # 获取弟弟函数
 didi = lst[1]
 didi()
+print('------------3')
 
 # 3.使用 __closure__ , cell_contents 判定闭包
 """如果返回的元组中有数据说明是闭包,谁的生命周期被延长就打印谁"""

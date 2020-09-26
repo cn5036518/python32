@@ -6,7 +6,7 @@
 locals 在函数外 , 获取的是打印之前所有的全局变量
 locals 在函数内 , 获取的是调用之前所有的局部变量
 """
-"""
+
 def func():
 	a1 = 1
 	b2 = 2
@@ -15,11 +15,11 @@ a = 1
 b = 2
 res = locals()
 c = 3
-print(res)
+print(res)   #{'a': 1, 'b': 2, 'res': {...}, 'c': 3}
+#locals 在函数外 , 获取的是打印之前所有的全局变量
 d = 4
-"""
+
 # 2.局部空间
-"""
 a = 1
 b = 2
 def func():
@@ -27,20 +27,24 @@ def func():
 	b2 = 2
 	res = locals()
 	c3 = 3
-	print(res)
+	print(res)   #{'a1': 1, 'b2': 2}
+	# locals 在函数内 , 获取的是调用之前所有的局部变量
 	d4 = 4
 c = 3
 func()
 d = 4
-"""
+
 
 # 二.globals 只获取全局空间的全局变量
 """
-globals 在函数外 , 获取的是打印之前所有的全局变量
-globals 在函数内 , 获取的是调用之前所有的全局变量
+globals 在函数外 , 获取的是打印之前所有的全局变量     py3.6
+globals 在函数外 , 获取的是所有的全局变量              py3.7及其以上
+
+globals 在函数内 , 获取的是调用之前所有的全局变量     py3.6
+globals 在函数内 , 获取的是所有的全局变量               py3.7及其以上
 """
 # 1. 全局空间
-"""
+
 def func():
 	a1 = 1
 	b2 = 2
@@ -49,12 +53,11 @@ a = 1
 b = 2
 res = globals()
 c = 3
-print(res)
+print(res)   #{'a': 1, 'b': 2, 'res': {...}, 'c': 3, 'd': 4}  py3.7
 d = 4
-"""
+
 
 # 2.局部空间
-"""
 a = 1
 b = 2
 def func():
@@ -62,12 +65,12 @@ def func():
 	b2 = 2
 	res = globals()
 	c3 = 3
-	print(res)
+	print(res)  # {'a': 1, 'b': 2, 'res': {...}, 'c': 3, 'd': 4}
 	d4 = 4
 c = 3 
-func() globals()
+func() #globals()
 d = 4
-"""
+
 
 # ### globals  返回的是内置系统的全局字典
 """

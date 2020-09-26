@@ -31,6 +31,7 @@ def small_star(hang,lie):
 """10,10普通实参,在函数的调用处"""
 small_star(10,10)
 small_star(2,3)
+print('-------------------1')
 
 
 # 2.默认形参 
@@ -52,6 +53,7 @@ def small_star(hang=10,lie=10):
 small_star(4,8)
 small_star(8)
 small_star()
+print('-------------------2')
 
 # 3.普通形参 + 默认形参
 """普通形参必须写在默认形参的前面  不能调换位置"""

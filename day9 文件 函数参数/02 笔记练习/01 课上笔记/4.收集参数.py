@@ -14,7 +14,7 @@ def func(a,b,c,*args):
 func(1,2,3,4,5,6)
 
 
-# 任意个数值得累加和
+# 任意个数值的累加和
 def mysum(*args):
 	total = 0
 	for i in args:
@@ -53,7 +53,7 @@ def func(**kwargs):
 	for k,v in kwargs.items():
 		if k in dic:
 			# 将2次循环的结果通过+= 拼接在一起
-			strvar1 += dic[k] + ":" + v + "\n"			
+			strvar1 += dic[k] + ":" + v + "\n"		  #赋值运算符的优先级< 算数运算符
 		else:
 			# 将3次循环的结果通过+= 拼接在一起
 			strvar2 += v + " , "

@@ -61,8 +61,9 @@ def calc(num1,num2,sign):
 		return num1 * num2
 	elif sign == "/":
 		if num2 == 0:
-			return "除数不能为零"
-		return num1 / num2
+			print("除数不能为零")
+		else:
+			return num1 / num2
 	else:
 		return "抱歉,超出了我的运算范围."
 	
