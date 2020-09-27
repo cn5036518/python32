@@ -16,7 +16,8 @@ gen = ( i for i in range(10) )
 print(gen)
 
 # 判断类型
-from collections import Iterator
+# from collections import Iterator
+from collections.abc import Iterator
 
 print(isinstance(gen,Iterator))
 

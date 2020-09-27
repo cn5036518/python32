@@ -20,7 +20,7 @@ lst = [ i*2 for i in range(1,6) ]
 print(lst)
 
 # 2.带有判断条件的推导式
-"""注意点:for后面紧跟的判断条件只能是单项分支."""
+"""注意点:for后面紧跟的判断条件只能是单项分支.只有if,不能有else"""
 """[1,2,3,4,5,6,7,8,9,10] => [1,3,5,7,9 ... ]"""
 lst = [1,2,3,4,5,6,7,8,9,10]
 lst_new = []
@@ -39,11 +39,11 @@ lst2 = ["王志国","邓鹏","合理"]
 lst_new = []
 for i in lst1:
     for j in lst2:
-        lst_new.append(i+"♡♢♤♠"+j)
+        lst_new.append(i+"♡"+j)
 print(lst_new)
 
 # 改写推导式
-lst = [ i+"♡♢♤♠"+j for i in lst1 for j in lst2 ]
+lst = [ i+"♡"+j for i in lst1 for j in lst2 ]
 print(lst)
 
 # 4.带有判断条件的多循环推导式
@@ -51,11 +51,11 @@ lst_new = []
 for i in lst1:
     for j in lst2:
         if lst1.index(i) == lst2.index(j):
-            lst_new.append(i+"♡♢♤♠"+j)
+            lst_new.append(i+"♡"+j)
 print(lst_new)
 
 # 改写推导式
-lst = [i+"♡♢♤♠"+j for i in lst1 for j in lst2 if lst1.index(i) == lst2.index(j)]
+lst = [i+"♡"+j for i in lst1 for j in lst2 if lst1.index(i) == lst2.index(j)]
 print(lst)
 
 

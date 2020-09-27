@@ -90,10 +90,22 @@ for i in range(3):
     for j in range(3):
         lst.append(  M[i][j] * N[i][j]   )
 print(lst)
+print('-----------------1')
+lst = [     M[i][j] * N[i][j] for j in range(3)     for i in range(3)]
+print(lst)
         
 
 # =>实现效果2   [  [2, 4, 6], [12, 15, 18], [28, 32, 36]   ]
 # 遍历出三个空的列表
+lst2 = []
+for i in range(3):  #外层循环动的慢
+	lst1 = []  #[2, 4, 6]   #关键点
+	for j in range(3):  #内层循环动得快
+		 lst1.append(M[i][j] * N[i][j])
+	lst2.append(lst1)
+print(lst2)  #[[2, 4, 6], [12, 15, 18], [28, 32, 36]]
+print('----------------------5-3')
+
 lst = [ [] for i in range(3)]
 print(lst)
 

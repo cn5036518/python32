@@ -24,7 +24,8 @@ gen = mygen()
 
 # 第一次调用
 res = next(gen)
-print(res)
+print(res)  #1
+print('--------------------1-1')
 # 第二次调用
 res = next(gen)
 print(res)
@@ -32,6 +33,7 @@ print(res)
 res = next(gen)
 print(res)
 # 第四次调用
+print('--------------------1')
 """
 StopIteration error 
 res = next(gen)
@@ -59,15 +61,15 @@ def mygen():
 # 初始化生成器函数 => 生成器
 gen = mygen()
 print("<=====>")
-for i in range(30):
+for i in range(3):
     num = next(gen)
     print("我的球衣号码是{}".format(num))
 
 print("<=====>")
-for i in range(40):
+for i in range(4):
     num = next(gen)
     print("我的球衣号码是{}".format(num))
-
+print('--------------------2')
 
 # (3) send的使用方式 (给上一个yield发送数据)
 """
@@ -134,6 +136,7 @@ res = gen.send("100") 把100这个数据发送给上一次代码保存的位置8
 到第四次调用时, 因为没有更多的yield 返回数据,gen.send(300)无法接受到返回值,
 所以出现停止迭代 StopIteration的报错,程序终止;
 """
+print('--------------------3')
 
 # (4) yield from 的使用
 """将一个可迭代对象变成一个迭代器返回	"""
@@ -148,6 +151,7 @@ print(next(gen))
 print(next(gen))
 print(next(gen))
 # print(next(gen)) # StopIteration
+print('--------------------4')
 
 # (5) 斐波那契数列
 """使用生成器分段获取所有内容,而不是一股脑的把所有数据全部打印"""
@@ -169,9 +173,9 @@ for i in range(3):
     print(next(gen))
 
 # 第二次获取
-for i in range(5):
+for i in range(2):
     print(next(gen))
-
+print('--------------------5')
 
 
 
