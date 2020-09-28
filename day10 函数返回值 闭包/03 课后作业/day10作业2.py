@@ -88,7 +88,7 @@
 # def wrapper():
 # 	a = 1
 # 	def inner():
-# 		nonlocal a
+# 		nonlocal a  #加这行
 # 		a += 1
 # 		print(a)  #2
 # 	inner()

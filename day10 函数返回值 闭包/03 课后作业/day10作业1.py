@@ -128,7 +128,6 @@ print('-----------------------4')
 
 # 5.写函数，计算传入字符串中【数字】、【字母】、【空格] 以及 【其他】的个数
 def func(args):
-	pass
 	n1 = 0
 	n2 = 0
 	n3 = 0
@@ -170,7 +169,7 @@ print('-----------------------6')
 def func(*args):
 	total = 0
 	for i in args:
-		total += 1
+		total += len(i)
 	print(total)  #5
 
 strvar = 'a'
