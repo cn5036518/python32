@@ -66,21 +66,6 @@ print(next(gen))
 print('---------------------------4-1')
 
 
-# def mygen2():
-# 	res1 = yield '内部'
-# 	res2 = yield
-# 	print(res1 + res2)
-# 	res3 = yield
-#
-# gen2 = mygen2()
-# res = gen.send(None)
-# print(res)
-#
-# res2 = gen.send(100)
-# print(res2)
-#
-# res3 = gen.send(200)
-# print(res3)
 
 
 

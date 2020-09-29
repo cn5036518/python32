@@ -105,6 +105,7 @@ print(lst_new)
 
 # 推导式
 lst = ['python{}期'.format(i) for i in range(1,11)]
+lst = ['python{}期'.format(i) for i in range(1,11) if i != 5]
 print(lst)
 print('-----------------------6')
 
