@@ -80,6 +80,8 @@ for i in range(10000000):
 endtime = time.time()
 print("中间用时:",endtime-startime)
 
+print('-------------------------------------------')
+
 # 小结:  7个方法
 # 时间戳  time.time()
 

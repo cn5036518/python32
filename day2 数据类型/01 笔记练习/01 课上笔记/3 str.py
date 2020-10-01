@@ -22,7 +22,10 @@ print(strvar , type(strvar))
 strvar = "还有诗和\n远方的田野"
 strvar = "还有诗和\r\n远方的田野"
 strvar = "还有诗和\t远方的田野"
+
 strvar = "还有诗和\r远方的田野"
+# 远方的田野
+
 strvar = "还有诗和\n远方的\r田野"
 # 可以将有意义的字符变得无意义
 strvar = "还有诗和\"远\"方的田野"

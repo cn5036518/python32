@@ -94,12 +94,12 @@ print(res) #6
 # 去的过程
 # n=3 endval=1 return jiecheng(n-1,n * endval) ==>jiecheng(2,3*1)
 # n=2 endval=3*1 return jiecheng(n-1,n * endval) ==>jiecheng(1,3*1*2)
-# n=1 endval=3*2*1 if n==1 成立 rreturn endval  3*2*1
+# n=1 endval=3*2*1 if n==1 成立 return endval  3*2*1
 # endval = 3*2*1
 # 最下层空间的返回值是 3*2*1
 # 最上层空间的返回值是 3*2*1
 # 最下层和最上层返回的结果是一致的,所以对于尾递归来说,只需要考虑去的过程
-# 无序考虑回的过程即可完成
+# 无需考虑回的过程即可完成
 
 
 # 优化代码1

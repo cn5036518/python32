@@ -62,5 +62,40 @@ with open("lianxi2.txt",mode="rb+") as fp:
 print(res , type(res2))
 
 
+# 小结:
+lst = [1,2,3]
+#dumps 把任意对象序列化成一个bytes
+res = pickle.dumps(lst)
+print(res , type(res))
+
+#loads 把任意bytes反序列化成原来数据
+res2 = pickle.loads(res)
+print(res2 , type(res2))
+
+#dump  把对象序列化后写入到file-like Object(即文件对象)
+lst = [1,2,3]
+with open("lianxi1.txt",mode="wb") as fp:
+	pickle.dump(lst,fp)
+
+#load  把file-like Object(即文件对象)中的内容拿出来,反序列化成原来数据
+with open("lianxi1.txt",mode="rb") as fp:
+	res2 = pickle.load(fp)
+print(res2 , type(res2))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
