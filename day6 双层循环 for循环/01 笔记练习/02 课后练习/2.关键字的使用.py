@@ -1,12 +1,12 @@
 # ### 关键字的使用  pass break continue
 # pass 过 (代码块中的占位符)
-"""
-if 20 == 20:
-	pass
+# """
+# if 20 == 20:
+	# pass
 	
-while True:
-	pass
-"""
+# while True:
+	# pass
+# """
 
 # break 终止当前循环 (只能用在循环之中)
 # 1 ~ 10 遇到5终止循环
