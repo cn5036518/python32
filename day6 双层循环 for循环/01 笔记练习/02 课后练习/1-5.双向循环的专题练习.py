@@ -89,7 +89,7 @@ for i in range(100,1000):
 		print(i)
 	elif tens == units and tens == hundreds:
 		print(i)
-print('--------------5')
+print('-------------- 55')
 
 # 百钱买百鸡
 # 公鸡一个五块钱，母鸡一个三块钱，小鸡三个一块钱，现在要用一百块钱买一百只鸡，问公鸡、母鸡、小鸡各多少只？
