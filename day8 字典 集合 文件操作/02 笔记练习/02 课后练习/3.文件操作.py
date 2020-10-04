@@ -1,14 +1,14 @@
 # ### 文件操作
-"""
-语法:
-fp = open(文件,模式,编码集)
-fp => 文件的io对象 (文件句柄)
-i => input  输入
-o => outpur 输出
+# """
+# 语法:
+# fp = open(文件,模式,编码集)
+# fp => 文件的io对象 (文件句柄)
+# i => input  输入
+# o => outpur 输出
 
-fp.read()  读取文件内容
-fp.write() 写入文件的内容
-"""
+# fp.read()  读取文件内容
+# fp.write() 写入文件的内容
+# """
 # 1.文件的写入操作
 # (1) 打开文件
 fp = open("ceshi1.txt",mode="w",encoding="utf-8")# 打开冰箱门
@@ -27,14 +27,14 @@ fp.close()
 print(res)
 
 # 3.文件存储二进制字节流
-"""
-二进制字节流:`用于传输数据或者存储数据的一种数据格式
-b"abc" b开头的字节流要求数据只能是ascii编码中的字符,不能是中文
+# """
+# 二进制字节流:`用于传输数据或者存储数据的一种数据格式
+# b"abc" b开头的字节流要求数据只能是ascii编码中的字符,不能是中文
 
 # 将字符串和字节流(Bytes流)类型进行转换 (参数写成转化的字符编码格式)
-    #encode() 编码  将字符串转化为字节流(Bytes流)
-    #decode() 解码  将Bytes流转化为字符串
-"""
+    # encode() 编码  将字符串转化为字节流(Bytes流)
+    # decode() 解码  将Bytes流转化为字符串
+# """
 data = b"abc"
 data = "中文".encode("utf-8")
 print(data,type(data))  #b'\xe4\xb8\xad\xe6\x96\x87' <class 'bytes'>
@@ -51,7 +51,7 @@ res = b"\xe4\xb8\xad".decode()
 print(res)  #中
 
 # 4.文件存储二进制的字节流
-"""如果存储的是二进制字节流,指定模式wb,不要指定encoding编码集,否则报错""" 
+# """如果存储的是二进制字节流,指定模式wb,不要指定encoding编码集,否则报错""" 
 fp = open("ceshi2.txt",mode="wb")
 strvar = "红鲤鱼绿鲤鱼与驴".encode("utf-8")
 fp.write(strvar)
@@ -65,7 +65,7 @@ print(res)  #b'\xe7\xba\xa2\xe9\xb2\xa4\xe9\xb1\xbc\xe7\xbb\xbf\xe9\xb2\xa4\xe9\
 print(res.decode()) #红鲤鱼绿鲤鱼与驴
 
 # 6.复制文件
-"""所有的图片,音频,视频都需要通过二进制字节流来进行存储传输."""
+# """所有的图片,音频,视频都需要通过二进制字节流来进行存储传输."""
 # 先把原文件的二进制字节流读取出来
 # 相对路径找集合.png 相对于当前3.py这个文件
 # fp = open("集合.png",mode="rb")

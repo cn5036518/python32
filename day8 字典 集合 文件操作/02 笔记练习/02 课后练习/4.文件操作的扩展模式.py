@@ -1,13 +1,13 @@
 # ### 文件操作的扩展模式
-"""
+# """
 # (utf-8编码格式下 默认一个中文三个字节 一个英文或符号 占用一个字节)
-    #read()		功能: 读取字符的个数(里面的参数代表字符个数)
-		注意:从当前光标往右边读
-    #seek()		功能: 调整指针的位置(里面的参数代表字节个数)
-		seek(0)   把光标移动到文件的开头
-		seek(0,2) 把光标移动到文件的末尾
-    #tell()		功能: 当前光标左侧所有的字节数(返回字节数)
-"""
+    # read()		功能: 读取字符的个数(里面的参数代表字符个数)
+		# 注意:从当前光标往右边读
+    # seek()		功能: 调整指针的位置(里面的参数代表字节个数)
+		# seek(0)   把光标移动到文件的开头
+		# seek(0,2) 把光标移动到文件的末尾
+    # tell()		功能: 当前光标左侧所有的字节数(返回字节数)
+# """
 
 # 1.r+ 先读后写
 
@@ -55,10 +55,10 @@
 
 
 # 5.r+和a+区别
-"""
-r+模式基于当前光标所在位置进行写入覆盖，r+模式下，光标默认在文件开头
-a+模式会强制把光标放到文件末尾进行追加写入
-"""
+# """
+# r+模式基于当前光标所在位置进行写入覆盖，r+模式下，光标默认在文件开头
+# a+模式会强制把光标放到文件末尾进行追加写入
+# """
 
 # fp = open("ceshi5.txt",mode="r+",encoding="utf-8")
 # # fp = open("ceshi5.txt",mode="a+",encoding="utf-8")
@@ -81,25 +81,25 @@ a+模式会强制把光标放到文件末尾进行追加写入
 # fp.close()
 
 # 7.注意点 (seek在移动时,又可能移动到某个汉字的字节中间,导致原字节无法解析)
-"""
-fp = open("ceshi6.txt",mode="r+",encoding="utf-8")
-fp.seek(3)
-print(fp.read())
-fp.close()
+# """
+# fp = open("ceshi6.txt",mode="r+",encoding="utf-8")
+# fp.seek(3)
+# print(fp.read())
+# fp.close()
 
 # print("你".encode())
 # b'\xe4\xbd\xa0'
-"""
+# """
 
 # 8.with语法 自动实现文件关闭操作
 # 方法一.读取二进制字节流
-"""
-with open("集合2.png",mode="rb") as fp:
-	res = fp.read()
+# """
+# with open("集合2.png",mode="rb") as fp:
+	# res = fp.read()
 
-with open("集合3.png",mode="wb") as fp:
-	fp.write(res)
-"""
+# with open("集合3.png",mode="wb") as fp:
+	# fp.write(res)
+# """
 # 方法二.继续简化
 # with open("集合3.png",mode="rb") as fp1 , open("集合4.png",mode="wb") as fp2 :
 # 	res = fp1.read()

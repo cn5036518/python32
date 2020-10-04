@@ -101,7 +101,7 @@ setvar.discard("刘某PDD111111") # success
 # print(setvar)
 
 # ### 3.冰冻集合 (额外了解)
-"""frozenset 单纯的只能做交差并补操作,不能做添加或者删除的操作  只读"""
+# """frozenset 单纯的只能做交差并补操作,不能做添加或者删除的操作  只读"""
 lst = ["王文","宋健","何旭彤"]
 fz1 = frozenset(lst)
 print(fz1, type(fz1))
