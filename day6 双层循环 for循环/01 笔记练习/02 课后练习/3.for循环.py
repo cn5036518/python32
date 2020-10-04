@@ -2,26 +2,26 @@
 # 遍历 循环 迭代 , 把容器中的元素一个一个获取出来
 
 # while循环在遍历数据时的局限性
-"""
-lst = [1,2,3,4,5]  # ok
-i = 0
-while i < len(lst):
-	print(lst[i])
-	i+=1
+# """
+# lst = [1,2,3,4,5]  # ok
+# i = 0
+# while i < len(lst):
+	# print(lst[i])
+	# i+=1
 	
-setvar = {"a","b","c"} # not ok
-i = 0
-while i < len(setvar):
-	print(setvar[i])
-	i+=1
-"""
+# setvar = {"a","b","c"} # not ok
+# i = 0
+# while i < len(setvar):
+	# print(setvar[i])
+	# i+=1
+# """
 
 # for循环的基本语法
-"""
-Iterable 可迭代性数据：1.容器类型数据 2.range对象 3.迭代器
-for 变量 in Iterable:
-	code1.
-"""
+# """
+# Iterable 可迭代性数据：1.容器类型数据 2.range对象 3.迭代器
+# for 变量 in Iterable:
+	# code1.
+# """
 # 字符串
 container = "北京和深圳温差大概20多度"
 # 列表
@@ -80,10 +80,10 @@ a,b,c = ("马云","小马哥","马春配")
 print(a,b,c)
 
 # ### range对象
-"""
-range([开始值,]结束值[,步长])
-取头舍尾,结束值本身获取不到,获取到它之前的那一个数据
-"""
+# """
+# range([开始值,]结束值[,步长])
+# 取头舍尾,结束值本身获取不到,获取到它之前的那一个数据
+# """
 
 # range(一个值)
 for i in range(5): # 0 ~ 4
@@ -103,11 +103,11 @@ for i in range(10,0,-1): # 10 9 8 7 ... 1
 
 
 # 总结:
-"""
-while 一般用于处理复杂的逻辑关系
-for   一般用于迭代数据
-部分情况下两个循环可以互相转换;
-"""
+# """
+# while 一般用于处理复杂的逻辑关系
+# for   一般用于迭代数据
+# 部分情况下两个循环可以互相转换;
+# """
 
 i = 1
 while i <= 9:
@@ -127,7 +127,7 @@ for i in range(1,10):
 i = 1
 while i <= 10:	
 	if i == 5:
-		i += 1
+		i += 1  #必须加上
 		continue
 	print(i)
 	i +=1
