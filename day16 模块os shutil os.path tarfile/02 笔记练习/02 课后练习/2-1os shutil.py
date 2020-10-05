@@ -3,7 +3,7 @@ import os
 os.chdir('/home/wangtongpei/mywork')  #切换当前工作目录
 
 # os 模块具有 新建/删除
-# os.mknod   创建文件
+# os.mknod   创建文件 1
 # os.mknod('1.txt')
 
 # os.remove 删除文件
