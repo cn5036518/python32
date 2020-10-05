@@ -84,7 +84,7 @@ if not os.path.isabs(pathvar):
 print(abs_path)
 
 # ### 作业题 : 计算一个文件夹中的所有文件大小
-# 判断文件还是目录,递归子目录
+## 判断文件还是目录,递归子目录
 
 
 
