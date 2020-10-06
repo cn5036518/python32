@@ -32,15 +32,15 @@ print(res)
 res = random.uniform(2,0)
 print(res)
 
-"""
-原码解析:
-a = 2 , b = 0
-return 2 + (0-2) * (0<=x<1)
-x = 0 return 2 取到
-x = 1 return 0 取不到
-0 < x <= 2
-return a + (b-a) * self.random()
-"""
+# """
+# 原码解析:
+# a = 2 , b = 0
+# return 2 + (0-2) * (0<=x<1)
+# x = 0 return 2 取到
+# x = 1 return 0 取不到
+# 0 < x <= 2
+# return a + (b-a) * self.random()
+# """
 
 #choice()  随机获取序列中的值(多选一)  **
 lst = ["孙凯喜","王永飞","于朝志","须臾间","含税小"]

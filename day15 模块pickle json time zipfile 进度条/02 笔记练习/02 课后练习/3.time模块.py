@@ -31,27 +31,27 @@ res = time.ctime(res1)
 print(res)
 
 #asctime()       通过时间元组获取时间字符串(参数是时间元组) (了解)
-"""只能通过手动的形式来调星期"""
+# """只能通过手动的形式来调星期"""
 ttp = (2020,9,29,16,48,30,0,0,0)
 res = time.asctime(ttp)
 print(res)
 
 
 # mktime 配合 ctime来取代asctime (推荐)
-"""自动识别当前是周几"""
+# """自动识别当前是周几"""
 res = time.mktime(ttp)
 strvar = time.ctime(res)
 print(strvar)
 
 
 #sleep()         程序睡眠等待
-"""
-time.sleep(10)
-print("我睡醒了")
-"""
+# """
+# time.sleep(10)
+# print("我睡醒了")
+# """
 
 #strftime()      格式化时间字符串(格式化字符串,时间元祖)
-"""linux支持中文 windows不支持 """
+# """linux支持中文 windows不支持 """
 strvar = time.strftime("%Y-%m-%d %H:%M:%S")
 strvar = time.strftime("%Y-%m-%d %H:%M:%S 是杜兰特的死神的生日")
 print(strvar)
@@ -61,14 +61,14 @@ print(strvar)
 
 
 #strptime()      将时间字符串通过指定格式提取到时间元组中(时间字符串,格式化字符串) 
-"""注意:替换时间格式化标签时,必须严丝合缝.不能随便加空格或特殊字符"""
+# """注意:替换时间格式化标签时,必须严丝合缝.不能随便加空格或特殊字符"""
 ttp = time.strptime("2020年的9月29号是死神杜兰特的生日,晚上20点30分40秒准备轰趴派队","%Y年的%m月%d号是死神杜兰特的生日,晚上%H点%M分%S秒准备轰趴派队")
 print(ttp)
 
-"""
-strftime : 把时间元组 => 字符串
-strptime : 把字符串   => 时间元组
-"""
+# """
+# strftime : 把时间元组 => 字符串
+# strptime : 把字符串   => 时间元组
+# """
 
 #perf_counter()  用于计算程序运行的时间 (了解)
 
@@ -83,16 +83,17 @@ print("中间用时:",endtime-startime)
 print('-------------------------------------------')
 
 # 小结:  7个方法
-# 时间戳  time.time()
+# time()  #当前时间戳
 
-# localtime <=======> mktime =============> ctime
-# 时间元组			时间戳				 时间字符串1  Wed Sep 30 19:34:16 2020
+# 时间元组<==========>时间戳==============>时间字符串1  格式:Tue Oct  6 10:30:19 2020
+# localtime		    mktime				 ctime
 
-# 时间元组=======>asctime=======>时间字符串1   Wed Sep 30 19:34:16 2020
+# 时间元组============asctime=======>时间字符串1   格式:Tue Oct  6 10:30:19 2020
 
-# 时间元组=======>strftime=======>时间字符串2   2020-10-31 10:10:10
 
-# 时间元组<=======strptime<=======时间字符串2
+# 时间元组============strftime=======>时间字符串2  格式:2020-10-06 20:30:22
+
+# 时间元组<============strptime=======时间字符串1  格式:Tue Oct  6 10:30:19 2020
 
 # time_tuple = (2020,9,29,16,48,30,0,0,0)  #时间元组作为参数
 # time.struct_time(tm_year=2020, tm_mon=9, tm_mday=29)   #时间元组输出

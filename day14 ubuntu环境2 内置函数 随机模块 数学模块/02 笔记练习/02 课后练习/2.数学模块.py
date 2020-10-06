@@ -12,7 +12,7 @@ res = math.floor(-3.99)
 print(res)
 
 #pow()  计算一个数值的N次方(结果为浮点数) (对比内置pow)
-"""结果为浮点数,必须是两个参数"""
+# """结果为浮点数,必须是两个参数"""
 res = math.pow(2,3)
 # res = math.pow(2,3,3) error
 print(res)

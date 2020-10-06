@@ -4,7 +4,7 @@ print(abs(-1))
 print(abs(100))
 
 # round  四舍五入
-"""奇进偶不进 n.5的情况特定发生;"""
+# """奇进偶不进 n.5的情况特定发生;"""
 res = round(3.87)
 res = round(4.51)
 # res = round(2.5)
@@ -54,10 +54,10 @@ print(res)
 
 
 # pow    计算某个数值的x次方
-"""如果是三个参数,前两个运算的结果和第三个参数取余"""
+# """如果是三个参数,前两个运算的结果和第三个参数取余"""
 print(pow(2,3))
-print(pow(2,3,7))
-print(pow(2,3,4))
+print(pow(2,3,7))  #1
+print(pow(2,3,4))  
 print(pow(2,3,5))
 
 print("<======>")
@@ -110,10 +110,10 @@ strvar = "a=3"
 exec(strvar)
 print(a)
 
-strvar = """
-for i in range(10):
-	print(i)
-"""
+# strvar = """
+# for i in range(10):
+	# print(i)
+# """
 exec(strvar)
 
 
@@ -123,10 +123,10 @@ res = repr(strvar)
 print(res)
 
 # input  接受输入字符串
-"""
-res = input("输入内容")
-print(res , type(res))
-"""
+# """
+# res = input("输入内容")
+# print(res , type(res))
+# """
 
 # hash   生成哈希值
 # 文件校验
