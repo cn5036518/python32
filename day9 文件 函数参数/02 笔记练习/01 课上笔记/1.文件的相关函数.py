@@ -1,68 +1,68 @@
 # ### 刷新缓冲区
-"""
-# 刷新缓冲区 flush
-    # 当文件关闭的时候自动刷新缓冲区
-    # 当整个程序运行结束的时候自动刷新缓冲区
-    # 当缓冲区写满了  会自动刷新缓冲区
-    # 手动刷新缓冲区
-"""
-"""
-fp = open("ceshi1.txt",mode="a",encoding="utf-8")
-fp.write("abc")
+# """
+刷新缓冲区 flush
+    当文件关闭的时候自动刷新缓冲区
+    当整个程序运行结束的时候自动刷新缓冲区
+    当缓冲区写满了  会自动刷新缓冲区
+    手动刷新缓冲区
+# """
+# """
+# fp = open("ceshi1.txt",mode="a",encoding="utf-8")
+# fp.write("abc")
 
-# 手动刷新缓冲区,直接把内容写入到文件
-fp.flush()
+手动刷新缓冲区,直接把内容写入到文件
+# fp.flush()
 
-while True:
-	pass
+# while True:
+	# pass
 
-fp.close()
-"""
+# fp.close()
+# """
 # ### 文件相关的函数
-"""fp这个对象本身是迭代器,可以把文件中的内容按照换行一行一行遍历出来"""
-"""
-fp = open("ceshi1.txt",mode="r",encoding="utf-8")
-#readable()	    功能: 判断文件对象是否可读
-print(fp.readable())
-#writable()	    功能: 判断文件对象是否可写 write去掉e
-print(fp.writable())
-# 遍历fp文件对象
-for i in fp:
-	print(i)
-"""
+# """fp这个对象本身是迭代器,可以把文件中的内容按照换行一行一行遍历出来"""
+# """
+# fp = open("ceshi1.txt",mode="r",encoding="utf-8")
+readable()	    功能: 判断文件对象是否可读
+# print(fp.readable())
+writable()	    功能: 判断文件对象是否可写 write去掉e
+# print(fp.writable())
+遍历fp文件对象
+# for i in fp:
+	# print(i)
+# """
 
 # 1.readline()     功能: 读取一行文件内容
-'''
-with open("ceshi1.txt",mode="r",encoding="utf-8") as fp:
-	res = fp.readline()
-	print(res)
-	res = fp.readline()
-	print(res)
-	res = fp.readline()
-	print(res)
-	res = fp.readline()
-	print(res)
+# '''
+# with open("ceshi1.txt",mode="r",encoding="utf-8") as fp:
+	# res = fp.readline()
+	# print(res)
+	# res = fp.readline()
+	# print(res)
+	# res = fp.readline()
+	# print(res)
+	# res = fp.readline()
+	# print(res)
 	
-# (1)一次把所有内容都读取出来
-with open("ceshi1.txt",mode="r",encoding="utf-8") as fp:
-	# 先读取一行
-	res = fp.readline()
-	# 判断是不是空,不是空在循环
-	while res:
-		print(res)
-		# 再读取一行,放到循环中判断.
-		res = fp.readline()
+(1)一次把所有内容都读取出来
+# with open("ceshi1.txt",mode="r",encoding="utf-8") as fp:
+	先读取一行
+	# res = fp.readline()
+	判断是不是空,不是空在循环
+	# while res:
+		# print(res)
+		再读取一行,放到循环中判断.
+		# res = fp.readline()
 	
-# (2)注意点:readline(读取的字符数)
-print("<====================>")
-with open("ceshi1.txt",mode="r",encoding="utf-8") as fp:
-	"""
-	读取的字符数量 > 实际当前行字符数量的时候 => 按照当前行读取
-	读取的字符数量 < 实际当前行字符数量的时候 => 按照实际数量来读
-	"""
-	res = fp.readline(300)
-	print(res)
-'''
+(2)注意点:readline(读取的字符数)
+# print("<====================>")
+# with open("ceshi1.txt",mode="r",encoding="utf-8") as fp:
+	# """
+	# 读取的字符数量 > 实际当前行字符数量的时候 => 按照当前行读取
+	# 读取的字符数量 < 实际当前行字符数量的时候 => 按照实际数量来读
+	# """
+	# res = fp.readline(300)
+	# print(res)
+# '''
 print("<====================>1")
 
 
@@ -95,35 +95,35 @@ with open("ceshi2.txt",mode="w+",encoding="utf-8") as fp:
 	fp.writelines(lst_new)  #一次写入多行(包含换行符\n)
 
 # 注意点,内容必须是字符串,不能是整型
-"""
-lst = [1,2,3]
-with open("ceshi2.txt",mode="w+",encoding="utf-8") as fp:
-	fp.writelines(lst)
-"""
+# """
+# lst = [1,2,3]
+# with open("ceshi2.txt",mode="w+",encoding="utf-8") as fp:
+	# fp.writelines(lst)
+# """
 
 # # 4.truncate()     功能: 把要截取的字符串提取出来,然后清空内容将提取的字符串重新写入文件中 (字节)
 with open("ceshi2.txt",mode="r+",encoding="utf-8") as fp:
 	fp.truncate(3)
 
 
-"""
-seek(字节)
-truncate(字节)
-read(字符/字节)
-readline(字符/字节)
+# """
+# seek(字节)
+# truncate(字节)
+# read(字符/字节)
+# readline(字符/字节)
 
-readline() 一次读一行
-readlines() 读取多行到列表,每一行+\n是列表的一个元素
-writelines() 可以一次写入多行(包含\n 换行符)
-	参数:内容为字符串类型的可迭代数据	
-	lst = ['床前明月光', '疑是地上霜', '举头望明月', '低头想家乡']
-	lst =[1,2,3]  会报错  1是int 不是字符串
-truncate()  截取
+# readline() 一次读一行
+# readlines() 读取多行到列表,每一行+\n是列表的一个元素
+# writelines() 可以一次写入多行(包含\n 换行符)
+	# 参数:内容为字符串类型的可迭代数据	
+	# lst = ['床前明月光', '疑是地上霜', '举头望明月', '低头想家乡']
+	# lst =[1,2,3]  会报错  1是int 不是字符串
+# truncate()  截取
 
-readable()  判读可读
-writable()  判断可写
+# readable()  判读可读
+# writable()  判断可写
 
-"""
+# """
 
 
 
