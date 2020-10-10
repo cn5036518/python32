@@ -75,7 +75,7 @@ print(re.findall('a[0-9][*#/]b','a1/b a2b a29b a56b a456b')) # a1/b
 # ^ 在字符组开头的位置出现代表 除了...的意思
 print(re.findall('a[^-+*/]b',"a%b ccaa*bda&bd")) #a%b a&b #应用 匹配最里层的小括号
 
-# 匹配^-\()[]等特殊字符时 ,需要前面加上\进行转义
+# 匹配^-\()[]{}等特殊字符时 ,需要前面加上\进行转义
 strvar = "a^c a-c a\c"
 lst = re.findall(r"a[\^\-\\]c",strvar)
 print(lst)

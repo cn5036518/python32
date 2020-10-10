@@ -11,7 +11,7 @@ print(list3)
 
 # 2.res是多少?
 def func():
-	return [lambda x : i*x    for i in range(4)]
+	return [lambda x : i*x    for i in range(4)]  #循环完毕后,才调用函数
 # res = [m(2) for m in func()]
 
 # 3.打印结果是多少?
@@ -26,3 +26,5 @@ for n in [2,10]:
 print(list(g))
 	
 # 4.如何判断输入的数是质数( 1.通用方法完成 2.使用for .. else 完成 )
+
+# 5 计算文件夹的大小
