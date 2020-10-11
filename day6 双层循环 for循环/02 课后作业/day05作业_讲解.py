@@ -1,65 +1,65 @@
 # 1.猜大小的游戏：
 # 设定一个理想数字比如：66，让用户输入数字，如果比66大，则显示猜测的结果大了；如果比66小，则显示猜测的结果小了;只有等于66，显示猜测结果正确。
-"""
-num = 66
-str_num = input("请输入理想的数字")
-num_new = int(str_num)
-if num_new > num:
-	print("猜测的结果大了")
-elif num_new == num:
-	print("显示猜测结果正确")
-elif num_new < 66:
-	print("则显示猜测的结果小了")
-"""
+# """
+# num = 66
+# str_num = input("请输入理想的数字")
+# num_new = int(str_num)
+# if num_new > num:
+	# print("猜测的结果大了")
+# elif num_new == num:
+	# print("显示猜测结果正确")
+# elif num_new < 66:
+	# print("则显示猜测的结果小了")
+# """
 
 
 # 2.输出 1-100 内的所有奇数
-"""
-i = 1
-while i <= 100:
-	if i % 2 == 1:
-		print(i)
-	i +=1
-"""
+# """
+# i = 1
+# while i <= 100:
+	# if i % 2 == 1:
+		# print(i)
+	# i +=1
+# """
 # 3.输出 1-100 内的所有偶数
-"""
-i = 1
-while i <= 100:
-	if i % 2 == 0:
-		print(i)
-	i +=1
-"""
+# """
+# i = 1
+# while i <= 100:
+	# if i % 2 == 0:
+		# print(i)
+	# i +=1
+# """
 # 4.用户登陆（有三次输错机会）且每次输错误时显示剩余错误次数（提示：使用字符串格式化）
-"""
-times = 1
-while times <= 3:
-	pwd = input("请输入您的密码:")
-	if pwd == "111":
-		print("恭喜你登录成功~")
-		break
+# """
+# times = 1
+# while times <= 3:
+	# pwd = input("请输入您的密码:")
+	# if pwd == "111":
+		# print("恭喜你登录成功~")
+		# break
 	
 	# 剩余次数 = 总次数 - 已经使用的次数
-	print("你剩余的输入次数是%d" % (3 - times))	
-	times +=1
-"""
-"""
-sign = True
-times = 1
-while sign:
-	pwd = input("请输入您的密码:")
-	if pwd == "111":
-		print("恭喜你登录成功~")
-		sign = False
-	else:
+	# print("你剩余的输入次数是%d" % (3 - times))	
+	# times +=1
+# """
+# """
+# sign = True
+# times = 1
+# while sign:
+	# pwd = input("请输入您的密码:")
+	# if pwd == "111":
+		# print("恭喜你登录成功~")
+		# sign = False
+	# else:
 		# 剩余次数 = 总次数 - 已经使用的次数
-		print("你剩余的输入次数是%d" % (3 - times))
+		# print("你剩余的输入次数是%d" % (3 - times))
 
 	# 如果次数已经是3次了,强制终止循环;
-	if times == 3:
-		print("你已经没有机会了... ")
-		sign = False	
-	times +=1
-"""
+	# if times == 3:
+		# print("你已经没有机会了... ")
+		# sign = False	
+	# times +=1
+# """
 # 5.写代码，有如下字符串利用切片实现每一个功能
 strvar = "132a4b5c"
 # 1)对字符串进行切片形成新的字符串 "132"
@@ -88,25 +88,25 @@ while j < 8:
 	print()
 	j +=1
 
-"""
-# □■□■□■□■
-i = 0		
-while i < 8:
-	if i % 2 == 0:
-		print("□",end="")
-	else:
-		print("■",end="")
-	i +=1 
+# """
+□■□■□■□■
+# i = 0		
+# while i < 8:
+	# if i % 2 == 0:
+		# print("□",end="")
+	# else:
+		# print("■",end="")
+	# i +=1 
 
-# ■□■□■□■□
-i = 0		
-while i < 8:
-	if i % 2 == 0:
-		print("■",end="")				
-	else:
-		print("□",end="")
-	i +=1 
-"""
+■□■□■□■□
+# i = 0		
+# while i < 8:
+	# if i % 2 == 0:
+		# print("■",end="")				
+	# else:
+		# print("□",end="")
+	# i +=1 
+# """
 
 print("<=====>")
 j = 0
@@ -134,16 +134,16 @@ while j < 8:
 
 
 # 方法二
-"""
-□■□■□■□■
-■□■□■□■□
-□■□■□■□■
-■□■□■□■□
-□■□■□■□■
-■□■□■□■□
-□■□■□■□■
-■□■□■□■□
-"""
+# """
+# □■□■□■□■
+# ■□■□■□■□
+# □■□■□■□■
+# ■□■□■□■□
+# □■□■□■□■
+# ■□■□■□■□
+# □■□■□■□■
+# ■□■□■□■□
+# """
 
 print("<=====>")
 i = 0

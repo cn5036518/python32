@@ -45,6 +45,14 @@ touch 123.py
 ln -s /home/wangwen/ceshi100 /home/wangwen/ceshi200
 cd ceshi100 切换到连接里面看文件;
 
+ln -s /home/wangtongpei/mywork/001.txt /home/wangtongpei/mywork/c
+# ln -s 软链接的实际指向  软链接的存放路径 必须是绝对路径
+# 软链接的名字是001.txt -> /home/wangtongpei/mywork/001.txt*
+# lrwxrwxrwx 1 wangtongpei wangtongpei   32 10月 11 19:15 001.txt -> /home/wangtongpei/mywork/001.txt*
+wangtongpei@wangtongpei-virtual-machine:~/mywork/c$ pwd
+/home/wangtongpei/mywork/c
+
+
 windows  => ipconfig
 linux    => ifconfig
 

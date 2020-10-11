@@ -18,6 +18,16 @@ def jiecheng(n):
 #  规律   2! = 2 * 1!
 #  规律   1! = 1
 
+# 递归的小结2:
+# 1 找到规律
+# 2 递归的固定格式
+
+# 非尾递归的格式
+def jiecheng(n):
+	if n == 1:  #1 递归终止条件
+		return 1 #2 返回固定值(或参数-唯一)
+	return jiecheng(n-1) * n  #3 return 函数调自己(参数递减的规律) 
+
 print(jiecheng(2))
 # jiecheng(1) => 1 
 # jiecheng(2) => jiecheng(1) * 2 => 1 * 2
@@ -84,6 +94,19 @@ def jiecheng(n,endval):
 	return jiecheng(n-1 , n * endval)
 res = jiecheng(5,1) # 5*4*3*2*1
 print(res)
+
+# 递归的小结:
+# 1 找到规律
+# 2 递归的固定格式
+# 尾递归的格式
+def jiecheng(n,endval):
+	if n == 1:  #1 递归终止的条件
+		return endval  # 2 返回第二个参数
+	return jiecheng(n-1 , n * endval)  #3 return 函数调自己(参数1递减的规律  第一个参数-1 n-1)  
+res = jiecheng(5,1) # 5*4*3*2*1
+print(res)
+		
+
 
 # """
 # 代码解析:

@@ -65,98 +65,98 @@ for i in range(len(name)):
 
 # 2.实现一个整数加法计算器(两个数相加)：
 # 如：content = input("请输入内容:") 用户输入：5+9或3+ 9或5 + 6，然后进行分割再进行计算
-"""
-content = input("请输入内容:") 
-print(content)
-a,b = content.split("+")
-print( a,b )
-print(float(a.strip()) + float(b.strip()))
-"""
+# """
+# content = input("请输入内容:") 
+# print(content)
+# a,b = content.split("+")
+# print( a,b )
+# print(float(a.strip()) + float(b.strip()))
+# """
 # 3.升级题：实现一个整数加法计算器（多个数相加）：
 # 如：content = input("请输入内容:") 用户输入：5+9+6 +12+  13，然后进行分割再进行计算。
-"""
-content = input("请输入内容:") 
-print(content)
-lst = content.split("+")
-print(lst)
+# """
+# content = input("请输入内容:") 
+# print(content)
+# lst = content.split("+")
+# print(lst)
 
-total = 0
-for i in lst:
-	total += float(i.strip())
-print(total)
-"""
+# total = 0
+# for i in lst:
+	# total += float(i.strip())
+# print(total)
+# """
 
 # 4.计算用户输入的内容中有几个整数.
 # 如：content = input("请输入内容：")   # 如fhdal234slfh98769fjdla
-"""
-content = input("请输入内容：")
-total = 0
-for i in content:
-	if i.isdecimal():
-		total += 1
-print(total)
-"""
+# """
+# content = input("请输入内容：")
+# total = 0
+# for i in content:
+	# if i.isdecimal():
+		# total += 1
+# print(total)
+# """
 
 # 5.等待用户输入内容，是否包含敏感字符？
 # 如果存在敏感字符提示“存在敏感字符请重新输入”，敏感字符：“粉嫩”、“铁锤”
 # 方法一
-'''
-lst = ["粉嫩","铁锤"]
-while True:
-	# 重置sign标记
-	sign = False
-	content = input("请输入内容：")
-	# print(content)
-	"""
-	if content.find("粉嫩") == -1 and content.find("铁锤") == -1:
-		print("ok")
-	else:
-		print("not ok")
-	"""
-	# 小分铁嫩锤
-	for i in lst:
-		if i in content:	
-			# 把sign标记设置成True
-			sign = True
-			break
+# '''
+# lst = ["粉嫩","铁锤"]
+# while True:
+	重置sign标记
+	# sign = False
+	# content = input("请输入内容：")
+	print(content)
+	# """
+	# if content.find("粉嫩") == -1 and content.find("铁锤") == -1:
+		# print("ok")
+	# else:
+		# print("not ok")
+	# """
+	小分铁嫩锤
+	# for i in lst:
+		# if i in content:	
+			把sign标记设置成True
+			# sign = True
+			# break
 	
-	# 如果sign 这个标记是True,敏感,否则不敏感;
-	if sign == True:
-		print("存在敏感字符请重新输入")
-	else:
-		print("不存在敏感字符")
-		break
-'''
+	如果sign 这个标记是True,敏感,否则不敏感;
+	# if sign == True:
+		# print("存在敏感字符请重新输入")
+	# else:
+		# print("不存在敏感字符")
+		# break
+# '''
 print("<====>")
 # 方法二 (python特有) 额外的
-"""如果在循环时,遇到break临时终止了循环,else这个分支不执行的
-只有在正常全部循环执行了一遍之后,才会执行else分支
-"""
-"""
-for i in range(3):
-	if i == 2:
-		break
-else:
-	print("ok")
-"""
+# """如果在循环时,遇到break临时终止了循环,else这个分支不执行的
+# 只有在正常全部循环执行了一遍之后,才会执行else分支
+# """
+# """
+# for i in range(3):
+	# if i == 2:
+		# break
+# else:
+	# print("ok")
+# """
 
 
-"""
-lst = ["粉嫩","铁锤"]
-# 触发break,不执行else , 不触发break , 执行else
-while True:
-	content = input("请输入内容：")
-	for i in lst:
-		# 但凡发现了敏感词汇,直接break,就不会走else分支了
-		if i in content:
-			print("是敏感词汇,请重新输入")
-			# 终止内层的for循环
-			break
-	else:
-		print("不是敏感词汇")
-		# 终止外层while循环
-		break
-"""
+# """
+# lst = ["粉嫩","铁锤"]
+触发break,不执行else , 不触发break , 执行else
+# while True:
+	# content = input("请输入内容：")
+	# for i in lst:
+		但凡发现了敏感词汇,直接break,就不会走else分支了
+		# if i in content:
+			# print("是敏感词汇,请重新输入")
+			终止内层的for循环
+			# break
+	# else:
+		# print("不是敏感词汇")
+		终止外层while循环
+		# break
+# """
 			
 
 	
