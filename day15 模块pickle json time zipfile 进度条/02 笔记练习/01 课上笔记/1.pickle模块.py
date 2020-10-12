@@ -1,22 +1,22 @@
 # ### pickle 序列化/反序列化模块
 import pickle
-"""
-序列化:   把不能够直接存储在文件中的数据变得可存储
-反序列化: 把存储在文件中的数据拿出来恢复成原来的数据类型
+# """
+# 序列化:   把不能够直接存储在文件中的数据变得可存储
+# 反序列化: 把存储在文件中的数据拿出来恢复成原来的数据类型
 
-php
-	serialize
-	unserialize
+# php
+	# serialize
+	# unserialize
 
-把所有的数据类型都通过pickle模块进行序列化	
-"""
+# 把所有的数据类型都通过pickle模块进行序列化	
+# """
 
 lst = [1,2,3]
 # 错误案例, 文件不能直接存储容器 , 文件只能存储字符串和字节流
-"""
-with open("lianxi1.txt",mode="w",encoding="utf-8") as fp:
-	fp.write(1)
-"""
+# """
+# with open("lianxi1.txt",mode="w",encoding="utf-8") as fp:
+	# fp.write(1)
+# """
 #dumps 把任意对象序列化成一个bytes
 res = pickle.dumps(lst)
 print(res , type(res))

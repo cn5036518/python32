@@ -26,16 +26,16 @@ os.chdir("/home/wangwen/mywork")
 # ### shutil模块 复制/移动/
 import shutil
 #copyfileobj(fsrc, fdst[, length=16*1024])  复制文件 (length的单位是字符(表达一次读多少字符/字节))
-"""
-fp_src = open("3.txt",mode="r",encoding="utf-8")
-fp_dst = open("4.txt",mode="w",encoding="utf-8")
-shutil.copyfileobj(fp_src,fp_dst)
-"""
+# """
+# fp_src = open("3.txt",mode="r",encoding="utf-8")
+# fp_dst = open("4.txt",mode="w",encoding="utf-8")
+# shutil.copyfileobj(fp_src,fp_dst)
+# """
 #copyfile(src,dst)   #单纯的仅复制文件内容 , 底层调用了 copyfileobj
 # shutil.copyfile("4.txt","5.txt")
 
 #copymode(src,dst)   #单纯的仅复制文件权限 , 不包括内容  (虚拟机共享目录都是默认777)
-"""注意: 要先有两个文件才可以,不会默认创建"""
+# """注意: 要先有两个文件才可以,不会默认创建"""
 shutil.copymode("4.txt","5.txt")
 
 #copystat(src,dst)   #复制所有状态信息,包括权限，组，用户，修改时间等,不包括内容

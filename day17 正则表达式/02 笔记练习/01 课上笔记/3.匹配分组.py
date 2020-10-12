@@ -65,8 +65,8 @@ print(obj.groups())  #('135',)   显示小括号分组的
 		  # 优点是,可以让匹配到的内容和分组里的内容同时显示;
 		  # 匹配不到内容时,返回的是None
 		  
-# obj.group() : 获取匹配到的内容  少的
-# obj.groups(): 获取分组里面的内容  多的
+# obj.group() : 获取匹配到的内容  
+# obj.groups(): 获取分组里面的内容  
 # """
 # findall
 strvar = "www.baidu.com  www.oldboy.com  www.wangwen.com"

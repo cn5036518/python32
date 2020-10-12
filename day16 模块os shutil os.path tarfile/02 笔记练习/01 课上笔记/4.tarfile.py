@@ -6,7 +6,7 @@ import tarfile
 # 创建压缩包
 tf = tarfile.open("ceshi0930_0.tar","w",encoding="utf-8")
 # 写入文件
-"""add(路径,别名)"""
+# """add(路径,别名)"""
 tf.add("/bin/chown","chown")
 tf.add("/bin/cp","cp")
 tf.add("/bin/dash","tmp/dash")
@@ -16,7 +16,7 @@ tf.close() # 378880
 # 2.使用gz算法压缩
 tf = tarfile.open("ceshi0930_1.tar.gz","w:gz",encoding="utf-8")
 # 写入文件
-"""add(路径,别名)"""
+# """add(路径,别名)"""
 tf.add("/bin/chown","chown")
 tf.add("/bin/cp","cp")
 tf.add("/bin/dash","tmp/dash")
@@ -26,7 +26,7 @@ tf.close() # 180413
 # 3.使用bz2算法压缩
 tf = tarfile.open("ceshi0930_2.tar.bz2","w:bz2",encoding="utf-8")
 # 写入文件
-"""add(路径,别名)"""
+# """add(路径,别名)"""
 tf.add("/bin/chown","chown")
 tf.add("/bin/cp","cp")
 tf.add("/bin/dash","tmp/dash")
@@ -36,14 +36,14 @@ tf.close() # 163261
 
 # (2) 解压文件
 tf = tarfile.open("ceshi0930_1.tar.gz","r",encoding="utf-8")
-""" extract(文件,路径) 解压单个文件"""
+# """ extract(文件,路径) 解压单个文件"""
 tf.extract("chown","ceshi0930_1")
-""" extract(路径) 解压所有文件"""
+# """ extractall(路径) 解压所有文件"""
 tf.extractall("ceshi0930_1_2")
 tf.close()
 
 # (3) 追加文件
-"""对已经压缩过的包无法进行追加文件,只能是没有压缩过的包进行追加文件"""
+# """对已经压缩过的包无法进行追加文件,只能是没有压缩过的包进行追加文件"""
 tf = tarfile.open("ceshi0930_0.tar","a",encoding="utf-8")
 tf.add("/bin/mkdir","mkdir")
 tf.close()
@@ -61,11 +61,11 @@ with tarfile.open("ceshi0930_0.tar","r",encoding="utf-8") as tf:
 
 # ### 追加文件到压缩包中在压缩
 import os,shutil
-"""
-1.把已经压缩的包进行解压
-2.把要追加的内容放进去
-3.过滤文件重新压缩
-"""
+# """
+# 1.把已经压缩的包进行解压
+# 2.把要追加的内容放进去
+# 3.过滤文件重新压缩
+# """
 # 记录压缩包所在的绝对路径
 pathvar1 = os.path.abspath("ceshi0930_2.tar.bz2")
 # 要解压到哪个文件夹中(绝对路径)
@@ -92,14 +92,14 @@ with tarfile.open(pathvar1,"w:bz2",encoding="utf-8") as tf:
 			# 拼凑成完整的绝对路径
 			abs_path = os.path.join(pathvar2,i)
 			# 剩下的都要压缩
-			"""add(路径,别名)"""
+			# """add(路径,别名)"""
 			tf.add(abs_path,i)
-"""
-	/mnt/hgfs/python32_gx/day16/ceshi0930_2/chown
-	/mnt/hgfs/python32_gx/day16/ceshi0930_2/cp
-	/mnt/hgfs/python32_gx/day16/ceshi0930_2/echo	
-	tf.add("/bin/chown","chown")
-"""
+# """
+	# /mnt/hgfs/python32_gx/day16/ceshi0930_2/chown
+	# /mnt/hgfs/python32_gx/day16/ceshi0930_2/cp
+	# /mnt/hgfs/python32_gx/day16/ceshi0930_2/echo	
+	# tf.add("/bin/chown","chown")
+# """
 
 
 

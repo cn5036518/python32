@@ -1,16 +1,16 @@
 # ### json 序列化/反序列化模块
 import json
-"""
-json格式的数据,所有的编程语言都能识别,本身是字符串
-类型有要求: int float bool str list tuple dict None
+# """
+# json格式的数据,所有的编程语言都能识别,本身是字符串
+# 类型有要求: int float bool str list tuple dict None
 
-json   主要应用于传输数据 , 序列化成字符串
-pickle 主要应用于存储数据 , 序列化成二进制字节流
-"""
+# json   主要应用于传输数据 , 序列化成字符串
+# pickle 主要应用于存储数据 , 序列化成二进制字节流
+# """
 
 # json 基本用法
 # json =>  dumps 和 loads
-"""ensure_ascii=False 显示中文 sort_keys=True 按键排序"""
+# """ensure_ascii=False 显示中文 sort_keys=True 按键排序"""
 dic = {"name":"梁新宇","sex":"野味","age":22,"family":["爸爸","妈妈","姐姐"]}
 res = json.dumps(dic,ensure_ascii=False,sort_keys=True)
 print(res , type(res))
@@ -38,10 +38,10 @@ with open("lianxi4.json",mode="w",encoding="utf-8") as fp:
 	fp.write("\n")
 
 # 不能连续load,是一次性获取所有数据 , error
-"""
-with open("lianxi4.json",mode="r",encoding="utf-8") as fp:
-	dic = json.load(fp)
-"""
+# """
+# with open("lianxi4.json",mode="r",encoding="utf-8") as fp:
+	# dic = json.load(fp)
+# """
 
 # 解决办法 loads(分开读取)
 with open("lianxi4.json",mode="r",encoding="utf-8") as fp:
@@ -62,15 +62,15 @@ with open("lianxi5.pkl",mode="wb") as fp:
 	
 
 # 方法一
-"""
-with open("lianxi5.pkl",mode="rb") as fp:
-	dic1 = pickle.load(fp)
-	dic2 = pickle.load(fp)
-	print(dic1)
-	print(dic2)
-"""
+# """
+# with open("lianxi5.pkl",mode="rb") as fp:
+	# dic1 = pickle.load(fp)
+	# dic2 = pickle.load(fp)
+	# print(dic1)
+	# print(dic2)
+# """
 # 方法二 (扩展)
-"""try .. except .. 把又可能报错的代码放到try代码块中,如果出现异常执行except分支,来抑制报错"""
+# """try .. except .. 把又可能报错的代码放到try代码块中,如果出现异常执行except分支,来抑制报错"""
 # 一次性拿出所有load出来的文件数据
 try:
 	with open("lianxi5.pkl",mode="rb") as fp:
@@ -81,17 +81,17 @@ try:
 except:
 	pass
 
-"""
+# """
 
 # json 和 pickle 两个模块的区别:
-(1)json序列化之后的数据类型是str,所有编程语言都识别,
-   但是仅限于(int float bool)(str list tuple dict None)
-   json不能连续load,只能一次性拿出所有数据
-(2)pickle序列化之后的数据类型是bytes,用于数据存储
-   所有数据类型都可转化,但仅限于python之间的存储传输.
-   pickle可以连续load,多套数据放到同一个文件中
+# (1)json序列化之后的数据类型是str,所有编程语言都识别,
+   # 但是仅限于(int float bool)(str list tuple dict None)
+   # json不能连续load,只能一次性拿出所有数据
+# (2)pickle序列化之后的数据类型是bytes,用于数据存储
+   # 所有数据类型都可转化,但仅限于python之间的存储传输.
+   # pickle可以连续load,多套数据放到同一个文件中
 
-"""
+# """
 
 
 
