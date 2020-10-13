@@ -44,7 +44,7 @@ def exe_process():
 	recv_size = 0
 	total_size = 1000
 	while recv_size < total_size:
-		time.sleep(0.02)
+		time.sleep(0.01)
 		recv_size += 10
 		percent = recv_size / total_size
 		myprocess(percent)
@@ -57,13 +57,44 @@ def loading():
 	
 # 三 获取数据
 # 从文件读取商品数据
+def read_data(filename):
+	lst = []
+	with open(filename,mode='r',encoding='utf-8') as fp:
+		for i in fp:
+			dic = json.loads(i)
+			lst.append(dic)
+	return lst
 	
+#[{'name': '电脑', 'price': 1999},
+ # {'name': '鼠标', 'price': 10},
+ # {'name': '游艇', 'price': 20},
+ # {'name': '美女', 'price': 998}, 
+ # {'name': '风油精', 'price': 30}]
+	
+# 四 展示商品
+def show_goods(data):
+	strvar = '商品名称'.center(18)  #两边各7个空格
+	print('序号{}价格'.format(strvar)) #打印商品展示第一行
+	for k,v in enumerate(data,1):
+		# print(k,v)
+		#1 {'name': '电脑', 'price': 1999}
+		v['num'] = k  #给字典新加一个键值对num
+		# print(v)
+		#{'name': '电脑', 'price': 1999, 'num': 1}
+		print('{:<10d}{:<12s}{}'.format(v['num'],v['name'],v['price']))
 
 def main():
 	# 1.充值
 	recharge()	
 	# 2.加载中
 	loading()
+	# 3.获取数据
+	data = read_data('shopping_data.json')
+	print(data)
+	#[{'name': '电脑', 'price': 1999}, {'name': '鼠标', 'price': 10}, {'name': '游艇', 'price': 20}, {'name': '美女', 'price': 998}, {'name': '风油精', 'price': 30}]
+	# 4.展示商品
+	show_goods(data)
+	
 	
 main()
 
