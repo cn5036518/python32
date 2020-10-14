@@ -88,7 +88,7 @@ def qingtianzhu(obj,name):
 
 import types
 # 创建绑定方法,系统自动把该对象当成参数传递给方法;
-# types.MethodType(方法,对象) => 绑定方法   
+# types.MethodType(函数,对象) => 绑定方法   
 res = types.MethodType(qingtianzhu,obj)
 print(res)
 

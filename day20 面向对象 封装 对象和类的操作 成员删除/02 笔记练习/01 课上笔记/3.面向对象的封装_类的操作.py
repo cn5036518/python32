@@ -65,7 +65,7 @@ MyCar.car_info()
 
 
 obj.price = "10万"
-print(MyCar.price)
+print(MyCar.price)  #error
 
 
 

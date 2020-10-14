@@ -23,11 +23,11 @@ class Plane():
 	def __earn():
 		print("机长的收入保密")
 		
-	def pub_get1(self):
+	def pub_get1(self):  #获取私有绑定方法
 		print(self.__air_sister)
 		self.__age()
 		
-	def pub_get2():
+	def pub_get2():  #获取私有无参方法
 		print(Plane.__air_sister)
 		Plane.__earn()
 
@@ -54,7 +54,7 @@ Plane.pub_get2()
 # """
 # 1.对象可以访问类中的公有成员,但是无权修改或者删除该类中的成员
 # 2.对象在访问成员时,优先访问该对象自己的成员,
-# 如果没有在访问类的,类如果也没有直接报错;
+# 如果没有再访问类的,类如果也没有直接报错;
 # """
 # 删除对象成员属性
 obj.captian = "赵世超"

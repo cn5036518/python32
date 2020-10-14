@@ -102,18 +102,19 @@ def func2(name):
 obj.func2 = func2
 obj.func2('擎天柱2') #我是飞机函数2擎天柱2
 
-#    升级版
+#    升级版  手动传递obj
 def func3(obj,name):
-	print('我是飞机函数3 {},我的颜色是{}'.format(name,obj.color))
+	print('我是飞机函数3 {},我的颜色是{}'.format(name,obj.color)) #对象的好处是可以获取对象中的其他属性obj.color
 obj.func3 = func3
 obj.func3(obj,'擎天柱3') #我是飞机函数2 擎天柱3,我的颜色是yellow
 
-#    终极版
+#    终极版  自动传递obj
 import types
 def func4(obj,name):
 	print('我是飞机函数4 {},我的颜色是{}'.format(name,obj.color))
 obj.func4 = types.MethodType(func4,obj)
 obj.func4('擎天柱4') #我是飞机函数4 擎天柱4,我的颜色是yellow
+# 只需要一个参数
 
 # 03 lambda
 func5 = lambda :print('威震天')
@@ -161,11 +162,11 @@ class Plane():
 	def __earn():
 		print("机长的收入保密")
 		
-	def pub_get1(self):
+	def pub_get1(self):  #获取私有绑定方法
 		print(self.__air_sister)
 		self.__age()
 		
-	def pub_get2():
+	def pub_get2(): #获取私有无参方法
 		print(Plane.__air_sister)
 		Plane.__earn()
 		
@@ -177,12 +178,17 @@ obj = Plane()
 # 01 公有
 # 成员属性
 print(Plane.captain)  #赵沈阳
+obj.captain2 = 'hah'
+print(obj.captain2) #hah
+# print(Plane.captain2)
+#AttributeError: type object 'Plane' has no attribute 'captain2'
+print('------------------1')
 
 # 成员方法
 Plane.fly2() #航天飞机飞到天空层,翱翔太空
 
 # 02 私有
-# 成员属性
+# 成员属性  不推荐
 print(Plane._Plane__air_sister)  #3名空姐
 
 # 成员方法
