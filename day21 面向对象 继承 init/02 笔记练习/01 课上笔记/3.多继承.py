@@ -46,7 +46,7 @@ class Son(Father,Mother):
 	
 	# 用类调用成员
 	def skill1(self):
-		Father.f_hobby()
+		Father.f_hobby()  #类来调用无参方法  #如果类调绑定方法,必须传对象
 		print(Mother.property)
 		
 	# 用对象调用成员
@@ -59,7 +59,7 @@ class Son(Father,Mother):
 	# """super()只调用父类的相关成员,顺带传递对象参数"""
 	def skill3(self):
 		print(super())
-		print(super().property)
+		print(super().property)  #super()是一个对象  谁调传谁(传对象)
 		super().m_hobby()
 		
 

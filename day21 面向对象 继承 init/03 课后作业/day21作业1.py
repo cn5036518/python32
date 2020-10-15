@@ -212,7 +212,24 @@ r2 = Game_role('剑豪',20,80)
 r1.attack(r2.name,r2.hp)
 # 盖伦攻击剑豪,剑豪掉了10点血,还剩70点血
 # 2个对象如何在一个方法中使用?--nok
-print('---------------------------3')
+print('---------------------------3-1')
+
+class Game_role():
+	def __init__(self,name,ad,hp):
+		self.name = name
+		self.ad = ad
+		self.hp = hp
+
+	def attack(self,r2):  #对象2当参数传入
+		print('{}攻击{},{}掉了{}点血,还剩{}点血'.format(self.name,r2.name,r2.name,self.ad,r2.hp-self.ad))
+
+r1 = Game_role('盖伦',10,100)
+r2 = Game_role('剑豪',20,80)
+
+r1.attack(r2)  #对象2当类的成员方法参数传入
+# 盖伦攻击剑豪,剑豪掉了10点血,还剩70点血
+# 2个对象如何在一个方法中使用?
+print('---------------------------3-2')
 
 # ### 4.请定义一个圆形类,有计算周长和面积的两个方法 (圆的半径通过参数传递给初始化方法)
 import math
