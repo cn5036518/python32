@@ -20,7 +20,7 @@ class Lion():
 # 触发方式一: 页面执行完毕回收所有变量
 obj1 = Lion("辛巴")
 
-# 触发方式二: 所有对象被del的时候
+# 触发方式二: 所有对象被del的时候  指的单个对象的引用次数为0
 obj2 = obj1
 obj3 = obj1
 print(obj2 , obj1 ,obj3)
@@ -42,15 +42,15 @@ class ReadFile():
 	
 	# 打开文件
 	def __init__(self,filename):
-		self.fp = open(filename,mode="r",encoding="utf-8")
-		
-	# 关闭文件
-	def __del__(self):
-		self.fp.close()
+		self.fp = open(filename,mode="r",encoding="utf-8")		
 		
 	# 读取文件
 	def readcontent(self):
 		return self.fp.read()
+		
+		# 关闭文件
+	def __del__(self):
+		self.fp.close()
 		
 
 obj = ReadFile("0.py")
