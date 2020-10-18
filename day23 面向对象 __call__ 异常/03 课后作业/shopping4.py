@@ -61,21 +61,34 @@ def add_car(num,data):
 		car[num]['acount'] += 1
 	# print(car)  #这里car是字典.不需要global,就可以通过增加键值对来修改全局变量
 	# 这里如果在函数内对car进行了重新赋值 ,比如  car={},就是局部变量了,无法直接修改全局变量,必须加global才行
+	print(car) #{2: {'name': '鼠标', 'price': 10, 'acount': 2}}
 	
 	# 3 得到购物车的总价
 def total_price():	
 	total = 0
-	print(car,'--------------2')
-	return 2
-
+	for k,v in car.items():
+		total += v['price'] * v['acount']
+	print(total)
+	return total
 
 	# 4 结算
 def settle(total):
-	pass
+	print('你选购的商品购买成功,一共花了{}元,你目前的余额是{}元'.format(total,money-total))
 	
 	# 5 删除商品
 def del_goods(total):
-	pass
+	print('你的余额不够,还差{}元,请删除部分商品'.format(total-money))
+	num = input('请输入你要删除的商品编号:')
+	if num.isdecimal():
+		num = int(num)
+		if num not in car:
+			print('你输入的商品编号不在购物车里')
+		else:
+			car[num]['acount'] -= 1
+			if car[num]['acount'] == 0:
+				car.pop(num)
+	else:
+		print('请输入数字')
 
 filename = r'shopping_data.json'
 
@@ -103,14 +116,18 @@ def main():
 	
 		# 3 得到购物车的总价
 		elif num.upper() == 'N':
-			total = total_price()
+			while True:
+				total = total_price()
 			
-		# 4 结算
-			if total <= money:
-				settle(total)
-			else:				
-		# 5 删除商品
-				del_goods(total)
+		# 4 结算			
+				if total <= money:
+					settle(total)
+					sign = False
+					break
+				else:				
+			# 5 删除商品
+					del_goods(total)
+					
 				
 		elif num.upper() == 'Q':
 			print('欢迎下次光临')

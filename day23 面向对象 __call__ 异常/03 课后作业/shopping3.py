@@ -71,7 +71,6 @@ def add_goods(num,data):
 
 # 3 得到购物车的总价
 def toatl_price(num):
-	pass
 	total = 0
 	for k,v in car.items():
 		total += v['price'] * v['acount']
