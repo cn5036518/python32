@@ -226,6 +226,100 @@ print('-----------------------6-2')
 # 进行时2
 # 后 ... 衣衫褴褛
 
+# (7) 带有参数的函数装饰器
+def outer(num):
+	def kuozhan(_func):
+		def newfunc1(self):
+			print(self)
+			print("前 ... 老实巴交")
+			_func(self)
+			print("后 ... 浑身哆嗦")
+			
+		def newfunc2(self):
+			print(self)
+			print("前 ... 狂送人头")
+			_func(self)
+			print("后 ... 让二追三")
+			
+		if num == 1:  #生命周期延长
+			return newfunc1
+		elif num == 2:
+			return newfunc2
+		elif num == 3:
+			return '洗洗手'			
+	return kuozhan
+
+class MyClass():
+	@outer(1)
+	# @kuozhan
+	# func1 = kuozhan(func1)
+	# func1 = newfunc1  #定义装饰器
+	# func1() = newfunc1()  #调用装饰器
+	def func1(self):
+		print('文明')
+		
+	# <__main__.MyClass object at 0x7f5c600a0400>
+# 前 ... 老实巴交
+# 文明
+# 后 ... 浑身哆嗦
+	
+	@outer(2)
+	# @kuozhan
+	# func2 = kuozhan(func2)
+	# func2 = newfunc2
+	# func2() = newfunc2()
+	def func2(self):
+		print('打包')
+# <__main__.MyClass object at 0x7f8ca11f2400>
+# 前 ... 狂送人头
+# 打包
+# 后 ... 让二追三
+		
+	@outer(3)
+	# @kuozhan
+	# func3 = kuozhan(func3)
+	# func3 = newfunc3
+	def func3(self):
+		print('瞄准')
+		#洗洗手
+
+obj = MyClass()
+obj.func1()
+print('------------------------7-1')
+
+obj.func2()
+print('------------------------7-2')
+
+print(obj.func3)
+# obj.func3()
+print('------------------------7-3')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

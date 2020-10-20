@@ -187,7 +187,7 @@ print("<=====>  6-2")
 @Kuozhan()   #@obj  @对象  
 # func = Kuozan()(func)   
 # func = obj(func)
-# func = newfunc   
+# func = newfunc      
 # func() = newfunc()   
 def func():
 	print('进行时 ....')
