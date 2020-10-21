@@ -268,12 +268,15 @@ class Operation():
 					if old_pwd1 == card.password:
 						new_pwd1 = input('请输入你的新密码:')
 						new_pwd2 = input('请再次输入你的新密码:')
-						if new_pwd1 == new_pwd2:
-							print('密码修改成功')
-							card.password = new_pwd1  # 替换卡对象的密码
-							break
+						if new_pwd1 == old_pwd1 or new_pwd2 == old_pwd1:
+							print('新密码不能和原密码一样')
 						else:
-							print('两次密码不一致,请重新输入')
+							if new_pwd1 == new_pwd2:
+								print('密码修改成功')
+								card.password = new_pwd1  # 替换卡对象的密码
+								break
+							else:
+								print('两次密码不一致,请重新输入')
 					else:
 						print('对不起密码不对,请重新输入')
 	
@@ -297,12 +300,16 @@ class Operation():
 						# self.user_dict[user_id_dict[userid]]  用户对象
 							new_pwd1 = input('请输入你的新密码:')
 							new_pwd2 = input('请再次输入你的新密码:')
-							if new_pwd1 == new_pwd2:
-								print('密码修改成功')
-								card.password = new_pwd1  # 替换卡对象的密码
-								break
+							old_pwd1 = card.password  #老卡的密码
+							if new_pwd1 == old_pwd1 or new_pwd2 == old_pwd1:
+								print('新密码不能和原密码一样')
 							else:
-								print('两次密码不一致,请重新输入')
+								if new_pwd1 == new_pwd2:
+									print('密码修改成功')
+									card.password = new_pwd1  # 替换卡对象的密码
+									break
+								else:
+									print('两次密码不一致,请重新输入')
 						else:
 							print('对不起身份证不对,请重新输入')
 					else:
