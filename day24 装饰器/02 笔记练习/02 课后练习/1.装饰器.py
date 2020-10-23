@@ -228,34 +228,34 @@ class Kuozhan():
 			
 	# 参数1的情况 : 添加成员属性和方法
 	def kuozhan1(self,cls):
-		def newfunc():
+		def newfunc1():
 			# MyClass.ad = "贵族茅厕,茅厕中的百岁山."
 			cls.ad = Kuozhan.ad
 			cls.money = Kuozhan.money
 			return cls()			
-		return newfunc
+		return newfunc1
 		
 	# 参数2的情况 : 把方法变成属性;
 	def kuozhan2(self,cls):
-		def newfunc():
+		def newfunc2():
 			if "run" in cls.__dict__:
 				cls.run = cls.run()
 				return cls()
-		return newfunc
+		return newfunc2
 		
 
 	
 print("<==================>")
 # 方式一
 # """
-# @Kuozhan(1) # => @obj => MyClass = obj(MyClass)
-# class MyClass():
-	# def run():
-		# return "亢龙有悔"
+@Kuozhan(1) # => @obj => MyClass = obj(MyClass)
+class MyClass():
+	def run():
+		return "亢龙有悔"
 
-# obj = MyClass()
-# print(obj.ad)
-# obj.money()
+obj = MyClass()
+print(obj.ad)
+obj.money()
 # """
 # 方式二
 @Kuozhan(2)

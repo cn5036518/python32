@@ -248,14 +248,14 @@ class Kuozhan():
 print("<==================>")
 # 方式一
 # """
-# @Kuozhan(1) # => @obj => MyClass = obj(MyClass)
-# class MyClass():
-	# def run():
-		# return "亢龙有悔"
+@Kuozhan(1) # => @obj => MyClass = obj(MyClass)
+class MyClass():
+	def run():
+		return "亢龙有悔"
 
-# obj = MyClass()
-# print(obj.ad)
-# obj.money()
+obj = MyClass()
+print(obj.ad)
+obj.money()
 # """
 # 方式二
 @Kuozhan(2)
