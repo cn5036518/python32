@@ -1,0 +1,51 @@
+class Bulletbox():
+	def __init__(self,bulletcount):
+		self.bulletcount = bulletcount #子弹总数
+		print('子弹的初始个数是{}发'.format(self.bulletcount))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

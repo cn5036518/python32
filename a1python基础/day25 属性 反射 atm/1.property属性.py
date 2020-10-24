@@ -13,7 +13,7 @@ class MyClass():
 	def __init__(self,name):
 		self.name = name
 		
-	@property
+	@property    #username = property(username)
 	def username(self):
 		return self.name
 		# pass
@@ -23,7 +23,7 @@ class MyClass():
 		# print(val)
 		self.name = val
 		pass
-		
+
 	@username.deleter
 	def username(self):
 		# print("222")

@@ -3,7 +3,7 @@ strvar = '1-2*((60-30+-8*(9-2*5/3+7/3*99/4*2998+10*568/14))-(-4*3)/(16-3*2))'
 # obj = re.search(r"\([^\(\)]+\)",strvar)
 # print(obj.group())
 
-# strvar = '1-2*(-5-6/-2*2)+(40 -  7)'
+# strvar = '1-2*(-5-6/-2*2)+(40 -  7)'  #先计算这个简单的表达式,然后到复杂
 
 # 去除多余的符号
 def operate_sign(strvar):
@@ -23,7 +23,7 @@ def calc_res(strvar):
 		a,b = strvar.split("*")
 		return float(a) * float(b)
 
-# 匹配计算出对应的表达式
+# 匹配计算出对应的表达式(括号内的值)
 def calc_exp(strvar):
 	print(strvar , "strvar ... ") # (-5-6/-2*2) 
 	
@@ -47,13 +47,18 @@ def calc_exp(strvar):
 			break
 	
 
-	# ### part2 值计算加减
+	# ### part2 只计算加减
 	
 	# 把表达式当中多余的符号做一个替换
 	strvar = operate_sign(strvar)
 	print(strvar,"2222")	
 	
 	# 计算这个表达式+-结果
+		# 将+-表达式中的符号前后的int或者float数匹配出来,放到列表
+	# [+-]? 匹配正负号
+	# \d+(\.\d+)?  匹配整数或小数
+	# lst = re.findall(r'[+-]?\d+(\.\d+)?',strvar) 只会显示
+	#  小括号里面的,即 \.\d+,(?:\.\d+)可以取消优先显示
 	lst = re.findall("[+-]?\d+(?:\.\d+)?",strvar)
 	# print(lst)
 	
@@ -67,6 +72,7 @@ def calc_exp(strvar):
 # 去除括号
 def remove_bracket(strvar):
 	while True:
+		#匹配出第一个最里层的小括号里面的表达式  不用findall 用search
 		obj = re.search(r"\([^\(\)]+\)",strvar)
 		# print(obj)
 		if obj:
