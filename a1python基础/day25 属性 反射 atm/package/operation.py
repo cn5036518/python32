@@ -3,7 +3,7 @@ import pickle  #json不能存储对象
 import random
 import re
 
-from .card import Card
+from .card import Card   #相对路径的导包
 from .person import Person
 
 class Operation():
@@ -98,6 +98,15 @@ class Operation():
 			elif name.isalpha():
 				return name
 				
+	def get_userid(self):			
+		while True:
+			userid = input('请输入身份证号:')
+			lst = re.findall(r'^\d{6}[12]\d{3}[01]\d{1}[0123]\d{1}\d{3}[\dX]$',userid)
+			if lst:
+				return userid
+			else:
+				print('身份证号码格式不符合要求')
+				
 	def get_phone(self):
 		while True:
 			phone = input('请输入您的手机号:')
@@ -107,14 +116,7 @@ class Operation():
 			else:
 				print('手机号格式不符合要求')
 				
-	def get_userid(self):			
-		while True:
-			userid = input('请输入身份证号:')
-			lst = re.findall(r'^\d{6}[12]\d{3}[01]\d{1}[0123]\d{1}\d{3}[\dX]$',userid)
-			if lst:
-				return userid
-			else:
-				print('身份证号码格式不符合要求')
+
 				
 
 	# 1-1获取密码
@@ -366,7 +368,9 @@ class Operation():
 					# user = self.user_dict[self.user_id_dict[userid1]]   #用户对象
 					if userid1 in  self.user_id_dict:
 						cardid = self.user_id_dict.get(userid1) #获取卡号
+						# 身份证号==>卡号
 						user = self.user_dict.get(cardid)   #用户对象
+						# 卡号==> 用户对象
 						if userid1 == user.userid:
 							print('使用身份证号冻结成功')
 							card.islock = True  # 修改卡对象的锁定状态
@@ -405,7 +409,9 @@ class Operation():
 					# user = self.user_dict[self.user_id_dict[userid1]]   #用户对象
 					if userid1 in  self.user_id_dict:
 						cardid = self.user_id_dict.get(userid1) #获取卡号
+						# 身份证号==>卡号
 						user = self.user_dict.get(cardid)   #用户对象
+						# 卡号==> 用户对象
 						if userid1 == user.userid:
 							print('使用身份证号解卡成功')
 							card.islock = False  # 修改卡对象的锁定状态
@@ -470,6 +476,7 @@ class Operation():
 				# user.card  #卡的对象
 				if userid1 == user.userid:
 					old_pwd = user.card.password  #老卡的密码
+					# 用户对象.卡对象.卡取款密码 连贯操作
 					old_money = user.card.money  #老卡的余额
 					old_islock = user.card.islock  #老卡的锁定状态
 					
@@ -477,9 +484,7 @@ class Operation():
 					old_userid = user.userid #老卡号所在用户的身份证
 					old_phone = user.phone  # 老卡号所在用户的手机
 					
-					# card11 = Card('111',old_pwd,old_money,old_islock)
-					cardid11 = self.get_cardid()
-					# card11 = Card('111',old_pwd,old_money)
+					cardid11 = self.get_cardid() #获取新卡的卡号
 					card11 = Card(cardid11,old_pwd,old_money)
 					card11.islock = old_islock
 					#新卡的对象
@@ -487,16 +492,17 @@ class Operation():
 					user11 = Person(old_name,old_userid,old_phone,card11)
 					#新卡所在的用户对象
 					
-					#将 新卡号的id:user11  作为键值对,添加对字典1
+					#将 新卡号的id:user11  作为键值对,添加到字典1
 					self.user_dict[card11.cardid] = user11
 					
 					# 将 老卡号的id 从字典1删除   #llw
 					self.user_dict.pop(cardid)
 					
-					#将 老卡身份证和新卡号的id: 作为键值对,添加对字典2  
+					#将 老卡身份证和新卡号的id: 作为键值对,添加到字典2  
 					# 修改老卡身份证和老卡号的id
 					self.user_id_dict[old_userid] = card11.cardid
 					print('补卡成功')
+					print('新卡的卡号是{}'.format(card11.cardid))
 					break
 					
 				else:

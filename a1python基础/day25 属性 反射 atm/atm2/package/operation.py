@@ -170,6 +170,249 @@ class Operation():
 					print('抱歉,密码输错三次,卡被锁定,请联系管理员.')			
 			times += 1
 
+	# 3 存钱
+	 # 卡是否存在,是否冻结,存钱金额是否正确
+	 # 卡的金额增加  (修改卡对象的余额属性)
+	# 卡号--用户对象--卡对象--卡余额属性
+	def deposit(self):
+		# 1.获取这张卡对象的相关信息
+		card = self.get_card_info() #获取卡的对象
+		amount = input('请输入你的存钱金额:') 
+		if amount.isdecimal():
+			amount = int(amount)
+			if not card:
+				print('您的这张卡不存在')
+			else:
+				if card.islock:#True是锁了 默认False 没锁
+					print('你的卡已经被锁了')
+				else:
+					print('存款前,你的余额是{}元'.format(card.money))
+					card.money += amount
+					print('存款成功,你本次存入了{}元,存款后,你的余额是{}元'.format(amount,card.money))				
+		else:
+			print('请输入数字')
+		
+		# 4 取钱
+	# 取钱:卡是否存在,是否冻结,取钱金额是否正确
+	# 取款金额不能超过余额
+	def withdraw(self):
+		# 1.获取这张卡的相关信息
+		card = self.get_card_info() #获取卡的对象
+		amount = input('请输入你的取钱金额:')
+		if amount.isdecimal():
+			amount = int(amount)
+			if not card:
+				print('您的这张卡不存在')
+			else:
+				if card.islock:
+					print('你的卡已经被锁了')
+				else:
+					if amount <= card.money:
+						if self.check_pwd(card): #取款密码校验  self对象调用
+							print('取款前,你的余额是{}元'.format(card.money))
+							card.money -= amount
+							print('取款成功,你本次取了{}元,取款后,你的余额是{}元'.format(amount,card.money))						
+					else:
+						print('余额不足')			
+		else:
+			print('请输入数字')
+
+	# 5转账:把一个卡里的钱转到其他卡内 
+# (卡是否存在,是否冻结,对方账户是否存在,转账的金额是否正确)	
+	def transfer(self):
+		print('转账方:')
+		card1 = self.get_card_info()  #获取卡1的对象
+		print('接收方:')
+		card2 = self.get_card_info() #获取卡2的对象
+		if card1 and card2:
+			if not card1.islock and not card2.islock:
+				if card1.cardid != card2.cardid:
+					print('转账方和接受方的卡都存在,且未冻结,也没有给自己转账,可以发起转账')
+					amount = input('请输入你的转账金额:')
+					if amount.isdecimal():
+						amount = int(amount)
+						if amount <= card1.money:
+							print('转账前,卡号1:{who1}的余额是{money1}元'.format(who1 = card1.cardid,money1 = card1.money))
+							print('转账前,卡号2:{who2}的余额是{money2}元'.format(who2 = card2.cardid,money2 = card2.money))
+							card1.money -= amount
+							card2.money += amount
+							print('转账成功,卡号1:{who1}本次给卡号2:{who2}转账了{amount1}元,转账后,卡号1:{who1}的余额是{money1}元,卡号2:{who2}的余额是{money2}元'.format(who1 = card1.cardid,who2 = card2.cardid,amount1 = amount,money1 = card1.money,money2 = card2.money))						
+						else:
+							print('你的转账金额超过了你的余额,不能转出')					
+					else:
+						print('请输入数字')		
+				else:
+					print('不能给自己转账')
+			else:
+				if card1.islock and card2.islock:
+					print('转账双方的卡号都被冻结了')
+				elif card1.islock:
+					print('卡号{}被冻结了'.format(card1.cardid))
+				elif card2.islock:
+					print('卡号{}被冻结了'.format(card2.cardid))
+		else:
+			if not card1 and not card2:
+				print('转账双方的卡号都不存在')
+			elif not card1:
+				print('卡号{}不存在'.format(card1.cardid))
+			elif not card2:
+				print('卡号{}不存在'.format(card2.cardid))
+
+	#6 修改密码
+	# 改密:(1)原密码改密  (2)身份证改密
+	def change_pwd(self):
+		# 1.获取这张卡的相关信息
+		card = self.get_card_info()
+		while True:
+			content = input('修改密码,原密码改密按P,身份证改密按I,退出按Q:')
+			if content.upper() == 'P':
+				self.old_pwd(card)
+				print('密码修改成功')
+				break
+			elif content.upper() == 'I':
+				self.idcard_pwd(card)
+				break
+			elif content.upper() == 'Q':
+				print('退出改密')
+				break
+			else:
+				print('输入选项不对')
+
+	def old_pwd(self,card):
+		print('原密码改密')
+		if not card:
+			print('您的这张卡不存在')
+		else:
+			if card.islock:
+				print('你的卡已经被锁了')
+			else:
+				while True:
+					old_pwd1 = input('请输入你的原密码:')
+					if old_pwd1 == card.password:
+						new_pwd1 = input('请输入你的新密码:')
+						new_pwd2 = input('请再次输入你的新密码:')
+						if new_pwd1 == old_pwd1 or new_pwd2 == old_pwd1:
+							print('新密码不能和原密码一样')
+						else:
+							if new_pwd1 == new_pwd2:
+								print('密码修改成功')
+								card.password = new_pwd1 #修改卡对象的密码
+								break
+							else:
+								print('两次密码不一致,请重新输入')
+						self.input_pwd()
+					else:
+						print('对不起密码不对,请重新输入')
+
+	def idcard_pwd(self,card):
+		print('身份证改密')
+		if not card:
+			print('您的这张卡不存在')
+		else:
+			if card.islock:
+				print('你的卡已经被锁了')
+			else:
+				while True:
+					userid1 = input('请输入你的身份证号:')
+					if userid1 in self.user_id_dict:
+						cardid = self.user_id_dict.get(userid1) #获取卡号
+						# 身份证号==>卡号  字典2
+						user = self.user_dict.get(cardid) #用户对象
+						# 卡号==>用户对象  字典1
+						if userid1 == user.userid:
+							# self.input_pwd()	
+							new_pwd1 = input('请输入你的新密码:')
+							new_pwd2 = input('请再次输入你的新密码:')
+							old_pwd1 = card.password #老卡的密码
+							if new_pwd1 == old_pwd1 or new_pwd2 == old_pwd1:
+								print('新密码不能和原密码一样')
+							else:
+								if new_pwd1 == new_pwd2:
+									print('密码修改成功')
+									card.password = new_pwd1 #修改卡对象的密码
+									break  
+									#SyntaxError: 'break' outside loop
+									# return
+								else:
+									print('两次密码不一致,请重新输入')	
+						else:
+							print('对不起,身份证号不对,请重新输入')
+					else:
+						print('对不起,该身份证号未开户,请重新输入')
+
+	# def input_pwd(self):
+		# new_pwd1 = input('请输入你的新密码:')
+		# new_pwd2 = input('请再次输入你的新密码:')
+		# if new_pwd1 == old_pwd1 or new_pwd2 == old_pwd1:
+			# print('新密码不能和原密码一样')
+		# else:
+			# if new_pwd1 == new_pwd2:
+				# print('密码修改成功')
+				# card.password = new_pwd1 #修改卡对象的密码
+				# break  
+				# SyntaxError: 'break' outside loop
+				# return
+			# else:
+				# print('两次密码不一致,请重新输入')	
+
+# 9补卡:将旧用户的所有信息和新卡绑定 即除了卡号变了.其余卡对象信息和用户对象信息都不变
+# (包括名字,余额等所有卡信息和用户信息,数据重新绑定)[user_id_dict]
+# 通过身份证 => 卡号  => 用户对象 	
+	def supplment_card(self):
+		print('补卡了')
+		while True:
+			userid1 = input('请输入你的身份证:')
+			if userid1 in self.user_id_dict:
+				cardid = self.user_id_dict.get(userid1)  ##获取老卡号
+				# 身份证号 ==> 卡号
+				user = self.user_dict.get(cardid) # 用户对象
+				# 卡号 ==> 用户对象
+				if userid1 == user.userid: #校验身份证
+					old_pwd = user.card.password  #老卡的密码
+					# 用户对象.卡对象.卡取款密码  
+					old_money = user.card.money  #老卡的余额
+					old_islock = user.card.islock  #老卡的锁定状态
+					
+					old_name = user.name   #老卡号所在用户的姓名
+					old_userid = user.userid #老卡号所在用户的身份证
+					old_phone = user.phone  # 老卡号所在用户的手机
+					
+					cardid11 = self.get_cardid() #获取新卡的卡号
+					card11 = Card(cardid11,old_pwd,old_money)
+					card11.islock = old_islock
+					#新卡的对象
+					
+					user11 = Person(old_name,old_userid,old_phone,card11) #卡对象是参数4  重新绑定卡对象和用户对象
+					#新卡所在的用户对象
+					
+					#将 新卡号的id:user11(用户对象)  作为键值对,添加到字典1
+					self.user_dict[card11.cardid] = user11
+					
+					# 将 老卡号的id 从字典1删除   #删除老卡的cardid
+					self.user_dict.pop(cardid)
+					
+					#将 老卡身份证和新卡号的id: 作为键值对,添加到字典2  
+					# 修改老卡身份证和老卡号的id
+					self.user_id_dict[old_userid] = card11.cardid
+					print('补卡成功')
+					print('新卡的卡号是{}'.format(card11.cardid))
+					break
+				else:
+					print('对不起身份证不对,请重新输入')				
+			else:
+				print('对不起身份证未开户,请重新输入')
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

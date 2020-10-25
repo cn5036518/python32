@@ -14,19 +14,19 @@ class Main():
 				elif choice == '2':
 					obj.query()  #2 查询  卡余额和锁定状态
 				elif choice == '3':
-					pass
+					obj.deposit()  #3 存钱
 				elif choice == '4':
-					pass
+					obj.withdraw()  # 4取款
 				elif choice == '5':
-					pass
+					obj.transfer() #5 转账
 				elif choice == '6':
-					pass
+					obj.change_pwd() #6 修改密码
 				elif choice == '7':
 					pass
 				elif choice == '8':
 					pass
 				elif choice == '9':
-					pass
+					obj.supplment_card()  #9 补卡
 				elif choice == '0':
 					obj.save()   #0 保存退出
 					break
