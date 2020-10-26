@@ -12,11 +12,11 @@ class Main():
 			while True:
 				choice = input('请选择需要办理的业务:')
 				if choice == '1':
-					pass
+					obj.register() # 1 开户注册
 				elif choice == '2':
-					pass
+					obj.query()   #2  查询   (卡余额和锁定状态)
 				elif choice == '0':
-					obj.save()
+					obj.save()   #0 保存退出
 					break
 
 

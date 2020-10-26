@@ -48,6 +48,7 @@ class Operation():
 
 	# 1开户注册
 	def register(self):
+	# 一 用户对象的信息
 		# 获取用户名
 		# name = input('请输入姓名:')
 		name = self.get_name()
@@ -60,20 +61,23 @@ class Operation():
 		# phone = input('请输入您的手机号:')
 		phone = self.get_phone()
 		
-		## 获取密码
+	# 二 卡对象的信息
+		## 获取卡取款密码
 		password = self.get_pwd("请输入您的卡密码:","请确认您的卡密码:")
 		# 获取卡号
 		cardid = self.get_cardid()
 		# 卡内默认余额 10元
-		money = 10
+		money = 10   #也可以在卡对象的构造方法中定义
 		
+	#  三 创建对象(卡和用户)
 		# 创建一张卡的对象
 		card = Card(cardid,password,money)
 		
 		# 创建一个用户的对象
-		user = Person(name,userid,phone,card)  #card是卡对象
+		user = Person(name,userid,phone,card)  #card是卡对象 关键点1
 		# print(user)
 		
+	#  四 存储数据到字典  (把用户对象存入字典)
 		# 存储数据到 user_dict    卡号:用户对象  cardid:user  
 		# 把卡号和用户对象绑定
 		# print(self.user_dict)
@@ -144,7 +148,7 @@ class Operation():
 			# =>  user_dict
 			if cardid not in self.user_dict:
 			# 卡号不能相同
-				return cardid
+				return cardid  #死循环的终止条件
 
 	# 2 查询
 	def query(self):
@@ -177,14 +181,14 @@ class Operation():
 
 	# 2-2 校验卡的密码 3次锁定  self.islock变成True
 	def check_pwd(self,card):  #参数card是卡对象
-		times = 1
+		times = 0
 		for i in range(3):
-			pwd = input('请输入您的密码')
+			pwd = input('请输入您的密码:')
 			if pwd == card.password:
 				return True
 			else:
 				#剩余次数 = 总次数 - 使用次数
-				print('密码错误~ , 您还剩下{}次机会'.format(3-times))
+				print('密码错误~ , 您还剩下{}次机会'.format(2-times))
 				if times == 3:
 					card.islock = True  #锁定状态
 					print("抱歉,密码输错三次,卡被锁定,请联系管理员.")		
