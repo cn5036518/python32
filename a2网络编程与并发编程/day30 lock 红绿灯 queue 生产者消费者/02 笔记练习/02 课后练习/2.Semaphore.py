@@ -1,8 +1,8 @@
 # ### 信号量 Semaphore 本质上就是锁,只不过是多个进程上多把锁,可以控制上锁的数量
-"""Semaphore = lock + 数量 """
+# """Semaphore = lock + 数量 """
 from multiprocessing import Semaphore , Process
 import time , random
-"""
+# """
 	# 同一时间允许多个进程上5把锁
 	sem = Semaphore(5)
 	#上锁
@@ -10,7 +10,7 @@ import time , random
 	print("执行操作 ... ")
 	#解锁
 	sem.release()
-"""
+# """
 
 def singsong_ktv(person,sem):
 	# 上锁
@@ -33,10 +33,10 @@ if __name__ == "__main__":
 		p.start()
 
 
-"""
+# """
 # 总结: Semaphore 可以设置上锁的数量 , 同一时间上多把锁
-创建进程时,是异步并发,执行任务时,是同步程序;
-"""
+# 创建进程时,是异步并发,执行任务时,是同步程序;
+# """
 
 
 
