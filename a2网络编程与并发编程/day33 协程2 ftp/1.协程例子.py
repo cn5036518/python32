@@ -4,7 +4,7 @@
 (2) join 阻塞,直到某个协程在任务执行完毕之后在放行
 (3) joinall 等待所有协程任务执行完毕之后放行;
 	  # g1.join()  g2.join() <=> gevent.joinall( [g1,g2..] )
-(4) value 获取协程任务中的返回值 g1.value  g2.value
+(4) value 获取协程任务中的返回值 g1.value  g2.value 00
 # """
 from gevent import monkey ; monkey.patch_all()
 import gevent
