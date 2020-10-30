@@ -1,6 +1,11 @@
 # ### day01
 # ### vmware-tools 插件安装
 
+ubuntu下
+先将pycharm的tar.gz的包提取到当前目录
+进入pycharm 安装包下的bin目录下，输入如下命令：./pycharm.sh
+右键--锁定到启动
+
 # part1
 1991 年 芬兰林纳斯发明的. 
 选择在插件文件夹中,右键打开终端
