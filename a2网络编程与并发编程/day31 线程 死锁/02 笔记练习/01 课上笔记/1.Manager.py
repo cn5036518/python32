@@ -4,7 +4,9 @@ from multiprocessing import Process , Manager ,Lock
 #1 共享列表
 def mywork(data,lock):
 	# 共享列表
+	lock.acquire()
 	data[0] += 1	
+	lock.release()
 	
 if __name__ == "__main__":
 	lst = []
@@ -34,9 +36,9 @@ from multiprocessing import Process,Manager,Lock
 
 def mywork(data,lock):
 	# 共享字典
-	# lock.acquire()
+	lock.acquire()  #如果不锁，数据会不准确
 	data['count'] -= 10	
-	# lock.release()
+	lock.release()
 	
 if __name__ == '__main__':
 	lst = []

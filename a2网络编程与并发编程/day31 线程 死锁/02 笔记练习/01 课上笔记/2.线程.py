@@ -41,6 +41,7 @@ if __name__ == "__main__":
 	endtime = time.time()
 	print("运行的时间是{}".format(endtime - startime) ) # 运行的时间是1.8805944919586182
 # """
+
 # 多进程速度
 # """
 if __name__ == "__main__":

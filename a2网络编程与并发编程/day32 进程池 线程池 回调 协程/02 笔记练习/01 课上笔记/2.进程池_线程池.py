@@ -31,19 +31,19 @@ if __name__ == "__main__":
 		# print(obj.result()) 不要写在这,导致程序同步,内部有阻塞
 		lst.append(obj)
 		
-	# (3) 获取当前任务的返回值
+	# (3) 获取当前任务的返回值  异步获取
 	for i in lst:
 		print(i.result(),">===获取返回值===?")
 		
-	# (4) shutdown 等待所有进程池里的进程执行完毕之后,在放行
+	# (4) shutdown 等待所有进程池里的进程执行完毕之后,再放行下面的代码
 	p.shutdown()
 
 	print("进程池结束 ... ")
 # '''
 # (2) ThreadPoolExecutor
 # '''
-# from threading import currentThread as ct
-from threading import current_thread as ct
+from threading import currentThread as ct
+# from threading import current_thread as ct
 
 def func(i):
 	print(" 任务执行中 ...  start ... 线程号{}".format( ct().ident ) , i )
@@ -69,9 +69,9 @@ if __name__ == "__main__":
 		# print(obj.result()) 不要写在这,导致程序同步,内部有阻塞  (和join用法类似)
 		lst.append(obj)
 		
-	# (3) 获取当前任务的返回值
+	# (3) 获取当前任务的返回值 异步获取
 	for i in lst:
-		setvar.add(i.result())		
+		setvar.add(i.result())	 #集合去重，无序	
 		
 	# (4) shutdown 等待所有线程池里的线程执行完毕之后,再放行下面的代码
 	t.shutdown()    #(和join用法类似)
@@ -90,12 +90,12 @@ def func(i):
 	
 if __name__ == "__main__":
 	t = ThreadPoolExecutor()
-	it = t.map(func,range(100))
+	it = t.map(func,range(100)) #参数1：函数名  参数2：可迭代对象
 	# 返回的数据是迭代器
 	print(isinstance(it,Iterator))
 	
 	# 协调子父线程,等待线程池中所有子线程执行完毕之后,再放行下面的代码;
-	t.shutdown()  和join类似
+	t.shutdown()  #和join类似
 	
 	# 获取迭代器里面的返回值
 	for i in it:

@@ -28,7 +28,7 @@ if __name__ == "__main__":
 	for i in range(1,11):
 		p = Process(target=func,args=(i,))
 		p.start()
-		# join 写在里面会导致程序变成同步
+		# join 写在for里面会导致程序变成同步
 		lst.append(p)
 		
 	# 把所有的进程对象都放在列表中,统一使用.join进行管理;
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 # (1) 基本语法
 import os
 
-class MyProcess(Process):
+class MyProcess(Process):  #1 继承Process类，重新run方法
 	def run(self):
 		print("1.子进程id:{},2.父进程id:{}".format(os.getpid(),os.getppid()))
 
@@ -59,7 +59,7 @@ class MyProcess(Process):
 
 	def __init__(self,name):
 		# 手动调用一下父类的构造方法,完成系统成员的初始化;
-		super().__init__()
+		super().__init__()  #super()是对象，只调用父类的成员（不调用自己的）
 		self.name = name
 	
 	def run(self):

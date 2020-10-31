@@ -1,7 +1,7 @@
 # ### __init__ 构造方法
 # '''
 	# 触发时机：实例化对象,初始化的时候触发
-	# 功能：为对象添加成员
+	# 功能：为对象添加成员（属性或方法）
 	# 参数：参数不固定,至少一个self参数
 	# 返回值：无
 # '''
@@ -10,12 +10,12 @@
 class MyClass():
 	def __init__(self):
 		print("构造方法被触发 ... ")
-		self.color = "屎黄色"
+		self.color = "黄色"
 		
 # 实例化对象
 obj = MyClass()
 print(obj.__dict__)
-print(obj.color)
+print(obj.color)  #构造方法为对象添加成员属性
 
 # (2) 带有多个参数的构造方法
 class MyClass():
@@ -23,7 +23,7 @@ class MyClass():
 		self.color = color
 
 # 实例化对象
-obj1 = MyClass("狗屎绿")
+obj1 = MyClass("狗狗绿")
 print(obj1.color)
 obj2 = MyClass("粉嫩红")
 print(obj2.color)
@@ -59,7 +59,7 @@ haoke = Children("绿巨人","绿色的")
 haoke.la()
 haoke.info()
 
-wangbaoqiang = Children("王宝强","亮绿色")
+wangbaoqiang = Children("王宝强","亮色")
 wangbaoqiang.info()
 # wangbaoqiang.__eat() error
 wangbaoqiang.info2("张保张","黄色")

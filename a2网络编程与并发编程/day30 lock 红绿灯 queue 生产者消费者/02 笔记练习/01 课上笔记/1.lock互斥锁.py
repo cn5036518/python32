@@ -24,7 +24,7 @@ def wr_info(sign , dic=None):
 			dic = json.load(fp)
 		return dic
 		
-	elif sign == "w":
+	elif sign == "w":  #清空写入
 		with open("ticket",mode="w",encoding="utf-8") as fp:
 			json.dump(dic,fp)
 

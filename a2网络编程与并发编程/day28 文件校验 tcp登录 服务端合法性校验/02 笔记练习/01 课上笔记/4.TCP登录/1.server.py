@@ -17,24 +17,32 @@ class MyServer(socketserver.BaseRequestHandler):
 	def auth(self):
 		
 		conn = self.request
+		
 		# 接受客户端发送过来的数据,通过decode反解成字符串
 		res = conn.recv(1024).decode()
+		
 		# 通过json把字符串 转换成 字典
 		dic = json.loads(res)
 		# {'username': 'caijingguan', 'password': '8888', 'operate': 'login'} 
 		print(dic , type(dic)) 
+		
 		with open("userinfo.data",mode="r",encoding="utf-8") as fp: 
 		# fp文件对象是迭代器,一行一行返回数据
 			for i in fp:
 				# 文件中解析出用户和密码
 				usr,pwd = i.strip().split(":")
+				# pwd_mi = self.get_md5_code( dic["username"] , dic["password"] )
 				if usr == dic["username"] and pwd == self.get_md5_code( dic["username"] , dic["password"] ) : 
+					
 					# 自定义返回的字典数据
 					dic_msg = {"code":1,"msg":"登录成功"}
+					
 					# 把字典 => 字符串
 					json_str = json.dumps(dic_msg)
+					
 					# 把字符串 => 字节流 发送给客户端
 					conn.send( json_str.encode() )
+					
 					# 把sign标记从False => True 代表登录成功
 					self.sign = True
 					break

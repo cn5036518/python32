@@ -30,7 +30,7 @@ def check(e):
 	e.set()
 
 def connect(e):
-	sign = False
+	sign = False #标识位
 	for i in range(1,4):
 		# 最多阻塞1秒
 		e.wait(1)

@@ -9,7 +9,7 @@ class Plane():
 	
 	# 公有绑定方法
 	def fly(self):
-		print("飞机要非要平流层,才能减少震动",self.__air_sister)
+		print("飞机要飞在平流层,才能减少震动",self.__air_sister)
 		
 	# 私有绑定方法
 	def __age(self):
@@ -17,17 +17,17 @@ class Plane():
 		
 	# 公有无参方法
 	def fly2():
-		print("航天飞机飞到天空层,翱翔太空")
+		print("航天飞机飞到太空层,翱翔太空")
 	
 	# 私有无参方法
 	def __earn():
 		print("机长的收入保密")
 		
-	def pub_get1(self):  #获取私有绑定方法
+	def pub_get1(self):  #获取私有绑定方法和私有属性
 		print(self.__air_sister)
 		self.__age()
 		
-	def pub_get2():  #获取私有无参方法
+	def pub_get2():  #获取私有无参方法和私有属性
 		print(Plane.__air_sister)
 		Plane.__earn()
 
@@ -35,13 +35,13 @@ class Plane():
 obj = Plane()
 
 # 方法一.访问私有成员 (不推荐)
-# python私有化: 采取了改名策略 =>  _类名 + __air_sister
+# python私有化: 采取了改名策略 =>  _类名 + __air_sister    _类__私有成员
 # print(obj.__air_sister)
 print(obj._Plane__air_sister)
 print(Plane.__dict__)
 # """
 # {'__module__': '__main__', 'captian': '赵沈阳', 
-# '_Plane__air_sister': '3名空姐', 
+# '_Plane__air_sister': '3名空姐',   #改名策略
 # 'fly': <function Plane.fly at 0x7f2774616158>, '_Plane__age': <function Plane.__age at 0x7f27746161e0>, 'fly2': <function Plane.fly2 at 0x7f2774616268>, '_Plane__earn': <function Plane.__earn at 0x7f27746162f0>, '__dict__': <attribute '__dict__' of 'Plane' objects>, '__weakref__': <attribute '__weakref__' of 'Plane' objects>, '__doc__': None}
 # """
 
@@ -59,7 +59,7 @@ Plane.pub_get2()
 # 删除对象成员属性
 obj.captian = "赵世超"
 del obj.captian
-print(obj.captian)
+print(obj.captian)  #这里打印的是类的成员属性
 
 # 删除对象成员方法
 obj.basketball = lambda : print("我的私人飞机可以在天上打篮球")

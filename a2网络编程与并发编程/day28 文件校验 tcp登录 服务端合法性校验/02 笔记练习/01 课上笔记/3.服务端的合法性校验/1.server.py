@@ -24,7 +24,11 @@ class MyServer(socketserver.BaseRequestHandler):
 		cli_res = conn.recv(1024).decode()
 		
 		# 进行比对,如果ok 返回True , 反之,返回False
-		return  True if ser_res == cli_res else False			
+		# return  True if ser_res == cli_res else False	
+		if ser_res == cli_res:
+			return  True
+		esle:
+			return False
 
 	def handle(self):
 		if self.auth():

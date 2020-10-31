@@ -58,15 +58,16 @@ MyCar.luntai()
 # 1.类中的无参方法默认只能类来调用,对象无法调取
 # 2.对象可以调用类中的成员,反过来,类不能调用对象中的成员
 # 3.每创建一个对象都会在内存中占用一份空间,对象之间是彼此独立的;
+#    类和对象是两个独立的内存空间
 # """
 obj = MyCar()
-# obj.car_info() error
+# obj.car_info() error  #对象不能调取类中的无参方法
 MyCar.car_info()
 
 
 obj.price = "10万"
-print(MyCar.price)  #error
-
+print(MyCar.price)  #error    #类不能调用对象中的成员
+# 对象可以调用类中的成员,反过来,类不能调用对象中的成员
 
 
 

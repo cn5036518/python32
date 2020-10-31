@@ -78,7 +78,7 @@ def car(e,i):
 	# 判断是否是红灯,如果是加上wait阻塞
 	if not e.is_set():
 		print("car{} 在等待 ... ".format(i))
-		e.wait()
+		e.wait()  #注意点，容易忘记写
 		
 	# 否则不是,代表绿灯通行;
 	print("car{} 通行了 ... ".format(i))

@@ -9,8 +9,8 @@
 	# 2.成员方法
 	
 # 绑定方法:
-	# 1.绑定到对象 : 当对象去调用类中成员方法时,系统会默认把该对象当成参数传递给该方法
-	# 2.绑定到类   : 当对象或者类去调用类中成员方法时,系统会默认把该类当成参数传递给该方法
+	# 1.绑定到对象 : 当对象去调用类中成员方法时,系统会默认把该对象当成参数传递给该方法 self
+	# 2.绑定到类   : 当对象或者类去调用类中成员方法时,系统会默认把该类当成参数传递给该方法  @classmethod
 
 # 使用方式:
 	# 对象.成员属性
@@ -48,7 +48,7 @@ obj.run()
 
 
 #(2)实例化的对象动态添加公有成员属性
-obj.color = "尿黄色"
+obj.color = "黄色"
 obj.logo = "五菱宏光" 
 print(obj.color)
 print(obj.logo)
@@ -69,7 +69,7 @@ obj.dahuangfeng()
 # 2.有参方法
 # 基本版
 def qingtianzhu(name):
-	print("请叫我一柱擎天么,{}".format(name))
+	print("请叫我擎天么,{}".format(name))
 	
 obj.qingtianzhu = qingtianzhu
 obj.qingtianzhu("擎天柱")
@@ -81,7 +81,7 @@ def qingtianzhu(obj,name):
 obj.qingtianzhu = qingtianzhu
 obj.qingtianzhu(obj,"擎天柱")
 
-# 究极版
+# 终极版
 # """如果要创建绑定方法,参数的顺序,self对象本身要放到第一位."""
 def qingtianzhu(obj,name):
 	print("请叫我一柱擎天么,{},我的颜色是{}".format(name,obj.color))
@@ -93,7 +93,7 @@ res = types.MethodType(qingtianzhu,obj)
 print(res)
 
 obj.qingtianzhu = types.MethodType(qingtianzhu,obj)
-obj.qingtianzhu("擎天柱")
+obj.qingtianzhu("擎天柱")  #这里不需要手动传obj了
 
 # 3.lambda表达式
 obj.weizhentian = lambda : print("我是威震天")

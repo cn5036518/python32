@@ -56,7 +56,8 @@ if __name__ == "__main__":
 	p1 = Process(  target=consumer,args=(q , "赵万里")  )
 	p2 = Process(  target=producer,args=(q , "赵沈阳" , "香蕉" )  )
 	
-	p1.daemon = True
+	p1.daemon = True  #守护进程  （和监控报活用法类似）
+	#主进程结束，p1守护进程随之结束
 	
 	p1.start()
 	p2.start()

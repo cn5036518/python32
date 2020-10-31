@@ -94,7 +94,7 @@ def eat():
 	
 def play():
 	print("play1")
-	time.sleep(3)
+	time.sleep(3)  #这2个函数的执行，一共是阻塞了3秒，而不是6秒
 	print("play2")
 
 
