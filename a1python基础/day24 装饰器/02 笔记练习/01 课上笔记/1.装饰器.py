@@ -9,9 +9,9 @@
 
 def kuozhan(_func):
 	def newfunc():
-		print("厕所前 ... 干净整齐")
+		print("前 ... 干净整齐")
 		_func()
-		print("厕所后 ... 臭气熏天")
+		print("后 ... 臭气熏天")
 	return newfunc
 
 def func():
@@ -25,9 +25,9 @@ func()
 print("<=======================>")
 def kuozhan(_func):
 	def newfunc():
-		print("厕所前 ... 干净整齐")
+		print("前 ... 干净整齐")
 		_func()		
-		print("厕所后 ... 臭气熏天")
+		print("后 ... 臭气熏天")
 	return newfunc
 	
 @kuozhan
@@ -39,16 +39,16 @@ func()
 # (3) 装饰器的嵌套
 def kuozhan1(_func):
 	def newfunc():
-		print("厕所前 ... 人模狗样1")
+		print("前 ... 人模狗样1")
 		_func()		
-		print("厕所后 ... 牛头马面2")
+		print("后 ... 牛头马面2")
 	return newfunc
 
 def kuozhan2(_func):
 	def newfunc():
-		print("厕所前 ... 面黄肌瘦3")
+		print("前 ... 面黄肌瘦3")
 		_func()		
-		print("厕所后 ... 红光满面4")
+		print("后 ... 红光满面4")
 	return newfunc
 
 
@@ -64,9 +64,9 @@ func()
 print("<===================>")
 def kuozhan(_func):
 	def newfunc(who,where,eat):
-		print("厕所前 ... 文质彬彬")
+		print("前 ... 文质彬彬")
 		_func(who,where,eat)
-		print("厕所后 ... 兽性大发")
+		print("后 ... 兽性大发")
 	return newfunc
 
 @kuozhan
@@ -104,7 +104,7 @@ def func(*args,**kwargs):
 		# print(i) # 2
 		# print(list(dic.values())) # ['刘文波', '张磊', '宋健']
 		# print(list(dic.values())[i])
-		print("{}找不到拉屎的地点而错,请传入他的拉屎地点".format(list(dic.values())[i]))
+		print("{}找不到地点而错,请传入他的地点".format(list(dic.values())[i]))
 		
 		
 	return lst	
@@ -122,22 +122,22 @@ class Kuozhan():
 				
 	def kuozhan1(func):
 		def newfunc():
-			print("厕所前 ... 饥肠辘辘")
+			print("前 ... 饥肠辘辘")
 			func()
-			print("厕所后 ...  酒足饭饱")
+			print("后 ...  酒足饭饱")
 		return newfunc
 		
 	def kuozhan2(self,func):
 		def newfunc():
-			print("厕所前 ... 蓬头垢面")
+			print("前 ... 蓬头垢面")
 			func()
-			print("厕所后 ... 衣衫褴褛")
+			print("后 ... 衣衫褴褛")
 		return newfunc
 
 # 方式一
 @Kuozhan.kuozhan1
 def func():
-	print("厕所进行时 .... ")
+	print("进行时 .... ")
 
 func()
 
@@ -146,7 +146,7 @@ print("<===============>")
 # 方式二
 @Kuozhan()
 def func():
-	print("厕所进行时 .... ")
+	print("进行时 .... ")
 
 func()
 
@@ -158,22 +158,22 @@ def outer(num):
 	
 		def newfunc1(self):
 			print(self)
-			print("厕所前 ... 老实巴交")
+			print("前 ... 老实巴交")
 			_func(self)
-			print("厕所后 ... 浑身哆嗦")
+			print("后 ... 浑身哆嗦")
 			
 		def newfunc2(self):
 			print(self)
-			print("厕所前 ... 狂送人头")
+			print("前 ... 狂送人头")
 			_func(self)
-			print("厕所后 ... 让二追三")
+			print("后 ... 让二追三")
 					
 		if num == 1: 
 			return newfunc1
 		elif num == 2:
 			return newfunc2
 		elif num == 3:
-			return "厕所前,洗洗手,厕所后,簌簌口"
+			return "前,洗洗手,后,簌簌口"
 		
 	return kuozhan
 
@@ -182,7 +182,7 @@ class MyClass():
 
 	@outer(1)  # (1)@outer(1) => @kuozhan  (2)@kuozhan =>  func1 = newfunc1 => (3) obj.func1() <=> obj.newfunc1(self)
 	def func1(self):
-		print("向前一小步,文明一大步")
+		print("向前一小步")
 		
 	@outer(2)
 	def func2(self):
@@ -190,7 +190,7 @@ class MyClass():
 
 	@outer(3)
 	def func3(self):
-		print("请瞄准后发射,尿到外边,说明你短!")
+		print("请瞄准后发射!")
 
 print("<==============>")
 obj = MyClass()
@@ -211,10 +211,10 @@ obj.func1() # <=> obj.newfunc1()
 
 class Kuozhan():
 
-	ad = "贵族茅厕,茅厕中的百岁山."
+	ad = "贵族茅台,茅台中的百岁山."
 	
 	def money(self):
-		print("贵族茅厕,包月1100,一小时200元")
+		print("贵族茅台,包月1100,一小时200元")
 		
 	def __init__(self,num):
 		self.num = num
@@ -229,7 +229,7 @@ class Kuozhan():
 	# 参数1的情况 : 添加成员属性和方法
 	def kuozhan1(self,cls):
 		def newfunc():
-			# MyClass.ad = "贵族茅厕,茅厕中的百岁山."
+			# MyClass.ad = "贵族茅台,茅台中的百岁山."
 			cls.ad = Kuozhan.ad
 			cls.money = Kuozhan.money
 			return cls()			
@@ -248,14 +248,14 @@ class Kuozhan():
 print("<==================>")
 # 方式一
 # """
-@Kuozhan(1) # => @obj => MyClass = obj(MyClass)
-class MyClass():
-	def run():
-		return "亢龙有悔"
+# @Kuozhan(1) # => @obj => MyClass = obj(MyClass)
+# class MyClass():
+	# def run():
+		# return "亢龙有悔"
 
-obj = MyClass()
-print(obj.ad)
-obj.money()
+# obj = MyClass()
+# print(obj.ad)
+# obj.money()
 # """
 # 方式二
 @Kuozhan(2)
@@ -270,7 +270,7 @@ print(obj.run)
 
 # """
 # (扩展)
-# 虽然MyClass2这个名字替换掉了,但是内j存中的该类仍然存在;
+# 虽然MyClass2这个名字替换掉了,但是内存中的该类仍然存在;
 # class MyClass2():
 	# a = 200
 
@@ -287,24 +287,6 @@ print(obj.run)
 # print(obj.a)  # 200 
 # print(obj.ad) # 90
 # """
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	

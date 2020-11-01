@@ -55,21 +55,24 @@ class MyClass():
 # add的触发方式
 a = MyClass(3)
 res = a + 1
-print(res)
+print(res)  #10
 
 # radd的触发方式
 b = MyClass(5)
 res = 7 + b
-print(res)
+print(res)  #32
 
 # 对象 + 对象
 res = a + b
-print(res)
+print(res)  #34
 
 # """
-# a+b 触发的是add魔术方法  self 接受的是a   other 接受的是b
-# return a.num + b  => return 9 + b
+# a+b 触发的是add魔术方法  self 接受的是a(注意点)   other 接受的是b
+# a.num是3
+# return a.num *3 + b  => return 3*3 + b => return 9 + b
+
 # res =  9 + b   触发的是radd魔术方法  self 接受的是b   other 接受的是9
+# b.num是5
 # return b.num * 5 + 9  => 5 * 5 + 9 => 34
 # """
 
@@ -99,8 +102,13 @@ class MyClass():
 		return len( [  i for i in MyClass.__dict__ if not (  i.startswith("__") and i.endswith("__")  )  ] ) 
 
 obj = MyClass()
+print(obj.__dict__)  #{}
+print(MyClass.__dict__)
 print(len(obj))
 
+lst = [  i for i in MyClass.__dict__ if not (  i.startswith("__") and i.endswith("__")  )  ]
+print(lst)
+#['pty1', 'pty2', '_MyClass__pty3', 'func1', 'func2', '_MyClass__func3']
 
 # """
 # 代码原型;

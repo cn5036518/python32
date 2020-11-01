@@ -1,10 +1,10 @@
 # ### 多态: 不同的子类对象调用相同的父类方法,得到不同的执行结果
-# """继承 重写 """
+# """继承 重写父类的方法 """
 	# 调用方:不同的子类对象.
 	# 方法:相同的父类方法
 	# 返回:不同的结果 
 
-class Soldier():
+class Soldier():  #这里父类的方法体是pass
 	def attack(self):
 		pass
 		
@@ -41,7 +41,7 @@ obj2 = Navy()
 obj3 = AirForce()
 
 # 
-lst = [obj1,obj2,obj3]
+lst = [obj1,obj2,obj3]   #三个军种的对象放入列表
 # lst = [Army(),Navy(),AirForce()]
 
 strvar = """
@@ -55,14 +55,14 @@ num = input(strvar)
 for i in lst:
 	# print(i)
 	if num == "1":
-		i.attack()
+		i.attack()  #全体出击
 	elif num == "2":
-		i.back()
+		i.back()  #全体撤退
 	elif num == "3":
-		if isinstance(i,Navy):
-			i.attack()
+		if isinstance(i,Navy): #判断对象属于哪个类
+			i.attack()  #海军出击
 		else:
-			i.back()
+			i.back()  #其他兵种撤退
 	else:
 		print("风太大,小弟听不见")
 		break

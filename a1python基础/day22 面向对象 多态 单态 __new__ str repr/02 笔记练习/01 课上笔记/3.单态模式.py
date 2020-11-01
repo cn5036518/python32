@@ -2,7 +2,7 @@
 # """
 # 每创建一个对象,就会在内存中多占用一份空间
 # 为了节省空间,提升执行效率,使用单态模式
-# 场景:只是单纯调用类中的成员,而不会额外为当前对象添加成员;
+# 应用场景:只是单纯调用类中的成员,而不会额外为当前对象添加成员（只读不写）;
 # """
 
 class Singleton():
@@ -42,8 +42,8 @@ class Singleton():
 obj1 = Singleton("康玉康")
 obj2 = Singleton("张保张")
 print(obj1,obj2)
-print(obj1.name)
-print(obj2.name)
+print(obj1.name)  #张保张
+print(obj2.name)  #张保张
 # """
 # 康玉康 康玉康
 # 康玉康 张保张

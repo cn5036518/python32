@@ -42,17 +42,17 @@ print(res)
 # (3) 模拟整型强转操作
 import math
 class MyInt():
-	def __call__(self,num):
-		if isinstance(num,bool):
+	def __call__(self,num):  #带参数的__call__  带参数的函数
+		if isinstance(num,bool):  #01 bool
 			if num == False:
 				return 0 
 			else:
 				return 1
 				
-		elif isinstance(num,int):
+		elif isinstance(num,int): #02 int
 			return num
 			
-		elif isinstance(num,float):
+		elif isinstance(num,float):  #03 float
 			# 方法一
 			# a,b = str(num).split(".")
 			# return eval(a)
@@ -67,7 +67,7 @@ class MyInt():
 			# 简写
 			return math.floor(num) if  num >= 0  else math.ceil(num)
 			
-		elif isinstance(num,str):
+		elif isinstance(num,str):  #04 str(纯数字字符串)
 			if (num[0] == "+" or num[0] == "-") and num[1:].isdecimal():
 				# 获取当前字符串的正负值
 				if num[0] == "+":
@@ -92,10 +92,11 @@ class MyInt():
 			return 0 
 		
 		return eval(num) * sign			
+		#eval(num)  #num的类型是str 把纯数字的字符串变成数字--用eval
 			
 	
 myint = MyInt()
-res = myint(-5.67) 
+res = myint(-5.67)   #对象() 传入实参
 print(res , type(res))
 res = myint("-000000000000055555")
 print(res , type(res))

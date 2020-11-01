@@ -39,12 +39,15 @@ def func343434():
 	print("佩恩出场时,使用一手地爆天星,技惊四座,点燃所有观众")
 
 obj.skylight(func343434)
+#func343434 <class 'str'>
 
 # __class__ 获取当前对象所属的类
 print(obj.__class__)
+#<class '__main__.Sasuke'>
 
 # __bases__ 获取一个类直接继承的所有父类,返回元组
 print(Sasuke.__bases__)
+#(<class '__main__.Man'>, <class '__main__.Woman'>)
 
 
 

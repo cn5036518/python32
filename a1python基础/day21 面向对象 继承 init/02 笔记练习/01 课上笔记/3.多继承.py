@@ -40,7 +40,7 @@ class Mother():
 class Son(Father,Mother):
 	property = "打游戏,吃小零食"
 	
-	def m_hobby(self):
+	def m_hobby(self):  #重写父类的方法
 		print("son中m_hobby方法")
 	
 	
@@ -69,7 +69,7 @@ obj2 = Son()
 obj2.property = "喜欢看lol,dnf,wow,跑跑卡丁车,ddo,霸王大陆,澄海3c"
 # obj2.skill2()
 
-obj2.skill3()
+obj2.skill3()    #super()是一个对象  谁调传谁(传对象)  这里是obj2,调，就把obj2当参数传递
 
 
 

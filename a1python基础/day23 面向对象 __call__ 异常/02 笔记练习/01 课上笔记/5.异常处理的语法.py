@@ -20,7 +20,7 @@ class MyClass():
 
 try:
 	lst = [1,2,3]
-	lst[1000]
+	lst[1000]  #索引越界
 except:
 	pass
 	
@@ -70,7 +70,7 @@ try:
 	
 	# 给StopIteration这个类创建出来的对象起一个别名叫e
 	# """ 
-	# 当你打印对象时,会触发内部__str__方法,通过一些列的调用,返回出最后的返回值
+	# 当你打印对象时,会触发内部__str__方法,通过一系列的调用,返回出最后的返回值
 	# """
 except StopIteration as e:
 	# 可以获取返回值

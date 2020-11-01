@@ -58,7 +58,7 @@ def myexit():
 def download():
 	operate_dict = {
 		"operate":"download",
-		"filename":"studey_info1.mp4"
+		"filename":"studey_info.mp4"
 	}
 	
 	# 把要下载的请求发送给服务端
@@ -74,7 +74,7 @@ def download():
 	if res["result"]:
 		# 给用户创建个文件夹
 		try:
-			os.mkdir("mydownload")
+			os.mkdir("mydownload")   #如果文件已经存在,会报错
 		except:
 			pass
 			

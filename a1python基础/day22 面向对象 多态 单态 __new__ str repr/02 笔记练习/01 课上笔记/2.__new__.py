@@ -14,12 +14,15 @@ obj2 = MyClass2()
 
 class MyClass1():
 	def __new__(cls):
-		# print(cls)		
+		# print(cls)
+		
 		# 1.返回本类对象
 		# """类.成员方法(类)"""
 		# return object.__new__(cls)
+		
 		# 2.返回其他类的对象
 		# return obj2
+		
 		# 3.不返回对象,None
 		return None		
 	
@@ -65,7 +68,7 @@ class Boat():
 		self.name  = name
 		self.type = type
 
-obj = Boat("万里阳光号","破木头做的")
+obj = Boat("万里阳光号","木头做的")
 print(obj.name , obj.type)
 
 
@@ -86,7 +89,7 @@ class Children():
 		
 obj = Children("灭霸","紫薯")
 
-# print(obj.name) error
+# print(obj.name) error   这里不会调用构造方法
 # print(obj.skin) error
 
 
