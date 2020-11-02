@@ -2,7 +2,7 @@
 [快捷键]
 快捷键:ctrl + l 清屏
 快捷键:ctrl + c 终止
-exit  : 退出数据库
+exit  : 退出数据库 1
 
 [linux] 
 service mysql stop
