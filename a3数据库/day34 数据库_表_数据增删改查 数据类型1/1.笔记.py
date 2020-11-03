@@ -93,10 +93,11 @@ flush privileges
 # (1) 操作数据库 [文件夹]
 增:
 	# 创建数据库
-	create database db001 charset utf8;
+	create database db001 charset utf8;  #不能是utf-8
 查:
 	# 查看数据库
 	show databases;
+	
 	# 查看建库语句;
 	show create database db001;
 	+----------+----------------------------------------------------------------+
@@ -106,7 +107,8 @@ flush privileges
 	+----------+----------------------------------------------------------------+
 	CREATE DATABASE `db002` /*!40100 DEFAULT CHARACTER SET utf8 */
 改:
-	alter database db002 charset gbk;
+	# 修改数据库
+	alter database db001 charset gbk;
 	
 删:
 	# 删除数据库
@@ -123,6 +125,7 @@ flush privileges
 查:
 	# 查看所有表
 	show tables;
+	
 	# 查看建表语句
 	show create table t1;
 	# """
@@ -133,6 +136,7 @@ flush privileges
 # ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 # 1 row in set (0.00 sec)
 	# """
+	
 	# 查看表结构
 	desc t1;
 	+-------+---------+------+-----+---------+-------+
@@ -142,8 +146,8 @@ flush privileges
 	| name  | char(1) | YES  |     | NULL    |       |
 	+-------+---------+------+-----+---------+-------+
 改:
-	# modify 只能改变类型
-	alter table t1 modify name char(5);
+	# modify 只能改变类型  
+	alter table t1 modify name char(5);  #从1个字符修改到5个字符
 	
 	# change 改变类型+字段名
 	alter table t1 change name  name123 char(4);
@@ -155,8 +159,9 @@ flush privileges
 	alter table t1 drop age;
 	
 	# rename 更改表名
-	alter table t1 rename t1111111;
+	alter table t1 rename t11;
 删:
+	#删除表
 	drop table t1;
 
 
@@ -168,10 +173,10 @@ flush privileges
 	# 一次插入多条数据
 	insert into t1(id,name) values(2,"王文"),(3,"刘文波"),(4,"康裕康"),(5,"张保障");
 	
-	# 不指定具体字段,默认把字段全部插一遍
+	# 不指定具体字段,默认把所有字段全部插一遍
 	insert into t1 values(6,"沈思雨");
 	
-	# 可以具体指定某个或者某几个字段进行插入
+	# 可以具体指定某个或者某几个字段进行插入,不指定的默认写默认值
 	insert into t1(name) values("张宇");
 	
 查:
@@ -201,9 +206,11 @@ flush privileges
 
 # ### part5 常用数据类型
 
-# 整型
+# 1整型
 tinyint  1个字节  有符号范围(-128~127) 无符号(0~255) unsigned   小整型值
+							 -2^7~2^7-1	      0~2^8-1
 int      4个字节  有符号范围(-21亿 ~ 21亿左右)  无符号(0~42亿) 大整型值
+							 -2^31~2^31-1		0~2^32-1       默认有符号
 
 	create table t3(id int , sex tinyint);
 	insert into t3(id,sex) values(4000000000,127) error out of range
@@ -211,22 +218,27 @@ int      4个字节  有符号范围(-21亿 ~ 21亿左右)  无符号(0~42亿) �
 	insert into t3(id,sex) values(13,127);
 
 
-# 浮点型
-float(255,30)   单精度
+# 3浮点型
+float(255,30)   单精度 参数1是总的位数,参数2是小数的位数
 double(255,30)  双精度
 decimal(65,30)  金钱类型 (用字符串的形式来存储小数)
 
 	create table t4(f1 float(5,3) , f2 double(5,3) , f3 decimal(5,3) );
 	insert into t4 values(1.7777777777777777777777777,1.7777777777777777777777777,1.7777777777777777777777777);
+	| 1.778 | 1.778 | 1.778
+	
 	insert into t4 values(11.7777777777777777777777777,11.7777777777777777777777777,11.7777777777777777777777777);
+	# | 11.778 | 11.778 | 11.778
+	
 	insert into t4 values(111.7777777777777777777777777,111.7777777777777777777777777,111.7777777777777777777777777); error out of range
 	insert into t4 values(1.7,1.7,1.7); error  整数位最多保留2位 , 小数位最多保留3位;存在四舍五入
+	# |  1.700 |  1.700 |  1.700 
 
 	
 	# float 小数位默认保留5位,double 小数位默认保留16位,decimal 默认保留整数,四舍五入
 	create table t5(f1 float , f2 double , f3 decimal);
 	insert into t5 values(1.7777777777777777777777777,1.7777777777777777777777777,1.7777777777777777777777777);
-	
+	# | 1.77778 | 1.7777777777777777 |    2 
 	
 	create table t6(f1 float(7,3));
 	insert into t6 values(1234.5678);
@@ -237,12 +249,16 @@ decimal(65,30)  金钱类型 (用字符串的形式来存储小数)
 	+----------+
 	# 整数位最多保留4位,小数位最多保留3位
 	# 默认double保留的小数位更多,float保留的小数位少;decimal保留整数位
-	insert into t6 values(12345.67); 
+	insert into t6 values(12345.67);   #error
 
 
-# 字符串 char(字符长度)  varchar(字符长度)
-char(11)  		 定长:固定开辟11个字符长度的空间(手机号,身份证号),开辟空间的速度上来说比较快,从数据结构上来说,需谨慎,可能存在空间浪费. max = 255
-varchar(11)		 变长:动态最多开辟11个字符长度的空间(评论,广告),开辟空间的速度上来说相对慢,从数据结构上来说,推荐使用,不存在空间浪费 max > 255
+# 3字符串 char(字符长度)  varchar(字符长度)
+char(11)  		 定长:固定开辟11个字符长度的空间(手机号,身份证号),
+				开辟空间的速度上来说比较快,
+				从数据结构上来说,需谨慎,可能存在空间浪费. max = 255
+varchar(11)		 变长:动态最多开辟11个字符长度的空间(评论,广告),
+				开辟空间的速度上来说相对慢(因为计算长度),
+				从数据结构上来说,推荐使用,不存在空间浪费 max > 255
 text             文本类型:针对于文章,论文,小说. max > varchar
 
 	create table t7(c char(11), v varchar(11) , t text);
@@ -250,17 +266,18 @@ text             文本类型:针对于文章,论文,小说. max > varchar
 	insert into t7 values("你好啊你好啊你好啊你好","你好啊你好啊你好啊你好","你好啊你好啊你好啊你好");
 	# concat  可以把各个字段拼接在一起
 	select concat(c,"<=>",v,"<=>",t) from t7;
+	# | 11111==11111==11111  
 
 
-# 数据库内部方法
-select user()
-select concat()
-select database()
-select now()
+# 4数据库内部方法
+select user();   #| root@localhost
+select concat();
+select database();  #查询当前数据库名字
+select now();     #| 2020-11-03 15:55:55  查询当前时间
 
-# 枚举和集合
-enum  枚举 : 从列出来的数据当中选一个 (性别)
-set   集合 : 从列出来的数据当中选多个 (爱好)
+# 5枚举和集合
+enum  枚举 : 从列出来的数据当中选一个 (性别)  #单选
+set   集合 : 从列出来的数据当中选多个 (爱好) #多选  去重无序
 
 create table t8( 
 id int , 
@@ -272,10 +289,35 @@ hobby set("吃肉","抽烟","喝酒","打麻将","嫖赌")
 
 # 正常写法
 insert into t8(id,name,sex , money , hobby) values(1,"张保障","兽性",2.6,"打麻将,吃肉,嫖赌");
+# |    1 | jack | man  | 2.600 | 读书,健身  
+
 # 自动去重
 insert into t8(id,name,sex , money , hobby) values(1,"张保障","兽性",2.6,"打麻将,吃肉,嫖赌,嫖赌,嫖赌,嫖赌,嫖赌,嫖赌");
+# insert into t8 values(1,'jack','man',2.6,'读书,健身,健身,健身');
+# |    1 | jack | man  | 2.600 | 读书,健身 
+
 # 异常写法 : 不能选择除了列出来的数据之外的其他值 error 报错
 insert into t8(id,name,sex , money , hobby) values(1,"张保障","人妖12",2.6,"打麻将,吃肉,嫖赌12");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
