@@ -38,7 +38,6 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 # unsigned 无符号
 	create table t3(id int unsigned);   #0~255  tiny   int 0~42亿
 	insert into t3 values(-1); error
-		# Out of range value for column 'id' at row 1
 	insert into t3 values(+1);  #可以
 	insert into t3 values(4000000000); success
 	# |          1 |
@@ -57,14 +56,13 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 # default    :    默认值
 	create table t5(id int not null  , name varchar(11) default "沈思雨" );
 	insert into t5 values(1,null);
-	# |  1 | NULL |   #注意点  这里是NULL.而不是'沈思雨'
+	# |  1 | NULL |   #注意点
 	insert into t5(id) values(2);
 	# |  1 | NULL      |
 	# |  2 | 沈思雨  
 	
 	create table t5_2(id int not null  default "1111" , name varchar(11) default "沈思雨" );
-	insert into t5_2 values(); # 在values里面不写值,默认使用默认值;   
-	#应用:自增+默认值 可以用于快速造测试数据
+	insert into t5_2 values(); # 在values里面不写值,默认使用默认值;
 	# | 1111 | 沈思雨  
 	
 	
@@ -190,8 +188,8 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	# unique : 有可能出现多个空值的情况要注意;
 	create table t2_server(id int , 
 	server_name varchar(10)  not null , 
-	ip varchar(15) ,  #ip port 没有定义not null
-	port int ,  #ip port 没有定义not null
+	ip varchar(15) , 
+	port int ,
 	unique(ip,port) ); #联合唯一索引
 	# | Field       | Type        | Null | Key | Default | Extra |
 	# +-------------+-------------+------+-----+---------+-------+
@@ -220,7 +218,6 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	server_name varchar(10)  not null , 
 	ip varchar(15) , port int  , 
 	primary key(ip,port) );  #主键= 唯一+非空   联合唯一主键
-	# 这里的ip和port没有写not null,一旦指定联合唯一主键,自动就是not null
 	
 	# | Field       | Type        | Null | Key | Default | Extra |
 	# +-------------+-------------+------+-----+---------+-------+
@@ -241,8 +238,6 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	
 	insert into t3_server values(1,"华为","192.168.11.251",3306);
 	insert into t3_server values(1,"华为","192.168.11.251",3307);
-	insert into t3_server values(1,"华为","192.168.11.251",3307);
-	# Duplicate entry '192.168.11.251-3307' for key 'PRIMARY'
 	
 	# | id   | server_name | ip             | port |
 	# +------+-------------+----------------+------+
@@ -259,7 +254,6 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 		
 		#主键和unique的区别
 			# 主键= 唯一+not null  只能有一个主键primary key字段
-					# ip和port没有写not null,一旦指定联合唯一主键,自动就是not null
 			# unique 可以是null 也可以有多个unique字段		
 	# """
 	
@@ -268,8 +262,6 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 # (该字段可以设置成外键,作用是可以联级更新或者联级删除)
 	# """  
 		# 语法:	foreign key(classid) references class1(id)  
-		
-		# 语法:	foreign key(表1的字段名) references 表2名(表2的字段名)  
 		# 条件:	被关联的字段,必须具备唯一属性(unique或者主键);
 	# """
 	student1:
@@ -324,8 +316,8 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	# 没有关联的数据可以直接删除
 	delete from class1 where id = 1;
 	# 有关联的数据不能直接删除,要先把关联的数据删掉之后再删除
-	delete from student1 where id = 3; #先删除外键字段所在表的记录
-	delete from class1 where id = 2;  #再删除关联表(非外键字段所在表)的记录
+	delete from student1 where id = 3;
+	delete from class1 where id = 2;
 	
 	
 	# 联级更新 , 联级删除 ( 谨慎使用 )
@@ -361,17 +353,14 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	insert into class2 values(2,"python33");
 	insert into class2 values(3,"python34");
 	
-	insert into student2 values(null,"wangtongpei",58,1);  #自增可以传null
+	insert into student2 values(null,"wangtongpei",58,1);
 	insert into student2 values(null,"liuyifeng",85,1);
 	insert into student2 values(null,"wangwen",18,2);
 	
 	# 联级删除 (把所有关联数据全部删除,谨慎;)
-	delete from class2 where id = 1;   #删除的是关联表(非外键所在表)的记录,连带把外键所在表的记录也删除了
-	# 如果不用级联删除,是无法直接删除的,直接删除会报错
+	delete from class2 where id = 1;
 	# 联级更新 (把所有关联数据全部更新,谨慎;)
 	update class2 set id = 100 where classname="python33";
-	#更新的是关联表(非外键所在表)的记录,连带把外键所在表的记录也更新了
-	# 如果不用级联更新,可以更新关联表(非外键所在表)的记录,外键所在表的记录不会随之同步更新
 	
 	
 # ### part4 表与表之间的关系
@@ -417,8 +406,7 @@ xid sid
 			实现高并发,高可用;
 事务处理: 执行sql语句时,必须所有的操作全部成功,才最终提交数据,
           有一条失败,直接回滚,恢复到操作之前的状态
-begin     : 开启事务  #每次只能用一次,下次还需要手动敲,否则,未开启事务,无法回滚  注意点
-# delete删除记录,在commit前,可以rollback,  但是truncate清空表或者直接drop删除表,无法回滚--
+begin     : 开启事务
 commit    : 提交数据
 rollback  : 回滚数据
 
