@@ -27,10 +27,10 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	unsigned   :    无符号
 	not null   :    不为空
 	default    :    默认值
-	unique     :    唯一值,加入唯一索引
+	unique     :    唯一值,加入唯一索引 可以为空
 	(索引相当于字典目录,索引的提出是为了加快速度,一味地乱加索引不会提高查询效率)
 	(比如:唯一值 身份证id适合加索引.性别就不适合加索引)
-	primary key:    主键
+	primary key:    主键=唯一+not null
 	auto_increment: 自增加一
 	zerofill   :    零填充
 	foreign key:    外键
@@ -471,6 +471,26 @@ create table blackhole( id int ) engine=BLACKHOLE;
 # 4 添加/删除 foreign key 外键 (先通过desc 表 找到外键名字,然后再删)
 	alter table student1 drop foreign key student1_ibfk_1; #删除
 	alter table student1 add foreign key(classid) references class1(id) #添加
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
