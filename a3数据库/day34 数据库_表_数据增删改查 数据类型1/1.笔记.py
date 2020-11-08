@@ -29,9 +29,14 @@ exit  或者  \q
 
 # ### part2
 # 查询当前登录用户
-select user()
+select user();
+# | user()         |
+# +----------------+
+# | root@localhost
+
 # 设置密码
 set password = password("123456")
+
 # 去除密码
 set password = password("");
 
@@ -39,44 +44,107 @@ set password = password("");
 # ### part3
 VMnet8: nat
 VMnet1:host-only
-ipconfig [windows] ifconfig[linux]
+ipconfig [windows] ifconfig\ip addr[linux]
 
-# 给具体某个ip设置一个账户连接linux
-create user "ceshi100"@"192.168.126.1" identified by "111";
-create user "ceshi100"@"192.168.235.1" identified by "111";
-# 给具体192.168.126.% 这个网段下的所有ip设置账户
-create user "ceshi101"@"192.168.126.%" identified by "222";
-# 给所有ip下的主机设置账户
-create user "ceshi102"@"%" identified by "333";
+# 001给具体某个物理机ip(win下)设置一个账户,连接ubuntu上的mysql
+create user 'ceshi100'@'192.168.235.1' identified by '111';
+# ceshi100是用户名,111是密码  192.168.235.1是win下的vmnet8的ip地址
+# 1 在ubuntu下的登录mysql后,执行上述sql后,接着执行下面的sql后,表示远程连接
+#    ubuntu下的mysql成功了
+
+SELECT User, Host FROM mysql.user;
++---------------+-----------------+
+| User          | Host            |
++---------------+-----------------+
+| ceshi102      | %               |
+| ceshi103      | %               |
+| ceshi110      | %               |
+| root          | %               |
+| ceshi100      | 192.168.235.1   |
+
+# 2 win下cmd下,远程连接ubuntu下的mysql?
+mysql -uceshi100 -p -h192.168.235.128
+## ubuntu下的mysql本身的root/123456是可以通过win下的cmd连接ubuntu下的mysql,除此之外
+#   192.168.235.128是ubuntu的ip地址  输入密码111后
+# 就在win下的cms,成功连接到了ubuntu下的mysql
+# 注意点:如果ceshi100      | 192.168.235.1 已经成功添加了,再次执行
+#  create user 'ceshi100'@'192.168.235.1' identified by '111';会提示报错,已经添加了
+
+# 4 navicat如何远程连接ubuntu下的mysql?
+# ubuntu下的mysql本身的root/123456是可以通过Navicat连接ubuntu下的mysql,除此之外
+# navicat下用户名ceshi100 密码111 ip地址192.168.235.128可以成功远程连接ubuntu下的mysql
+
+
+# 4如何删除ceshi100      | 192.168.235.1这个远程连接的用户名和密码?
+drop user 'ceshi100'@'192.168.235.1';
+# 注意点:delete from mysql.user where User = 'ceshi100'; 执行这个句子是不能彻底将ceshi100这个记录删除的
+
+#参考资料
+# https://phoenixnap.com/kb/how-to-create-new-mysql-user-account-grant-privileges
+# https://phoenixnap.com/kb/remove-delete-mysql-user
+# DROP USER 'username'@'localhost';
+
+# 002给具体192.168.126.% 这个网段下的所有ip设置账户
+create user 'ceshi101'@'192.168.235.%' identified by '222';
+
+# 003给所有ip下的主机设置账户
+create user 'ceshi102'@'%' identified by '333';  #
+create user 'ceshi110'@'%' identified by '333';  #
+
+# 远程连接账号,比如:ceshi100/111成功创建后,通过win下cmd或者Navicat成功连接后
+# 发现该连接账号连查看数据库的权限都没有,需要给该连接账号添加各种权限,否则连接成功后,没有权限,无法使用
 
 USAGE 没有任何权限
 # 查看具体某个ip下的用户权限
-show grants for "ceshi102"@"%";
-+--------------------------------------+
-| Grants for ceshi102@%                |
-+--------------------------------------+
-| GRANT USAGE ON *.* TO 'ceshi102'@'%' |
-+--------------------------------------+
+mysql> show grants for 'ceshi102'@'%';
+# +--------------------------------------+
+# | Grants for ceshi102@%                |
+# +--------------------------------------+
+# | GRANT USAGE ON *.* TO 'ceshi102'@'%' |
+# +--------------------------------------+
+
+mysql> show grants for 'ceshi100'@'192.168.235.1';
+# | Grants for ceshi100@192.168.235.1                |
+# +--------------------------------------------------+
+# | GRANT USAGE ON *.* TO 'ceshi100'@'192.168.235.1'
 
 # 授权语法
 grant 权限 on 数据库.表 to "用户名"@"ip地址" identified by "密码";
-# """
 # select  查询数据的权限
 # insert  添加数据的权限
 # update  更改数据的权限
 # delete  删除数据的权限
 # *       所有
-# """
+
 # 授予查询权限
-grant select,insert on *.* to "ceshi102"@"%" identified by "333";
+grant select,insert on *.* to 'ceshi102'@'%' identified by '333';
+grant select,insert on *.* to 'ceshi100'@'192.168.235.1' identified by '111';
+
 # 授予所有权限
-grant all on *.* to "ceshi102"@"%" identified by "333";
+grant all on *.* to 'ceshi102'@'%' identified by '333';
+grant all on *.* to 'ceshi100'@'192.168.235.1' identified by '111';
+
+# 查看具体某个ip下的用户权限
+mysql> show grants for 'ceshi100'@'192.168.235.1';
+# | Grants for ceshi100@192.168.235.1                         |
+# +-----------------------------------------------------------+
+# | GRANT ALL PRIVILEGES ON *.* TO 'ceshi100'@'192.168.235.1'
+
 # 移除删除权限(删除数据库/表)
-revoke drop on *.* from "ceshi102"@"%"
+revoke drop on *.* from 'ceshi102'@'%';
+revoke drop on *.* from 'ceshi100'@'192.168.235.1';
+
 # 移除所有权限
-revoke all on *.* from "ceshi102"@"%"
+revoke all on *.* from 'ceshi102'@'%';
+revoke all on *.* from 'ceshi100'@'192.168.235.1';
+
 # 刷新权限,立刻生效
-flush privileges
+flush privileges;
+
+# 注意点：1 如果先授予所有权限，然后接着授予查询权限，结果还是所有权限（以最高权限为准---）
+#         需要先移除所有权限后，再授予查询权限
+#         2 如果先授予查询权限，然后接着授予所有权限，结果是所有权限
+
 
 # ### part4 [必须熟练]
 # """
@@ -169,8 +237,9 @@ flush privileges
 增:
 	# 一次插入一条数据
 	insert into t1(id,name) values(1,'abcd');
+	insert into t1(id,name) values(2,'abc');
 	
-	# 一次插入多条数据
+	# 一次插入多条数据  #了解 用的不多
 	insert into t1(id,name) values(2,"王文"),(3,"刘文波"),(4,"康裕康"),(5,"张保障");
 	
 	# 不指定具体字段,默认把所有字段全部插一遍
@@ -198,7 +267,7 @@ flush privileges
 	# 删除的时候,必须加上where
 	delete from t1 where id = 1;
 	
-	# 删除所有数据,一删全删,一定加where
+	# 删除所有数据,一删全删,一定加where（id不重置）
 	delete from t1;
 	
 	# 删除所有 (数据+重置id)
@@ -207,9 +276,9 @@ flush privileges
 # ### part5 常用数据类型
 
 # 1整型
-tinyint  1个字节  有符号范围(-128~127) 无符号(0~255) unsigned   小整型值
+tinyint  1个字节-8位   有符号范围(-128~127) 无符号(0~255) unsigned   小整型值
 							 -2^7~2^7-1	      0~2^8-1
-int      4个字节  有符号范围(-21亿 ~ 21亿左右)  无符号(0~42亿) 大整型值
+int      4个字节-32位  有符号范围(-21亿 ~ 21亿左右)  无符号(0~42亿) 大整型值
 							 -2^31~2^31-1		0~2^32-1       默认有符号
 
 	create table t3(id int , sex tinyint);
@@ -282,9 +351,9 @@ set   集合 : 从列出来的数据当中选多个 (爱好) #多选  去重无�
 create table t8( 
 id int , 
 name varchar(10) ,
-sex enum("男性","兽性","人妖") , 
+sex enum("男性","兽性","人妖") ,    #枚举 单选
 money float(5,3) , 
-hobby set("吃肉","抽烟","喝酒","打麻将","嫖赌")  
+hobby set("吃肉","抽烟","喝酒","打麻将","嫖赌")  #set集合  多选 自动去重
 );
 
 # 正常写法

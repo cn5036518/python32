@@ -21,6 +21,9 @@
 				# like "%b%" 匹配字符串中含有b的任意长度的内容
 				# like "__b" 匹配总长度为3个字符,任意内容的字符串,并且以b结尾
 				# like "b_"  匹配总长度为2个字符,任意内容的字符串,并且以b开头
+				
+		# 注意点:
+			# where 后面不能写max(name),不能有(),写别名max_name
 	# """
 	
 	# 1. 查询部门是sale的所有员工姓名:
@@ -38,7 +41,7 @@
 	# 5. 查看岗位描述为NULL的员工信息
 	select emp_name from employee where post_comment = null;
 	select emp_name from employee where post_comment = '';
-	select emp_name from employee where post_comment is null;  #正确
+	select emp_name from employee where post_comment is null;  #正确 null是关键字，不能用= 要用is
 	
 	# 6. 查看岗位描述不为NULL的员工信息
 	select emp_name from employee where post_comment is not null;
@@ -69,8 +72,10 @@
 	
 # 二.group by 子句 分组分类
 	# """group by 字段,对数据进行分类, by后面接什么字段,select后面就搜什么字段"""
+	#group by后面的字段.select后面必须有(如果有聚合函数的话,select后面可以只接聚合函数).  
+	#select后面有的,group by后面可以没有
 	select sex from  employee group by sex;
-	# group_concat 按照分组把对应字段拼在一起;
+	# group_concat 按照分组把对应字段拼在一起(适用于一对多);
 	select group_concat(emp_name),post from  employee group by post;
 	# 查询每个部门的员工姓名   (一个部门有多个员工)
 	# | post                                    | group_concat(emp_name)                                  |
@@ -116,7 +121,7 @@
 		select sum(salary) from employee;
 		
 	# 1. 查询部门名以及各部门的平均薪资
-	select avg(salary),post from employee group by post;
+	select avg(salary),post from employee group by post;  #各部门- group by
 	
 	# 2. 查询部门名以及各部门的最高薪资
 	select max(salary),post from employee group by post;
@@ -258,6 +263,7 @@
 		# (1) sql语句当中又嵌套了另外一条sql,用括号()进行包裹,表达一个整体
 		# (2) 一般用在from子句,where子句... 身后,表达一个条件或者一个表
 		# (3) 速度快慢: 单表查询 > 联表查询 > 子查询;
+		# 注意点:  子查询语句写在from后,必须要给子查询语句加别名  
 	# """
 	
 		department;

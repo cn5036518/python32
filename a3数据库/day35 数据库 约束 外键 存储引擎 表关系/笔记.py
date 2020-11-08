@@ -76,7 +76,7 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	insert into t6(id) values(1); error
 	# Duplicate entry '1' for key 'id'
 	insert into t6(id) values(null);
-	insert into t6(id) values(null); # id变成了多个null  #注意2
+	insert into t6(id) values(null); # id变成了多个null  #注意2--特例
 	# |    1 | 赵万里    |
 	# | NULL | 赵万里    |
 	# | NULL | 赵万里
@@ -187,7 +187,7 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	 # Duplicate entry '192.168.11.252-80' for key 'ip'
 
 	
-	# unique : 有可能出现多个空值的情况要注意;
+	# unique : 有可能出现多个空值的情况要注意;--特例
 	create table t2_server(id int , 
 	server_name varchar(10)  not null , 
 	ip varchar(15) ,  #ip port 没有定义not null
@@ -260,7 +260,7 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 		#主键和unique的区别
 			# 主键= 唯一+not null  只能有一个主键primary key字段
 					# ip和port没有写not null,一旦指定联合唯一主键,自动就是not null
-			# unique 可以是null 也可以有多个unique字段		
+			# unique 可以是null，可以是多个null 也可以有多个unique字段		
 	# """
 	
 	
@@ -269,19 +269,19 @@ timestamp YYYYMMDDHHMMSS(时间戳)  自动更新时间
 	# """  
 		# 语法:	foreign key(classid) references class1(id)  
 		
-		# 语法:	foreign key(表1的字段名) references 表2名(表2的字段名)  
+		# 语法:	foreign key(表1的字段名-外键字段) references 表2名(表2的字段名)  
 		# 条件:	被关联的字段,必须具备唯一属性(unique或者主键);
 	# """
 	student1:
 		id  name          age    classid(外键)      
 		1  	wangtongpei   58     1
 		2   liuyifeng     85     1
-		3   wangwen       18     2
+		3   wangwen       18     2# (先删除这行)
 	
 	class1:
 		id classname 
 		1  python32
-		2  python33
+		2  python33 #（再删除这行，否则报错）
 	
 	
 	# 创建class1
@@ -418,7 +418,7 @@ xid sid
 事务处理: 执行sql语句时,必须所有的操作全部成功,才最终提交数据,
           有一条失败,直接回滚,恢复到操作之前的状态
 begin     : 开启事务  #每次只能用一次,下次还需要手动敲,否则,未开启事务,无法回滚  注意点
-# delete删除记录,在commit前,可以rollback,  但是truncate清空表或者直接drop删除表,无法回滚--
+# delete删除记录,在commit前,可以rollback,  但是1truncate清空表 2直接drop删除表 3新建表,无法回滚--
 commit    : 提交数据
 rollback  : 回滚数据
 
@@ -470,7 +470,7 @@ create table blackhole( id int ) engine=BLACKHOLE;
 	
 # 4 添加/删除 foreign key 外键 (先通过desc 表 找到外键名字,然后再删)
 	alter table student1 drop foreign key student1_ibfk_1; #删除
-	alter table student1 add foreign key(classid) references class1(id) #添加
+	alter table student1 add foreign key(classid) references class1(id) #添加外键
 	
 	
 	
