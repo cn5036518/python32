@@ -164,7 +164,7 @@ cursor.scroll(0,mode='absolute')
 res = cursor.fetchone()
 print(res)
 # {'id': 1, 'first_name': '王', 'last_name': '键', 'sex': 0, 'age': 15, 'money': 20000.0}
-print('---------------------4-4-2')
+print('---------------------4-4-21')
 
 conn.commit()
 cursor.close()
