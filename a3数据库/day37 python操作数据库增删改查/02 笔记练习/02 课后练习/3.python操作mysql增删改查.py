@@ -26,7 +26,7 @@ cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
 # 1.增
 # """
 sql = "insert into t1(first_name,last_name,sex,age,money) values(%s,%s,%s,%s,%s)"
-# 注意点:主键自增的,insert的时候,t1后面必须列出sex,age等字段,省略字段可能会报错
+# 注意点:主键自增的,insert的时候,t1后面必须列出sex,age等字段,t1后面省略全部字段可能会报错
 # (1) 一次插入一条   #参数2是元组
 res = cursor.execute( sql , ("孙","健",0,15,20000)  )
 print(res) # 1  #返回插入成功的条数
@@ -88,7 +88,7 @@ else:
 # 01 修改单条记录
 sql = "update t1 set first_name = '王' where id = %s"
 res = cursor.execute(sql,(2,)) #参数2是元组
-print(res)  # 返回的是4,代表修改成功了4条
+print(res)  # 返回的是1,代表修改成功了1条
 
 if res:
 	print('修改成功')
@@ -130,7 +130,7 @@ res = cursor.fetchmany()
 # 默认获取的是一条数据,返回列表,里面是一组一组的字典;
 # 注意点:获取的数据是从上面fetchone之后的数据 类似生成器
 # 上面fetchone获取第1 2条数据,这里就从第3条数据开始获取
-data = cursor.fetchmany(3)
+data = cursor.fetchmany(3)  #获取3条数据
 print(data)
 # """
 [

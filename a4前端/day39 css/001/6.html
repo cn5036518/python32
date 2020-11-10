@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪类选择器</title>
+    <style>
+        /* 鼠标悬停的时候触发 */
+        a:hover
+        {color:teal;}
+        /* 列表中第一个元素 */
+        ul li:first-child
+        {color:yellow;}
+        /* 列表中最后一个元素 */
+        ul li:last-child
+        {color:green;}
+        /* 列表中具体某一个元素 */
+        ul li:nth-child(4)
+        {color: red;}
+        /*  偶数个2n / even   奇数个2n-1 / odd n不可换 */
+        ul li:nth-child(even)
+        {color:turquoise;}
+        ul li:nth-child(odd)
+        {color:violet;}
+    
+    </style>
+</head>
+<body>
+    
+    <a href="#"> 老男孩教育 </a>
+    <ul>
+        <li>马春妮</li>
+        <li>孙坚</li>
+        <li>晓东</li>
+        <li>文东</li>
+        <li>王伟</li>
+        <li>好心</li>
+        <li>蜂拥</li>
+        <li>倩倩</li>
+        <li>石超</li>
+        <li>帅帅</li>
+    </ul>
+
+    <!--
+    小练习:
+        1.写一个table表格,设置一个背景色
+        2.偶数行颜色为蓝色
+        3.第3 , 6 , 9   3被行颜色为黄色
+        4.鼠标滑过时,颜色变成红色
+    -->
+
+</body>
+</html>

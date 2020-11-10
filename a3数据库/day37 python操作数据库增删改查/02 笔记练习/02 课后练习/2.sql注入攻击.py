@@ -27,7 +27,7 @@ sql11 = "insert into usr_pwd values(1,'jack','123')"  #单双引号需要岔开
 # res = cursor.execute(sql11)  #插入一条数据  
 #注意点:必须要在表里插入至少一条数据.否则无法模拟sql注入
 
-sql2 = "select * from usr_pwd where username='%s' and password='%s' " % (user,pwd)
+sql2 = "select * from usr_pwd where username='%s' and password='%s' " % (user,pwd)  #这个写法会出现sql注入
 print(sql2)
 res = cursor.execute(sql2)
 print(res) # 1查到成功 0没查到失败
@@ -64,7 +64,7 @@ database="db005")
 cursor = conn.cursor()
 sql = "select * from usr_pwd where username=%s and password=%s"
 # 单双引号需要岔开
-res = cursor.execute(sql , (user,pwd)  )
+res = cursor.execute(sql , (user,pwd)  )  #参数1是sql语句 参数2是元组
 # 参数2是元组
 print(res)
 

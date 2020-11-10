@@ -194,13 +194,15 @@ where
 4、查询平均成绩大于八十分的同学的姓名和平均成绩
 # 方法1  子查询
 # 1 查询每个同学的平均成绩
+# 1 查询每个同学的平均成绩
 select
 	t1.sid,t1.sname,avg(num) as avg_num
 from 
 	student as t1,course as t2,score as t3
 where 
 	t3.student_id = t1.sid and t3.course_id = t2.cid
-group by t1.sid,t1.sname;
+group by t1.sid,t1.sname  #01先连3个表形成一个大表,02然后分组计算每个同学的平均成绩 group by+avg()
+having avg_num >80;  #03 分组后二次过滤having
 
 | sid | sname  | avg_num |
 +-----+--------+---------+
@@ -218,21 +220,50 @@ group by t1.sid,t1.sname;
 |  12 | 如花   | 74.2500 |
 |  13 | 刘三   | 87.0000 |
 
-# 2 查出平均成绩大于八十分的
-select avg_num from t11 wherer avg_num > 80;
-
-# 3 综合拼装子查询
-select t1.sname,t1.avg_num from (select
-	t1.sid,t1.sname,avg(num) as avg_num
-from 
-	student as t1,course as t2,score as t3
-where 
-	t3.student_id = t1.sid and t3.course_id = t2.cid
-group by t1.sid,t1.sname) as t11 where t1.avg_num > 80;
 | sname  | avg_num |
 +--------+---------+
 | 张三   | 82.2500 |
 | 刘三   | 87.0000 
+
+# select
+	# t1.sid,t1.sname,avg(num) as avg_num
+# from 
+	# student as t1,course as t2,score as t3
+# where 
+	# t3.student_id = t1.sid and t3.course_id = t2.cid
+# group by t1.sid,t1.sname;
+
+# | sid | sname  | avg_num |
+# +-----+--------+---------+
+# |   1 | 理解   | 40.2500 |
+# |   2 | 钢蛋   | 58.3333 |
+# |   3 | 张三   | 82.2500 |
+# |   4 | 张一   | 64.2500 |
+# |   5 | 张二   | 64.2500 |
+# |   6 | 张四   | 69.0000 |
+# |   7 | 铁锤   | 66.0000 |
+# |   8 | 李三   | 66.0000 |
+# |   9 | 李一   | 67.0000 |
+# |  10 | 李二   | 74.2500 |
+# |  11 | 李四   | 74.2500 |
+# |  12 | 如花   | 74.2500 |
+# |  13 | 刘三   | 87.0000 |
+
+2 查出平均成绩大于八十分的
+# select avg_num from t11 wherer avg_num > 80;
+
+3 综合拼装子查询
+# select t1.sname,t1.avg_num from (select
+	# t1.sid,t1.sname,avg(num) as avg_num
+# from 
+	# student as t1,course as t2,score as t3
+# where 
+	# t3.student_id = t1.sid and t3.course_id = t2.cid
+# group by t1.sid,t1.sname) as t11 where t1.avg_num > 80;
+# | sname  | avg_num |
+# +--------+---------+
+# | 张三   | 82.2500 |
+# | 刘三   | 87.0000 
 
 # select avg_num from (select
 	# t1.sid,t1.sname,avg(num) as avg_num
@@ -279,6 +310,163 @@ select count(*) from teacher where tname like '李%';
 # |        2 |
 
 7、 查询没有报李平老师课的学生姓名
+# 方法2 not in  推荐  比方法1的左连接更简洁
+# 1 连4个表
+select
+	*
+from 
+	student as t1,course as t2,score as t3,teacher as t4
+where 
+	t3.student_id = t1.sid 
+	and t3.course_id = t2.cid
+	and t2.teacher_id = t4.tid;
+	
+select
+	distinct(t1.sid)
+from 
+	student as t1,course as t2,score as t3,teacher as t4
+where 
+	t3.student_id = t1.sid 
+	and t3.course_id = t2.cid
+	and t2.teacher_id = t4.tid;
+
+# 1 所有报课学生的sid
+| sid |
++-----+
+|   1 |
+|   2 |
+|   3 |
+|   4 |
+|   5 |
+|   6 |
+|   7 |
+|   8 |
+|   9 |
+|  10 |
+|  11 |
+|  12 |
+|  13 |
+
+select
+	distinct(t1.sid)
+from 
+	student as t1,course as t2,score as t3,teacher as t4
+where 
+	t3.student_id = t1.sid 
+	and t3.course_id = t2.cid
+	and t2.teacher_id = t4.tid
+	and t4.tname = '李平';
+	
+# # 2 所有报李平老师课学生的sid
+| sid |
++-----+
+|   1 |
+|   3 |
+|   4 |
+|   5 |
+|   6 |
+|   7 |
+|   8 |
+|   9 |
+|  10 |
+|  11 |
+|  12 |
+|   2 |
+
+select
+	distinct(t1.sid)
+from 
+	student as t1,course as t2,score as t3,teacher as t4
+where 
+	t3.student_id = t1.sid 
+	and t3.course_id = t2.cid
+	and t2.teacher_id = t4.tid
+	and t1.sid not in (1,2,3,...12);
+
+
+#综合拼接
+select
+	# distinct(t1.sid)
+	distinct(t1.sid),t1.sname
+from 
+	student as t1,course as t2,score as t3,teacher as t4
+where 
+	t3.student_id = t1.sid 
+	and t3.course_id = t2.cid
+	and t2.teacher_id = t4.tid
+	and t1.sid not in (select
+						distinct(t1.sid)
+					from 
+						student as t1,course as t2,score as t3,teacher as t4
+					where 
+						t3.student_id = t1.sid 
+						and t3.course_id = t2.cid
+						and t2.teacher_id = t4.tid
+						and t4.tname = '李平');						
+# +-----+--------+
+# | sid | sname  |
+# +-----+--------+
+# |  13 | 刘三   |
+
+select 
+	*
+from 
+	student as t1 left join t2 on t1.sid = t2.sid;
+
+select 
+	t1.sid,t1.sname,t2.num
+from 
+	student as t1 left join (select
+	t1.sid,t1.sname,t2.cname,t3.num
+from 
+	student as t1,course as t2,score as t3
+where 
+	t3.student_id = t1.sid and t3.course_id = t2.cid) as t2 on t1.sid = t2.sid;
+
+# 4没报课的学生(一门课都没报),  --刘一 刘二 刘四
+# 这个前3步是内连接,看不出来,第4步,用student当主表 左连接成绩表score才能看到
+
+# 01 连接2个表成一个大表
+select	* from 	student as t1 left join score as t2	 on t1.sid = t2.student_id;
+# where t2.num is null;
+
+| sid | gender | class_id | sname  | sid  | student_id | course_id | num  |
++-----+--------+----------+--------+------+------------+-----------+------+
+|   1 | 男     |        1 | 理解   |    1 |          1 |         1 |   10 |
+|   1 | 男     |        1 | 理解   |    2 |          1 |         2 |    9 |
+|   1 | 男     |        1 | 理解   |    3 |          1 |         3 |   76 |
+|   1 | 男     |        1 | 理解   |    5 |          1 |         4 |   66 |
+|   2 | 女     |        1 | 钢蛋   |    6 |          2 |         1 |    8 |
+....
+|  12 | 女     |        3 | 如花   |   46 |         12 |         1 |   90 |
+|  12 | 女     |        3 | 如花   |   47 |         12 |         2 |   77 |
+|  12 | 女     |        3 | 如花   |   48 |         12 |         3 |   43 |
+|  12 | 女     |        3 | 如花   |   49 |         12 |         4 |   87 |
+|  13 | 男     |        3 | 刘三   |   52 |         13 |         3 |   87 |
+|  14 | 男     |        3 | 刘一   | NULL |       NULL |      NULL | NULL |
+|  15 | 女     |        3 | 刘二   | NULL |       NULL |      NULL | NULL |
+|  16 | 男     |        3 | 刘四   | NULL |       NULL |      NULL | NULL |
+
+# 02 对大表进行单表条件查询 (写在where后)  全部字段
+select	* from 	student as t1 left join score as t2	 on t1.sid = t2.student_id
+where t2.num is null;
+
+| sid | gender | class_id | sname  | sid  | student_id | course_id | num  |
++-----+--------+----------+--------+------+------------+-----------+------+
+|  14 | 男     |        3 | 刘一   | NULL |       NULL |      NULL | NULL |
+|  15 | 女     |        3 | 刘二   | NULL |       NULL |      NULL | NULL |
+|  16 | 男     |        3 | 刘四   | NULL |       NULL |      NULL | NULL
+
+#03 选取字段
+select	 t1.sid,t1.sname from 	student as t1 left join score as t2	 on t1.sid = t2.student_id
+where t2.num is null;
+| sid | sname  |
++-----+--------+
+|  14 | 刘一   |
+|  15 | 刘二   |
+|  16 | 刘四  
+
+#方式1  左连接
 select
 	*
 from 
@@ -2695,9 +2883,9 @@ where
 ```
 
 # 21题--nok
-# 24题未完成反刍--nok
+# 24题完成第1次反刍--ok
 
-
+#第2次反刍和优化到了第11题
 
 
 

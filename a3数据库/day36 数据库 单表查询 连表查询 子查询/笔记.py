@@ -72,9 +72,45 @@
 	
 # 二.group by 子句 分组分类
 	# """group by 字段,对数据进行分类, by后面接什么字段,select后面就搜什么字段"""
-	#group by后面的字段.select后面必须有(如果有聚合函数的话,select后面可以只接聚合函数).  
-	#select后面有的,group by后面可以没有
+	#group by后面的字段.select后面必须有(如果有聚合函数的话,select后面可以只接聚合函数).    #注意点
+	#select后面有的,group by后面可以没有,也可以有,需要看情况
+	# 
 	select sex from  employee group by sex;
+	
+	#group by的规律
+	select sex,count(*),id from  employee group by sex;  #会报错
+	# this is incompatible with sql_mode=only_full_group_by
+	# 原因:sex和id是一对多,如果是一对一是不报错的
+	
+	# 如果sex和id是一对多,用group_concat(id)即可
+	mysql> select sex,count(*),group_concat(id) from  employee group by sex;
+	# +--------+----------+------------------------+
+	# | sex    | count(*) | group_concat(id)       |
+	# +--------+----------+------------------------+
+	# | male   |       10 | 2,3,4,5,1,7,8,17,15,14 |
+	# | female |        8 | 18,16,13,12,11,10,9,6 
+	
+	select emp_name,count(*),id from  employee group by id;
+	select * from  employee group by id;   
+	# 这里不报错的原因:id这个字段是unique或者主键
+	# +--------------+----------+----+
+	# | emp_name     | count(*) | id |
+	# +--------------+----------+----+
+	# | egon         |        1 |  1 |
+	# | alex         |        1 |  2 |
+	# | wupeiqi      |        1 |  3 |
+	# | yuanhao      |        1 |  4 |
+	
+	# 结论:
+	# 1 group by 后面的id如果是unique或者主键,select可以是*或者任意字段
+		# select后面有的,group by后面可以没有
+	# 2 group by 后面的sex如果不是unique或者主键
+		# group by后面是sex,select后面只能是sex或者聚合函数,如果select后面写了id等其他字段
+		# 直接写,会报错  this is incompatible with sql_mode=only_full_group_by
+		# 此时用group_concat(id)就不会报错,可以解决一对多
+		
+		
+	
 	# group_concat 按照分组把对应字段拼在一起(适用于一对多);
 	select group_concat(emp_name),post from  employee group by post;
 	# 查询每个部门的员工姓名   (一个部门有多个员工)
@@ -130,7 +166,7 @@
 	select min(salary),post from employee group by post;
 	
 	# 4. 查询公司内男员工和女员工的个数
-	select count(*),sex from employee group by sex;
+	select count(*),sex from employee group by sex;  #个数 count(*)  +group by
 	
 	# 5. 查询部门名以及部门包含的所有员工名字  (一个部门有多个员工)
 	select group_concat(emp_name),post from employee group by post;
@@ -143,16 +179,17 @@
 
 # 三.having 在数据分类分组之后,对数据进行二次过滤,一般配合group by来使用的;
 	# 找出各部门平均薪资,并且大于10000
-	select post , avg(salary) from  employee group by post having avg(salary) > 10000
+	select post , avg(salary) from  employee group by post having avg(salary) > 10000  #各部门-group by  大于-having
 
-	# 1.查询各岗位(部门)内包含的员工个数小于2的岗位名、岗位内包含员工名字、个数
+	# 1.查询各岗位(部门)内包含的员工个数小于2的岗位名、岗位内包含员工名字、个数     #各部门-group by  小于-having
 	select post , group_concat(emp_name), count(*) from employee group by post having count(*) < 2;
+	# 一个部分含有多个员工，用group_concat
 	
 	# 2.查询各岗位(部门)平均薪资小于10000的岗位名、平均工资
 	select post , avg(salary) from employee group by post having avg(salary) < 10000
 	
 	# 3.查询各岗位(部门)平均薪资大于10000且小于20000的岗位名、平均工资
-	select post, avg(salary) from employee group by post having avg(salary) between 10000 and 20000
+	select post, avg(salary) from employee group by post having avg(salary) between 10000 and 20000  #左闭右闭
 	select post, avg(salary) from employee group by post having avg(salary) > 10000 and  avg(salary) < 20000;
 	
 	
@@ -196,6 +233,7 @@
 	
 # `### part2  多表查询
 	# 1.内联接 :  inner join  :  两表或者多表之间,把满足条件的所有数据查询出来 (多表之间共同拥有的数据会被查询出来)
+	#   把两个表的字段合在一起  比如：表a有5个字段，表b有2个字段，合在一起就是7个字段。
 		# 两表联查
 		select 字段 from 表1 inner join 表2 on 必要的关联条件   #on后面只写必要的关联条件,其他条件写在where后
 		# 多表联查
@@ -291,32 +329,35 @@
 	# 一.找出平均年龄大于25岁以上的部门
 	# (1) where
 	select 
-		d.id,d.name
+		d.id,d.name,avg(e.age)
 	from 
 		employee as e ,department as d
 	where
 		e.dep_id = d.id   #avg(e.age) 不可以用在where后  where后不能有小括号 avg_age
 	group by 
-		d.id,d.name
+		d.id,d.name   #各部门-group by
 	having
-		avg(e.age) > 25   #avg(e.age) 可以用在having后
+		avg(e.age) > 25;   #avg(e.age) 可以用在having后   大于-having
 		
 	# mysql> select d.id from employee as e,department as d where e.dep_id=d.id group by d.id having avg(e.age) > 25;
-	# +------+
-	# | id   |
-	# +------+
-	# |  201 |
-	# |  202 |
+# | id   | name         | avg(e.age) |
+# +------+--------------+------------+
+# |  201 | 人力资源     |    43.0000 |
+# |  202 | 销售         |    28.0000
 	
 	# (2) inner join 
 	select 
-		d.id,d.name
+		d.id,d.name,avg(e.age)
 	from 
 		employee as e inner join department as d on e.dep_id = d.id
 	group by 
 		d.id,d.name
 	having
-		avg(e.age) > 25
+		avg(e.age) > 25;
+	# | id   | name         | avg(e.age) |
+# +------+--------------+------------+
+# |  201 | 人力资源     |    43.0000 |
+# |  202 | 销售         |    28.0000
 		
 	department;
 	+------+--------------+
@@ -343,12 +384,33 @@
 	# (3) 子查询 
 	# 1.先找出平均年龄大于25岁的部门id
 	select dep_id from employee group by employee.dep_id having avg(age)>25; # 201 202
+	# select 
+		# dep_id 
+	# from 
+		# employee 
+	# group by 
+		# employee.dep_id 
+	# having 
+		# avg(age)>25; # 201 202
 	
 	# 2.通过部门的id找部门的名字
 	select name from department where id in (201,202);
 	
 	# 3.综合拼接:
 	select id , name from department where id in (select dep_id from employee group by employee.dep_id having avg(age)>25);
+	# select 
+		# id , name 
+	# from 
+		# department 
+	# where 
+		# id in (select 
+					# dep_id 
+				  # from 
+					# employee 
+				  # group by 
+					# employee.dep_id 
+				  # having 
+					# avg(age)>25);
 
 	# 二.查看技术部门员工姓名
 	| id | name      | sex    | age  | dep_id | id   | name         |
@@ -367,13 +429,15 @@ from
 where
 	e.dep_id = d.id
 	and
-	d.name = "技术"
+	d.name = "技术"  #1 先连成一个大表，然后对大表进行单表条件查询（条件写在where后）
 	
 	# (2) inner join 
 select 
 	e.id,e.name
 from
-	employee as e inner join department as d on e.dep_id = d.id 
+	employee as e 
+	inner join department as d 
+	on e.dep_id = d.id 
 where
 	d.name = "技术"
 	
@@ -408,6 +472,16 @@ where
 	
 	# (3) 综合拼接
 	select id,name from employee where dep_id = (select id from department where name = "技术");
+	# select 
+		# id,name 
+	# from 
+		# employee 
+	# where 
+		# dep_id = (select 
+						# id 
+					# from 
+						# department
+					# where name = "技术");
 	
 	# 三.查看哪个部门没员工
 	
@@ -415,19 +489,27 @@ where
 	select
 		d.id,d.name
 	from
-		department as d left join employee as e on d.id = e.dep_id
+		department as d 
+		left join employee as e 
+		on d.id = e.dep_id
 	where
 		e.dep_id is null	 #这里null是关键字,不能用= 需要用is
+		#1 先连成一个大表，然后对大表进行一次单表条件查询（条件写在where后）
 	
 	# 方法2:子查询 
 	# 1.找员工在哪些部门 (200  201  202 204)
 	select dep_id from employee  group by dep_id
 	
 	# 2.把不在该部门的员工找出来
-	select  id  from department where id not in (200,201,202,204);
+	select  id  from department where id not in (200,201,202,204);  #不在 not in
 	
 	# 3.综合拼接
 	select  id,name  from department where id not in (select dep_id from employee  group by dep_id);
+	# select id,name  
+	# from department 
+	# where id not in (select dep_id 
+					# from employee  
+					# group by dep_id);
 	
 	department;
 	+------+--------------+
@@ -442,21 +524,43 @@ where
 	+----+------------+--------+------+--------+
 	| id | name       | sex    | age  | dep_id |avg(age) 
 	+----+------------+--------+------+--------+
-	|  1 | egon       | male   |   18 |    200 |  18
-	|  2 | alex       | female |   48 |    201 |  43
-	|  3 | wupeiqi    | male   |   38 |    201 |  43
+	|  1 | egon       | male   |   18 |    200 |  28
+	|  2 | alex       | female |   48 |    201 |  28
+	|  3 | wupeiqi    | male   |   38 |    201 |  28
 	|  4 | yuanhao    | female |   28 |    202 |  28
-	|  5 | liwenzhou  | male   |   18 |    200 |  18
-	|  6 | jingliyang | female |   18 |    204 |  18
+	|  5 | liwenzhou  | male   |   18 |    200 |  28
+	|  6 | jingliyang | female |   18 |    204 |  28
 	+----+------------+--------+------+--------+
 	
 	# 四.查询大于平均年龄的员工名与年龄
+	# 方法1 子查询
 	# 假设已经知道了平均年龄;
 	select name,age from employee where age > 30;
 	# 计算平均年龄
-	select avg(age) from employee;
+	select avg(age) from employee;  #这里的聚合函数avg没有用group by 分组
 	# 综合拼接
 	select name,age from employee where age > (select avg(age) from employee);  #子查询必须有小括号
+	
+	# 方法2  连表
+	# 1计算平均年龄
+	select avg(age) from employee;  #这里的聚合函数avg没有用group by 分组  注意
+	| avg(age) |
+	+----------+
+	|  28.0000
+	
+	# 2 将平均年龄这个字段和表employee连表
+	#   相当于给表employee新加了一个字段
+	select 
+		* 
+	from
+		employee as t1,(select avg(age) as avg_age from employee) as t2
+	where and t1.age > t2.avg_age;  
+	
+	| id | name    | sex    | age  | dep_id | avg_age |
+	+----+---------+--------+------+--------+---------+
+	|  2 | alex    | female |   48 |    201 | 28.0000 |
+	|  3 | wupeiqi | male   |   38 |    201 | 28.0000
+	
 	
 	
 		department;
@@ -472,12 +576,12 @@ where
 	+----+------------+--------+------+--------+
 	| id | name       | sex    | age  | dep_id |avg(age) 
 	+----+------------+--------+------+--------+
-	|  1 | egon       | male   |   18 |    200 |  18
-	|  2 | alex       | female |   48 |    201 |  43
-	|  3 | wupeiqi    | male   |   38 |    201 |  43
+	|  1 | egon       | male   |   18 |    200 |  28
+	|  2 | alex       | female |   48 |    201 |  28
+	|  3 | wupeiqi    | male   |   38 |    201 |  28
 	|  4 | yuanhao    | female |   28 |    202 |  28
-	|  5 | liwenzhou  | male   |   18 |    200 |  18
-	|  6 | jingliyang | female |   18 |    204 |  18
+	|  5 | liwenzhou  | male   |   18 |    200 |  28
+	|  6 | jingliyang | female |   18 |    204 |  28
 	+----+------------+--------+------+--------+
 	
 	# 五.把大于其本部门平均年龄的员工名和姓名查出来
@@ -511,6 +615,13 @@ from
 	|  4 | yuanhao    | female |   28 |    202 |    202 |  28.0000 |
 	|  5 | liwenzhou  | male   |   18 |    200 |    200 |  18.0000 |
 	|  6 | jingliyang | female |   18 |    204 |    204 |  18.0000 |
+	
+# select 	*
+# from employee as t1 
+	# inner join (select dep_id , avg(age) as avg_age 
+				# from employee  
+				# group by dep_id) 
+	# as t2 on t1.dep_id = t2.dep_id
 
 	
 	# 4.最后做一次单表查询,让age > 平均值	
@@ -520,6 +631,14 @@ from
 	employee as t1 inner join (select dep_id , avg(age) as avg_age from employee  group by dep_id) as t2 on t1.dep_id = t2.dep_id
 where 
 	age >avg_age  #注意点:avg(age)中的()不能写在where后面,需要别名才行
+	
+# select 	*
+# from employee as t1 
+	# inner join (select dep_id , avg(age) as avg_age 
+				# from employee  
+				# group by dep_id) as t2 
+	# on t1.dep_id = t2.dep_id
+# where age >avg_age  #注意点:avg(age)中的()不能写在where后面,需要别名才行
 	
 	
 	# 六.查询每个部门最新入职的那位员工  # 利用上一套数据表进行查询;
@@ -548,7 +667,7 @@ where
 	+----+------------+--------+-----+------------+-----------------------------------------+--------------+------------+--------+-----------+
 	
 	# 1.找各部门的最新入职的时间
-	select post,max(hire_date) as max_date from employee group by post
+	select post,max(hire_date) as max_date from employee group by post;
 	
 	+-----------------------------------------+------------+
 	| post                                    | max_date   |
@@ -568,13 +687,29 @@ where
 		t1.hire_date = t2.max_date
 		
 	# 3.综合拼装
+# 方式1  inner join on
 select 
 	emp_name , max_date
 from
 	employee as t1 inner join (select post,max(hire_date) as max_date from employee group by post) as t2 on t1.post = t2.post
 where
-	t1.hire_date = t2.max_date   #注意点:max(hire_date)中的()不能写在where后面,需要别名才行   #连大表后,where加一个条件(大表单表查询)
+	t1.hire_date = t2.max_date;   #注意点:max(hire_date)中的()不能写在where后面,需要别名才行   #连大表后,where加一个条件(大表单表查询)
 	
+# select 	emp_name , max_date
+# from	employee as t1 
+	# inner join (select post,max(hire_date) as max_date 
+				# from employee 
+				# group by post) as t2 
+	# on t1.post = t2.post
+# where	t1.hire_date = t2.max_date
+
+# 方式2  where
+select 
+	emp_name , max_date
+from
+	employee as t1, (select post,max(hire_date) as max_date from employee group by post) as t2 
+where t1.post = t2.post 
+      and t1.hire_date = t2.max_date; 
 	
 	# 七.带EXISTS关键字的子查询
 	# """

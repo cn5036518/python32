@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单选框 , 复选框 , 下拉框</title>
+</head>
+<body>
+    <form>
+        <!-- 单选框 radio 单选 name名字要一致  checkedc:默认选中 -->
+        <input type="radio" name="sex" value="m" id="sex1"/> <label for="sex1">男性</label>
+        <input type="radio" name="sex" value="w" id="sex1" checked /> <label for="sex1">女性</label>
+        
+        <hr />
+        <!-- 复选框 checkbox 多选 name名字要一致 -->
+        <input type="checkbox" name="food" value="banana" checked/>香蕉
+        <input type="checkbox" name="food" value="huanggua" />黄瓜
+        <input type="checkbox" name="food" value="qiezi" checked/>茄子
+        <input type="checkbox" name="food" value="donggua" />冬瓜
+        <hr>
+
+        <!-- 输入input后回车 单向标签自动补全 -->
+         <!-- 下拉框 select 多选一 selected 默认选中, disabled 无法选中-->
+         <select name="city">
+            <option value="beijing">北京人</option>
+            <option value="xian" selected>西安人</option>
+            <option value="dalian">大连人</option>
+            <option value="fuzhou">福州人</option>
+            <option value="zhengzhou" disabled>郑州人</option>
+         </select>
+
+         <hr>
+         <input type="submit" value="点我">
+
+
+    </form>
+
+
+
+</body>
+</html>

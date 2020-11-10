@@ -7,14 +7,14 @@ import pymysql
 conn = pymysql.connect( host="127.0.0.1" , user="root" , password="123456" , database="db003" , charset="utf8" , port=3306 )
 
 # (2) 创建游标对象 (用来操作数据库的增删改查)
-cursor = conn.cursor()
+cursor = conn.cursor()  #默认是元组，可以设置成字典
 print(cursor)
 
 # (3) 执行sql语句
 sql = "select * from employee"
 # 执行查询语句返回的总条数
 res = cursor.execute(sql)
-print(res) 
+print(res)  #18
 
 # (4) 获取数据 fetchone 获取一条数据
 # 返回的是元组,里面包含的是第一条的完整数据
@@ -48,7 +48,7 @@ money float
 );
 """
 # res = cursor.execute(sql)
-# print(res) #0 返回值无意义
+# print(res) #0 创建表 返回值无意义
 
 # 2.查询表结构
 # """
@@ -63,7 +63,7 @@ print(res)  #获取第一个字段的信息
 res = cursor.fetchone()
 print(res)  #获取第2个字段的信息
 res = cursor.fetchone()
-print(res)
+print(res)  #获取第3个字段的信息
 
 # """
 # 3.删除表
@@ -71,13 +71,14 @@ print(res)
 try:
 	sql = "drop table t1"
 	res = cursor.execute(sql)
-	print(res) # 0 返回值无意义
+	print(res) # 0 删除表 返回值无意义
 except:
 	pass
 # """
 
 # ### 3.事务处理
 # """pymysql 默认开启事务的,所有增删改的数据必须提交commit,否则默认回滚;rollback"""
+# 新建表、删除表drop、清空表truncate 无法rollback
 conn = pymysql.connect(host="127.0.0.1",user="root",password="123456",database="db003")
 cursor = conn.cursor()
 sql1 = "begin"  #开启事务
