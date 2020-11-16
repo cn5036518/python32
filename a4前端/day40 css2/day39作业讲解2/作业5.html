@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业5</title>
+    <style>
+        *
+        {margin:0px;padding:0px; outline:none;}
+		
+        .main
+        {
+			width:460px;height:570px;
+			background: url("image/bg.png") no-repeat;
+			overflow: hidden;
+		}
+        
+		.main table
+        {margin-left:30px;margin-top:120px;}
+		
+        .main table tr
+        {}
+		
+        .main table tr td
+        { padding-bottom:15px; }
+		
+        .main table tr td p
+        {font-size:14px;font-weight: bold;color:#666666;}
+		
+        .main table tr td p img
+        {margin-left:5px;}
+		
+
+        /* background-color: transparent; 背景色透明  
+		outline:none; 光标聚焦的时边框none去掉; */
+		
+        .main table tr td p input
+        {width:300px;height:30px;line-height:30px;
+		background-color: transparent;border:none;}
+        
+		.p1
+        {margin-top:10px;width:385px;height:30px;line-height:30px;
+		border:solid 1px red;border:solid 1px #C8C8C8;}
+        
+		.p2
+        {background-color: transparent;width:385px;height:90px;
+		padding-top:5px;text-indent: 1.5em;}
+        
+		.p3
+        {position: relative;margin-top:10px;}
+        .p3 img
+        {position: absolute;top:5px;left:0px;}
+        
+		.p4
+		{width:114px;height:44px;
+			background: url("image/button.png") no-repeat;
+			border:none;
+		}
+        .p4:hover
+        {background-position: 0px -44px;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="" method="">
+        <table  cellpadding=0 cellspacing=0  >
+            <tr>
+                <td>
+                    <p>username:</p>
+                    <p class="p1">
+                        <img src="image/user.png" />
+                        <input type="text" value="" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>password:</p>
+                    <p class="p1">
+                        <img src="image/lock.png" />
+                        <input type="text" value="" /></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>email:</p>
+                    <p class="p1">
+                        <img src="image/mail.png" />
+                        <input type="text" value="" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>message:</p>
+                    <p class="p3">
+                        <img src="image/comment.png" />
+                        <textarea class="p2">123455667 </textarea>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="" class="p4" />
+					<!-- 这里的value显示按钮上的子,默认是提交二字 -->
+                </td>
+            </tr>
+
+        </table>
+        <form>
+        
+    </div>
+    
+</body>
+</html>

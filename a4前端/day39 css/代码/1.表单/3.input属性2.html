@@ -17,8 +17,21 @@
     autofocus    自动获取焦点, 整个页面只能有一个
     tabindex     设置tab的切换顺序 
     -->
+    <form action="">
+        用户名:<input type="text" name="username" id="" placeholder="请输入用户名" required>
+        <br>
+        密码:<input type="password" name="pwd" id="">
+        <br>
+        年龄:<input type="text" name="age" id="" value="18" readonly>
+        <br>
+        邮箱:<input type="text" name="email" id="" value="12345@qq.com" disabled>
+        <br>
+        班级:<input type="text" name="classroom" id="" size=100 maxlength=5 minlength=2>
+        <br>
+        国籍:<input type="text" name="country" id="" autofocus>
+        <br>
+        <input type="submit" value="提交">
 
-
-
+    </form>
 </body>
 </html>

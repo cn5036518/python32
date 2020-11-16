@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程控制 -> 分支结构</title>
+</head>
+<body>
+    <script>
+        // var mashengni = '美女';
+        //1.单项分支
+        // if(mashengni == '美女'){
+        //     alert('给他买好吃的');
+        // }
+
+         //2.双项分支
+        // if(mashengni == '野兽'){
+        //     alert('给他一榔头');
+        // }
+        // else{
+        //     alert('跳起来给他一榔头');
+        // }
+
+        //3.多项分支
+        // 不推荐判断条件连续比较,有可能失效;
+        var salary = 10001;
+        if(salary > 10000 && salary < 12000){
+            console.log('正常薪资范围');
+        }
+        else if(salary >= 12000 && salary < 15000){
+            console.log('超过一般水平');
+        }
+        else if(salary >= 15000 && salary < 18000){
+            console.log('大神级毕业生');
+        }
+        else if(salary >= 18000){
+            console.log('王牌毕业生');
+        }
+        else{
+            console.log('回炉重生');
+        }
+            
+        //4.巢状分支
+        var youqian = true;
+        var youfang = true;
+        if(youqian){
+            if(youfang){
+                console.log('我要嫁给你~');
+            }
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

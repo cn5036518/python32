@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 转换元素</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div
+        /* display:inline; 转换成行内元素 */
+        /* 从可以独占一行 到不能独占一行 */
+        {
+            display: inline;
+            border: solid 1px red;
+            width: 1000px;
+            height: 20px;
+        }
+
+        span
+        /* display:block; 转换成块状元素 独占一行 */
+        /* 从不能独占一行, 到可以独占一行 */
+        {
+            display: block;
+            width: 100px;
+            height: 30px;
+            border: solid 1px green;
+        }
+
+        a
+        /* display:inline-block; 转换成行内块状元素 */
+        /* 从不能设置宽和高 到可以 设置宽和高 */
+        {
+            display: inline-block;
+            width: 500px;
+            height: 30px;
+            border: solid 1px red;
+        }
+
+        p
+        /* display:none 隐藏元素 */
+        {
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 元素的分类:
+		行内元素 : inline   			span  a
+        块状元素 : block    			div h1-h6 p        
+        行内块状元素  : inline-block    button img imput
+		
+        标签的种类:
+            (1) 行内元素标签: 不能独占一行,不能设置宽和高,横向排列
+                例子: span a
+            (2) 块状元素标签: 独占一行,可以设置宽和高,纵向排列
+                例子: div h1~h6 p
+            (3) 行内块状标签: 不能独占一行,能设置宽和高,横向排列
+                例子: button img input
+    span 和 div 都属于无语义化标签,用来布局页面,划分页面结构
+    -->
+
+    <div>第一个div</div>
+    <div>第二个div</div>
+
+    <span>我是span1</span>
+    <span>我是span2</span>
+
+    <a href="#">我是链接1</a>
+    <a href="#">我是链接2</a>
+
+    <p>12345</p>
+</body>
+</html>

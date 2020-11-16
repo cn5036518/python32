@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>强制转换 - Number</title>
+</head>
+<body>
+    <script>
+        // 1. parseInt 强制转换成整型 
+        /* 要求: 字符串必须数字开头; */
+        var num = 1.93;   //1  "number"
+        var num = 'abc';  //NaN
+        var num = '123';  //123
+
+        var num = '123abc';//123
+        var num = 'abc123';//NaN
+        var num = '1.34abc';//1
+
+        var num = [];  //NaN 
+        var num = false  //NaN 
+
+        var res = parseInt(num);
+        console.log(res,typeof(res));
+
+         // 2.parseFloat 强制转换成浮点型
+        /* 要求: 字符串必须数字开头; */
+        var num = 100; //100
+
+        var num = 'abc'; //NaN
+        var num = '123'; //123
+        var num = '123abc'; //123
+        var num = 'abc123'; //NaN
+        var num = '1.34abc'; //1.34
+
+        var num = {};  //NaN 
+        var num = []; //NaN 
+        var num = true; //NaN 
+
+        var res = parseFloat(num);
+        console.log(res,typeof(res));
+
+         // 3.Number类型强转
+        /* 要求:必须是纯数字或者布尔类型*/
+        var a = false; //0
+        var a = '123.45'; //123.45 
+
+        var res = Number(a);
+        console.log(res,typeof(res));
+    </script>
+</body>
+</html>

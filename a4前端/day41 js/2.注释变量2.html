@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注释/变量</title>
+</head>
+<body>
+    <script>
+        // ###1 注释分为两类: (1) 单行注释 (2) 多行注释
+        // 我是单行注释
+        /* 我是多行注释 */
+
+           // ###2 变量
+        /* var的用作是划分当前变量的作用域 
+		不写var,默认声明全局的变量(即便是在函数内) */
+        var a = 1;
+        var a=1,b=2,c=3;
+        console.log(a);
+        console.log(b,c);
+
+        //js 浏览器按f12 console看打印结果
+
+         // ###3 变量的命名
+        //除了$特殊之外,其余和py一样
+        var $ = '特殊的变量名';
+        var $abc = 111;
+        console.log($);
+        console.log($abc);
+
+
+
+    </script>
+
+
+
+</body>
+</html>

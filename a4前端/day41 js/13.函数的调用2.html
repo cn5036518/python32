@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的调用</title>
+</head>
+<body>
+    <script>
+        function func(){
+            console.log('函数正在执行');
+        }
+
+        // 1.正常调用
+        func();  //函数正在执行
+
+        // 2.函数的立即执行
+        //立即执行:函数定义的时候,就同步调用执行了
+        (function func(){
+            console.log('函数正在执行2');
+        })();  //函数正在执行2
+
+        // 3.匿名函数的立即执行
+        // 这里是省略了函数的名字
+        (function(){
+            console.log('匿名函数正在执行3')
+        })();  //匿名函数正在执行3
+        
+        // var res = function(){
+        //     console.log('我是func2');
+        // }
+        // res(); 
+        //res是匿名函数的名字
+
+        // 4.其他立即执行的方法;
+        !function(){
+            console.log('我在执行4');
+        }();  //我在执行4
+
+        ~function(){
+            console.log('我在执行5');
+        }();  //我在执行5
+    </script>
+</body>
+</html>

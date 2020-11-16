@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js中的运算符</title>
+</head>
+<body>
+    <script>
+        // (1) ++ -- 递增,递减
+        // num++ 先赋值再自增
+        var num = 100;
+        var res = num++;
+        // 这里是先把num赋值给res,等待下一个num才会自增1
+        console.log(res,typeof(res));  //100
+        // var res = num; 
+        var res = num++; 
+        console.log(res,typeof(res)); //101
+
+        // ++num 先自增再赋值
+        var num = 100;
+        var res = ++num;
+        var res = ++num;
+        console.log(res,typeof(res)); //102
+
+        // (2) === !== (全等于,不全等于)比较两样东西1.比较值的大小 2.比较值的类型
+        var res = '1' == 1; //true
+        var res = '1' === 1; //false 类型不同
+        var res = '1' !== 1; //true
+        console.log(res,typeof(res));
+
+        // (3) && => and  ,  || => or   ,  ! => not
+        // python特殊.其余的语言都是&& || !
+        var num = 8;
+        if(num > 5 && num < 10){
+            console.log('ok1');  //ok1
+        }
+
+        if(num > 10 || num < 3){
+            console.log('ok2');
+        }
+
+        var num = 0;
+        if(!num){
+            console.log('ok3');//ok3
+        }
+
+         // (4) 三元(目)运算符 [ res = js: 表达式?真值:假值 ]    
+		//[ python :res = 正确 if 条件表达式 else 错误 ]
+        var age = 18;
+        var res = age >= 18 ? '成年人':'儿童';
+        console.log(res); //成年人
+    </script>
+</body>
+</html>

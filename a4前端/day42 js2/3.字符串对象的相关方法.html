@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串对象的相关方法</title>
+</head>
+<body>
+    <script>
+        var string = "to be or not to be";
+         //获取字符串长度 lengt
+        var res = string.length  //18
+        // var res = string[-1];  //undefined  不支持索引号负数
+        var res = string[1];  //o
+        console.log(res);
+
+        //1.清除两侧的空白 trim [ python的strip ]
+        var res = string.trim()
+        console.log(string)
+        console.log(res)
+
+        //2.获取首次出现的位置索引号 indexOf   [ python的find ]
+         /*找不到返回-1*/
+        var string = "to be or not to be";
+        var res = string.indexOf('z');  //-1
+        var res = string.indexOf('b');  //3
+        console.log(res); 
+
+        //3/最后一次出现的位置索引号 lastIndexOf 
+        /*找不到返回-1*/
+        var res = string.lastIndexOf('zz'); //-1
+        var res = string.lastIndexOf('o'); //14
+        console.log(res);
+
+        //4.连接字符串	concat	 [ python的 os.path.join  + ]
+        var res = string.concat("d:\\","python32\\","day42");
+        console.log(res);  //to be or not to be d:\python32\day42
+
+        //5.截取字符串 slice
+        /* string.slice(开始值,结束值) 字符串的切片  
+		留头舍尾  [支持逆向下标]*/
+        var string = "11122233e or not to be";
+        var res = string.slice(1,7);  //112223 
+        var res = string.slice(-5,-1);      // to b
+        // var res = string.slice(-5,-10); //截取不到返回空
+        console.log(res,"<==1==>")
+
+        //6.截取字符串 substr
+        /* string.substr(开始值,截取几个) */
+        var string = "11122233e or not to be";
+        var res = string.substr(3,4) //2223
+        console.log(res,"<==2==>")
+
+        //7.拆分字符串 split  [ python的 split ]
+        var string = "11122233e or not to be";
+        var res = string.split(" ")
+        console.log(res,"<==3==>")
+		//["11122233e", "or", "not", "to", "be"]
+
+        //8.大小写 toUpperCase toLowerCase
+        var string = "11122233e Or noT tO be";
+        res = string.toUpperCase(); //11122233E OR NOT TO BE
+        res = string.toLowerCase(); //11122233e or not to be
+        console.log(res,"<==4==>")
+
+        //9.search 匹配第一次找到的索引位置,找不到返回-1
+        var string = "aaabbb oldaoy ccc"
+        var res = string.search(/oldboy/)  //-1  oldboy前后的/是正则的起始格式
+		var res = string.search(/old/);  //7
+        console.log(res,"<==5==>")
+
+        //10.match 返回匹配的数据
+        /* /正则表达式/修饰符 g:全局匹配 i:不区分大小写 m:多行匹配  */
+		// g:全局匹配  和python的findall类似
+        var string = "我的电话是 : 13838384388 你的电话是: 13854381438"
+        var res = string.match(/\d{11}/);  // 匹配一个        
+        console.log(res)
+        console.log(res[0])//13838384388
+		
+		var res = string.match(/\d{11}/g); // 匹配多个,(需要修饰符加上g)
+		console.log(res);   //["13838384388", "13854381438"]
+        console.log(res[0]); //13838384388
+        console.log(res[1]); //13854381438
+
+        //11.字符串替换 replace
+        /* replace默认只替换一次 */
+        var string = "to be or not to be";
+        var res = string.replace("to","two") //two be or not to be
+        console.log(res,"<==6==>")       
+
+		// 如何替换全部?
+        // 方法一:
+        function myreplace(string,a,b){
+            /*
+                找最后一个to,如果找不到返回-1
+                如果能找到就不停的进行替换,直到-1为止,循环终止;
+            */
+            while(string.lastIndexOf(a) != -1){
+                //console.log(1)
+                string = string.replace(a,b);
+            }
+            return string;
+        }     
+        var string = "to be or not to be";   
+        var res = myreplace(string,"to","two")
+        console.log(res) // two be or not two be
+
+        // 方法二
+        var string = "to be or not to be";
+        var res = string.replace(/to/g,"two");// g:全局匹配  和python的findall类似
+        console.log(res) // two be or not two be
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
