@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="zouni">走你</button>
+<div id="d1">
+    <h1>xxxx</h1>
+
+</div>
+
+</body>
+<script src="jquery.js"></script>
+
+<script>
+
+
+    // 示例: 点击按钮插入a标签的示例
+
+    // 1 绑定事件
+    $('#zouni').click(function(){
+        // 2创建a标签
+        var a = $('<a>',{
+			text:'这还是个链接',
+			href:'http://www.baidu.com',
+			class:'link',
+			id:'baidu',
+			name:'baidu'
+	    })
+	    // 3 找到要插入a标签的外层标签
+	    // 4 插入a标签
+	    // $("#d1")[0].appendChild(a[0]);  
+		//原生js的方法,往标签内部的最后面插入元素
+	    $("#d1").append(a);
+
+    })
+
+
+
+
+
+
+
+
+</script>
+
+</html>

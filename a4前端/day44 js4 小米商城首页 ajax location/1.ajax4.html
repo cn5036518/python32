@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js版本的 ajax 网页无刷新技术</title>
+</head>
+<body>
+        <!-- AJAX异步数据传输:
+
+ajax,谐音“阿贾克斯”,是英文Asynchronous Javascript And XML,
+中文翻译为js与xml的异步传输技术.
+
+效果:在不刷新页面的情况下,请求到后台数据.也叫网页无刷新技术.
+
+ajax本质就是利用javascript提供的XMLHttpRequest对象 , 
+代替浏览器地址中传递参数请求服务器的过程
+
+api接口: 试用get方式获取天气数据;
+http://wthrcdn.etouch.cn/weather_mini?city=城市   -->
+
+        <input type="text" name="city" value="">
+        <button id="btn">查询</button>
+        <div id="info"></div>
+
+        <script>
+            var btn = document.querySelector('#btn'); //1获取button对象
+            console.log(btn);
+            btn.onclick = function(){ //绑定静态方法
+                var city = document.querySelector('input[name=city]');
+                console.log(city); //2获取input对象
+                console.log(city.value); //3 获取输入的城市名字           
+
+                // 1.创建ajax请求对象
+                var xhr = new XMLHttpRequest();
+                console.log(xhr)
+
+                // 2.打开连接
+                xhr.open('get',`http://wthrcdn.etouch.cn/weather_mini?city=${city.value}`);
+
+                //3. 发送请求
+                xhr.send();
+
+                // 4.每当 readyState 改变时，就会触发 onreadystatechange 事件
+                xhr.onreadystatechange = function(){
+                    // 服务端的状态码为4 ,  客户端的状态码为200 , 代表数据已经传输完毕;
+                    if(xhr.readyState == 4 && xhr.status == 200){
+                        console.log(xhr.responseText,typeof(xhr.responseText));  
+                        //string
+                        var res = JSON.parse(xhr.responseText);
+                        console.log(res,typeof(res))  //object
+
+                        // 获取一周天气数据
+                        var data_lst = res.data.forecast;//数组
+                        console.log(data_lst);
+
+                        // 拼装数据
+                        var content = `<table border=1 width=600>`;
+                        content += `<tr><th>天气</th> <th>天气</th></tr>`;
+                        // console.log(content);
+
+                        for(var i of data_lst){
+                            console.log(i);
+                            content += `<tr><th>${i.date}</th> <th>${i.type}</th></tr>`;
+                        }
+                        content += `</table>`;
+                        console.log(content);
+
+                        var info = document.querySelector('#info');
+                        console.log(info);  //获取div对象
+
+                        info.innerHTML = content;
+                    }
+                }
+            }
+        </script>
+</body>
+</html>

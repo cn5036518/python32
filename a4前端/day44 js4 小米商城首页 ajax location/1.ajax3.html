@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js版本的 ajax 网页无刷新技术 </title>
+</head>
+<body>
+     <!-- AJAX异步数据传输:
+
+ajax,谐音“阿贾克斯”,是英文Asynchronous Javascript And XML,
+中文翻译为js与xml的异步传输技术.
+
+效果:在不刷新页面的情况下,请求到后台数据.也叫网页无刷新技术.
+
+ajax本质就是利用javascript提供的XMLHttpRequest对象 , 
+代替浏览器地址中传递参数请求服务器的过程
+
+api接口: 试用get方式获取天气数据;
+http://wthrcdn.etouch.cn/weather_mini?city=城市   -->
+
+    <input type="text" name="city" value="">
+    <button id="btn">查询</button>
+    <div id="info"></div>
+
+    <script>
+        var btn = document.getElementById('btn');
+        //获取button对象
+        //定义btn的时候用var.后面就不能再用var了,用了就是再次定义
+        btn.onclick = function(){
+            var city = document.querySelector('input[name=city]');
+            console.log(city); //input 对象
+            console.log(city.value); //北京  城市名-输入的值
+
+            // 1.创建ajax请求对象
+            var xhr = new XMLHttpRequest();
+            console.log(xhr);
+
+             // 2.打开连接
+            // 获取的地址:http://wthrcdn.etouch.cn/weather_mini?city=北京
+            // 第三个参数可选 true 或者 false  
+			//默认true 代表异步 false 代表同步 可以不写
+            xhr.open('get',`http://wthrcdn.etouch.cn/weather_mini?city=${city.value}`)
+
+            // 3.发送请求
+            xhr.send();
+                     /*
+                readyState 存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+
+                0: 请求未初始化
+                1: 服务器连接已建立
+                2: 请求已接收
+                3: 请求处理中
+                4: 请求已完成，且响应已就绪
+            */
+
+            // 4.每当 readyState 改变时，就会触发 onreadystatechange 事件
+            xhr.onreadystatechange = function(){
+                // 服务端的状态码为4 ,  客户端的状态码为200 , 代表数据已经传输完毕;
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText,typeof(xhr.responseText));
+                    //string
+                    
+                   // 解析json格式的字符串 => js对象
+                   var res = JSON.parse(xhr.responseText) ;
+                //    console.log(res,typeof(res)); //objext
+                //    console.log(res.data.forecast); //数组
+
+                    // 获取一周天气数据
+                    var data_lst = res.data.forecast; //数组
+
+                    // 拼装数据
+                    var content = `<table border=1 width=600 >`;
+                    content += `<tr><th>天气</th> <th>天气</th></tr>`;
+                    // 表头字段
+
+                    for(var i of data_lst){
+                        console.log(i);
+                        content += `<tr><th>${i.date}</th> <th>${i.type}</th></tr>`;
+                    }
+                    content += `</table>`;
+                    console.log(content);  //拼写 console 不是content
+
+                    // 获取info节点对象
+                    var info = document.querySelector('#info');
+
+                    // 把表格数据插入到info div当中;显示到前端页面
+                    info.innerHTML = content;
+                }
+            }
+        }
+
+        // date: "17日星期二"
+// fengli: "<![CDATA[2级]]>"
+// fengxiang: "东北风"
+// high: "高温 11℃"
+// low: "低温 8℃"
+// type: "小雨"
+// __proto__: Object
+    </script>    
+</body>
+</html>
+

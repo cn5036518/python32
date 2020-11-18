@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="s1" disabled>
+
+<input type="text">
+<input type="password">
+
+</body>
+<script src="jquery.js"></script>
+<script>
+		var res = $(':enabled');  //  找到可操作的标签
+        console.log(res);
+        var res = $(':disabled'); //  找到不可操作的标签
+        console.log(res);
+</script>
+
+</html>

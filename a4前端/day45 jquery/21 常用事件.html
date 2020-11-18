@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dd{
+            background-color:red;
+            height:200px;
+            width:200px;
+        }
+        .xdd{
+            background-color:green;
+            height:200px;
+            width:200px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<input type="text" id="uname">
+
+<input type="text" id="xx">
+
+<select name="hobby" id="hobby">
+    <option value="1">康玉康老师</option>
+    <option value="2">张宝张老师</option>
+    <option value="3">沈思宇老师</option>
+
+</select>
+
+<div class="dd"></div>
+
+
+<input type="text" id="Inp">
+
+</body>
+<script src="jquery.js"></script>
+<script>
+
+// focus: 获取光标时触发的事件
+    $('#uname').focus(function(){
+        $(this).css({'background-color':'yellow'});
+
+    })
+//blur:  光标离开时触发的事件
+    $('#uname').blur(function(){
+        $(this).css({'background-color':'green'});
+
+    })
+
+// change: 域内容发生变化时触发的事件,在input标签中用的其实比较少,一般多用在select标签上
+    $('#xx').change(function(){
+        console.log($(this).val());
+    })
+
+
+    $('#hobby').change(function(){
+        //console.log($(this).text());
+        //console.log(this.options);  // 获取当前select标签对象所有option子标签对象
+        //console.log(this.selectedIndex);  // 选中的option标签的索引位置
+        console.log(this.options[this.selectedIndex].innerText);
+
+    })
+
+// hover:鼠标悬浮事件,对原生js的mouseenter和mouseout事件的封装
+$('.dd').hover(
+    // 鼠标进入时触发的事情
+    function(){
+        $(this).addClass('xdd');
+    },
+    // 鼠标离开时触发的事情
+    function(){
+        $(this).removeClass('xdd');
+    }
+
+)
+
+
+// input事件,只能用on绑定, 根据用户输入的内容,实时触发的动作
+$('#Inp').on('input',function(){
+    console.log($(this).val());
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

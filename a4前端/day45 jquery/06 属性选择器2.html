@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="c1" xx="lnh">
+        跟着老男孩老师学思想
+    </div>
+
+    <script>
+        // 通过属性名查找标签
+        $('[class]');
+        // $('[class]').css({'color':'red'});
+        $('[xx]'); // 自定义属性
+        // $('[xx]').css({'color':'red'});
+
+        //  通过属性名对应属性值来查找标签
+        $('[class="c1"]');
+        // $('[class="c1"]').css({'color':'red'});
+        // $('[class=c1]').css({'color':'red'});
+        $('[xx="lnh"]'); //自定义属性
+
+
+    </script>
+</body>
+</html>

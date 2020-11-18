@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐藏显示密码效果</title>
+</head>
+<body>
+    <input type="password" name="pwd" value="111" class="abcd" /> 
+	<button onclick="change()" id="btn" >点我显示密码</button>
+    
+    <div>
+        <img src="images/oneal1.jpg" />
+    </div>
+    
+    
+    <script>
+
+        // 效果1: 显示隐藏密码
+        var password = document.querySelector("input[name=pwd]")
+        console.log(password);//找到密码input对象
+        console.log(password.type);//password
+        console.log(password.name); //pwd
+        console.log(password.value); //111
+        console.log(password.className) //abcd
+		 // console.log(password.class);//undefined
+
+        function change(){
+            var btn = document.querySelector("#btn")
+            console.log(btn);// 获取button对象
+            if(password.type=="password"){
+                password.type = "text";
+                btn.innerHTML = "点我隐藏密码";
+            }else{
+                password.type= "password";
+                btn.innerHTML = '点我显示密码'; //和下面行等效
+                // btn.innerText = '点我显示密码';
+            }
+        }
+
+        // 效果2:点击换图片
+        var img = document.querySelector("img");
+        console.log(img)//获取img对象
+		
+		//方式2:对象.onclick  //方式1:onclick也可写在html的标签后
+        img.onclick = function(){
+            console.log(img.src) // http://127.0.0.1:5500/images/oneal1.jpg
+            var arr = img.src.split("/")
+            imgname = arr[arr.length - 1];  //数组不支持-1下标
+            console.log(arr); //["http:", "", "127.0.0.1:5500", "images", "oneal1.jpg"]
+            console.log(imgname);  //oneal1.jpg
+            
+            if(imgname == "oneal1.jpg"){
+                img.src = "images/bakeli.jpg";
+            }else{
+                img.src = "images/oneal1.jpg";
+            }
+
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

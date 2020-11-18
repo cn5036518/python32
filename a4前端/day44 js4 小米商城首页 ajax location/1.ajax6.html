@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js版本的 ajax 网页无刷新技术</title>
+</head>
+<body>
+    <input type="text" name="city" value="">
+    <button id="btn">查询</button>
+    <div id="info"></div>
+    <script>
+        // 1 获取button对象
+        var btn = document.querySelector('#btn');
+        console.log(btn);  
+
+        // 2 绑定方法
+        btn.onclick = function(){
+            //2 获取input对象
+            var city = document.querySelector('input[name=city]');
+            console.log(city);
+
+            //3 获取input对象输入的城市名
+            console.log(city.value);
+
+            // 1.创建ajax请求对象
+            var xhr = new XMLHttpRequest();
+            console.log(xhr);
+
+            // 2.打开连接
+            xhr.open('get',`http://wthrcdn.etouch.cn/weather_mini?city=${city.value}`);
+           
+            // 3.发送请求
+            xhr.send();  
+            // console.log(1);        
+
+            // 4.每当 readyState 改变时，就会触发 onreadystatechange 事件            
+                // 服务端的状态码为4 ,  客户端的状态码为200 , 代表数据已经传输完毕;
+                 // 解析json格式的字符串 => js对象
+             // 获取一周天气数据
+             // 拼装数据
+             // 获取info节点对象
+             // 把表格数据插入到info div当中;显示到前端页面
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.responseText);
+                    var res = JSON.parse(xhr.responseText);
+                    console.log(res,typeof(res));
+
+                    var data_lst = res.data.forecast;
+                    console.log(data_lst);  
+
+                    content = `<table border=1 width=600>`;
+                    content += `<tr><th>日期</th> <th>天气</th></tr>`;
+                    console.log(content);
+
+                    for(var i of data_lst){
+                        // console.log(i);
+                        content += `<tr><th>${i.date}</th> <th>${i.type}</th></tr>`;
+                    }
+                    content += `</table>`;
+
+                    var info = document.querySelector('#info');
+                    console.log(info);
+
+                    info.innerHTML = content;
+
+                }
+            }
+        }          
+    </script>    
+</body>
+</html>

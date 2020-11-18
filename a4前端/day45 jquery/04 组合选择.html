@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+
+<div class="c1">
+    xxxx
+</div>
+<div id="d1">
+    oooo
+</div>
+
+
+</body>
+// 引入js文件或者写js代码的时候,
+//最好写到html文件的最下方,但是要在html标签内部
+    <script src="jquery.js"></script>
+    <script>
+        // 示例  组合选择器
+        $("#d1,.c1");
+        $("#d1,.c1").css({'color':'red'});
+
+    </script>
+</html>
+
+

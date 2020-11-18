@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js事件</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box
+        {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            left: 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 1.事件的静态绑定 -->
+    <button onclick="func1()">按钮1</button>
+    <div class="box"></div>
+    <script>
+        var box = document.getElementsByClassName("box")
+        console.log(box); //数组
+
+        var box = document.getElementsByClassName("box")[0]; //获取div对象
+        var t;  //全局变量
+        console.log(box); //获取div对象
+
+        function func1(){
+            var left = parseInt(window.getComputedStyle(box).left);//转换成数字
+            console.log(left,typeof(left));//0 "number"
+            // console.log(box.style.left);
+
+            t = setInterval(function(){
+                left += 10;
+                box.style.left = `${left}px`;
+            },50)
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>

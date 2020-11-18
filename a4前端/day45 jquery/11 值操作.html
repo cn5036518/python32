@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input type="text" id="username">
+
+    <input type="radio" class="a1" name="sex" value="1">男
+    <input type="radio" class="a1" name="sex" value="2">女
+
+    <input type="checkbox" class="a2" name="hobby" value="1">抽烟
+    <input type="checkbox" class="a2" name="hobby" value="2">喝酒
+    <input type="checkbox" class="a2" name="hobby" value="3">烫头
+
+    <select name="city" id="s1">
+     <option value="1">北京</option>
+     <option value="2">上海</option>
+     <option value="3">深圳</option>
+    </select>
+
+    <select name="lover" id="s2" multiple>
+     <option value="1">波多</option>
+     <option value="2">苍井</option>
+     <option value="3">小泽</option>
+    </select>
+
+
+</body>
+<script src="jquery.js"></script>
+<script>
+
+    //示例: 简单验证用户输入内容长度的判断
+<!--    $('#username').blur(function(){-->
+<!--        var uname = $('#username').val();-->
+<!--        if (uname.length < 4){-->
+
+<!--            alert('太短了');-->
+<!--        }-->
+
+<!--    })-->
+
+    // 获取值
+    // $('#username').val(); //input type=text的普通文本输入框获取值
+	// 这里需要在f12的控制台敲这个代码,在pycharm没有绑定事件是获取不到的
+	// 注意点
+    // $('input:checked').val();  // input type=radio
+
+    // $(':checkbox:checked').val(); // input type=checkbox  
+	//通过val方法不能直接获取所有的被勾选的标签的value属性对应的值,
+	//只能获取第一个
+    // 所以,我们需要通过循环的方式来获取
+    /*
+    方式1:
+		var checkbox_list = $(':checkbox:checked');
+        for (var i of checkbox_list ){
+            console.log(i.value);
+        }
+
+        each循环-- js原生
+		var a = [11,22,33];
+        $.each(a,function(k,v){
+            console.log(k,v);
+        })
+
+        循环jq对象写法-- jq的写法
+        var checkbox_list = $(':checkbox:checked');
+        checkbox_list.each(function(k,v){
+            console.log(k,v.value);
+        })
+		
+    */
+
+
+    $('#s1').val();  // 单选下拉框获取值
+    $('#s1').val(['1']); // 单选下拉框设置值
+
+    $('#s2').val(); // 多选下拉框获取值
+    $('#s2').val(['2','3']); // 多选下拉框设置值
+
+
+    // 设置值
+    // $('#username').val('xxxxx'); 
+	// /input type=text的普通文本输入框设置值
+	
+    // $(':radio').val(['1']);   
+	//input type=radio设置值
+	
+    // $(':checkbox').val(['1','3']);  
+	// input type=checkbox设置值
+
+
+
+
+</script>
+
+
+<script>
+
+
+
+
+</script>
+
+
+</html>

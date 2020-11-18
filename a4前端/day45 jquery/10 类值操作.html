@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #d1{
+            color: tan;
+        }
+
+        .c4{
+            color:yellow!important;
+        }
+        span{
+            color:blue;
+        }
+
+
+        /*
+        优先级:
+            继承 0
+            div 1
+            id 100
+            内联样式优先级 1000
+            !important 最牛逼
+            相同优先级的,后面的覆盖前面的
+			数值越大 优先级越高
+        */
+
+
+
+
+        .c1{   /* 10 */
+          height:100px;
+          width:100px;
+          background-color:red;
+
+        }
+
+        .c2{
+          height:100px;
+          width:100px;
+          background-color:green;
+
+        }
+        .c3{
+            color:red;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="c1">
+    康玉康和张保张
+    秀!!!
+</div>
+
+<div class="c3">
+    div1
+    <span class="c4" id="d1" style="color:purple;">xxx</span>
+</div>
+
+
+</body>
+<script src="jquery.js"></script>
+<script>
+    $('.c1').addClass('c2');  // 动态添加类值
+    $('.c1').removeClass('c2');   // 删除类值
+    $('.c1').toggleClass('c2'); // 有就删除,没有就添加
+
+    // 网站的闪烁效果
+    setInterval(function(){$('.c1').toggleClass('c2');},100);
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

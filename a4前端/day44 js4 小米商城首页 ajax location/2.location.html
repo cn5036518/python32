@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM对象 location</title>
+</head>
+<body>
+    <button onclick="func1()">查看location对象</button>
+    <button onclick="func2()">跳转其他页面</button>
+    <button onclick="func3()">刷新页面</button>
+    <button onclick="func4()">过一秒再刷新页面</button>
+
+    <script>
+
+        function func1(){
+            /* 链接地址:  http://ip + 端口号 + 路径 + 参数 + 锚点 */
+            console.log(location);
+            console.log(`协议:${location.protocol}`);//协议:http:
+            console.log(`ip端口号:${location.host}`);//ip端口号:127.0.0.1:5500
+            console.log(`端口号:${location.port}`);//端口号:5500
+            console.log(`路径:${location.pathname}`);//路径:/2.location2.html
+            console.log(`获取锚点:${location.hash}`);
+			//http://127.0.0.1:5500/2.location2.html?a=1&b=2#id1
+            //获取锚点:#id1
+            console.log(`获取地址栏参数:${location.search}`);
+			 //http://127.0.0.1:5500/2.location2.html?a=1&b=2
+            //获取地址栏参数:?a=1&b=2
+            console.log(`完全地址:${location.href}`)
+			//完全地址:http://127.0.0.1:5500/2.location2.html?a=1&b=2
+        }
+
+        //跳转页面
+        function func2(){
+            // location.href = "http://www.baidu.com";方法一
+            location.assign("http://www.jd.com");
+        }
+
+        //刷新页面
+        function func3(){
+            location.reload();
+        }
+
+        // 过一秒再刷新页面
+        function func4(){
+            setTimeout(func3,1000);
+            console.log("我执行了...")
+        }
+
+        // 每过一秒刷新一下页面
+        /* 等待所有页面图片文字全部加载完毕之后,再去执行对应的代码 */
+        window.onload = function(){
+            func4()
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- hash: ""
+host: "127.0.0.1:5500"
+hostname: "127.0.0.1"
+href: "http://127.0.0.1:5500/2.location2.html"
+origin: "http://127.0.0.1:5500"
+pathname: "/2.location2.html"
+port: "5500"
+protocol: "http:"
+reload: ƒ reload()
+replace: ƒ ()
+search: ""
+toString: ƒ toString()
+valueOf: ƒ valueOf()
+Symbol(Symbol.toPrimitive): undefined
+__proto__: Location -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <ul>
+        <li class="c1">刘义沨</li>
+        <li>李亚锋</li>
+        <li id="singer">
+            <span class="s1">张磊1</span>
+            <span>张磊2</span>
+        </li>
+        <li>高华新</li>
+        <li class="superman">赵世超</li>
+        <li>杨元涛</li>
+    </ul>
+
+    <script>
+        var res = $('#singer').parent();
+        // 找该标签的父辈对象
+        // console.log(res);
+
+        var res = $('#singer').parents();
+        // 找到所有的直系祖先辈
+        // console.log(res);
+        // console.log(res.text());
+
+        var res = $('#singer').parentsUntil('body');
+        // console.log(res); //ul对象
+    // 直到找到符合某个选择器的标签为止,不包含该选择器对应的那个标签
+
+
+        var res = $('#singer').children();
+        // console.log(res)
+        // 找儿子辈的标签
+
+        var res = $('#singer').children('.s1');
+        // console.log(res)
+        // 对找到的儿子标签进行过滤 $("#singer").children('选择器');
+
+
+        var res = $('#singer').next();
+        // console.log(res)
+        // 找到下一个兄弟标签
+
+        var res = $('#singer').nextAll();
+        // console.log(res)
+        // 找到它下面的所有兄弟标签
+
+        var res = $('#singer').nextUntil('.superman');
+        // console.log(res)
+        // 找它下面的兄弟标签,直到找到符合某个选择器的标签为止,
+	//并且不包含该标签
+
+
+        var res = $('#singer').prev();
+        // console.log(res)
+        // 找到上一个兄弟标签
+
+        var res = $('#singer').prevAll();
+        // console.log(res)
+        // 找到它上面所有的兄弟标签
+
+        var res = $('#singer').prevUntil('.c1');
+        // console.log(res)
+        	// 找它上面的兄弟标签,直到找到符合某个选择器的标签为止,
+	//并且不包含该标签
+
+
+        var res = $('#singer').siblings();
+        // console.log(res);
+        // 找到所有兄弟标签,不包含自己
+
+        var res = $('#singer').siblings('.c1');
+        // console.log(res);
+    // 找到兄弟标签中符合选择器的兄弟标签
+
+
+        var res = $('ul').find('span');
+        // console.log(res);
+    // 找到后代中所有符合条件的标签
+
+
+        var res = $('li').first();
+        // console.log(res);
+        // 找到所有找到的标签中的第一个标签,获得的是jq对象
+
+        var res = $('li').last();
+        // console.log(res);
+        // 找到最后一个标签
+
+        var res = $('li').eq(0);
+        // console.log(res);
+        // 通过索引取值找到标签,拿到的是jq对象
+
+        var res = $('li')[0];
+        console.log(res);
+    //  通过索引取值找到标签,拿到的是原生DOM对象-js
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

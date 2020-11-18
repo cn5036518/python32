@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js控制css的相关属性</title>
+    <style>
+        .box
+        {
+            border: solid 1px red;
+        }
+
+        .box_new
+        {
+            position: absolute;
+            left: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="box1">点击我换颜色</button>
+    <button id="box2">点击我隐藏</button>
+    <button id="box3">点击我显示</button>
+    <button id="box4">点击边框换圆角</button>
+    <button id="box5">点击加样式</button>  
+    <!-- 重点 -->
+
+    <div class="box" 
+        style="width: 300px;
+            height: 200px; 
+            background-color: yellow;
+            font-size: 40px;">
+        你好评
+    </div>
+
+    <script>
+        var box = document.querySelector('.box');
+        console.log(box); //获取div对象
+
+        // js的dom对象获取相关的css属性
+        // 获取方法一
+        console.log(box.style.width);  //300px
+        console.log(box.style.backgroundColor); //yellow 小驼峰
+        // console.log(box.style.background_color); //undefined
+
+         // 获取方法二
+        console.log(box.style['width']);  //300px
+        console.log(box.style['background-color']);//yellow
+        console.log(box.style['font-size']) //40px 和下面行等效
+        // console.log(box.style['fontSize']) //40px 
+
+         // 获取方法三 getComputedStyle 获取该节点对象的所有样式  推荐
+         console.log(window.getComputedStyle(box)['font-size']); //40px 和下面行等效
+        //  console.log(window.getComputedStyle(box)['fontSize']); //40px
+         console.log(window.getComputedStyle(box).fontSize);//40px
+        //  console.log(window.getComputedStyle(box).font-size);//报错
+
+        //上述方法一和方法二只能用于行内样式,不支持行外样式
+		//方法三不但可以用于行内样式,还支持行外样式
+
+        // 事件绑定
+        var box1 = document.getElementById('box1');  //获取button对象
+        console.log(box1);
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3');
+        var box4 = document.getElementById('box4');
+        var box5 = document.getElementById('box5');
+
+        box1.onclick = function(){
+            // box.style.backgroundColor = 'red'; //点击我换颜色 支持 小驼峰
+            // box.style.background-color = 'red'; //报错
+            box.style['background-color'] = 'red'; // 可以
+            //先获取css属性,然后修改css属性
+        }
+
+        box2.onclick = function(){
+            box.style.display = 'none'; //点击我隐藏
+        }
+        
+        box3.onclick = function(){
+            box.style.display = 'block'; //点击我显示
+        }
+
+        box4.onclick = function(){
+            // box.style.borderRadius = '100%';  //静态效果
+            var point = 0;
+            var t = setInterval(function(){   //动态效果
+                box.style.borderRadius = `${point}%`;
+                if(point<100){
+                    point++;  //+=1
+                }
+                else{
+                    clearInterval(t);
+                    console.log('结束了');
+                }
+            },50)
+        }
+
+        /* 重点 添加样式*/
+        box5.onclick = function(){
+            box.className = 'box box_new';
+            // box.className += ' box_new';  //和上面行等效
+            // box.className += 'box_new';  //不对
+        }
+        
+
+
+    </script>    
+</body>
+</html>
