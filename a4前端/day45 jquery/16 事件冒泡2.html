@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <style>
+        .c1{
+            height: 200px;
+            background-color: red;
+        }
+        .c2{
+            height: 100px;
+            width: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">
+        <div class="c2"></div>
+    </div>
+    <script>
+        $('.c1').click(function () {
+            alert('父标签');
+        });
+
+        $('.c2').click(function () {
+           alert('子标签');
+           return false;  // 阻止事件冒泡的方式
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -68,12 +68,14 @@
 </body>
 <script src="jquery.js"></script>
 <script>
-    $('.c1').addClass('c2');  // 动态添加类值
+    $('.c1').addClass('c2');  // 动态添加类值(加上其对应的css)
     $('.c1').removeClass('c2');   // 删除类值
     $('.c1').toggleClass('c2'); // 有就删除,没有就添加
 
     // 网站的闪烁效果
-    setInterval(function(){$('.c1').toggleClass('c2');},100);
+    setInterval(function(){
+		$('.c1').toggleClass('c2');},
+	100);
 
 </script>
 

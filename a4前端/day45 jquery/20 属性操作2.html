@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="c1">
+        div1
+    </div>
+    <input type="radio" name="sex" id="male">男
+    <input type="radio" name="sex" checked id="female">女
+
+    <script>
+        //1 attr 方法
+        var res = $('.c1').attr({'xx':'yy','xx1':'yy1'});   // 设置属性
+        // console.log(res);
+
+        var res = $('.c1').attr('xx');  //yy
+        console.log(res);
+
+        //2 prop方法
+         // 针对的是checked selected enabled disabled四个属性
+        //用法:
+        var res = $('#female').prop('checked');
+        console.log(res); //true
+        // 查看属性,得到true表示有这个属性,false表示没有
+
+        $('#female').prop('checked',false);  // 设置取消选中
+        // console.log(res);
+
+        $('#female').prop('checked',true);  // 设置选中
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
