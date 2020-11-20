@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="63b77ab7-e87d-44c3-849c-6853edf3b7a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/10 轮播图2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/day45作业讲解/01 表格数据操作.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/day46全部代码/01 django之自定义web框架/01 socket服务端2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/day46全部代码/01 django之自定义web框架/02 函数版web框架2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/day46全部代码/01 django之自定义web框架/03 动态页面版web框架2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/01 http协议和django初识.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/assets/1605840484443.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/assets/1605840561540.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/assets/1605840594859.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/assets/1605840978292.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/assets/1605843990728.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/assets/1605845182523.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/03 wsgiref2简单使用.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/statics/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/statics/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/statics/xx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/templates/beatfulpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/templates/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/01 wsgiref流程/nbweb框架-wsgiref流程/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/03 动态页面版web框架 -jinja2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/03 动态页面版web框架.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/beatfulpage-jinja2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/beatfulpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/02 jinja2模板/xx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/01 socket服务端.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/02 函数版web框架.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/03 动态页面版web框架 -jinja2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/03 动态页面版web框架.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/04 多线程版web框架.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/beatfulpage-jinja2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/beatfulpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 django之自定义web框架/xx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/01 表格数据操作.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/02 bootstrap简单实用.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/03 布局容器.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/04 栅格单位.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/05 表单.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/06 简单样式演示.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/07 导航栏.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/08 巨幕.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/09 进度条.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/10 轮播图.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/statics/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/statics/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/statics/xx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/templates/beatfulpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/templates/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/nbweb框架/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day46/timg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/01 作业1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/02 作业2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/03 wsgiref.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/03 wsgiref2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/statics/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/statics/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/statics/xx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/templates/beatfulpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/templates/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架-wsgiref流程/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/statics/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/statics/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/statics/xx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/templates/beatfulpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/templates/person.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/day47/nbweb框架/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/.idea/zhaozhi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/piao/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/zhaozhi/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/zhaozhi/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/zhaozhi/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi/zhaozhi/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/piao/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/zhaozhi2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/zhaozhi2/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/zhaozhi2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/zhaozhi2/zhaozhi2/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/昨日作业讲解/01 作业1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/昨日作业讲解/02 作业2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/昨日作业讲解/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/昨日作业讲解/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day47 HTTP协议和django初始/代码/昨日作业讲解/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/djangoProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/djangoProject/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/djangoProject/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/piao/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/10 轮播图.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/10 轮播图.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/day46全部代码/01 django之自定义web框架/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../../a4前端/day46 bootstrap/day46全部代码/01 django之自定义web框架/1.jpg" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1kYFlKv9dhR33SIA72dAG4MT5tj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/Program Files/python37/python.exe" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.urls">
+    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="djangoProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/djangoProject" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/djangoProject/urls.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="djangoProject" type="Python.DjangoServer" factoryName="Django server">
+      <module name="djangoProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.urls" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63b77ab7-e87d-44c3-849c-6853edf3b7a5" name="Default Changelist" comment="" />
+      <created>1605869767354</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605869767354</updated>
+      <workItem from="1605869771551" duration="1235000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/djangoProject$urls.coverage" NAME="urls Coverage Results" MODIFIED="1605869920161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/djangoProject" />
+  </component>
+</project>
