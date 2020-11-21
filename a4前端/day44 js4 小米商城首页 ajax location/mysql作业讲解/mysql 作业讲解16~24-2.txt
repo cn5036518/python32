@@ -954,26 +954,98 @@ where
 
 
 # 4.通过课程id,找其中的最大值(分数的最大值)
+select
+	course_id,max(num) as max_num
+from
+	score
+where course_id in (2,4)
+group by course_id;
 
+| course_id | max(num) |
++-----------+----------+
+|         2 |      100 |
+|         4 |      100 |
 
 	
 # 综合拼装
 
 
 # 5.把对应的学生姓名,最大分数拼在一起,做单表联查
-
+select
+	t2.sname,course_id,max(num) as max_num
+from
+	score as t1,student as t2,(4号) as t3
+where 
+	t1.student_id = t2.sid and
+	t1.course_id = t3.course_id and
+	t1.num = t2.max_num;
 	
 
 # 综合拼装
+select
+	t2.sname,t1.course_id,t3.max_num
+from
+	score as t1,student as t2,(select
+		course_id,max(num) as max_num
+	from
+		score
+	where course_id in (2,4)
+	group by course_id) as t3
+where 
+	t1.student_id = t2.sid and
+	t1.course_id = t3.course_id and
+	t1.num = t3.max_num;
+
+ sname  | course_id | max_num |
++--------+-----------+---------+
+| 张四   |         2 |     100 |
+| 铁锤   |         2 |     100 |
+| 李三   |         2 |     100 |
+| 张一   |         4 |     100 |
+| 张二   |         4 |     100 |
+| 张四   |         4 |     100
 
 
+select
+	t2.sname,t1.course_id,t3.max_num
+from
+	score as t1,student as t2,(select
+		course_id,max(num) as max_num
+	from
+		score
+	where course_id in (select
+		cid
+	from
+		course
+	where
+		teacher_id = (select
+			teacher_id
+		from
+			course
+		group by
+			teacher_id
+		having
+			count(*) = (select
+				count(*)
+			from
+				course
+			group by teacher_id
+			order by count(*) desc
+			limit 1)))
+	group by course_id) as t3
+where 
+	t1.student_id = t2.sid and
+	t1.course_id = t3.course_id and
+	t1.num = t3.max_num;
 
-
-
-
-
-
-
+ sname  | course_id | max_num |
++--------+-----------+---------+
+| 张四   |         2 |     100 |
+| 铁锤   |         2 |     100 |
+| 李三   |         2 |     100 |
+| 张一   |         4 |     100 |
+| 张二   |         4 |     100 |
+| 张四   |         4 |     100
 
 
 

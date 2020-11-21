@@ -12,6 +12,7 @@
             top:0px;
             background-color: green;
             display: none;
+			/*隐藏标签*/
             opacity:0.5;  // 标签透明度
         }
 
@@ -28,6 +29,7 @@
     </style>
 </head>
 <body>
+<!--需求:表格的增删改 模态框-->
     <button id="add">新增</button>
 
     <table border="1">
@@ -87,34 +89,35 @@
 
 
         var flag = 0;  // 新增动作标识
+		//变量名字不能是status 因为windows.status已经存在,会覆盖  出现报错
         var btn = document.getElementById("add");
         var box = document.querySelector(".box");
         var close = document.querySelector(".close");
         btn.onclick = function(){
             console.log(11)
-            // 1 弹出模态对话框
+            // 1 点击新增按钮, 弹出模态对话框
             box.style.display = "block";
+			//从none变成block  从隐藏变成显示
             flag = 0;
             $('#username').val('');
+			//新增的时候,将姓名输入框的内容先清空
             $('#hobby').val('');
-
-
         }
+		//关闭模态框
         close.onclick = function(){
             box.style.display = "none";
+			 //从block变成none  从显示变成隐藏
         }
 
 
         $("#sub").click(function(){
-
+			// 2 获取用户输入的数据
             var username = $('#username').val();
+			//获取用户在姓名输入框中的输入内容
             var hobby = $('#hobby').val();
 
-            if (flag === 0){
-                    // 2 获取用户输入的数据
-
-
-                    //3 将用户数据的数据添加到表格中
+            if (flag === 0){                    
+                    //3 将用户输入的数据添加到表格中
                     var trEle =
                 `
                         <tr>
@@ -125,15 +128,10 @@
                                 <button class="del">删除</button>
                                 <button class="edit">编辑</button>
                             </td>
-
                         </tr>
                 `
-
+				//新增到内部的后面
                     $('tbody').append(trEle);
-
-
-
-
             }else{
 
                  flag.parent().siblings().eq(1).text(username);
@@ -144,12 +142,12 @@
             box.style.display = "none";
 
         })
-        // 删除
+        // 02 删除--事件委托
         $('tbody').on('click', '.del', function(){
             $(this).parent().parent().remove();  // $(this) 还是我们点击的删除按钮标签
 
         })
-        // 编辑动作
+        // 03 编辑动作
 
         $('tbody').on('click', '.edit', function(){
             flag = $(this);

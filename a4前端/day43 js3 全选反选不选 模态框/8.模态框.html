@@ -12,6 +12,7 @@
             top:0px;
             background-color: greenyellow;
             display: none;
+			 /*不显示*/
         }
 
         .content
@@ -20,8 +21,10 @@
             width:500px;
             height:500px;
             background-color:tan;
-            margin:auto;
-            margin-top:14%;        
+            margin: auto;
+            /*//可以左右居中*/
+            margin-top:14%;
+            /*往下调整,垂直居中*/    
         }
 
     </style>
@@ -45,6 +48,7 @@
         btn.onclick = function(){
             console.log(11)
             box.style.display = "block";
+			//让原来不显示的显示出来
         }
         close.onclick = function(){
             box.style.display = "none";

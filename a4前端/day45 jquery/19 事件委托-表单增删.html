@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button class="add">保存</button>
+
+<label>
+    姓名: <input type="text" id="username">
+</label>
+<label>
+     爱好: <input type="text" id="hobby">
+</label>
+<label>
+    年龄: <input type="text" id="age">
+</label>
+
+<!--加label后,点击'姓名',也能把光标定位到输入框-->
+<!--label后的for属性需要和input里面的id保持一致-->
+
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>爱好</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>张三</td>
+            <td>李四</td>
+            <td>18</td>
+            <td><button class="del">删除</button></td>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>赵六</td>
+            <td>17</td>
+            <td><button class="del">删除</button></td>
+        </tr>
+
+
+    </tbody>
+
+</table>
+
+
+</body>
+<script src="jquery.js"></script>
+
+<script>
+    // 1保存记录
+    $('.add').click(function(){
+        var username = $('#username').val()
+		//获取用户输入的用户名
+		console.log(username);
+		
+        var hobby = $('#hobby').val()
+		//获取用户输入的爱好
+        var age = $('#age').val()
+
+		//拼接行字符串
+        var trEle =
+        `
+                <tr>
+                    <td>${username}</td>
+                    <td>${hobby}</td>
+                    <td>${age}</td>
+                    <td><button class="del">删除</button></td>
+                </tr>
+        `
+		//内部的后面添加
+        $('tbody').append(trEle);
+
+    });
+
+    // 2删除
+    // 基于事件冒泡,完成事件委托,必须用on进行绑定
+    // 失败作品   // 最新添加的记录,无法删除.原来的记录是可以删除的
+<!--    $('.del').click(function(){-->
+<!--        $(this).parent().parent().remove();-->
+
+<!--    })-->
+
+    // 成功作品, 事件委托:写法 : 
+	//上层标签对象.on(事件名称, 委托人的选择器, function(){})
+    $('tbody').on('click', '.del', function(){
+        $(this).parent().parent().remove();  // 
+		//$(this) 		还是我们点击的删除按钮标签
+
+    })
+
+
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
