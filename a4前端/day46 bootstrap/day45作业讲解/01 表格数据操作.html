@@ -9,7 +9,9 @@
             position:fixed;
             width:100%;
             height:100%;
+             /*占满整个屏幕*/
             top:0px;
+             /*固定在body的左上角*/
             background-color: green;
             display: none;
 			/*隐藏标签*/
@@ -23,9 +25,9 @@
             height:500px;
             background-color:tan;
             margin:auto;
+			 /*水平居中*/
             margin-top:14%;
         }
-
     </style>
 </head>
 <body>
@@ -38,7 +40,6 @@
             <th>#</th>
             <th>姓名</th>
             <th>爱好</th>
-
             <th>操作</th>
         </tr>
     </thead>
@@ -47,7 +48,6 @@
             <td><input type="checkbox"></td>
             <td>张三</td>
             <td>李四</td>
-
             <td>
                 <button class="del">删除</button>
                 <button class="edit">编辑</button>
@@ -57,16 +57,12 @@
             <td><input type="checkbox"></td>
             <td>王五</td>
             <td>赵六</td>
-
             <td>
                 <button class="del">删除</button>
                 <button class="edit">编辑</button>
             </td>
         </tr>
-
-
     </tbody>
-
 </table>
 
     <div class="box">
@@ -81,13 +77,8 @@
         </div>
     </div>
 
-
-
-
     <script src="jquery.js"></script>
     <script>
-
-
         var flag = 0;  // 新增动作标识
 		//变量名字不能是status 因为windows.status已经存在,会覆盖  出现报错
         var btn = document.getElementById("add");
@@ -133,50 +124,62 @@
 				//新增到内部的后面
                     $('tbody').append(trEle);
             }else{
-
-                 flag.parent().siblings().eq(1).text(username);
-                 flag.parent().siblings().eq(2).text(hobby);
-
+				 //编辑的逻辑
+				// 4 将该行数据修改为新数据
+				// 这里的flag是144行的$(this)即编辑按钮
+				flag.parent().siblings().eq(1).text(username);
+				//text() 是获取内容  text(username)是修改姓名内容
+				
+				flag.parent().siblings().eq(2).text(hobby);
+				//text() 是获取内容  text(hobby)是修改爱好内容
             }
              // 4 关闭对话框
             box.style.display = "none";
+			
+			     // 3 修改然后保存
+
+        // 4 将该行数据修改为新数据
+
+        // 5 关闭对户框
 
         })
         // 02 删除--事件委托
         $('tbody').on('click', '.del', function(){
-            $(this).parent().parent().remove();  // $(this) 还是我们点击的删除按钮标签
+            $(this).parent().parent().remove();  
+			// $(this) 是我们点击的当前按钮标签-删除按钮
 
         })
-        // 03 编辑动作
+        // 03 编辑动作--事件委托  --重点
 
         $('tbody').on('click', '.edit', function(){
-            flag = $(this);
+            flag = $(this);//关键点 将当前的点击对象赋值给flag
+			// $(this) 是我们点击的当前按钮标签--编辑按钮
 
-
-            // 1 弹出莫泰对话框
+            // 1 弹出模态对话框
             box.style.display = "block";
+			
             // 2 获取该行数据,并且放到对话框的input标签中作为默认值
-            var uname = $(this).parent().siblings().eq(1).text();
-            var hy = $(this).parent().siblings().eq(2).text();
+             var uname = $(this).parent().siblings().eq(1).text();
+			//获取编辑按钮的父集标签的第一个兄弟标签的文本值
+			console.log(uname);
+			
+			var hy = $(this).parent().siblings().eq(2).text();
+			//获取编辑按钮的父集标签的第2个兄弟标签的文本值
+			console.log(hy);
 
-            $('#username').val(uname);
-            $('#hobby').val(hy);
-
+            //将从表格获取到的姓名文本 填到模态框的姓名输入框
+			$('#username').val(uname);
+			
+			//将从表格获取到的爱好文本 填到模态框的爱好输入框
+			$('#hobby').val(hy);
 
         })
-
-
-
 
         // 3 修改然后保存
 
         // 4 将该行数据修改为新数据
 
         // 5 关闭对户框
-
-
-
-
 
     </script>
 </body>

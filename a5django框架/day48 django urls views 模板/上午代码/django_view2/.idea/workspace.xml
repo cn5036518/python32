@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6eef7af9-190e-49d8-a067-43d469e8324e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../a4前端/day46 bootstrap/day45作业讲解/01 表格数据操作3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/.idea/01 练习.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/.idea/djangoProject2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/aaaa/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/djangoProject2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/djangoProject2/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/djangoProject2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/djangoProject2/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/templates/false.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/templates/success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/djangoProject2/templates/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/.idea/login.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/login/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/login/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/login/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/login/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/templates/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../01 练习/login/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/django_url.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/django_url2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url2/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url2/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/.idea/django_view.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/django_view/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/django_view/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/django_view/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/django_view/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_view/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/django_view2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_view2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_view2/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_view2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_view2/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/.idea/django_template.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/django_template/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/django_template/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/django_template/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/django_template/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_template/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/.idea/django_view.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/django_view/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/django_view/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/django_view/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/django_view/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/templates/articals.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../下午代码/django_view/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../a4前端/day46 bootstrap/day45作业讲解/01 表格数据操作.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../a4前端/day46 bootstrap/day45作业讲解/01 表格数据操作.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../a4前端/day46 bootstrap/day45作业讲解/01 表格数据操作2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../a4前端/day46 bootstrap/day45作业讲解/01 表格数据操作2.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1kgp88a2TAFiWtaOrO0dVg0WzLY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/Program Files/python37/python.exe" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="django_view2" type="Python.DjangoServer" factoryName="Django server">
+      <module name="django_view2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6eef7af9-190e-49d8-a067-43d469e8324e" name="Default Changelist" comment="" />
+      <created>1606131926895</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606131926895</updated>
+      <workItem from="1606131930341" duration="4229000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery.js"></script>
+    <style>
+        .box
+        {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            /*占满整个屏幕*/
+            top:0px;
+             /*固定在body的左上角*/
+            background-color: green;
+            /*display: none;*/
+            /*隐藏标签  none是隐藏 会把子标签也隐藏 block是显示*/
+            opacity: 0.5;
+        /*// 标签透明度*/
+        }
+        .content
+        {
+            border: solid 1px red;
+            width: 500px;
+            height: 500px;
+            background-color: tan;
+            margin: auto;
+            /*水平居中*/
+            margin-top:14%;
+        }
+    </style>
+</head>
+<body>
+
+<!--需求:表格的增删改 模态框-->
+<button id="add">新增</button>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>姓名</th>
+        <th>爱好</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>张三</td>
+        <td>李四</td>
+        <td>
+            <button class="del">删除</button>
+            <button class="edit">编辑</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>王五</td>
+        <td>赵六</td>
+        <td>
+            <button class="del">删除</button>
+            <button class="edit">编辑</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="box">
+    <div class="content">
+        <span class="close">X</span>
+        <br>
+        账号： <input type="text" id="username">
+        <br>
+        密码: <input type="text" id="hobby">
+        <br>
+        <button id="sub">保存</button>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

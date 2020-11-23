@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<form action="/login3/" method="post">
+<!--{#    /login3/ 前后的/都必须有 少了就报错#}-->
+    <!-- 提交数据时自动拼接上网址http:127.0.0.1:8000,不带路径 -->
+    用户名: <input type="text" name="username">
+<!--  拼写错误  name前面不能写逗号,否则,views中获取不到 request.POST.get('username')-->
+    密码: <input type="password" name="password">
+<!--    <input type="submit">-->
+    <button>提交</button>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

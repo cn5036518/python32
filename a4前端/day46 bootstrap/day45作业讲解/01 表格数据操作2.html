@@ -124,14 +124,55 @@
             $('tbody').append(trEle);
         }
         else {
-
+            //编辑的逻辑
+				// 4 将该行数据修改为新数据
+            // 这里的flag是144行的$(this)即编辑按钮
+            flag.parent().siblings().eq(1).text(username);
+            //text() 是获取内容  text(username)是修改姓名内容
+            flag.parent().siblings().eq(2).text(hobby);
+            //text() 是获取内容  text(hobby)是修改爱好内容
         }
         // 4 关闭对话框
         box.style.display = 'none';
     })
 
-    //02 删除--事件委托
+     // 3 修改然后保存
 
+        // 4 将该行数据修改为新数据
+
+        // 5 关闭对户框
+
+    //02 删除--事件委托
+    $('tbody').on('click','.del',function () {
+        $(this).parent().parent().remove();
+    // $(this) 是我们点击的当前按钮标签-删除按钮
+    })
+
+     // 03 编辑动作--事件委托  --重点
+    $('tbody').on('click','.edit',function () {
+        flag = $(this);  //关键点 将当前的点击对象赋值给flag
+        // $(this) 是我们点击的当前按钮标签--编辑按钮
+
+        // 1 弹出模态对话框
+        box.style.display = 'block';
+        // 2 获取该行数据,并且放到对话框的input标签中作为默认值
+        var uname = $(this).parent().siblings().eq(1).text();
+        //获取编辑按钮的父集标签的第一个兄弟标签的文本值
+        console.log(uname);
+        var hy = $(this).parent().siblings().eq(2).text();
+        //获取编辑按钮的父集标签的第2个兄弟标签的文本值
+        console.log(hy);
+
+        //将从表格获取到的姓名文本 填到模态框的姓名输入框
+        $('#username').val(uname);
+        //将从表格获取到的爱好文本 填到模态框的爱好输入框
+        $('#hobby').val(hy);
+    })
+    // 3 修改然后保存
+
+        // 4 将该行数据修改为新数据
+
+        // 5 关闭对户框
 
 
 
