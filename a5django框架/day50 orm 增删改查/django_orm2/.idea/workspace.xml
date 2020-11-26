@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0ffd8b03-7895-4f59-9f13-8468a19296f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../a4前端/工具/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/.idea/django_template.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/templatetags/mytag.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/django_template/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/django_template/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/django_template/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/django_template/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/css/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/bb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/csrf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/t1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/t2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/t3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/tan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/zujian.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template/templates/zujian2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/.idea/django_template2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/templatetags/mytag.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/django_template2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/django_template2/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/django_template2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/django_template2/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/css/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/bb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/csrf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/t1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/t2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/t3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/tan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/tan2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/zujian.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template2/templates/zujian2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/.idea/django_template3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/templatetags/mytag.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/django_template3/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/django_template3/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/django_template3/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/django_template3/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/css/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/bb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/csrf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/t1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/t2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/t3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/tan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/tan2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day49 模板渲染/代码/django_template3/templates/zujian2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/dataSources/3b216e0d-95fd-4046-ab12-40fb9d14afea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/dataSources/59576485-fbb0-495e-a93d-f422b5ff7285.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/django_orm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/migrations/0002_book_xx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/migrations/0003_remove_book_xx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/migrations/0004_userinfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/django_orm/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/django_orm/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/django_orm/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/django_orm/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/django_orm2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0002_remove_book_xx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0003_userinfo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm2/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm2/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm2/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm2/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/django_orm3/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/django_orm3/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/django_orm3/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/django_orm3/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm3/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/.idea/django_template.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/templatetags/mytag.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/django_template/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/django_template/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/django_template/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/django_template/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/css/xx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/bb.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/csrf.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/t1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/t2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/t3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/tan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/zujian.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_template/templates/zujian2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/jquery.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="django_migrations: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1km0pc8n7Qex4CaSnDPeFvDnZfQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/Program Files/python37/python.exe" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="django_orm2" type="Python.DjangoServer" factoryName="Django server">
+      <module name="django_orm2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ffd8b03-7895-4f59-9f13-8468a19296f0" name="Default Changelist" comment="" />
+      <created>1606290642084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606290642084</updated>
+      <workItem from="1606290643443" duration="2460000" />
+      <workItem from="1606293521926" duration="6744000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

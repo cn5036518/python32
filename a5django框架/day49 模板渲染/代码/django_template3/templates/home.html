@@ -1,0 +1,60 @@
+{% load mytag %}
+{# 先load一下我们的mytagpy文件#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1>这是home页面</h1>
+{% include 'component.html' %}
+{#在页面什么位置引入,组件效果就生成到什么位置#}
+
+<h1>{{ name|xx }}</h1>
+{##以过滤器的形式使用,这个是一个参数的#}
+{#name的值是实参  xx是函数名字#}
+{#chaoxx#}
+
+{#@register.filter  #定义自定义的过滤器#}
+{#def xx(v1):#}
+{#	return  v1 + 'xx'#}
+{##第一参数是使用过滤器时,管道符前面的数据 <h1>{{ name|xx }}</h1>#}
+{## name的值#}
+
+<h1>{{ name|xx2:'oo' }}</h1>
+{## 以过滤器的形式使用,这个是两个参数的#}
+
+{#@register.filter  #过滤器,至多有两个参数#}
+{#def xx2(v1,v2):#}
+{#	return v1 + 'xx2' + v2#}
+{## 第一参数是使用过滤器时,管道符前面的数据 ,--name的值#}
+{## 第二个参数是冒号后面的值,<h1>{{ name|xx:'oo' }}</h1>#}
+{#chaoxx2oo#}
+
+<h1>{% tag1 11 22 number %}</h1>
+{#133#}
+{#!-- 先写标签名称,然后写参数,参数以空格分隔 ,最终得到的tag1的return值 -->#}
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

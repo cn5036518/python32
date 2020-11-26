@@ -1,0 +1,37 @@
+{% load mytag %}
+{#01先load#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+{% dynamic menu_list %}
+{##02最终将渲染好的动态组件(zujian2.html),通过include引入组件的方式,加载到这里#}
+{## 这里是调用mytag.py中定义的函数dynamic#}
+{#menu_list是实参#}
+{#mytag.py中定义的函数dongtai的形参是v1#}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

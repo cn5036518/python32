@@ -1,0 +1,52 @@
+{% load mytag %}
+{#01 先load一下我们的mytagpy文件#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h1>这是home页面</h1>
+
+{% include 'zujian.html' %}
+{#在页面什么位置引入,组件效果就生成到什么位置#}
+
+<!--自定义过滤器的使用-->
+<h1>{{ name|xx }}</h1>
+{#chaoxx#}
+{#mytag.py的12行#}
+{# #以过滤器的形式使用,这个是一个参数的#}
+{#	#第一参数是使用过滤器时,#}
+{#	# 管道符前面的数据 <h1>{{ name|xx }}</h1>#}
+
+<h1>{{ name|xx2:'oo' }}</h1>
+{#chaoxx2oo  # 以过滤器的形式使用,这个是两个参数的#}
+{#	#第一参数是使用过滤器时,管道符前面的数据 ,--name#}
+{#	# 第二个参数是冒号后面的值,--''oo#}
+
+{#自定义标签的使用#}
+<h2>{% tag1 11 22 number %}</h2>
+<!-- 先写标签名称,然后写参数,参数以空格分隔 ,最终得到的tag1的return值 -->
+{#133#}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

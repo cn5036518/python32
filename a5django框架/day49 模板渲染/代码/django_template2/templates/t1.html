@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+{% extends 'base.html' %}
+{#必须写在最前面#}
+
+{% block css %}
+    <style>
+        .c1 {
+            background-color: green;
+            height: 40px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>在线指导</h1>
+    {{ block.super }}
+    <!-- 显示模板的内容 -->
+{% endblock %}
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
