@@ -46,7 +46,9 @@ class Book(models.Model):
 	# 	to='Publish',to_field='id',on_delete=models.CASCADE) #01全写
 	publishs = models.ForeignKey('Publish')  #简写
 	# 出版社和书籍表 一对多关系,上述publishs字段必须写在-多 处
-	authors = models.ManyToManyField('Author')
+	authors = models.ManyToManyField('Author',db_constraint=False)
+# db_constraint=False取消foreign key的强制约束效果,
+# 还可以继续使用orm的提供的属性或者方法来操作关系记录
 	#  书籍表和作者表 多对多关系 上述authors字段可以写在Author表(待确认)
 #      authors不是一个Book表的字段,会自动产生一个多对多的关系表
 

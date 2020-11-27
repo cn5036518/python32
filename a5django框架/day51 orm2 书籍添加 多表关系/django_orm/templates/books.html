@@ -21,11 +21,13 @@
         </thead>
         <tbody>
         {% for book in book_list %}
+<!--        {#                book_list是views中传递过来的#}-->
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ book.title }}</td>
                 <td>{{ book.price }}</td>
                 <td>{{ book.pub_date|date:'Y-m-d' }}</td>
+<!--                {#  加过滤器,把格式化日期显示在日期输入框#}-->
                 <td>{{ book.publish }}</td>
                 <td>
                     <a href="/edit_book/{{ book.id }}/" class="btn btn-warning">编辑</a>

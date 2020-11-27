@@ -6,12 +6,13 @@ from app01 import models
 
 
 def books(request):
-
+	# 展示数据 从数据库读取数据,展示到页面
 	book_list = models.Book.objects.all()
-
+	# 页面编辑后,数据库数据修改了,这里读取数据表后,显示修改后的数据到页面
+	# print(book_list)
+	# < QuerySet[ < Book: 金瓶梅12 >, < Book: 健身 >, < Book: pytHon少年闰土1 >, < Book: Python少年闰土2 >, < Book: 少年
+	# 闰土3 >, < Book: 少年闰土4 >, < Book: 少年闰土5 >, < Book: 读书1 >] >
 	return render(request, 'books.html', {'book_list': book_list})
-
-
 
 def add_book(request):
 	if request.method == 'GET':
@@ -49,9 +50,18 @@ def add_book(request):
 # 提交完毕后,返回图书展示列表
 
 def edit_book(request, book_id):
+	print(book_id)
+	# 这里获取的是urls中\d+ 匹配到的值
+	#   url(r'^edit_book/(\d+)/', book_view.edit_book),
+	# 点击编辑按钮后,打开的页面是get
+	# 编辑按钮获取的id (href="/edit_book/{{ book.id }})-->urls中的\d+ -->book_id
+
+	# 把数据库获取到的数据,发送填充到页面
+	# 修改内容后,保存提交是post
 
 	if request.method == 'GET':
 		old_obj = models.Book.objects.get(id=book_id)
+		# 根据id从数据库获取数据
 		return render(request,'edit_book.html', {'old_obj': old_obj})
 
 	else:
@@ -61,7 +71,6 @@ def edit_book(request, book_id):
 			**data
 		)
 		return redirect('/books/')
-
 
 def del_book(request, book_id):
 	models.Book.objects.get(id=book_id).delete()

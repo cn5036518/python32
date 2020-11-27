@@ -7,6 +7,7 @@ from app01.models import Book
 
 def books(request):
 	book_list = Book.objects.all()
+	# 页面编辑后,数据库数据修改了,这里读取数据表后,显示修改后的数据到页面
 	print(book_list)
 	return render(request,'books.html',{'book_list':book_list})
 
@@ -54,15 +55,25 @@ def edit_book(request,book_id):
 	# 这里获取的是urls中\d+ 匹配到的值
 	#   url(r'^edit_book/(\d+)/', book_view.edit_book),
 	# 点击编辑按钮后,打开的页面是get
+	# 编辑按钮获取的id (href="/edit_book/{{ book.id }})-->urls中的\d+ -->book_id
+	
 	# 把数据库获取到的数据,发送填充到页面
 	# 修改内容后,保存提交是post
 	if request.method == 'GET':
 		old_obj = Book.objects.get(id=book_id)
+		#根据id从数据库获取数据
+		print(old_obj.title)  #金瓶梅
+		return render(request,'edit_book.html',{'old_obj':old_obj})
 	else:
-		pass
+		data = request.POST.dict()
+		Book.objects.filter(id=book_id).update(
+			**data
+		)
+		return  redirect('/books/')
 
-def del_book(request):
-	pass
+def del_book(request,book_id):
+	Book.objects.get(id=book_id).delete()
+	return  redirect('/books/')
 
 
 

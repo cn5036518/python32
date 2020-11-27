@@ -24,6 +24,7 @@
                     <td>{{ book.title }}</td>
                     <td>{{ book.price }}</td>
                     <td>{{ book.pub_date|date:'Y-m-d' }}</td>
+{#                                加过滤器,把日期显示日期输入框#}
                     <td>{{ book.publish }}</td>
                     <td>
                         <a href="/edit_book/{{ book.id }}" class="btn btn-warning">编辑</a>
