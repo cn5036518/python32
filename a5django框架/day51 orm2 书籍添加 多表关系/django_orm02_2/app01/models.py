@@ -4,7 +4,7 @@ from django.db import models
 
 # 一对一:作者表和作者详细信息表
 # 一对多:出版社表和书籍表
-# 多对多:书籍表和作者表1
+# 多对多:书籍表和作者表
 
 # 作者表
 class Author(models.Model):

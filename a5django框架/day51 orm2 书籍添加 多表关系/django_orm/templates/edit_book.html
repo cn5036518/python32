@@ -12,6 +12,11 @@
         <div class="form-group">
             <label for="title">书籍名称</label>
             <input type="text" value="{{ old_obj.title }}" class="form-control" id="title" placeholder="书籍名称" name="title">
+<!--        {#            value的作用：是从后端的数据库获取数据后，通过views.py中的第三个参数
+return render(request,'edit_book.html', {'old_obj': old_obj})，传递到前端页面的value字段，从而修改页面输入框的默认值  #}-->
+<!--            {# name字段的作用：是为了给后端views中的request.POST传递数据
+把前端页面输入框的输入内容传递到后端views的request.POST
+然后存到数据库#}-->
         </div>
         <div class="form-group">
             <label for="price">价格</label>
@@ -20,7 +25,7 @@
         <div class="form-group">
             <label for="pub_date">出版日期</label>
             <input type="date" value="{{ old_obj.pub_date|date:'Y-m-d' }}" class="form-control" id="pub_date" placeholder="出版日期" name="pub_date">
-<!--        {#            加过滤器,把日期显示日期输入框#}-->
+<!--        {#            加过滤器,把日期显示在日期输入框#}-->
         </div>
         <div class="form-group">
             <label for="publish">出版社</label>

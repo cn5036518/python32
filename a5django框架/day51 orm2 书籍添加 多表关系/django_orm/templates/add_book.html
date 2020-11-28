@@ -12,6 +12,7 @@
         <div class="form-group">
             <label for="title">书籍名称</label>
             <input type="text" class="form-control" id="title" placeholder="书籍名称" name="title">
+<!--       {# name字段的作用：是为了给后端views中的request.POST传递数据  把前端页面输入框的输入内容传递到后端views的request.POST#}-->
         </div>
         <div class="form-group">
             <label for="price">价格</label>
@@ -28,9 +29,8 @@
 
 
 {#        <button type="button" class="btn btn-success">提交</button> type="button"不能提交form表单数据#}
-<!--        type不写,默认是button-->
-        <button type="submit" class="btn btn-success">提交</button>
+    <!--        type不写,默认是button 不能提交数据到后端-->
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+<!--    {#    type是submit 可以提交数据到后端#}-->
     </form>
-
-
 {% endblock %}

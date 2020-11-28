@@ -1,4 +1,4 @@
-"""django_orm URL Configuration
+"""django_orm_book4 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,19 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
 from app01 import views
-from booksys import views as book_view
-#两个应用必须用别名区分
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
-    url(r'^query/', views.query),
-
-    # 获取所有书籍的路径
-    url(r'^books/', book_view.books),
-    url(r'^add_book/', book_view.add_book),
-    url(r'^edit_book/(\d+)/', book_view.edit_book),
-# http://127.0.0.1:8000/edit_book/5/
-    url(r'^del_book/(\d+)/', book_view.del_book),
+    url(r'^query/', views.query),  #添加数据
+	
+    url(r'^books/', views.books),  #图书列表展示
 ]

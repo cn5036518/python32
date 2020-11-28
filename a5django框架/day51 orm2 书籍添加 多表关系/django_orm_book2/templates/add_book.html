@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    <h1>添加书籍</h1>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {#        {% csrf_token %}#}
+        <div class="form-group">
+            <label for="title">书籍名称</label>
+            <input type="text" class="form-control" id="title" placeholder="书籍名称"
+                   name="title">
+            {# name字段的作用：是为了给后端views中的request.POST传递数据  把前端页面输入框的输入内容传递到后端views的request.POST#}
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" placeholder="价格"
+                   name="price">
+        </div>
+        <div class="form-group">
+            <label for="pub_date">出版日期</label>
+            <input type="date" class="form-control" id="pub_date" placeholder="出版日期"
+                   name="pub_date">
+        </div>
+        <div class="form-group">
+            <label for="publish">出版社</label>
+            <input type="text" class="form-control" id="publish" placeholder="出版社"
+                   name="publish">
+        </div>
+
+{#        <button type="button" class="btn btn-success">提交</button>#}
+    <!--        type不写,默认是button 不能提交数据到后端-->
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+{#    type是submit 可以提交数据到后端#}
+
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

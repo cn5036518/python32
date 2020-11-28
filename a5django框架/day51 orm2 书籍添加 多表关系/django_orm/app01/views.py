@@ -31,6 +31,8 @@ def query(request):
 	# print(new_book.title)  #通过模型类对象,直接获取属性对应的值
 	# print(new_book.price)
 
+	# 批量添加数据
+	# 方法1
 	# obj_list = []
 	# for i in range(10):
 	# 	book_obj = models.Book(
@@ -43,6 +45,15 @@ def query(request):
 	# 	obj_list.append(book_obj)
 	#
 	# models.Book.objects.bulk_create(obj_list)  #bulk_create 批量添加
+
+	# 方法2  推荐 更简洁
+	# for i in range(5):
+	# 	Book.objects.create(
+	# 		title=f'读书{i}',
+	# 		price=10+i,
+	# 		pub_date=f'2020-02-1{i}',
+	# 		publish='读书出版社',
+	# 	)
 
 	# 查询所有书籍
 	# book_objs = models.Book.objects.all()  #queryset 类似于列表

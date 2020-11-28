@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="770838b5-81c0-4ffb-9d58-c00c1595fbc3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../django_orm_book2/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book2/templates/edit_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/django_orm_book3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book3/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book3/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book3/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book3/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm/app01/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm/booksys/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm/booksys/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm/templates/add_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm/templates/add_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm/templates/edit_book.html" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm/templates/edit_book.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm02_2/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm02_2/app01/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm_book2/booksys/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm_book2/booksys/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm_book2/django_orm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm_book2/django_orm/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day52 orm3 多表删除修改 跨表查询/django_orm02_2/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day52 orm3 多表删除修改 跨表查询/django_orm02_2/app01/views.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1kuiTW9VfsUX83rOz954tn3CHPN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/statics/plugins" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day51 orm2 书籍添加 多表关系\django_orm_book3\statics\plugins" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="django_orm_book3" type="Python.DjangoServer" factoryName="Django server">
+      <module name="django_orm_book3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="770838b5-81c0-4ffb-9d58-c00c1595fbc3" name="Default Changelist" comment="" />
+      <created>1606556884568</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606556884568</updated>
+      <workItem from="1606556888661" duration="9312000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

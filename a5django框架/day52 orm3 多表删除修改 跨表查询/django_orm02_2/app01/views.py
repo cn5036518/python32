@@ -12,14 +12,14 @@ def query(request):
 	# 一 多表的增删改查
 	# 01增
 	# 一对一关系的添加
-	# 先创建作者详细信息表记录
+	# 先创建作者详细信息表记录(被关联的表)
 	# ret = models.AuthorDetail.objects.create(
 	# 	birthday='2000-12-12',
 	# 	telephone='122',
 	# 	addr='惠州',
 	# )
 	#
-	#
+	# 再创建作者表
 	# models.Author.objects.create(
 	# 	name='元涛',
 	# 	age=18,
@@ -50,6 +50,7 @@ def query(request):
 	# book_obj.authors.add(author1,author2)
 	# book_obj.authors.add(1, 2)
 	# 书籍对象记录.关联字段.add(作者对象1,作者对象2)
+	# 实质是往第三张关系表中添加记录
 
 	#02 修改  只能用filter+update  因为get不支持updata方法
 	# 一对一   作者表和作者详细表
@@ -71,7 +72,7 @@ def query(request):
 	# )
 
 	# 多对多  书籍表和作者表
-	# 正向,通过属性字段
+	# 正向,通过关联属性字段
 	# obj = Book.objects.get(id=3)
 	# obj.authors.set(['2','3'])   #clear + add
 	# 书籍对象记录.关联字段.set(['作者1-id','作者2-id'])
@@ -96,7 +97,7 @@ def query(request):
 	# Publish.objects.get(id=1).delete() #会级联删除
 
 	# 多对多删除   书籍表和作者表(关联字段在书籍表)  不存在级联删除
-	#只是对第三张关系表进行删除
+	#只是对第三张关系表进行记录删除
 	# book_obj = Book.objects.get(id=4)
 	# print(book_obj,type(book_obj))
 	# 书的对象记录
@@ -129,16 +130,16 @@ def query(request):
 	#二 基于对象的跨表查询  子查询
 	# 01一对一  作者表和作者详细表 (关联字段在作者表)
 	#  正向查询(关系属性在哪个表里面,通过这个表的数据去查询另外一张表的数据,就是正向查询,反之就是反向查询)
-	# 正向查询靠属性字段,反向查询靠表名小写
+	# 正向查询靠关联属性字段,反向查询靠表名小写(一对一)或表名小写_set(一对多 多对多)
 
 	# 查询一下元涛这个作者的手机号
-	# 正向查询  正向查询靠属性字段
+	# 正向查询  正向查询靠关联属性字段
 	# obj = Author.objects.get(name='元涛')
 	# obj.au   #这就找到了关联的详细信息表里面的那个对象记录
 	# print(obj.au.telephone)  #122
 
 	# 查询手机号为111的作者姓名
-	# 反向查询  反向查询靠表名小写
+	# 反向查询  反向查询靠表名小写(一对一)
 	# obj = AuthorDetail.objects.get(telephone='111')
 	# obj.author  #这就找到了关联的作者表里面的那个对象记录
 	# print(obj.author.name)  #元涛2
@@ -147,13 +148,13 @@ def query(request):
 	# 02一对多 出版社表和书籍表(关联字段在书籍表 多)
 	#正向查询(关系属性在哪个表里面,
 	#       通过这个表的数据去查询另外一张表的数据,就是正向查询)
-	# 正向查询  正向查询靠属性字段
+	# 正向查询  正向查询靠关联属性字段
 	# 001查询 <读书> 这本书是哪个出版社出版的?
 	# obj = Book.objects.get(title='读书')
 	# obj.publishs  #找到了关联的出版社记录
 	# print(obj.publishs.name)  #读书出版社
 
-	# 002查询读书出版社出版了哪些书
+	# 002查询读书出版社出版了哪些书(多本书)
 	# 反向查询
 	# 反向查询在一对多的关系是,使用 表名小写_set
 	# obj = Publish.objects.get(name='读书出版社')
@@ -168,7 +169,7 @@ def query(request):
 	# 001查询一下读书这本书的作者是谁
 	# 正向查询(关系属性在哪个表里面,
 	#       通过这个表的数据去查询另外一张表的数据,就是正向查询)
-	# 正向查询  正向查询靠属性字段
+	# 正向查询  正向查询靠关联属性字段
 	# obj = Book.objects.filter(title='读书')
 	# print(obj) #<QuerySet [<Book: Book object>]>
 	# obj = obj.first()
@@ -192,18 +193,18 @@ def query(request):
 	# 基于对象的跨表查询	子查询
 	# # 正向查询(关系属性在哪个表里面,
 	# #       通过这个表的数据去查询另外一张表的数据,就是正向查询)
-	# 正向查询靠属性字段,反向查询靠表名小写
+	# 正向查询靠关联属性字段,反向查询靠表名小写
 
 	# 一对一
-	# 	正向查询    正向查询靠属性字段
+	# 	正向查询    正向查询靠关联属性字段
 	# 	反向查询    反向查询靠表名小写
 
 	# 一对多
-	# 	正向查询   正向查询靠属性字段
+	# 	正向查询   正向查询靠关联属性字段
 	# 	反向查询    反向查询在一对多的关系是,使用 表名小写_set
 
 	# 多对多
-	# 	正向查询    正向查询靠属性字段
+	# 	正向查询    正向查询靠关联属性字段
 	# 	反向查询    反向查询在多对多的关系是,使用 表名小写_set
 
 
@@ -216,37 +217,37 @@ def query(request):
 	# from app01_authordetail inner join app01_author 
 	# on app01_author.au_id = app01_authordetail.id;
 
-	# 正向查询靠属性, 反向查询靠表名小写
+	# 正向查询靠关联属性字段, 反向查询靠表名小写
 
 	# 01一对一的  出版社表和书籍表(关联字段在书籍表)
 	# 查询一下元涛这个作者的手机号
-	# 方法1 正向查询    正向查询靠属性字段
+	# 方法1 正向查询    正向查询靠关联属性字段
 	# ret = Author.objects.filter(name='元涛').values('au__telephone')
 	# print(ret)  #<QuerySet [{'au__telephone': '122'}]>
 	# print(ret[0])  #{'au__telephone': '122'}
 	# print(ret[0]['au__telephone'])  #122
-	#  values中的关联字段__实现跨表
+	#  values中的关联字段__实现跨表(连表)
 
 	# # 方法2 反向查询  反向查询靠表名小写
 	# ret = AuthorDetail.objects.filter(author__name='元涛').values('telephone')
 	# print(ret) #<QuerySet [{'telephone': '122'}]>
 	# print(ret[0])  #{'telephone': '122'}
 	# print(ret[0]['telephone'])  #122
-	# filter中的表名小写__实现跨表
+	# filter中的表名小写__实现跨表(连表)
 
 	# 02一对多的  出版社表和书籍表(关联字段在书籍表)
 	# 查询<读书>这本书是哪个出版社出版的
-	# 方法1 正向查询    正向查询靠属性
+	# 方法1 正向查询    正向查询靠关联属性字段
 	# ret = Book.objects.filter(title='读书').values('publishs__name')
 	# print(ret)  #<QuerySet [{'publishs__name': '读书出版社'}]>
 	# print(ret[0])  #{'publishs__name': '读书出版社'}
-	# 正向查询  values中的关联字段__实现跨表
+	# 正向查询  values中的关联字段__实现跨表(连表)
 
 	# 方法2 反向查询    反向查询靠表名小写
 	# ret = Publish.objects.filter(book__title='读书').values('name')
 	# print(ret)  #<QuerySet [{'name': '读书出版社'}]>
 	# print(ret[0]) #{'name': '读书出版社'}
-	# 反向查询  filter中的表名小写__实现跨表
+	# 反向查询  filter中的表名小写__实现跨表(连表)
 	
 	# 03多对多  书籍表和作者表(关联字段在书籍表)  不存在级联删除
 	#  查询一下<读书>这本书的作者是谁
@@ -254,20 +255,20 @@ def query(request):
 	# ret = Book.objects.filter(title='读书').values('authors__name')
 	# print(ret)  #<QuerySet [{'authors__name': '元涛'}]>
 	# print(ret[0])  #{'authors__name': '元涛'}
-	# 正向查询  values中的关联字段__实现跨表
+	# 正向查询  values中的关联字段__实现跨表(连表)
 
 	# 方法2 反向查询    反向查询靠表名小写
 	# ret = Author.objects.filter(book__title='读书').values('name')
 	# print(ret)  #<QuerySet [{'name': '元涛'}]>
 	# print(ret[0])   #{'name': '元涛'}
-	# 反向查询  filter中的表名小写__实现跨表
+	# 反向查询  filter中的表名小写__实现跨表(连表)
 
 
 	# 小结
 	# 基于双下划线的跨表查询 -- mysql连表查询
 	# # 正向查询(关系属性在哪个表里面,
 	# #       通过这个表的数据去查询另外一张表的数据,就是正向查询)
-	# 正向查询靠属性字段,反向查询靠表名小写
+	# 正向查询靠关联属性字段,反向查询靠表名小写
 
 	# 一对一
 	# 一对多
@@ -280,7 +281,7 @@ def query(request):
 	from django.db.models import Avg,Max,Min,Sum,Count
 	
 	#四 聚合查询    aggregate
-	# 查询所有书籍的平均 最大价格
+	# 查询所有书籍的平均价格 最大价格
 	# 方法1
 	# ret = Book.objects.all().aggregate(Avg('price'),Max('price'))
 	# print(ret)  #{'price__avg': 9.5, 'price__max': Decimal('10.00')}
@@ -295,14 +296,16 @@ def query(request):
 	# print(ret)  #{'m': Decimal('10.00'), 'a': 9.5}
 
 	# 五 分组查询  -- group by    annotate
-	# 查询每个出版社出版书的平均价格
+	# 01查询每个出版社出版书的平均价格
 	# 默认是用Publish的id字段值作为分组依据,
 	# 自动会找book表里面的publishs_id去分组
 	# 方法1   连表查询
+	# 反向查询(通过出版社找书)  表名小写__实现连表
 	# ret = Publish.objects.annotate(a=Avg('book__price')).values('a','name','city')
 	# print(ret)
 	# < QuerySet[{'name': '读书出版社', 'city': '沙河2', 'a': 9.5},
 	# {'name': '健身出版社', 'city': '沙河3','a': None}] >
+	# 表名小写__实现连表
 
 	#原生sql
 	# select
@@ -314,7 +317,7 @@ def query(request):
 	# group by
 	# 	t1.id;
 
-	# 方法2  单表查询
+	# 方法2  单表查询  推荐 更简洁
 	# 按照publishs_id进行分组
 	# ret = Book.objects.values('publishs_id').annotate(a=Avg('price'))
 	# print(ret)  #<QuerySet [{'publishs_id': 2, 'a': 9.5}]>
@@ -329,16 +332,19 @@ def query(request):
 
 	# 02每个作者出版书的最高价格
 	# 别忘了:  1.检查数据正确性   2.剔除无用数据
-	# 方法1
-	# 反向查询  表名小写
+	# 方法1   连表查询
+	# 反向查询(通过作者表找书籍表)  annotate后的Max后的表名小写__
+	# 默认按照author_id进行分组
 	# ret = Author.objects.annotate(m=Max('book__price')).values('name','m')
 	# print(ret)
 	# < QuerySet[{'name': '元涛', 'm': Decimal('10.00')},
 	# {'name': '元涛2', 'm': None}] >
+	# annotate后的Max后的表名小写__实现连表
 
-	# django翻译后的sql用的是左连接,所以有none
+	# django orm翻译后的sql用的是左连接,所以有none
 
-	# 方法2
+	# 方法2  单表查询  推荐 更简洁
+	# 正向查询(通过书籍找作者) values后面按照关联属性字段__
 	# 按照authors_id进行分组-annotate
 	# ret = Book.objects.values('authors__id').annotate(m=Max('price'))
 	# print(ret)
@@ -349,7 +355,7 @@ def query(request):
 	# 注意:一定要起别名a=
 	# #结果为Publish模型类对象,对象中有本表字典数据
 
-	# django翻译后的sql用的是左连接,所以有none
+	# django orm翻译后的sql用的是左连接,所以有none
 	# SELECT 
 	#   `app01_book_authors`.`author_id`, 
 	#   MAX(`app01_book`.`price`) AS `m` 
@@ -388,6 +394,22 @@ def query(request):
 
 	# annotate 分组
 	# aggregate 聚合
+
+	# day51单表的增删改查
+
+	# day53多表的增删改查
+	# 一对一
+	# 一对多
+	# 多对多
+	#
+	# 正向查询  关联属性字段   关系属性在哪个表里面,通过这个表的数据去查询另外一张表的数据,就是正向查询
+	# 反向查询  表名小写
+
+	# 基于对象的跨表查询	子查询
+	# 基于双下划线的跨表查询 -- mysql连表查询
+	# 聚合查询 aggregate
+	# 分组查询  annotate
+
 
 
 	return HttpResponse('ok')

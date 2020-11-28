@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    <h1>查看书籍</h1>
+{% endblock %}
+
+{% block content %}
+    {#    {{ block.super }}#}
+    {#    显示母版的内容#}
+    <a href="/add_book/" class="btn btn-primary">添加书籍</a>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>书籍名称</th>
+            <th>价格</th>
+            <th>出版日期</th>
+            <th>出版社</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in book_list %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.pub_date|date:'Y-m-d' }}</td>
+                 {#  加过滤器,把格式化日期显示在日期输入框#}-->
+                <td>{{ book.publish }}</td>
+                <td>
+{#                    <button class="btn btn-warning">编辑</button>#}
+{#                    <button class="btn btn-danger">删除</button>#}
+                    <a href="/edit_book/{{ book.id }}/" class="btn btn-warning">编辑</a>
+                    <a href="/del_book/{{ book.id }}/" class="btn btn-danger">删除</a>
+{#                    /edit_book/{{ book.id }}/可以获取当条记录的id号#}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
