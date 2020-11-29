@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    <h3>编辑数据</h3>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {#        {% csrf_token %}#}
+        <div class="form-group">
+            <label for="title">书籍名称</label>
+            <input type="text" class="form-control" id="title" placeholder="书籍名称"
+                   name="title" value="{{ old_obj.title }}">
+            {#            input标签通过value属性,获取view函数从数据库获取的对象记录 展示在前端页面的输入框#}
+            {#            input标签通过name属性,将前端页面输入框的输入内容传递到view函数的request.POST后,保存到数据库#}
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" placeholder="价格"
+                   name="price" value="{{ old_obj.price }}">
+        </div>
+        <div class="form-group">
+            <label for="pub_date">出版日期</label>
+            <input type="date" class="form-control" id="pub_date" placeholder="出版日期"
+                   name="pub_date" value="{{ old_obj.pub_date|date:'Y-m-d' }}">
+        </div>
+        {#        <div class="form-group">#}
+        {#            <label for="publish">出版社</label>#}
+        {#            <input type="text" class="form-control" id="publish" placeholder="出版社"#}
+        {#                                       name="publish" value="{{ old_obj.publish }}">#}
+        {#                                        单表#}
+        {#                   name="publishs" value="{{ old_obj.publishs.name }}">#}
+        {#                            一对多#}
+        {#                                input标签通过value属性,获取view函数从数据库获取的对象记录 展示在前端页面的输入框#}
+        {#                    input标签通过name属性,将前端页面输入框的输入内容作为name publishes的值,传递到view函数的request.POST后,保存到数据库#}
+        {#        </div>#}
+
+        {#            input标签通过value属性,获取view函数从数据库获取的对象记录 展示在前端页面的输入框#}
+        {#            input标签通过name属性,将前端页面输入框的输入内容作为name publishes的值,传递到view函数的request.POST后,保存到数据库#}
+
+        <label>出版社</label>
+        <select class="form-control" name="publishs">
+            {#        <select class="form-control">#}
+            {#        注意:name属性必须放在select标签中,而不能放在option标签中,否则会出现无法将name属性传递到后端view的情况#}
+            {% for foo in pub_obj %}
+                {% if old_obj.publishs_id == foo.id %}
+                    <option value="{{ foo.name }}" selected="selected">{{ foo.name }}</option>
+                {% else %}
+                    <option>{{ foo.name }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <br>
+
+
+        <label>作者</label>
+        <select class="form-control" multiple name="authors">
+            {% for foo in author_obj %}
+                {% for foo2 in old_obj.authors.all %}
+                    {% if foo.id == foo2.id %}
+                        <option selected="selected">{{ foo.name }}</option>
+                    {% else %}
+                        <option>{{ foo.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </select>
+        <br>
+
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

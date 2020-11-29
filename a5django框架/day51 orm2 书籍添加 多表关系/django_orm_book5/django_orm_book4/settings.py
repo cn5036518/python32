@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'django_orm_book4.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'orm01_2',  #数据库的名字
+        'NAME': 'orm01_3',  #数据库的名字
         'HOST':'127.0.0.1',
         'PORT':3306,
         'USER':'root',

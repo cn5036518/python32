@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6e28834-9af0-441e-ba97-cabba638da50" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/add_book.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/edit_book.html" afterDir="false" />
+    <list default="true" id="0432a2b9-e48d-4d23-a7fc-194d2864aba0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../day50 orm 增删改查/day50-课后作业题目-图书管理系统.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book4/day50-课后作业题目-图书管理系统.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book4/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book4/templates/edit_book.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/.idea/django_orm_book4.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/.idea/misc.xml" afterDir="false" />
@@ -13,11 +15,12 @@
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/admin.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/migrations/0002_auto_20201129_1100.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/migrations/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/models.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/tests.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book5/day52课后作业－图书管理系统－出版社和作者.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/django_orm_book4/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/django_orm_book4/settings.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/django_orm_book4/urls.py" afterDir="false" />
@@ -44,10 +47,50 @@
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/templates/base.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/templates/books.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../django_orm_book5/templates/edit_book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_orm_book4/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_orm_book4/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_orm_book4/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_orm_book4/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/django_orm_book6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/day52课后作业－图书管理系统－出版社和作者.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book6/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book6/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book6/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book6/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day52 orm3 多表删除修改 跨表查询/day52课后作业－图书管理系统－出版社和作者.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm_book4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm_book4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm_book4/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm_book4/app01/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm_book4/django_orm_book4/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm_book4/django_orm_book4/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django_orm_book4/django_orm_book4/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_orm_book4/django_orm_book4/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +108,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1kvEdOQstNuWYhtYhCEmlgCmmBu" />
+  <component name="ProjectId" id="1kxtAocR40ckCOxkycGZwzHvgSn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -74,11 +117,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../django_orm_book5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/statics/plugins" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day51 orm2 书籍添加 多表关系\django_orm_book4\statics\plugins" />
+      <recent name="C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day51 orm2 书籍添加 多表关系\django_orm_book6\statics\plugins" />
+      <recent name="C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day51 orm2 书籍添加 多表关系\django_orm_book6" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -94,8 +138,8 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="django_orm_book4" type="Python.DjangoServer" factoryName="Django server">
-      <module name="django_orm_book4" />
+    <configuration name="django_orm_book6" type="Python.DjangoServer" factoryName="Django server">
+      <module name="django_orm_book6" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -123,13 +167,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6e28834-9af0-441e-ba97-cabba638da50" name="Default Changelist" comment="" />
-      <created>1606572751219</created>
+      <changelist id="0432a2b9-e48d-4d23-a7fc-194d2864aba0" name="Default Changelist" comment="" />
+      <created>1606653929574</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606572751219</updated>
-      <workItem from="1606572755242" duration="5389000" />
-      <workItem from="1606616047407" duration="1645000" />
+      <updated>1606653929574</updated>
+      <workItem from="1606653931493" duration="4805000" />
     </task>
     <servers />
   </component>
@@ -141,9 +184,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
