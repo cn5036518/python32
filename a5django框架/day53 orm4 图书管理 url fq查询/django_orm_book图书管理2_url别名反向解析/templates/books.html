@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    {#    {{ block.super }}#}
+    <h2>查看书籍</h2>
+{% endblock %}
+
+{% block content %}
+{#    <a href="/add_book/" class="btn btn-primary">添加书籍</a>#}
+    <a href="{% url 'add_book' %}" class="btn btn-primary">添加书籍</a>
+{#    {% url 'add_book' %} 是html模板渲染语法玩url反向解析#}
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>书籍名称</th>
+            <th>价格</th>
+            <th>出版日期</th>
+            <th>出版社</th>
+            <th>作者</th>
+            <th>按钮</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in book_obj %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.PublishDate|date:'Y-m-d' }}</td>
+                <td>{{ book.publishs.name }}</td>
+                {#         通过书籍查出版社 正向查询 关联属性字段#}
+                <td>{{ book.get_authors_name }}</td>
+                {#          书籍对象记录除了调属性,还可以调models类中的方法#}
+                <td>
+{#                    <a href="/edit_book/{{ book.id }}" class="btn btn-warning">编辑</a>#}
+                    <a href="{% url 'edit_book' book.id %}" class="btn btn-warning">编辑</a>
+{#                    传参解析,多个参数用空格分隔 html模板渲染语法玩url反向解析#}
+{#                    <a href="/del_book/{{ book.id }}" class="btn btn-danger">删除</a>#}
+                    <a href="{% url 'del_book' book_id=book.id %}" class="btn btn-danger">删除</a>
+{#                    关键字传参解析, html模板渲染语法玩url反向解析#}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

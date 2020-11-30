@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    <h2>添加书籍</h2>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="title">书籍名称</label>
+            <input type="text" class="form-control" id="title" placeholder="书籍名称"
+                   name="title">
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" placeholder="价格"
+                   name="price">
+        </div>
+        <div class="form-group">
+            <label for="PublishDate">出版日期</label>
+            <input type="date" class="form-control" id="publishDate" placeholder="出版日期"
+                   name="PublishDate">
+        </div>
+
+        <div class="form-group">
+            <label for="publishs">出版社</label>
+            <select class="form-control" id="publishs" name="publishs_id">
+                {% for publish in publish_objs %}
+{#                    <option>{{ publish.name }}</option>#}
+                    <option value="{{ publish.id }}">{{ publish.name }}</option>
+                    {#                    这里{{ publish.name }}是在前端页面做展示#}
+{#                    提交给后端的时候,如果没有添加value属性,会把{{ publish.name }}传递给view中的request.POST#}
+{#                    如果添加了value属性,会把value="{{ publish.id }}作为值,name后的publishs_id作为键,传递给view中的request.POST#}
+{#                    如果手动修改了选项,会把最新选项-出版社的名字对应的出版社id,作为值,name后的publishs_id作为键,传递给view中的request.POST#}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="authors">作者</label>
+            <select class="form-control" id="authors" name="authors" multiple>
+                {#            multiple的属性和值相同,可以只写属性名#}
+                {% for author in author_objs %}
+                    <option value="{{ author.id }}">{{ author.name }}</option>
+{#                    这里{{ author.name }}是在前端页面做展示#}
+{#                    提交给后端的时候,如果没有添加value属性,会把{{ author.name }}传递给view中的request.POST#}
+{#                    如果添加了value属性,会把value="{{ author.id }}作为值,name后的authors作为键,传递给view中的request.POST#}
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+{#        是button 而不是botton#}
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

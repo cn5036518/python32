@@ -16,8 +16,8 @@ class Publish(models.Model):
 	name = models.CharField(max_length=32)
 	city = models.CharField(max_length=32)
 
-	def __str__(self):
-		return self.name
+	# def __str__(self):
+	# 	return self.name
 
 # 书籍表
 # 出版社表和书籍表  一对多

@@ -23,4 +23,7 @@ urlpatterns = [
     url(r'^query/', views.query),  #造数据
     
     url(r'^books/', views.books), #图书展示
+    url(r'^add_book/', views.add_book), #图书添加
+    url(r'^edit_book/(\d+)/', views.edit_book), #图书编辑
+    url(r'^del_book/(\d+)/', views.del_book), #图书编辑
 ]

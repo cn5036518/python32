@@ -29,7 +29,15 @@
                 <td>{{ book.price }}</td>
                 <td>{{ book.pub_date|date:'Y-m-d' }}</td>
                 <td>{{ book.publishs.name }}</td>
-                <td>{{ book.id }}</td>
+                {# book对象.关联属性字段获取对出版社对象记录#}
+
+                <td>
+                    {% for foo in book.authors.all %}
+{#                        all后面不能有() for写在一个td格子中#}
+                        {{ foo.name }}
+                    {% endfor %}
+                </td>
+
                 <td>
                     <a href="/edit_book/{{ book.id }}" class="btn btn-warning">编辑</a>
                     <a href="/del_book/{{ book.id }}" class="btn btn-danger">删除</a>

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    <h2>编辑书籍</h2>
+{% endblock %}
+
+{% block content %}
+    {#    {{ block.super }}#}
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="title">书籍名称</label>
+            <input type="text" class="form-control" id="title" placeholder="书籍名称"
+            name="title" value="{{ book_obj.title }}">
+            {#            name把前端页面输入框的内容,传递到view函数的request.POST,然后保存到数据库#}
+{#            value属性从后端数据库获取数据后,通过views函数,发送到前端页面的输入框作为默认值展示#}
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" placeholder="价格"
+            name="price" value="{{ book_obj.price }}">
+        </div>
+        <div class="form-group">
+            <label for="pub_date">出版日期</label>
+            <input type="date" class="form-control" id="pub_date" placeholder="出版日期"
+            name="pub_date" value="{{ book_obj.pub_date|date:'Y-m-d' }}">
+{#            name把前端页面输入框的内容,传递到view函数的request.POST,然后保存到数据库#}
+        </div>
+
+        <label>出版社</label>
+        <select class="form-control" name="publishs" >
+{#        正向查询 通过书籍对象.关联属性字段.name#}
+            {% for foo in publish_obj %}
+                {% if foo.id == book_obj.publishs.id %}
+                    如果出版社对象的id 等于 书籍对象.关联属性.id  选中,否则不选中
+                        <option value="{{ book_obj.publishs.name }}" selected="selected">{{ foo.name }}</option>
+                    {% else %}
+                        <option value="{{ book_obj.publishs.name }}">{{ foo.name }}</option>
+                {% endif %}
+
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+    <h2>编辑书籍</h2>
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="title">书籍名称</label>
+            <input type="text" class="form-control" id="title" placeholder="书籍名称"
+                   name="title" value="{{ old_book_obj.title }}">
+            {#            关于input标签的value属性,get的时候,value属性会解析从views.py传递过来的变量的值,将解析后的值,展示在输入框内#}
+            {#            当手动修改输入框的值后,提交的时候,会把输入框的最新内容,作为值,name属性title作为键,提交到后端服务器 views中用request.POST接受#}
+        </div>
+        <div class="form-group">
+            <label for="price">价格</label>
+            <input type="text" class="form-control" id="price" placeholder="价格"
+                   name="price" value="{{ old_book_obj.price }}">
+        </div>
+        <div class="form-group">
+            <label for="PublishDate">出版日期</label>
+            <input type="date" class="form-control" id="publishDate" placeholder="出版日期"
+                   name="PublishDate" value="{{ old_book_obj.PublishDate|date:'Y-m-d' }}">
+        </div>
+
+        <div class="form-group">
+            <label for="publishs">出版社</label>
+            <select class="form-control" id="publishs" name="publishs_id">
+                {% for publish in publish_objs %}
+                    <option>{{ publish.name }}</option>
+                    {% if publish.id == old_book_obj.publishs.id %}
+{#                        if判断 注意点1#}
+                        {#                            {% if publish == old_book_obj.publishs %}#}
+                        <option value="{{ publish.id }}" selected>{{ publish.name }}</option>
+                    {% else %}
+                        <option value="{{ publish.id }}">{{ publish.name }}</option>
+                    {% endif %}
+
+                    这里{{ publish.name }}是在前端页面做展示
+                    提交给后端的时候,如果没有添加value属性,会把{{ publish.name }}传递给view中的request.POST
+                    如果添加了value属性,会把value="{{ publish.id }}作为值,name后的publishs_id作为键,传递给view中的request.POST
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="authors">作者</label>
+            <select class="form-control" id="authors" name="authors" multiple>
+                {#            multiple的属性和值相同,可以只写属性名#}
+                {% for author in author_objs %}
+{#                    {% if author.id in old_book_obj.authors.all %}#}
+                    {% if author in old_book_obj.authors.all %}
+                        {#                if判断 注意点2#}
+                        <option value="{{ author.id }}" selected>{{ author.name }}</option>
+                    {% else %}
+                        <option value="{{ author.id }}">{{ author.name }}</option>
+                    {% endif %}
+
+                    {#                    这里{{ author.name }}是在前端页面做展示#}
+                    {#                    提交给后端的时候,如果没有添加value属性,会把{{ author.name }}传递给view中的request.POST#}
+                    {#                    如果添加了value属性,会把value="{{ author.id }}作为值,name后的authors作为键,传递给view中的request.POST#}
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success pull-right">提交</button>
+        {#        是button 而不是botton#}
+    </form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

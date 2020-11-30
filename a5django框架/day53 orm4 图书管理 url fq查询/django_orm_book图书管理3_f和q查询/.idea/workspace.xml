@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1c3f7333-95e1-4eaf-8931-cc6b93ea8dc7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/readme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/templates/edit_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/dataSources/b72c07c6-3d6a-4e3e-9575-77434c1aae3f.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/django_orm02.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/migrations/0002_auto_20201126_1208.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/migrations/0003_auto_20201130_1205.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/django_orm02/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/django_orm02/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/django_orm02/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/django_orm02/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/templates/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm02/templates/edit_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/.idea/django_orm_book图书管理.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/django_orm_book图书管理/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/django_orm_book图书管理/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/django_orm_book图书管理/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/django_orm_book图书管理/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/templates/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理/templates/edit_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/.idea/django_orm_book图书管理.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/django_orm_book图书管理/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/django_orm_book图书管理/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/django_orm_book图书管理/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/django_orm_book图书管理/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/templates/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_orm_book图书管理2_url别名反向解析/templates/edit_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/django_orm_book图书管理.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/0002_auto_20201130_2151.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book图书管理/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book图书管理/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book图书管理/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/django_orm_book图书管理/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/bootstrap-3.3.7-dist/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statics/plugins/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/django_url.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app01/xx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app02/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/app03/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/django_url/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/django_url.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app01/xx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app02/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/app03/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/django_url/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url2/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/.idea/django_url3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app01/xx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app02/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/app03/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/django_url3/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/django_url3/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/django_url3/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/django_url3/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../django_url3/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/app01/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/app01/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/django_orm_book6/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/django_orm_book6/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/templates/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day51 orm2 书籍添加 多表关系/django_orm_book6/templates/books.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1l02fQcSerXGUicDAe1wN04aMNf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day53 orm4 图书管理 url fq查询\django_orm_book图书管理\statics\plugins" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="django_orm_book图书管理" type="Python.DjangoServer" factoryName="Django server">
+      <module name="django_orm_book图书管理" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c3f7333-95e1-4eaf-8931-cc6b93ea8dc7" name="Default Changelist" comment="" />
+      <created>1606719790622</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606719790622</updated>
+      <workItem from="1606719791918" duration="10860000" />
+      <workItem from="1606734448916" duration="4625000" />
+      <workItem from="1606739174327" duration="2754000" />
+      <workItem from="1606744081189" duration="1562000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
