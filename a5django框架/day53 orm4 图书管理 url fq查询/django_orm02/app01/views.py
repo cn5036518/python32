@@ -266,15 +266,20 @@ def query(request):
 	# #支持四则运算
 
 	# Q查询, 多条件查询的时候用的多, or查询
-	# 查询一下点赞数大于10或者评论数大于10的所有书籍
-	# models.Book.objects.filter(Q(dianzan__gt=10) & Q(comment__gt=10))  #| -- or   & -- and  ~ -- not
+	# 1查询一下点赞数大于10或者评论数大于10的所有书籍
+	# models.Book.objects.filter(Q(dianzan__gt=10) & Q(comment__gt=10))
+	#   #| -- or   & -- and  ~ -- not
 	# models.Book.objects.filter(dianzan__gt=10, comment__gt=10)
 	# ret = models.Book.objects.filter(Q(dianzan__gt=10) | Q(comment__gt=10)).values('title')
 
-	# 点赞数大于10或者评论数大于10的并且价格大于30的
+	# 2点赞数大于10或者评论数大于10的并且价格大于30的
+	# 方法1
 	# ret = models.Book.objects.filter(Q(Q(dianzan__gt=10) | Q(comment__gt=10)) & Q(price__gt=30)).values('title')
+
+	# 方法2
 	# ret = models.Book.objects.filter(Q(dianzan__gt=10) | Q(comment__gt=10) , price__gt=30).values('title')
-	#Q(dianzan__gt=10) | Q(comment__gt=10)通过连接符号连接的Q查询条件,算是一组查询条件
+	#Q(dianzan__gt=10) | Q(comment__gt=10)
+	# 通过连接符号连接的Q查询条件,算是一组查询条件
 	# print(ret)
 
 	# ret = models.Book.objects.filter(Q(Q(dianzan__gt=10) | Q(comment__gt=10)) & ~Q(price__gt=30)).values('title')

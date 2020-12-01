@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>32期登录页面</h1>
+<form action="" method="post">
+    <div>{{ error }}</div>
+{#    如果error不传值,就不显示#}
+    用户名: <input type="text" name="username" value="{{ username }}">
+    密码: <input type="password" name="password" value="{{ password }}">
+    <input type="submit">
+</form>
+<hr>
+
+{#<iframe src="http://www.baidu.com" frameborder="0"#}
+{#    style="width: 100%";#}
+{#    height="500px">#}
+{#</iframe>#}
+
+{#发送get或者post请求的几种方法#}
+{#1 form#}
+{#2 a标签#}
+{#3 直接输入网址#}
+{#4 ajax#}
+
+<h1>32期ajax登录页面</h1>
+用户名: <input type="text" id="username">
+密码: <input type="password" id="password">
+<button id="btn">ajax提交</button>
+
+<h1 id="ajax_error" style="color: red"></h1>
+<h1 id="msg"></h1>
+{#存放字典的值#}
+<ul id="food_ul">
+
+</ul>
+{#存放列表的元素#}
+
+<script>
+
+
+    // 1 ajax登录
+    $('#btn').click(function () {
+        var uname = $('#username').val();
+        var password = $('#password').val();
+        //#1获取登录输入框的用户输入的用户名和密码
+        {#console.log(uname)#}
+
+    $.ajax({
+        type:'post',// 请求方法.
+        url:'/login/',  //提交到当前路径
+        // 如果不携带数据,可以不写data属性
+        data:{xname:uname,pwd:password},
+        // xname:chao,pwd:123  request.POST.get('xname')
+        success:function (res) {
+            // res接受的是请求成功之后的响应结果,ajax如何判断请求成功还是失败,由后台决定
+            // 后台响应的状态码如果是2xx\3xx等,ajax发现应用状态为2xx\3xx等,ajax就知道请求成功了
+            // ajax会自动触发success对应的回调函数,并且将接受到的响应传值给了函数的res
+            console.log('success',res);
+            $('#msg').text(res)
+            //把后台的'ok'获取到,展示在前台页面
+            //登录成功后,可以a标签跳转到首页
+        },
+        error:function (error) {
+            //后台响应的状态码为4xx或者5xx表示请求失败或者服务器出问题了,没有正常响应本次请求的内容
+            // ajax接受到响应,如果发现响应状态码为4xx或者5xx,那么ajax会自动触发error对应的函数,并将
+                                 // 响应结果传给函数作为参数(error参数)
+            console.log('error>>>>>>',error)
+            $('#ajax_error').text(error.responseText)
+            //把后台的'用户名或者密码有误'获取到,展示在前台页面
+        }
+    })
+    })
+
+    {#2 这里请求的地址不是127.0.0.1:8000/index/  而是127.0.0.1:8000/login/ #}
+    {#2-1显示字典的值   方法1   #}
+   {# $.ajax({#}
+   {#     url:'/index/',#}
+         {#异步提交,局部更新#}
+   {#     type:'get',#}
+   {#     success:function (res){#}
+   {#         console.log('>>>>>>>>>>>>>>>>',res,typeof res);#}
+            {#console.log('>>>>>>>>>>>>>>>>',res.name,typeof res);#}
+            {#这里字符串无法res.name#}
+            {#$('#msg').text(res.name);#}
+   {#         var userinfo = JSON.parse(res);#}
+   {#         console.log('>>>>>>>>>>>>>>>>',userinfo,typeof userinfo);#}
+   {#         $('#msg').text(userinfo.name)#}
+   {#     },#}
+   //{#});#}
+
+        {#2-2显示字典的值   方法2  推荐 #}
+    $.ajax({
+        url:'/index2/',
+        type:'get',
+        success:function (res) {
+            console.log('>>>>>',res,typeof res);
+            $('#msg').text(res.name)
+            {#把name的值'春培'显示在前台页面#}
+        }
+    })
+
+        {#3-1显示列表的元素   方法1   #}
+    {#$.ajax({#}
+    {#    url: '/food/',#}
+    {#    type: 'get',#}
+    {#    success: function (res) {#}
+    {#        console.log('>>>>>>>>>>', res, typeof res);#}
+    {#        var food_list = JSON.parse(res);#}
+    {#        console.log(food_list, typeof food_list)#}
+    {#        var ulEle = $('#food_ul');#}
+    {##}
+    {#        // 创建li标签#}
+    {#        $.each(food_list,function (k,v) {#}
+    {#              // k是列表的索引#}
+    {#            // v是列表的元素#}
+    {#            var newliele = document.createElement('li');#}
+    {#            // 给li标签添加文本内容#}
+    {#            newliele.innerText = v;#}
+    {#            // 将li标签添加到ul标签内部的后面--append#}
+    {#            ulEle.append(newliele);#}
+    {#        })#}
+    {#    }#}
+    //{#})#}
+
+    {#3-2显示列表的元素   方法2 推荐   #}
+    {#$.ajax({#}
+    {#    url: '/food/',#}
+    {#    type: 'get',#}
+    {#    success: function (res) {#}
+    {#        console.log('>>>>>>>>>>', res, typeof res);#}
+            {#var food_list = JSON.parse(res);#}
+            {#console.log(food_list, typeof food_list)#}
+    {#        var ulEle = $('#food_ul');#}
+            {##}
+    {#        // 创建li标签#}
+    {#        $.each(res, function (k, v) {#}
+    {#            // k是列表的索引#}
+    {#            // v是列表的元素#}
+    {#            var newliele = document.createElement('li');#}
+    {#            // 给li标签添加文本内容#}
+    {#            newliele.innerText = v;#}
+    {#            // 将li标签添加到ul标签内部的后面--append#}
+    {#            ulEle.append(newliele);#}
+    {#        })#}
+    {#    }#}
+    //{#})#}
+
+    {#3-2显示列表的元素   方法2 推荐   #}
+    $.ajax({
+        url:'/food/',
+        type:'get',
+        success:function (res) {
+            console.log(res,typeof res);
+            var ulele = $('#food_ul');
+            {#获取到标签#}
+
+            // 创建li标签
+            $.each(res,function (k,v) {
+                // k是列表的索引
+                // v是列表的元素
+                var newliele = document.createElement('li');
+                 // 给li标签添加文本内容
+                newliele.innerText = v;
+                // 将li标签添加到ul标签内部的后面--append
+                ulele.append(newliele);
+            })
+
+        }
+    })
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

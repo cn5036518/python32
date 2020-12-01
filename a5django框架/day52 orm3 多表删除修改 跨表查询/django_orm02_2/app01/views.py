@@ -365,31 +365,37 @@ def query(request):
 	# ORDER BY NULL LIMIT 21;
 
 #课后作业
-	# 1 查询每个作者的姓名以及出版的书的最高价格
+	# 1 查询每个作者的姓名以及出版的书的最高价格--ok
 	# ret = Author.objects.annotate(m=Max('book__price')).values('name','m')
 	# print(ret)
 	# ret = Author.objects.annotate(m=Max('book__price')).values('name','m')
-	# print(ret)
+	# print(ret)  #反向查询 表名小写
 	# print(ret[0])  #{'name': '元涛', 'm': Decimal('10.00')}
 	# < QuerySet[{'name': '元涛', 'm': Decimal('10.00')},
 	# {'name': '元涛2', 'm': None}] >
 
-	# 2 查询作者id大于2作者的姓名以及出版的书的最高价格
+	# 2 查询作者id大于2作者的姓名以及出版的书的最高价格--ok
 	# 默认按照authors_id进行分组
 	# ret = Author.objects.annotate(m=Max('book__price')).values('name','m')
-	# # ret.filter(Author_id__gt=2)
+	# # ret.filter(Author_id__gt=2)   ##反向查询 表名小写
 	# ret = ret.filter(id__gt=2)
 	# print(ret)
 	# < QuerySet[{'name': '元涛', 'm': Decimal('10.00')}, {'name': '元涛2', 'm': None}] >
 
 	# 3 查询作者id大于2或者作者年龄大于等于20岁的女作者的姓名以及出版的书的最高价格
-	# ret = Author.objects.annotate(m=Max('book__price')).values('name', 'm')
-	# ret = ret.filter(id__gt=2)
-	# 或者 如何写?
+	from django.db.models import F,Q
+	print('1')
+	ret = Author.objects.annotate(m=Max('book__price')).values('name', 'm')
+	ret = ret.filter(Q(id__gt=2)|Q(age__gt=20))
+	print(ret)
+	# 或者 如何写?  #Q查询
+
+	ret2 = Author.objects.filter(Q(age__gt=20)|Q(id__gt=2)).annotate(m=Max('book__price')).values('name','m')
+	print(ret2)
 
 	# 4 查询每个作者出版的书的最高价格 的平均值
 	# ret = Author.objects.annotate(m=Max('book__price')).values('name','m')
-	# ret = ret.aggregate(a = Avg('m'))
+	# ret = ret.aggregate(a = Avg('m'))   ##反向查询 表名小写
 	# print(ret)  #{'a': 10.0}
 
 	# annotate 分组

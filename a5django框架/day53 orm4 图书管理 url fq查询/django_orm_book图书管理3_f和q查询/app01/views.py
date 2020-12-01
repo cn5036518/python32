@@ -71,16 +71,37 @@ def query(request):
 
 	# 方法2  F查询
 	books = Book.objects.filter(dianzan__gt=F('comment'))
-	print(books.values('title'))
+	# print(books.values('title'))
 	#<QuerySet [{'title': '读书11'}, {'title': '读书3'}]>
 
 	# 2所有书籍价格上调10块钱
 	# 方法1 普通写法
-	books = Book.objects.all()
-	for book in books:
-		book.price += 10
-		print(book.price)
-		book.save()  #
+	# books = Book.objects.all()
+	# for book in books:
+	# 	book.price += 10
+	# 	print(book.price)
+	# 	book.save()  #把记录更新到数据库
+
+	# 方法2 F查询
+	Book.objects.all().update(price=F('price')+10)
+	# #支持四则运算
+
+	# Q查询, 多条件查询的时候用的多, or查询
+	# 1查询一下点赞数大于10或者评论数大于10的所有书籍
+	book = Book.objects.filter(Q(dianzan__gt=10) | Q(comment__gt=10))
+	#   #| -- or   & -- and  ~ -- not
+	# print(book.values('title'))
+	#<QuerySet [{'title': '读书6'}, {'title': '读书7'}]>
+
+	# 2点赞数大于10或者评论数大于10的并且价格大于30的
+	# 方法1
+	book = Book.objects.filter(Q(dianzan__gt=10)|Q(comment__gt=10),price__gt=30)
+	# print(book.values('title'))
+	#<QuerySet [{'title': '读书6'}, {'title': '读书7'}]>
+
+	# 方法2
+	book = Book.objects.filter(Q(Q(dianzan__gt=10) | Q(comment__gt=10)) &Q(price__gt=30))
+	print(book.values('title'))
 
 
 
