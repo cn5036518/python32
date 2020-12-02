@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -24,8 +24,89 @@
 <h1>32期ajax登录页面</h1>
 用户名: <input type="text id" id="username">
 密码: <input type="password" id="password">
+<button id="btn">ajax提交</button>
+
+<h1 id="ajax_error" style="color: red"></h1>
+{#登录失败的提示#}
+
+<h1 id="msg"></h1>
+{#显示字典的值#}
+
+<ul id="food_ul">
+{#    显示列表的元素到这里#}
+</ul>
+
+<script>
+    // 1 ajax登录
+    // ajax 在点击-ajax提交按钮后才触发
+    $('#btn').click(function () {
+        var uname = $('#username').val();
+        var password = $('#password').val();
+        {#jquery获取输入框的内容#}
+        console.log(uname)
+
+        //ajax在点击事件内部
+        $.ajax({
+            type:'post',//请求方法.
+            url:'/login/',
+            // 如果不携带数据,可以不写data属性
+            data:{xname:uname,pwd:password},
+            success:function (res) {
+                // res接受的是请求成功之后的响应结果,如果ajax判断请求成功和失败,有后台决定
+                // 后台响应的状态码如果是2xx\3xx等,ajax发现应用状态为2xx\3xx等,ajax就知道请求成功了
+                // ajax会自动触发success对应的回调函数,并且将接受到的响应传值给了函数
+                console.log('success',res);
+                {#success ok#}
+            },
+            error:function (res) {
+                //后台响应的状态码为4xx或者5xx表示请求失败或者服务器出问题了,没有正常响应本次请求的内容
+                  // ajax接受到响应,如果发现响应状态码为4xx或者5xx,那么ajax会自动触发error对应的函数,并将
+                // 响应结果传给函数作为参数(error参数)
+                console.log('error',res);
+                $('#ajax_error').text(res.responseText);
+            }
+        })
+    })
+
+    {#2获取字典键对应的值#}
+    $.ajax({
+        url:'/index/',
+        type:'get',
+        success:function (res) {
+            console.log(res,typeof res);
+            $('#msg').text(res.name)
+            {#把字典的值显示在前端页面#}
+        },
+        error:function (res) {
+            console.log(res,typeof res);
+        }
+    })
+
+    {#3获取列表的元素#}
+    $.ajax({
+        url:'/food/',
+        type:'get',
+        success:function (res) {
+            console.log(res,typeof res);
+            var ulele = $('#food_ul');
+
+            // 创建li标签
+            $.each(res,function (k,v) {
+                    // k是列表的索引
+                // v是列表的元素
+                {#console.log(v);#}
+                var newliele = document.createElement('li');
+                // 给li标签添加文本内容
+                newliele.innerText = v;
+                 // 将li标签添加到ul标签内部的后面--append
+                ulele.append(newliele);
+            })
+
+        }
+    })
 
 
+</script>
 </body>
 </html>
 

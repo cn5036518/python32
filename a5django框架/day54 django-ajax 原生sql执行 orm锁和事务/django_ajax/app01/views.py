@@ -70,7 +70,7 @@ def food(request):
 	# food_list = ['黄瓜', '茄子', '香蕉', '萝卜', '冬瓜']
 	food_list = ['黄瓜', '茄子', '香蕉', '萝卜', '冬瓜']
 	# food_str = json.dumps(food_list)
-	# 响应非字典类型数据时,需要加上safe=False的参数
+	# 响应非字典类型数据时,需要加上safe=False的参数 否则报错
 	return JsonResponse(food_list, safe=False)
 
 
