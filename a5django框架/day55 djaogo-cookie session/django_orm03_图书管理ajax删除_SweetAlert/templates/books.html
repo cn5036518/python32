@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block content_title %}
+        {{ block.super }}
+    <h2>查看书籍</h2>
+{% endblock %}
+
+{% block content %}
+{#        <a href="/add_book/" class="btn btn-primary">添加书籍</a>#}
+    <a href="{% url 'add_book' %}" class="btn btn-primary">添加书籍</a>
+{#        {% url 'add_book' %} 是html模板渲染语法玩url反向解析#}
+    <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>书籍名称</th>
+            <th>价格</th>
+            <th>出版日期</th>
+            <th>出版社</th>
+            <th>作者</th>
+            <th>按钮</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in book_obj %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+                <td>{{ book.PublishDate|date:'Y-m-d' }}</td>
+                <td>{{ book.publishs.name }}</td>
+{#                         通过书籍查出版社 正向查询 关联属性字段#}
+                <td>{{ book.get_authors_name }}</td>
+{#                          书籍对象记录除了调属性,还可以调models类中的方法#}
+                <td>
+{#                                        <a href="/edit_book/{{ book.id }}" class="btn btn-warning">编辑</a>#}
+                    <a href="{% url 'edit_book' book.id %}" class="btn btn-warning">编辑</a>
+{#                                        传参解析,多个参数用空格分隔 html模板渲染语法玩url反向解析#}
+{#                                        <a href="/del_book/{{ book.id }}" class="btn btn-danger">删除</a>#}
+                    <a href="{% url 'del_book' book_id=book.id %}" class="btn btn-danger">删除</a>
+{#                                        关键字传参解析, html模板渲染语法玩url反向解析#}
+                    <button class="btn btn-danger ajax_sub" xx="{{ book.pk }}">ajax删除</button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block js %}
+    <script>
+        $('.ajax_sub').click(function () {
+            var book_id = $(this).attr('xx');
+            //获取xx属性对应的值  $(this)指的是当前点击的标签button(ajax删除按钮)
+            //返回被选元素的属性值。 $(selector).attr(attribute)
+            console.log(book_id);
+            var ths = $(this);
+            // 保存一下这个this  因为后面的$(this)指的不是标签button
+
+            swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this imaginary file!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel plx!",
+                    closeOnConfirm: false,
+                    {#closeOnCancel: false#}
+                // {#上面行如果没有注释,取消删除 也会删除数据
+                },
+                function (isConfirm) {
+                    // {#console.log(isConfirm)#}
+                    // {#False#}
+                    if (isConfirm) {
+                        $.ajax({
+                            type: 'get',
+                            url: '/ajax_del_book/' + `${book_id}` + '/',
+                            // http://127.0.0.1:8000/ajax_del_book/1/
+                            success: function (res) {
+                                if (res.status === 1) {
+                                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    console.log($(this))
+                                    // {#jQuery.fn.init [{…}]#}
+                                    // {#这里的$(this)指的是swal 而不是ajax删除按钮  谁调用,这个$(this)就指的谁#}
+                                    console.log(ths)
+                                    // {#jQuery.fn.init [button.btn.btn-danger.ajax_sub]#}
+                                    ths.parent().parent().remove();
+                                    // {#button的父级是td,td的父级是tr 删除一行#}
+                                } else {
+                                    swal("Cancelled", "Your imaginary file is safe :)", "error");
+                                }
+                            },
+                        })
+                    }
+                })
+        });
+
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

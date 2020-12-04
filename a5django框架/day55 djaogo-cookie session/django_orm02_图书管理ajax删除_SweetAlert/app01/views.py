@@ -209,9 +209,9 @@ def ajax_del_book(request,book_id):
 	try:
 		Book.objects.get(id=book_id).delete()
 		#默认级联删除
-		res_data = {'status':1,'mag':'删除成功!'}
+		res_data = {'status':1,'msg':'删除成功!'}
 	except:
-		res_data = {'status':0,'mag':'删除失败!'}
+		res_data = {'status':0,'msg':'删除失败!'}
 		
 	return JsonResponse(res_data)
 # 把字典自动转成json字符串,传递给前端页面

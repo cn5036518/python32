@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    {#    <a href="/add_book/" class="btn btn-primary">添加书籍</a>#}
+<!--    {#    <a href="/add_book/" class="btn btn-primary">添加书籍</a>#}-->
     <a href="{% url 'add_book' %}" class="btn btn-primary">添加书籍</a>
-    {#    {% url 'add_book' %} 是html模板渲染语法玩url反向解析#}
+<!--    {#    {% url 'add_book' %} 是html模板渲染语法玩url反向解析#}-->
     <table class="table table-hover table-striped">
         <thead>
         <tr>
@@ -33,15 +33,15 @@
                 <td>{{ book.get_authors_name }}</td>
                 {#          书籍对象记录除了调属性,还可以调models类中的方法#}
                 <td>
-                    {#                    <a href="/edit_book/{{ book.id }}" class="btn btn-warning">编辑</a>#}
+<!--                    {#                    <a href="/edit_book/{{ book.id }}" class="btn btn-warning">编辑</a>#}-->
                     <a href="{% url 'edit_book' book.id %}" class="btn btn-warning">编辑</a>
-                    {#                    传参解析,多个参数用空格分隔 html模板渲染语法玩url反向解析#}
-                    {#                    <a href="/del_book/{{ book.id }}" class="btn btn-danger">删除</a>#}
+<!--                    {#                    传参解析,多个参数用空格分隔 html模板渲染语法玩url反向解析#}-->
+<!--                    {#                    <a href="/del_book/{{ book.id }}" class="btn btn-danger">删除</a>#}-->
                     <a href="{% url 'del_book' book_id=book.id %}" class="btn btn-danger">删除</a>
-                    {#                    关键字传参解析, html模板渲染语法玩url反向解析#}
+<!--                    {#                    关键字传参解析, html模板渲染语法玩url反向解析#}-->
                     <button class="btn btn-danger ajax_sub" xx="{{ book.pk }}">ajax删除</button>
-                    {#                    xx是自定义属性  book.pk 和book.id类似 指的是主键#}
-                    {#                    ajax_sub用的是class. 不是id#}
+<!--                    {#                    xx是自定义属性  book.pk 和book.id类似 指的是主键#}-->
+<!--                    {#                    ajax_sub用的是class. 不是id#}-->
                 </td>
             </tr>
         {% endfor %}
@@ -53,10 +53,10 @@
     <script>
         $('.ajax_sub').click(function () {
             var book_id = $(this).attr('xx');
-            //获取xx属性对应的值  $(this)指的是当前点击的标签button
-            {#console.log(book_id)#}
+            //获取xx属性对应的值  $(this)指的是当前点击的标签button(ajax删除按钮)
+            // {#console.log(book_id)#}
             var ths = $(this);
-            {#console.log(ths)#}
+            // {#console.log(ths)#}
             // 保存一下这个this  因为后面的$(this)指的不是标签button
 
             swal({
@@ -68,12 +68,12 @@
                     confirmButtonText: "Yes, delete it!",
                     cancelButtonText: "No, cancel plx!",
                     closeOnConfirm: false,
-                    {#closeOnCancel: false#}
-                    {#上面行如果没有注释,取消删除 也会删除数据#}
+                    // {#closeOnCancel: false#}
+                    // {#上面行如果没有注释,取消删除 也会删除数据#}
                 },
                 function (isConfirm) {
-                    {#console.log(isConfirm)#}
-                    {#False#}
+                    // {#console.log(isConfirm)#}
+                    // {#False#}
                     if (isConfirm) {
                         $.ajax({
                             type: 'get',
@@ -83,30 +83,29 @@
                                 if (res.status === 1) {
                                     swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                     console.log($(this))
-                                    {#jQuery.fn.init [{…}]#}
-                                    {#这里的$(this)指的是swal 而不是ajax删除按钮  谁调用,这个$(this)就指的谁#}
+                                    // {#jQuery.fn.init [{…}]#}
+                                    // {#这里的$(this)指的是swal 而不是ajax删除按钮  谁调用,这个$(this)就指的谁#}
                                     console.log(ths)
-                                    {#jQuery.fn.init [button.btn.btn-danger.ajax_sub]#}
+                                    // {#jQuery.fn.init [button.btn.btn-danger.ajax_sub]#}
                                     ths.parent().parent().remove();
-                                    {#button的父级是td,td的父级是tr 删除一行#}
+                                    // {#button的父级是td,td的父级是tr 删除一行#}
                                 } else {
                                     swal("Cancelled", "Your imaginary file is safe :)", "error");
                                 }
                             },
                         })
                     }
-
                 })
         });
 
-        var username = '薛宇健'
-        var a = {
-            username:'瑞啸',
-            age:48,
-            eat:function () {
-                console.log(this.username)
-            }
-        }
+        // var username = '薛宇健'
+        // var a = {
+        //     username:'瑞啸',
+        //     age:48,
+        //     eat:function () {
+        //         console.log(this.username)
+        //     }
+        // }
 
     </script>
 {% endblock %}

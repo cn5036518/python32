@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--{#<h1>32期皇家会所会员登录页面</h1>#}-->
+<!--{#<form action="" method="post" >#}-->
+<!--{#    {% csrf_token %}#}-->
+<!--{#    <div>{{ error }}</div>#}-->
+<!--{#    用户名: <input type="text" name="username"  value="{{ username }}">#}-->
+<!--{#    密码: <input type="password" name="password" value="{{ password }}">#}-->
+<!--{#    <input type="submit">#}-->
+<!--{##}-->
+<!--{#</form>#}-->
+
+<hr>
+
+{#<iframe src="http://www.baidu.com" frameborder="0" style="width: 100%;height: 500px"></iframe>#}
+{% csrf_token %}
+{#老师的代码不需要添加 {% csrf_token %} 不会报403#}
+{#这块我的代码复制的是老师的代码,不添加{% csrf_token %} 会报403#}
+
+
+<h1>32期皇家会所会员ajax登录页面</h1>
+
+用户名: <input type="text" id="username">
+密码: <input type="password" id="password">
+<button id="btn">ajax提交</button>
+<h1 id="ajax_error" style="color:Red;"></h1>
+
+<h1 id="msg"></h1>
+
+<ul id="food_ul">
+
+</ul>
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+
+<script>
+    //ajax通过django的csrf_token认证机制的写法
+    //方式1:
+     {#jq获取Input标签的csrfmiddlewaretoken的值  ajax通过data发送数据#}
+    $('#btn').click(function () {
+        var uname = $("#username").val();
+        var password = $("#password").val();
+
+        var token = $("[name='csrfmiddlewaretoken']").val();
+         {#jq获取Input标签的csrfmiddlewaretoken的值#}
+
+        $.ajax({
+            type: 'post',  // 请求方法.
+            url: '/login/',
+
+            data: {xname: uname, pwd: password, csrfmiddlewaretoken: token},
+            {## 发送  jq获取Input标签的csrfmiddlewaretoken的值#}
+            success: function (res) {
+                console.log('success', res);
+            },
+            error: function (error) {
+                console.log('error>>>>>', error);
+                $('#ajax_error').text(error.responseText);
+            }
+        })
+    })
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
