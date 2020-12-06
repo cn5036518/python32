@@ -9,7 +9,9 @@ from django.utils.deprecation import MiddlewareMixin
 # 	white_list = ['/login/', '/register/']
 #
 #
-# 	# 对请求处理用process_request, 如果请求通过了处理,就return None,如果没有通过直接return HttpResponse对象
+# 	# 对请求处理用process_request,
+# 	如果请求通过了处理,就return None,
+# 	如果没有通过直接return HttpResponse对象 终止
 # 	def process_request(self,request):
 #
 # 		current_path = request.path

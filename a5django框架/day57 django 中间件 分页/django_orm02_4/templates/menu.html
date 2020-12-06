@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div>
+    {% for menu in menu_dict %}
+{#        注意 menu_dict这是inclusion_tag函数的返回值那个字典中的键#}
+        <div class="list-group ">
+            <a href="{{ menu.url }}" class="list-group-item {{ menu.class }}">
+                <i class="{{ menu.icon }} fa-fw" aria-hidden="true"></i>&nbsp;
+                {{ menu.title }}</a>
+        </div>
+    {% endfor %}
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

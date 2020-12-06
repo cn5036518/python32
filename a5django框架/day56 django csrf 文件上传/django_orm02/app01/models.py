@@ -2,23 +2,25 @@ from django.db import models
 
 # Create your models here.
 
-
+# 左侧菜单表
 class Menu(models.Model):
 	title = models.CharField(max_length=10)
-	url = models.CharField(max_length=20)
+	url = models.CharField(max_length=20)  #跳转地址
 	icon = models.CharField(max_length=32, null=True,blank=True)
+	# 允许为空  菜单的图标
+	#菜单有图标,用户表的用户也可以存头像
 
-
-
+# 登录用户表
 class UserInfo(models.Model):
 
 	username = models.CharField(max_length=32)
 	password = models.CharField(max_length=32)
 	phone_number = models.CharField(max_length=18)
 	email = models.EmailField()  # 底层也是CharField
+	# 上述4个属性字段的名字建议和模板中的input标签的name属性保持一致
 
 	menus = models.ManyToManyField('Menu')
-
+	# 登录用户表UserInfo和左侧菜单表Menu  多对多
 
 
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{#    必须要引入jquery#}
+</head>
+<body>
+
+{#方式1#}
+{#form表单上传文件  页面会刷新#}
+{#<form action="" method="post" enctype="multipart/form-data">#}
+{#    {% csrf_token %}#}
+{#    用户名: <input type="text" name="username">#}
+{#    密码: <input type="password" name="password">#}
+{#    头像: <input type="file" name="avatar">#}
+{#    //上传单个文件#}
+{#    <input type="submit">#}
+{#</form>#}
+
+{#方式2#}
+{#ajax上传文件  页面不会刷新  异步提交  局部更新#}
+{% csrf_token %}
+用户名: <input type="text" name="username">
+密码: <input type="password" name="password">
+头像: <input type="file" name="avatar">
+<button id="sub">提交</button>
+
+<script>
+    $('#sub').click(function () {
+        var uname = $('[name="username"]').val();
+        var pwd = $('[name="password"]').val();
+        var file_obj = $('[type="file"]')[0].files[0];
+           //$('[type="file"]')[0] jq==>原生js的对象
+
+         // ajax上传文件,必须将文件数据放到一个叫做formdata的对象中才能发送
+        var formdata = new FormData();
+        formdata.append('username',uname)
+        formdata.append('password',pwd)
+        formdata.append('csrfmiddlewaretoken','{{ csrf_token }}')
+        formdata.append('avatar',file_obj)
+        {#// requser.FILES.get('avatar')#}
+
+        $.ajax({
+            url:'/upload/',
+            type:'post',
+            data:formdata,
+            // ajax会将本次请求的数据格式自动改为 content-type: multipart/form-data
+
+            // 告诉ajax不要对数据进行预处理和加工,上传文件必须加上这两个参数,固定写法
+            contentType:false,
+            processData: false,
+            success:function (res) {
+
+            }
+        })
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

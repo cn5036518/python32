@@ -29,10 +29,12 @@ def login(request):
 		return render(request, 'login.html')
 
 	else:
+		# ajax第1 2个方式用这个 request.POST
 		# data = request.POST
 		# print(data) #<QueryDict: {'xname': ['yuantao'], 'pwd': ['666']}>
 		# print('>>>>>',request.body)  #>>>>> b'xname=asdf&pwd=123'
 
+		#ajax第3个方式需要 request.body
 		data = request.body
 		data = data.decode()
 		import json
@@ -40,6 +42,8 @@ def login(request):
 		print(data,type(data))
 		#{'xname': 'asdf', 'pwd': '123'} <class 'dict'>
 
+		# ajax第1 2个方式走下面
+		# data = request.POST
 		username = data.get('xname')
 		password = data.get('pwd')
 		if username == 'yuantao' and password == '666':

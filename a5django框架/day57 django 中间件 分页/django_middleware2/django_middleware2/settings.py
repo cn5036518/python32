@@ -43,11 +43,17 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 封装session功能的 ,request.session['xx'] ='oo'
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 尽量将自己定义的中间件放到最后
+    'app01.mymiddleware.LoginAuth',
+    # 'app01.mymiddleware.Md1',
+    # 'app01.mymiddleware.Md2',
 ]
 
 ROOT_URLCONF = 'django_middleware2.urls'

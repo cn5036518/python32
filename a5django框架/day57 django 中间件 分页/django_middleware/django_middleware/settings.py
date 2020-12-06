@@ -44,7 +44,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',  # 封装session功能的 ,request.session['xx'] ='oo'
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    # 封装session功能的 ,request.session['xx'] ='oo'
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

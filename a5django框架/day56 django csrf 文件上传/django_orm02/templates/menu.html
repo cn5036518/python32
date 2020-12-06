@@ -10,17 +10,14 @@
 
 
 <div class="menu">
-
-
     {% for menu in menu_dict %}
-
         <div class="list-group menuc">
-            <a class="list-group-item {{ menu.class }}" href="{{ menu.url }}"><i class="{{ menu.icon }} fa-fw" aria-hidden="true"></i>&nbsp; {{ menu.title }}</a>
+            <a class="list-group-item {{ menu.class }}" href="{{ menu.url }}">
+{#                <i class="{{ menu.icon }} fa-fw" aria-hidden="true"></i>&nbsp;#}
+                <i class="{{ menu.icon }}" aria-hidden="true"></i>;
+                {{ menu.title }}</a>
         </div>
     {% endfor %}
-
-
-
 </div>
 
 </body>

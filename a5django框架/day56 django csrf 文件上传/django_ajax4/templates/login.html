@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+</head>
+<body>
+
+{#方式1 form提交 通过csrf认证#}
+{#<h1>form登录页面</h1>#}
+{#<form action="" method="post">#}
+{#    {% csrf_token %}#}
+{#    用户名: <input type="text" name="username"  >#}
+{#    密码: <input type="password" name="password" >#}
+{#    <input type="submit">#}
+{#</form>#}
+
+<hr>
+
+{#ajax提交 通过csrf认证 方式4 添加请求头键值对#}
+{#指定了请求数据格式为application/json  {a:1, b:2}#}
+{#http协议默认的请求数据格式为  application/x-www-form-urlencoded  a=1&b=2#}
+{#<script>#}
+
+{#<h1>ajax登录页面</h1>#}
+{#用户名: <input type="text" id="username">#}
+{#密码: <input type="password" id="password">#}
+{#<button id="btn">ajax提交</button>#}
+{#<h1 id="ajax_error" style="color: red;"></h1>#}
+
+{#给按钮绑定一个点击事件#}
+{#    $('#btn').click(function () {#}
+{#        var uname = $('#username').val();#}
+{#获取用户名输入框的输入内容#}
+{#        var password = $('#password').val();#}
+{##}
+{#发送ajax请求 异步提交 局部刷新#}
+{#        $.ajax({#}
+{#            type:'post',// 请求方法.#}
+{#            url:'/login/',#}
+{##}
+{#            contentType:'application/json',#}
+{#http协议默认的请求数据格式为  application/x-www-form-urlencoded #}
+{#            data:JSON.stringify({xname:uname,pwd:password}),#}
+{#js中把字典转成json字符串#}
+{#            headers:{// 设置请求头键值对#}
+{#                'X-CSRFToken':$.cookie('csrftoken'),#}
+{#            },#}
+{#            success:function (res) {#}
+{#                console.log('success',res);#}
+{#                $('#ajax_error').text(res.responseText);#}
+{#            },#}
+{#            error:function (res) {#}
+{#                console.log('error',res);#}
+{#res 写成ret 拼写#}
+{#                $('#ajax_error').text(res.responseText);#}
+{#            }#}
+{#        })#}
+{#    })#}
+{#</script>#}
+
+{#方式1:#}
+{#   jq获取隐藏的Input标签的csrfmiddlewaretoken的值  ajax通过data发送数据#}
+
+{#<h1>ajax登录页面</h1>#}
+{#{% csrf_token %}#}
+{#用户名: <input type="text" id="username">#}
+{#密码: <input type="password" id="password">#}
+{#<button id="btn">ajax提交</button>#}
+{#<h1 id="ajax_error" style="color: red;"></h1>#}
+
+{#<script>#}
+{#$('#btn').click(function () {#}
+{##}
+{#    var uname = $("#username").val();#}
+{#    var password = $("#password").val();#}
+{#    var token = $("[name='csrfmiddlewaretoken']").val();#}
+{## jq获取hidden#}
+{#Input标签的csrfmiddlewaretoken的值#}
+{##}
+{##}
+{#    $.ajax({#}
+{#        type: 'post',  // 请求方法.#}
+{#        url: '/login/',#}
+{##}
+{#        data: {xname: uname, pwd: password, csrfmiddlewaretoken: token},#}
+{## 发送#}
+{#jq获取Input标签的csrfmiddlewaretoken的值#}
+{#        success: function (res) {#}
+{#            console.log('success', res);#}
+{##}
+{#        }#}
+{#        ,#}
+{#        error: function (error) {#}
+{#            console.log('error>>>>>', error);#}
+{#            $('#ajax_error').text(error.responseText);#}
+{#        }#}
+{#    })#}
+{#    })#}
+{##}
+{#</script>#}
+
+{#方式1:#}
+{#   jq获取隐藏的Input标签的csrfmiddlewaretoken的值  ajax通过data发送数据#}
+{#<h1>ajax登录页面</h1>#}
+{#{% csrf_token %}#}
+{#用户名: <input type="text" id="username">#}
+{#密码: <input type="password" id="password">#}
+{#<button id="btn">ajax提交</button>#}
+{#<h1 id="ajax_error" style="color: red;"></h1>#}
+{##}
+{#<script>#}
+{#    $('#btn').click(function () {#}
+{#        var uname = $('#username').val();#}
+{#        var password = $('#password').val();#}
+{#        var token = $('[name="csrfmiddlewaretoken"]').val();#}
+{#获取hidden标签的token值  {% csrf_token %}的值#}
+{#<input type="hidden" name="csrfmiddlewaretoken" value="K2pB9wHwphIwIpVsQfzqppARpWaZwQgBhO8MnLeIQbdoLCXz3lszNOsiWaFHgrjK">#}
+{#    $.ajax({#}
+{#        type:'post',#}
+{#        url:'/login/',#}
+{#        data:{xname:uname,pwd:password,csrfmiddlewaretoken:token},#}
+{## 发送  jq获取Input标签的csrfmiddlewaretoken的值#}
+{#        success:function (res) {#}
+{#            console.log('success',res);#}
+{#        },#}
+{#        error:function (res) {#}
+{#            console.log('res',res);#}
+{#            $('#ajax_error').text(res.responseText);#}
+{#        }#}
+{#    })#}
+{#    })#}
+{#</script>#}
+
+{#方式2  推荐  简洁#}
+{# {{ csrf_token }}获取的是hidden input标签的那个value属性的csrfmiddlewaretoken值#}
+{#<h1>ajax登录页面</h1>#}
+{#{% csrf_token %}#}
+{#用户名: <input type="text" id="username">#}
+{#密码: <input type="password" id="password">#}
+{#<button id="btn">ajax提交</button>#}
+{#<h1 id="ajax_error" style="color: red;"></h1>#}
+
+{#<script>#}
+{#    $('#btn').click(function () {#}
+{#        var uname = $('#username').val();#}
+{#        var password = $('#password').val();#}
+{#    var token = $("[name='csrfmiddlewaretoken']").val();#}
+{#获取hidden标签的token值  {% csrf_token %}的值#}
+{#<input type="hidden" name="csrfmiddlewaretoken" value="K2pB9wHwphIwIpVsQfzqppARpWaZwQgBhO8MnLeIQbdoLCXz3lszNOsiWaFHgrjK">#}
+{#        $.ajax({#}
+{#            type: 'post',#}
+{#            url: '/login/',#}
+{#data:{xname:uname,pwd:password,csrfmiddlewaretoken:token},#}
+{#            data: {xname: uname, pwd: password, csrfmiddlewaretoken:'{{csrf_token}}'},#}
+{## 发送  jq获取Input标签的csrfmiddlewaretoken的值#}
+{#            success: function (res) {#}
+{#                console.log('success', res);#}
+{#            },#}
+{#            error: function (res) {#}
+{#                console.log('res', res);#}
+{#                $('#ajax_error').text(res.responseText);#}
+{#            }#}
+{#        })#}
+{#    })#}
+{#</script>#}
+
+{#方式2  推荐  简洁#}
+{# {{ csrf_token }}获取的是hidden input标签的那个value属性的csrfmiddlewaretoken值#}
+{#<h1>ajax登录页面</h1>#}
+{#{% csrf_token %}#}
+{#用户名: <input type="text" id="username">#}
+{#密码: <input type="password" id="password">#}
+{#<button id="btn">ajax提交</button>#}
+{#<h1 id="ajax_error" style="color: red;"></h1>#}
+{##}
+{#<script>#}
+{#    $('#btn').click(function () {#}
+{#        var uname = $('#username').val();#}
+{#        var password = $('#password').val();#}
+{##}
+{#        $.ajax({#}
+{#            type:'post',#}
+{#            url:'/login/',#}
+{#// {{ csrf_token }}拿到是{% csrf_token %}生成的input标签的那个value属性的token值#}
+{#            data:{#}
+{#                xname:uname,#}
+{#                pwd:password,#}
+{#                csrfmiddlewaretoken:'{{ csrf_token }}',#}
+{#            },#}
+{#            success:function (res) {#}
+{#                console.log('success',ret);#}
+{#            },#}
+{#            error:function (res) {#}
+{#                console.log('error',res);#}
+{#                $('#ajax_error').text(res.responseText);#}
+{##}
+{#            }#}
+{#        })#}
+{#    })#}
+{#</script>#}
+
+{#方式3 添加请求头键值对,键必须叫做:'X-CSRFToken',值是cookie中的token值#}
+{#       浏览器主动添加的  浏览器不会自动添加 这里请求头中的X-CSRFToken字段和请求头中的字段cookie是不同的字段#}
+{#<h1>ajax登录页面</h1>#}
+{#{% csrf_token %}#}
+{#用户名: <input type="text" id="username">#}
+{#密码: <input type="password" id="password">#}
+{#<button id="btn">ajax提交</button>#}
+{#<h1 id="ajax_error" style="color: red;"></h1>#}
+
+{#<script>#}
+{#    $('#btn').click(function () {#}
+{##}
+{#        var uname = $("#username").val();#}
+{#        var password = $("#password").val();#}
+{##}
+{#        $.ajax({#}
+{#            type: 'post',  // 请求方法.#}
+{#            url: '/login/',#}
+{##}
+{#            data: {xname: uname, pwd: password},#}
+{#            headers: {  // 设置请求头键值对#}
+{#                'X-CSRFToken': $.cookie('csrftoken'),#}
+{#                //将服务端给的cookie中的随机字符串,作为X-CSRFToken的值#}
+{#            },#}
+{#            success: function (res) {#}
+{##}
+{#                console.log('success', res);#}
+{##}
+{#            },#}
+{#            error: function (error) {#}
+{#                console.log('error>>>>>', error);#}
+{#                $('#ajax_error').text(error.responseText);#}
+{##}
+{#            }#}
+{##}
+{#        })#}
+{#    })#}
+{#</script>#}
+
+{#方式3 添加请求头键值对,键必须叫做:'X-CSRFToken',值是cookie中的token值#}
+{#  浏览器主动添加的  浏览器不会自动添加 这里请求头中的X-CSRFToken字段和请求头中的字段cookie是不同的字段#}
+<h1>ajax登录页面</h1>
+{#{% csrf_token %}#}
+用户名: <input type="text" id="username">
+密码: <input type="password" id="password">
+<button id="btn">ajax提交</button>
+<h1 id="ajax_error" style="color: red;"></h1>
+
+<script>
+   $('#btn').click(function () {
+       var uname = $('#username').val();
+       var password = $('#password').val();
+
+       $.ajax({
+           type:'post',
+           url:'/login/',
+
+           data:{
+               xname:uname,
+               pwd:password
+           },
+           headers:{// 设置请求头键值对
+               'X-CSRFToken':$.cookie('csrftoken'),
+                 //将服务端给的cookie中的随机字符串,作为X-CSRFToken的值
+           },
+           success:function (res) {
+               console.log('success',res);
+           },
+           error:function (res) {
+               console.log('error',res);
+               $('#ajax_error').text(res.responseText);
+           }
+       })
+   })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

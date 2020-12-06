@@ -70,8 +70,6 @@ from app01.utils.page import Pagenation
 
 @login_check
 def books(request):
-
-
 	current_page = request.GET.get('page')
 	try:
 		current_page = int(current_page)  #没有page参数或者不是数字字符串
@@ -85,12 +83,11 @@ def books(request):
 
 	book_objs = models.Book.objects.all()[page_obj.page_data_start:page_obj.end_data_start]
 
-
-
 	# book_objs = models.Book.objects.all()[10:20] # 2
 	# book_objs = models.Book.objects.all()[20:30] # 3
 
-	return render(request, 'books.html', {'book_objs': book_objs, 'page_obj': page_obj})
+	return render(request, 'books.html',
+	              {'book_objs': book_objs, 'page_obj': page_obj})
 
 
 

@@ -8,7 +8,7 @@ from django.views import View
 
 from django.urls import reverse  # 别名解析
 
-# 登录认证装饰器
+# 登录认证装饰器--认证登录状态
 def login_check(f):
 
 	def inner(request, *args, **kwargs):
@@ -29,16 +29,21 @@ def login(request):
 		pwd = request.POST.get('password')
 
 		res = models.UserInfo.objects.filter(username=uname, password=pwd)
+		# obj_list = Book.objects.filter(id=10, price=15)  #逗号连接的查询条件就是and的关系
+		# 逗号是and
 		if res.exists():
+			# exists(): queryset类型的数据来调用，如果QuerySet包含数据，就返回True，否则返回False
 			## 登录成功
 			request.session['is_login'] = True
 			request.session['user_id'] = res.first().id
+			# res是queryset类型的数据
 			request.session['username'] = uname
 
-			# 注入菜单数据
+			# 查询该用户的菜单数据  正向查询 关联属性字段
 			menu_list = res.first().menus.all().values('id', 'title', 'url', 'icon')
 
 			request.session['menu_data'] = list(menu_list)
+			# 记录用户的菜单
 
 			return redirect('books')
 		else:
@@ -52,8 +57,10 @@ def register(request):
 	else:
 		user_data = request.POST.dict()
 		user_data.pop('confirm_password')
+		# user_data.pop('csrfmiddlewaretoken')
 		# todo 要校验数据的格式等
 
+		# 把注册页面的输入框内容保存到数据库
 		models.UserInfo.objects.create(
 			**user_data
 		)
@@ -82,6 +89,7 @@ def books(request):
 
 
 class AddBook(View):
+	#给类中的方法加装饰器 day48 typora 方式1
 	@method_decorator(login_check)
 	def get(self,request):
 		publish_objs = models.Publish.objects.all()
