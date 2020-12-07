@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bb{
+            background-color: tan;
+        }
+
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <button @click="price+=1">价钱!!</button>
+        <h1>{{price}}</h1>
+        <input type="text" v-model="info.num">
+    </div>
+
+
+
+</body>
+<script>
+
+
+
+        var card = new Vue({
+            el:"#app",
+            data:{
+                price:100,
+                name:'昭志',
+                pp:'的pp',
+                info:{
+                    num:20
+                }
+
+            },
+            methods:{
+
+            },
+            watch:{
+
+                // 'pp':function (){
+                //
+                // },
+
+                // price(){
+                //     alert(this.name + this.pp + '有危险!!!!')
+                // }
+
+                //  不支持这种写法
+                // info.num(){
+                //     console.log(this.info.num);
+                // }
+                // 监听嵌套数据的写法
+                'info.num':function (){
+                    console.log(this.info.num);
+                }
+            }
+
+
+        });
+    </script>
+</html>

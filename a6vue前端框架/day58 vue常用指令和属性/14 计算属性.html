@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bb{
+            background-color: tan;
+        }
+
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <h1>{{showpp}}</h1>
+    </div>
+
+
+
+</body>
+<script>
+
+
+
+        var card = new Vue({
+            el:"#app",
+            data:{
+                price:100,
+                name:'昭志',
+                pp:'的pp'
+
+            },
+            methods:{
+
+            },
+            computed:{
+                showpp(){
+
+                    let s = this.name + ' ' + this.pp;
+                    return s
+                },
+
+
+
+            }
+
+
+        });
+    </script>
+</html>

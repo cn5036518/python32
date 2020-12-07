@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render, HttpResponse, redirect
 from app01 import models
 from app01.models import UserInfo
+from app01.models import Book
 from app01.models import Menu
 # Create your views here.
 from django.urls import reverse  # 别名解析
@@ -93,17 +94,45 @@ def logout(request):
 	request.session.flush()  #删除所有session数据
 	return redirect('login')
 
-@login_check
-#浏览器会自动保存sessionid  需要清除缓存看效果
-def books(request):
-	print(reverse('books'))  #/books/  #reverse('别名')来反向解析别名对应的路径
-	print(reverse('add_book'))  #/add_book/  #/add_book/v1/
-	print(reverse('edit_book',args=(3, )))  # /edit_book/2/
-	# print(reverse('del_book',args=(3, ))) # 当url用的是无名分组参数时,reverse反向解析路径用args来传参
-	print(reverse('del_book', kwargs={'book_id': 3, }))  #当url用的是有名分组参数时,reverse反向解析路径用kwargs来传参
-	book_objs = models.Book.objects.all()
+# @login_check
+# #浏览器会自动保存sessionid  需要清除缓存看效果
+# def books(request):
+# 	print(reverse('books'))  #/books/  #reverse('别名')来反向解析别名对应的路径
+# 	print(reverse('add_book'))  #/add_book/  #/add_book/v1/
+# 	print(reverse('edit_book',args=(3, )))  # /edit_book/2/
+# 	# print(reverse('del_book',args=(3, ))) # 当url用的是无名分组参数时,reverse反向解析路径用args来传参
+# 	print(reverse('del_book', kwargs={'book_id': 3, }))  #当url用的是有名分组参数时,reverse反向解析路径用kwargs来传参
+# 	book_objs = models.Book.objects.all()
+#
+# 	return render(request, 'books.html', {'book_objs': book_objs})
 
-	return render(request, 'books.html', {'book_objs': book_objs})
+from app01.utils.page import Pagenation
+
+@login_check
+def books(request):
+	print(request.GET)
+	# < QueryDict: {'page': ['11']} >
+	# 获取page.py中的s = f'<li><a href="?page={i}">{i}</a></li>'
+	# 即url上的?后面的参数
+	current_page = request.GET.get('page')
+	print(current_page)  #11 获取当前页码
+
+	try:
+		current_page = int(current_page)
+	except:
+		# 没有page参数或者不是数字字符串
+		current_page = 1
+
+	all_book_objs = Book.objects.all()
+	total_count = all_book_objs.count()  # 总数据量
+	page_obj = Pagenation(current_page,total_count) #新建对象
+
+	book_objs = Book.objects.all()[page_obj.page_data_start:page_obj.end_data_start]
+
+	# book_objs = models.Book.objects.all()[10:20] # 2
+	# book_objs = models.Book.objects.all()[20:30] # 3
+	return render(request,'books.html',
+	              {'book_objs':book_objs,'page_obj':page_obj})
 
 
 from django.views import View

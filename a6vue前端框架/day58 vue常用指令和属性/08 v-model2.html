@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="xx">
+    <input type="text" v-model="num">
+    <h1>{{num}}</h1>
+<!--    v-model的作用:联动-->
+<!--    修改input输入框的值num.
+h1标签的值num随之一起修改-->
+</div>
+
+<script>
+    new Vue({
+        el:'#xx',
+        data(){
+            return{
+                num:10,
+            }
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

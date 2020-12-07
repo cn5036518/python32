@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/sweetalert/sweetalert.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .c1 {
+            background-color: tan;
+        }
+
+        .navbar .items {
+            color: #ffffff !important;
+        }
+
+        .menu_color{
+            background-color: tan!important;
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default c1">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            {#            <a class="navbar-brand" href="#">首页</a>#}
+            <a class="navbar-brand items" href="{% url 'books' %}">首页</a>
+        </div>
+{#        {% static %}#}
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                {#                <li><a href="#">root</a></li>#}
+{#                <li><a href="#" class="items">{{ request.session.username }}</a></li>#}
+                <li><img src="/statics/img/{{ request.session.avatar }}" class="img-circle" alt="" style="height: 50px;"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle items" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">个人中心 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">购物车</a></li>
+                        <li><a href="#">我的订单</a></li>
+                        <li><a href="#">我的收藏</a></li>
+                        <li role="separator" class="divider"></li>
+                        {#                        <li><a href="#">注销</a></li>#}
+                        <li><a href="{% url 'logout' %}">注销</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+{#<div class="container">#}
+{#    {% block content_title %}#}
+{#        <h1>母版书籍</h1>#}
+{#    {% endblock %}#}
+{#    <div class="row">#}
+{#        <div class="col-md-10 col-md-offset-1">#}
+{#            {% block content %}#}
+{#                母版内容#}
+{#            {% endblock %}#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+{% load mytag %}
+{# 01先load#}
+<div class="row">
+    <div class="col-md-2">
+        {% menu_tag request %}
+{#        #02最终将渲染好的动态组件(menu.html),#}
+{#        通过include引入组件的方式,加载到这里#}
+{## 这里是调用mytag.py中定义的函数menu_tag#}
+{#request是实参#}
+{#mytag.py中定义的函数menu_tag的形参是request#}
+    </div>
+    <div class="col-md-8">
+        {% block content_title %}
+
+            <h1>母版书籍</h1>
+        {% endblock %}
+        {% block content %}
+            母版内容
+        {% endblock %}
+    </div>
+</div>
+
+
+</body>
+<script src="{% static 'plugins/jquery.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/sweetalert/sweetalert.min.js' %}"></script>
+{% block js %}
+
+{% endblock %}
+
+</html>

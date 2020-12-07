@@ -72,13 +72,14 @@ from app01.utils.page import Pagenation
 def books(request):
 	current_page = request.GET.get('page')
 	try:
-		current_page = int(current_page)  #没有page参数或者不是数字字符串
+		current_page = int(current_page)
 	except:
+		# 没有page参数或者不是数字字符串
 		current_page = 1
 
 	all_book_objs = models.Book.objects.all()
 	total_count = all_book_objs.count()  # 总数据量
-	page_obj = Pagenation(current_page, total_count)
+	page_obj = Pagenation(current_page, total_count) #新建对象
 
 
 	book_objs = models.Book.objects.all()[page_obj.page_data_start:page_obj.end_data_start]

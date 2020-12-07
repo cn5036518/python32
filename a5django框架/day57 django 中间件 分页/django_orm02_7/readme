@@ -1,0 +1,43 @@
+图书管理系统的需求
+   1 注册和登录--ok
+   2 动态组件--ok
+      不同权限不同的菜单
+   3 加session装饰器--ok
+      图书管理 作者管理 都需要登录后才能看到
+
+   4 分页--ok
+   5 登录后,显示用户名和用户头像--nok
+   6 中间件进行session认证替换session装饰器--ok
+
+
+基线
+C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day56 django csrf 文件上传\django_orm02
+
+改动的文件--分页
+C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day57 django 中间件 分页\django_orm02\app01\utils\page.py
+C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day57 django 中间件 分页\django_orm02\app01\views.py里面的books
+C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day57 django 中间件 分页\django_orm02\app01\xx.py #造数据
+C:\Users\Administrator\Desktop\ubuntu_gx\python32\a5django框架\day57 django 中间件 分页\django_orm02\templates\books.html
+
+
+造数据
+
+page.py
+
+views.py里面的books
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

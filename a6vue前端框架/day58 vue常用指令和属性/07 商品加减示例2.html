@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="xx">
+    <button @click="num++">+1</button>
+<!--    @click 是 v-on:click的简写-->
+    <input type="text" :value="num">
+<!--    :value 是on-bind:value的简写-->
+<!--    修改标签的属性的值,从而修改输入框的内容-->
+    <button @click="substract">-1</button>
+<!--    substract 是方法名-->
+     <!-- 一些复杂的数据处理还是通过方法来搞 -->
+</div>
+
+<script>
+    new Vue({
+        el:'#xx', // #xx   css选择器
+        data(){
+            return{
+                num:10,
+            }
+        },
+        methods:{
+            substract(){
+                //this指的是vue对象
+                if(this.num>0){
+                    this.num--;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

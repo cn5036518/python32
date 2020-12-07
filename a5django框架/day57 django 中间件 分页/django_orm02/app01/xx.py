@@ -18,7 +18,6 @@ for i in range(100):
 		price=i,
 		publishDate='2020-11-11',
 		publishs_id=1,
-
 	)
 	obj_lsit.append(book_obj)
 

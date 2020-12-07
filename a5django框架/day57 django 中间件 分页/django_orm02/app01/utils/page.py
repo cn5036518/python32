@@ -6,7 +6,7 @@ class Pagenation:
 	def __init__(self, current_page, total_count):
 		# 参数1是当前是第几页
 		# 参数2是总记录数
-		self.per_page_num = 3  # 每页展示10条数据
+		self.per_page_num = 3  # 每页展示3条数据
 
 		self.current_page = current_page
 
@@ -17,7 +17,7 @@ class Pagenation:
 
 		show_page_number = 11  # 总共展示11个页码
 
-		half_page_number = show_page_number // 2
+		half_page_number = show_page_number // 2  #地板除
 		if current_page <= half_page_number:
 			page_number_start = 1
 			page_number_end = show_page_number + 1
@@ -28,9 +28,12 @@ class Pagenation:
 
 		else:
 			page_number_start = current_page - half_page_number  # 11   6
+			# 当前页是11  起始页是6
 			page_number_end = current_page + half_page_number + 1  # 16
+		# 结束页是16
 
-		self.page_num_range = range(page_number_start, page_number_end)  # [1,2,3,4,5]
+		self.page_num_range = range(page_number_start, page_number_end)
+	# [1,2,3,4,5]
 
 	@property   #方法转属性
 	def page_data_start(self):

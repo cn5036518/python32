@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bb{
+            background-color: tan;
+        }
+
+    </style>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <input type="text" v-model="username">
+    </div>
+
+
+
+</body>
+<script>
+
+        var card = new Vue({
+            el:"#app",
+            data:{
+                username:''
+
+            },
+            methods:{
+
+            },
+            watch:{
+                username(){
+                    console.log(this.username.length);
+                    if (this.username.length > 6){
+                        alert('差不多得了');
+                        // this.username = this.username.slice(0,6);
+                    }
+                }
+
+            }
+
+
+        });
+    </script>
+</html>

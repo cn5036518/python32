@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<div id="xx">
+    <input :type="tt"> <button v-on:click="showp">{{msg}}</button>
+    <!--    :是v-bind:的简写 表示对标签的属性进行修改-->
+    <input :type="tt"> <button @click="showp">{{msg}}</button>
+    <!-- v-on:事件名称简写@事件名称 -->
+    <!--    v-on:click 简写是@click-->
+
+</div>
+
+
+</body>
+
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#xx',  // #xx   css选择器
+        data(){
+            return {
+                tt:'password',
+                msg:'显示密码',
+            }
+        },
+        methods:{
+            // showp:function (){
+            //
+            // }
+            showp(){ // 单体模式    showp:function ()简写成showp()
+                //this 指的是vue对象
+                if (this.tt === 'password'){
+                    this.tt = 'text';
+                    this.msg = '隐藏密码';
+                }else {
+                    this.tt = 'password';
+                    this.msg = '显示密码';
+                }
+
+            }
+        }
+
+    })
+
+
+</script>
+
+</html>

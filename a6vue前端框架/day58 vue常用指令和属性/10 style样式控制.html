@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div id="xx">
+    <!--    <div class="c1" :style="{color:c, backgroundColor:b}"> &lt;!&ndash; 注意:有-的css属性名称,要改为驼峰格式 &ndash;&gt;-->
+    <div class="c1" :style="divstyle">
+        <!-- 注意:有-的css属性名称,要改为驼峰格式 -->
+        床前明月光,疑是地上霜.
+
+    </div>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#xx',  // #xx   css选择器
+        data() {
+            return {
+                c: 'red',
+                b: 'green',
+                divstyle: {
+                    'color': 'tan',
+                    'backgroundColor': 'blue',
+
+                }
+            }
+        },
+        methods: {
+            // jian() {
+            //     if (this.num > 0) {
+            //         this.num--;
+            //     }
+            //
+            // }
+        }
+
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="xx">
+    <div class="c1" :style="{clor:c,backgroundColor:b}">
+        床前明月光,疑是地上霜.
+    </div>
+<!--    :style是on-bind:style的简写-->
+<!--    作用是修改标签属性的值-->
+
+</div>
+
+<script>
+    new Vue({
+        el:'#xx',
+        data(){
+            return{
+                c:'red',  //red需要加引号
+                b:'green',
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

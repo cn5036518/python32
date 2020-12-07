@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 | Sharelink</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="login-container">
+
+    <h1>图书系统登录</h1>
+    <div class="connect">
+        <p style="">欢迎您的到来</p>
+    </div>
+    <form action="" method="post" id="loginForm"
+          novalidate="novalidate">
+        {% csrf_token %}
+        <div>
+            <input type="text" name="username" class="username" placeholder="用户名" autocomplete="off">
+        </div>
+        <div>
+            <input type="password" name="password" class="password" placeholder="密码" oncontextmenu="return false"
+                   onpaste="return false">
+        </div>
+        <button id="submit" type="submit">登 录</button>
+    </form>
+    <a href="{% url 'register' %}">
+{#        跳转到注册页面#}
+        <button type="button" class="register-tis">还有没有账号？</button>
+    </a>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+
+<script src="{% static 'js/common.js' %}"></script>
+
+<script src="{% static 'js/supersized.3.2.7.min.js' %}"></script>
+<script src="{% static 'js/supersized-init.js' %}"></script>
+
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

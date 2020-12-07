@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="xx">
+    <button @click="num=num+10">+10</button>
+<!--    <button v-on:click="num=num+10">+10</button>-->
+<!--    v-on:click 简写@click-->
+    <!-- 直接操作数据属性 -->
+<!--    通过事件(比如:点击事件)触发修改-->
+    <h1>{{num}}</h1>
+</div>
+
+<script>
+    new Vue({
+        el:'#xx', // #xx   css选择器
+        data(){
+            return{
+                num:100,
+            }
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
