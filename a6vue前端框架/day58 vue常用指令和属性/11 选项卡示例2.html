@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+    <style>
+        #card{
+            width: 500px;
+            height: 350px;
+        }
+        .title{
+            height: 50px;
+        }
+        .title span{
+            width: 100px;
+            height: 50px;
+            background-color: #ccc;
+            display: inline-block;
+            line-height: 50px;
+              /* 设置行和当前元素的高度相等,就可以让文本内容上下居中 */
+            text-align: center;
+        }
+        .content .list{
+            width:500px;
+            height: 300px;
+            background-color: yellow;
+            display: none;
+            /*隐蔽标签*/
+        }
+        .content .active{
+            display: block;
+            /*显示标签*/
+        }
+        .title .current{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<div id="card">
+    <div class="title">
+        <span @click="num=1" :class="{current:num===1}">国内新闻</span>
+        <span @click="num=2" :class="{current:num===2}">国际新闻</span>
+        <span @click="num=3" :class="{current:num===3}">银河新闻</span>
+            <!--    通过事件(比如:点击事件)触发修改-->
+<!--            @click 是v-on:clock的简写-->
+         <!--    作用是 通过事件(比如:点击事件)触发修改-->
+<!--        1 @click="num=3" 点击span标签后,触发@click后,把num从0改成3-->
+<!--        2 :class="{current:num===3}   当num===3的时候,把class的值改成current-->
+<!--        <span class="current">银河新闻</span>-->
+    </div>
+    <div class="content">
+        <div class="list" :class="{active:num===1}">国内新闻列表</div>
+        <div class="list" :class="{active:num===2}">国际新闻列表</div>
+        <div class="list" :class="{active:num===3}">银河新闻列表</div>
+        <!--        1 :class="{active:num===3}"  当num===3的时候,把class的值改成active-->
+<!--       2 <div class="list active">银河新闻列表</div>-->
+
+    </div>
+
+</div>
+
+<script>
+            // 思路：
+        // 当用户点击标题栏的按钮[span]时，显示对应索引下标的内容块[.list]
+        // 代码实现：
+    var card = new Vue({
+        el:'#card',
+        data:{
+            num:0,
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

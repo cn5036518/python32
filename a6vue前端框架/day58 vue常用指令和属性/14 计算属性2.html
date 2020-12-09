@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+        <style>
+        .bb{
+            background-color: tan;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{showpp}}</h1>
+<!--    昭志 的pp-->
+</div>
+
+<script>
+    var card = new Vue({
+        el:'#app',
+        data:{
+            price:100,
+            name: '昭志',
+            pp: '的pp'
+        },
+        methods:{},
+        computed:{
+            showpp(){  //单体
+                //this 指的是当前vue对象
+                let s = this.name + ' ' + this.pp;
+                return s
+            },
+        }
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

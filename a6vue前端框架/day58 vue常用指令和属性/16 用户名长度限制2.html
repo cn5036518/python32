@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="username">
+</div>
+
+<script>
+    var card = new Vue({
+        el:'#app',
+        data:{
+            username:''
+        },
+        methods:{},
+        watch:{
+            username(){
+                //this是指vue对象
+                console.log(this.username.length);
+                if(this.username.length>6){
+                    alert('用户名长度不能超过6位');
+                    this.username = this.username.slice(0,6);
+                    //截取前6位
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todolist</title>
+    <style type="text/css">
+        .list_con {
+            width: 600px;
+            margin: 50px auto 0;
+        }
+
+        .inputtxt {
+            width: 550px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 0px;
+            text-indent: 10px;
+        }
+
+        .inputbtn {
+            width: 40px;
+            height: 32px;
+            padding: 0px;
+            border: 1px solid #ccc;
+        }
+
+        .list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .list li {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .list li span {
+            float: left;
+        }
+
+        .list li a {
+            float: right;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!--课后作业-->
+<!--1 支持增加 删除 上下排序-->
+
+<div class="list_con">
+    <h2>To do list</h2>
+    <input type="text" name="" id="txt1" class="inputtxt" v-model="input_text">
+    <input type="button" name="" value="增加" id="btn1" class="inputbtn" @click="add">
+
+    <ul id="list" class="list">
+        <!-- javascript:; # 阻止a标签跳转 -->
+        <li v-for="(value,index) in data_list" :key="index">
+            <span>{{value}}</span>
+            <a href="javascript:;" class="up" @click="up(index)"> ↑ </a>
+            <a href="javascript:;" class="down" @click="down(index)"> ↓ </a>
+            <a href="javascript:;" class="del" @click="del(index)">删除</a>
+        </li>
+
+    </ul>
+</div>
+
+</body>
+<script src="vue.js"></script>
+<script>
+
+    let vm = new Vue({
+        el: '.list_con',
+        data() {
+            return {
+                data_list: [
+                    '学习html', '学习css', '学习js'
+                ],
+                input_text: '',
+            }
+        },
+         methods:{
+            //1 给 增加 按钮绑定一个方法
+            // 2 点击 增加按钮后,获取对用户在输入框的输入内容
+            // 3 把输入的内容追加到数组中
+            // 4 把输入框的内容清空
+            // 1 增加记录
+            add(){
+                //this指的是当前的vue对象
+                // console.log(this.input_text) //123
+                this.data_list.push(this.input_text)  //3 把输入的内容追加到数组中
+                // console.log(this.data_list)
+                //) ["学习html", "学习css", "学习js", "222"]
+//      push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+// arrayObject.push(newelement1,newelement2,....,newelementX)
+//                 console.log(input_text)  //input_text is not defined
+//                 console.log(this.input_text)
+                this.input_text = '';  //4 把输入框的内容清空
+            },
+
+             // 2删除
+            del(index){
+                this.data_list.splice(index,1);
+                // splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+                // arrayObject.splice(index,howmany,item1,.....,itemX)
+                // index	必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+                //howmany	必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+            },
+
+            // 3上移
+            up(index){
+                if(index > 0){
+                    let up_ele = this.data_list.splice(index,1)[0];
+                    //删除点击的那行
+                    console.log(up_ele)
+                    this.data_list.splice(index-1,0,up_ele);
+                    //在点击行的上一行插入-新增
+                }
+            },
+
+            //4 下移
+            down(index){
+                if(index < this.data_list.length - 1){
+                    let up_ele = this.data_list.splice(index,1)[0];
+                      //删除点击的那行
+                    this.data_list.splice(index+1,0,up_ele);
+                    //在点击行的下一行插入-新增
+                }
+            }
+        }
+
+    })
+
+
+</script>
+</html>

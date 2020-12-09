@@ -16,7 +16,8 @@
             height: 50px;
             background-color:#ccc;
             display: inline-block;
-            line-height: 50px; /* 设置行和当前元素的高度相等,就可以让文本内容上下居中 */
+            line-height: 50px;
+            /* 设置行和当前元素的高度相等,就可以让文本内容上下居中 */
             text-align:center;
         }
         .content .list{
@@ -43,13 +44,22 @@
             <span @click="num=2" :class="{current:num===2}">国际新闻</span>
             <span @click="num=3" :class="{current:num===3}">银河新闻</span>
             <!--<span>{{num}}</span>-->
+                        <!--    通过事件(比如:点击事件)触发修改-->
+<!--            @click 是v-on:clock的简写-->
+         <!--    作用是 通过事件(比如:点击事件)触发修改-->
+<!--        1 @click="num=3" 点击span标签后,触发@click后,把num从0改成3-->
+<!--        2 ::class="{current:num===3}   当num===3的时候,把class的值改成current-->
+<!--        <span class="current">银河新闻</span>-->
         </div>
         <div class="content">
             <div class="list" :class="{active:num===1}">国内新闻列表</div>
             <div class="list" :class="{active:num===2}">国际新闻列表</div>
             <div class="list" :class="{active:num===3}">银河新闻列表</div>
+            <!--        1 :class="{active:num===3}"  当num===3的时候,把class的值改成active-->
+<!--       2 <div class="list active">银河新闻列表</div>-->
         </div>
     </div>
+
     <script>
         // 思路：
         // 当用户点击标题栏的按钮[span]时，显示对应索引下标的内容块[.list]

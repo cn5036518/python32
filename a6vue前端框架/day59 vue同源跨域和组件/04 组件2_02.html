@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+    <script src="axios.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <App></App>
+</div>
+
+<script>
+    // 组件化开发(将页面的每块功能,单独封装为一个组件,
+    // 哪个页面用哪些组件,就直接拿到这几个组件,拼到页面上展示)
+    // 1.声明子组件  声子
+    let Vheader = {
+        data() {
+            return {
+                nav_list: ['个人中心', '登录', '注册', 'username']
+            }
+        },
+        template:
+            `
+            <div>
+                <h1>{{nav_list}}</h1>
+                <h2>{{nav_list}}</h2>
+                <h3 style="color: green;">{{ff}}</h3>
+            </div>
+            `,
+//         [ "个人中心", "登录", "注册", "username" ]
+// [ "个人中心", "登录", "注册", "username" ]
+// 123
+        props: ['ff',],
+        // 添加这行后,就可以把App中的ff属性的值,静态或者动态传递到子组件Vheader中了
+    };
+
+    let App = {
+        data() {
+            return {
+                'xxx': 'ooo',
+                num: 1001,
+            }
+        },
+        // <Vheader ff="123"></Vheader> 静态传值
+        template:
+            `
+        <div class="app">
+<!--        //静态传值-->
+<!--            <Vheader ff="123"></Vheader>-->
+<!--            //固定显示123 绿色的-->
+
+<!--        //动态传值-->
+            <Vheader :ff="num"></Vheader>
+<!--            //:ff 是:v-bind的简写  可以动态修改标签属性的值-->
+        </div>
+        `,
+
+        components: {
+            Vheader,
+        }
+    };
+
+
+    let vm = new Vue({
+        el: '#app',
+        components: {
+            App,
+        },
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+    <script src="axios.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>天气预报</h1>
+    <h1>{{data}}</h1>
+<!--    天气预报-->
+<!--感冒多发期，适当减少外出频率，适量补充水分，适当增减衣物。-->
+</div>
+
+<script>
+    //jquery使用ajax
+    //vue使用axios(和jq的ajax类似)  vue没有ajax
+    //axios本质上就是javascript的ajax封装
+    let vm = new Vue({
+        el:'#app',
+        data(){
+            return{
+                data:'',  //res.data.data.ganmo;
+            }
+        },
+        created(){
+            axios.get('http://wthrcdn.etouch.cn/weather_mini?city=北京')
+            // axios.get('http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.search.catalogSug&query=大悲咒')
+              // No 'Access-Control-Allow-Origin' header is present on the requested resource.
+               //同源限制
+                .then((res)=>{
+                    console.log(res);
+                    console.log(this); //这里必须用箭头函数
+                    // 这里的this指的是当前对象axios的父级vue对象
+                    // 非箭头函数的this指的是当前的对象
+                    this.data = res.data.data.ganmao;
+                })
+                .catch(function (res) {
+                })
+        },
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

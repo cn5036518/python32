@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <button @click="price+=1">价钱</button>
+    <h1>{{price}}</h1>
+<!--    每点击一次价钱按钮,price就加1-->
+    <input type="text" v-model="info.num">
+</div>
+
+<script>
+    var card = new Vue({
+        el:'#app',
+        data:{
+            price: 100,
+            name: '昭志',
+            pp: '的pp',
+            info:{
+                num:20
+            }
+        },
+        methods:{},
+        watch:{
+            // 'pp':function () {
+            //
+            // },
+
+            // price(){
+            //     alert(this.name + this.pp)
+            // }
+
+            //  不支持这种写法
+            //嵌套数据不支持单体写法-简写
+        //     info.num(){
+        //         console.log(this.info.num)
+        //     }
+
+                // 监听嵌套数据的写法
+            'info.num':function () {
+                //this指的是vue对象
+                console.log(this.info.num)
+                //每在输入框输入一个字符,就打印一次
+            }
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

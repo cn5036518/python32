@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="033ca74e-a33a-463b-aaf5-d3b774579ed0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/11 选项卡示例2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/12 v-for循环2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/13 过滤器2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/14 计算属性2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/15 监听属性2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/16 用户名长度限制2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/17 生命周期钩子函数2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/18 阻止事件冒泡2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/day58课后作业.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/.idea/day59 vue同源跨域和组件.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/01 作业讲解.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/01 作业讲解2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/02 axios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/02 axios2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/03 组件-全局和局部组件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/03 组件02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/04 组件2_02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/04 组件2静态和动态传值.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/05 父组件往子组件传值.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/05 父组件往子组件传值2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/day58课后作业.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../day59 vue同源跨域和组件/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/day60 vue组件 vue-router vue-cli.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/.babelrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/.postcssrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/check-versions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/vue-loader.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/webpack.base.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/webpack.dev.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/build/webpack.prod.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/config/dev.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/config/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/config/prod.env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/src/components/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firstblood/static/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/05 父组件往子组件传值.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/05 父组件往子组件传值2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/06 平行组件传值.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/06 平行组件传值2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/07 vuerouter简单使用.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/07 vuerouter简单使用2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/vue-router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue03/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../工具/vue-router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5django框架/day57 django 中间件 分页/django_orm02_7/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5django框架/day57 django 中间件 分页/django_orm02_7/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/.idea/vue01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/.idea/vue01.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/06 v-on.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/06 v-on.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/10 style样式控制2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/10 style样式控制2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/11 选项卡示例.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/11 选项卡示例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/12 v-for循环.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/12 v-for循环.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/13 过滤器.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/13 过滤器.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/14 计算属性.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/14 计算属性.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/15 监听属性.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/15 监听属性.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/16 用户名长度限制.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/16 用户名长度限制.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/17 生命周期钩子函数.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/17 生命周期钩子函数.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day58 vue常用指令和属性/18 阻止事件冒泡.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day58 vue常用指令和属性/18 阻止事件冒泡.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1lPY8eIjnEgI1Jr0LqwRJigQP3l" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="033ca74e-a33a-463b-aaf5-d3b774579ed0" name="Default Changelist" comment="" />
+      <created>1607500034104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607500034104</updated>
+      <workItem from="1607500038153" duration="4440000" />
+      <workItem from="1607505918931" duration="4004000" />
+      <workItem from="1607515750313" duration="421000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

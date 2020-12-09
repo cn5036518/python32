@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{username}}</h1>
+</div>
+
+<script>
+    var card = new Vue({
+        el:'#app',
+        data:{
+            username:'chao'
+        },
+        methods:{},
+
+        // vue还未获取到视图(圈地)和数据属性之前触发的
+        beforeCreate(){
+            console.log('beforeCreate>>>');
+            console.log(this);//指的是vue对象
+            console.log(this.$el);//undefined
+            console.log(this.$data); //undefined
+        },
+
+        // vue对象获取到了数据属性,但是还没有获得圈地(视图)时触发的
+        created(){
+            console.log('created>>>>');
+            console.log(this.$el); //undefined
+            console.log(this.$data);
+        },
+
+        // 拿到了视图,但是数据属性挂载到视图之前触发的.
+        beforeMount(){
+            console.log('beforeMount>>>');
+            console.log(this.$el);
+//             <div id="app">
+//     <h1>{{username}}</h1>
+// </div>
+            console.log(this.$data);
+        },
+
+        // 数据属性挂载到视图之后触发的.
+        mounted(){
+            console.log('mounted>>>');
+            console.log(this.$el);
+            // <div id="app"><h1>chao</h1></div>
+            console.log(this.$data);
+        },
+        // 重点记住created和mounted,
+        // 将来我们在这两个方法中来发送获取数据的请求
+    })
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

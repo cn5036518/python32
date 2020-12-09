@@ -15,6 +15,10 @@
 <!--    :style是on-bind:style的简写-->
 <!--    作用是修改标签属性的值-->
 
+    <div class="c1" :style="divstyle">
+        床前明月光,疑是地上霜2.
+    </div>
+
 </div>
 
 <script>
@@ -24,6 +28,10 @@
             return{
                 c:'red',  //red需要加引号
                 b:'green',
+                divstyle:{
+                    'color':'tan',
+                    'backgroundColor':'blue',
+                }
             }
         }
     })

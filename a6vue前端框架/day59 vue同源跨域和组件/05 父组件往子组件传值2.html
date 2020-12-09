@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+    <script src="axios.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <App></App>
+</div>
+
+<!--   // 父组件往子组件传值:-->
+<script>
+    let Vheader = {
+        data(){
+            return{
+                nav_list:['个人中心', '登录', '注册', 'username']
+            }
+        },
+        template:
+        `
+        <div>
+            <h1>{{nav_list}}</h1>
+            <h2>{{nav_list}}</h2>
+            <h3 style="color:green; ">{{ff}}</h3>
+            <input type="text" v-model="ff">
+        </div>
+        `,
+ // v-model在input里面是替换value属性,修改变量ff的值的同时,{{ff}}也同步修改
+        props:['ff',],
+        // 父组件往子组件传值  子组件必须写props
+
+//  [ "个人中心", "登录", "注册", "username" ]
+// [ "个人中心", "登录", "注册", "username" ]
+// 1001
+// 1001
+// [ "xxx", "ooo" ]
+// 1001
+    };
+
+    let xxx = {
+        data(){
+            return{
+                content_list:['xxx','ooo',]
+            }
+        },
+        template:'<h1 style="color:red;">{{content_list}}</h1>',
+    };
+
+    let App = {
+        data(){
+            return{
+                'xxx':'ooo',
+                num:1001,
+            }
+        },
+        template:
+        `
+            <div class="app">
+                <Vheader :ff="num"></Vheader>
+                <xxx></xxx>
+                <h3 style="color: blue">{{num}}</h3>
+            </div>
+        `,
+        // :ff是动态修改标签的ff属性
+        //把父组件App中的num:1001 传递到子组件Vheader中
+        //父组件的num修改了,子组件vheader会随之修改
+        //子组件Vheader修改后,父组件不会随之修改
+        components:{
+            Vheader,
+            xxx,
+        }
+    };
+
+    let vm = new Vue({
+        el:'#app',
+        components:{
+            App,
+        }
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

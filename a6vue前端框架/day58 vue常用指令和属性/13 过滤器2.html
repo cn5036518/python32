@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vue.js"></script>
+    <style>
+        .bb {
+            background-color: tan;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{price|RMB}}</h1>
+<!--    100RMB1   全局的过滤器-->
+
+    <h1>{{price|yuan}}</h1>
+<!--    100元  局部的过滤器-->
+
+    <h1>{{price|keeptwopoint(1)}}</h1>
+<!--    100.0-->
+    <!-- 传递1个参数  保留1位小数 -->
+
+    <h1>{{price|keeptwopoint(2)|RMB}}</h1>
+      <!-- 连续使用多个过滤器 -->
+<!--    100.00RMB1-->
+
+</div>
+
+<script>
+    // 全局过滤器,任何对象都可以直接使用这个过滤器
+    // 'RMB'是过滤器的名字  拼接一个字符串
+    Vue.filter('RMB',function (val) {
+        return val + 'RMB1'
+    })
+
+    var card = new Vue({
+        el:'#app',
+        data:{
+            price:100,
+        },
+        methods:{},
+        // 局部过滤器,只能在当前对象中使用
+        filters:{
+            yuan(val){
+                return val + '元'
+                // 拼接一个字符串
+            },
+            keeptwopoint(val,n){
+                return val.toFixed(n)
+                //保留几位小数
+            }
+        },
+    });
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
