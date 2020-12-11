@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/a6vue前端框架/day61 vue ele_ui 路飞首页 git/xx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/a7django restful framework(drf)/day62 drf和git/xx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/a7django restful framework(drf)/day62 drf和git/xxx/ttt" vcs="Git" />
   </component>
 </project>
