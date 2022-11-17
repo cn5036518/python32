@@ -75,7 +75,26 @@ print(pathvar2)# /mnt/hgfs/python32_gx/day16/ceshi0930_2
 
 # 1.把已经压缩的包进行解压
 with tarfile.open(pathvar1,"r",encoding="utf-8") as tf:
-	tf.extractall(pathvar2)
+def is_within_directory(directory, target):
+	
+	abs_directory = os.path.abspath(directory)
+	abs_target = os.path.abspath(target)
+
+	prefix = os.path.commonprefix([abs_directory, abs_target])
+	
+	return prefix == abs_directory
+
+def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+
+	for member in tar.getmembers():
+		member_path = os.path.join(path, member.name)
+		if not is_within_directory(path, member_path):
+			raise Exception("Attempted Path Traversal in Tar File")
+
+	tar.extractall(path, members, numeric_owner=numeric_owner) 
+	
+
+safe_extract(tf, pathvar2)
 
 # 2.把要追加的内容放进去
 shutil.copy("/bin/echo" , pathvar2)
