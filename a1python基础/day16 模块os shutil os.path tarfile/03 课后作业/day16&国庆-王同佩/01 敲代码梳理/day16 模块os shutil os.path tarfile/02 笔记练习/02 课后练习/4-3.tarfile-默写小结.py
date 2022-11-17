@@ -25,7 +25,29 @@ with tarfile.open('tar45.tar.bz2','r',encoding='utf-8') as tf:
 
 # 02 解压所有文件
 with tarfile.open('tar45.tar.bz2','r',encoding='utf-8') as tf:
-	tf.extractall('tar45-2') #参数:解压后的目录
+
+import os
+
+def is_within_directory(directory, target):
+	
+	abs_directory = os.path.abspath(directory)
+	abs_target = os.path.abspath(target)
+
+	prefix = os.path.commonprefix([abs_directory, abs_target])
+	
+	return prefix == abs_directory
+
+def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+
+	for member in tar.getmembers():
+		member_path = os.path.join(path, member.name)
+		if not is_within_directory(path, member_path):
+			raise Exception("Attempted Path Traversal in Tar File")
+
+	tar.extractall(path, members, numeric_owner=numeric_owner) 
+	
+
+safe_extract(tf, "tar45-2")
 
 # 3 追加文件
 # 不能直接追加到压缩包,也不能追加到解压后的目录,只能追加到只打包不压缩的文件中
